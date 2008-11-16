@@ -1,0 +1,7 @@
+{
+  BenchmarkRunner runner=new BenchmarkRunner();
+  runner.addObjectSerializer(new ProtobufSerializer());
+  runner.addObjectSerializer(new ThriftSerializer());
+  runner.addObjectSerializer(new JavaSerializer());
+  runner.start();
+}

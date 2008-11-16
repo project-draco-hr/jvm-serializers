@@ -1,0 +1,46 @@
+{
+  TField field;
+  iprot.readStructBegin();
+  while (true) {
+    field=iprot.readFieldBegin();
+    if (field.type == TType.STOP) {
+      break;
+    }
+switch (field.id) {
+case IMAGE:
+      if (field.type == TType.LIST) {
+{
+          TList _list4=iprot.readListBegin();
+          this.image=new ArrayList<Image>(_list4.size);
+          for (int _i5=0; _i5 < _list4.size; ++_i5) {
+            Image _elem6=new Image();
+            _elem6=new Image();
+            _elem6.read(iprot);
+            this.image.add(_elem6);
+          }
+          iprot.readListEnd();
+        }
+        this.__isset.image=true;
+      }
+ else {
+        TProtocolUtil.skip(iprot,field.type);
+      }
+    break;
+case MEDIA:
+  if (field.type == TType.STRUCT) {
+    this.media=new Media();
+    this.media.read(iprot);
+    this.__isset.media=true;
+  }
+ else {
+    TProtocolUtil.skip(iprot,field.type);
+  }
+break;
+default :
+TProtocolUtil.skip(iprot,field.type);
+break;
+}
+iprot.readFieldEnd();
+}
+iprot.readStructEnd();
+}

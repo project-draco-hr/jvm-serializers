@@ -1,0 +1,7 @@
+{
+  System.out.println("warming up...");
+  for (  ObjectSerializer<T> serializer : _serializers)   createObjects(serializer);
+  for (  ObjectSerializer<T> serializer : _serializers)   serializeObjects(serializer);
+  for (  ObjectSerializer<T> serializer : _serializers)   deserializeObjects(serializer);
+  System.out.println("Starting");
+}

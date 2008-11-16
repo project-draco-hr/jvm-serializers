@@ -1,0 +1,5 @@
+{
+  result.hasUri=true;
+  result.uri_=value;
+  return this;
+}

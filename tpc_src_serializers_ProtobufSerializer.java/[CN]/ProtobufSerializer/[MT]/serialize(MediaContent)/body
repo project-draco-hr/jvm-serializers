@@ -1,0 +1,6 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  content.writeTo(baos);
+  byte[] array=baos.toByteArray();
+  return array;
+}

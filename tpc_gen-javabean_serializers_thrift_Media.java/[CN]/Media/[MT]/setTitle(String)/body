@@ -1,0 +1,4 @@
+{
+  this.title=title;
+  this.__isset.title=(title != null);
+}

@@ -1,0 +1,70 @@
+{
+  StringBuilder sb=new StringBuilder("Media(");
+  boolean first=true;
+  if (!first)   sb.append(", ");
+  sb.append("uri:");
+  sb.append(this.uri);
+  first=false;
+  if (__isset.title) {
+    if (!first)     sb.append(", ");
+    sb.append("title:");
+    sb.append(this.title);
+    first=false;
+  }
+  if (__isset.width) {
+    if (!first)     sb.append(", ");
+    sb.append("width:");
+    sb.append(this.width);
+    first=false;
+  }
+  if (__isset.height) {
+    if (!first)     sb.append(", ");
+    sb.append("height:");
+    sb.append(this.height);
+    first=false;
+  }
+  if (__isset.format) {
+    if (!first)     sb.append(", ");
+    sb.append("format:");
+    sb.append(this.format);
+    first=false;
+  }
+  if (__isset.duration) {
+    if (!first)     sb.append(", ");
+    sb.append("duration:");
+    sb.append(this.duration);
+    first=false;
+  }
+  if (__isset.size) {
+    if (!first)     sb.append(", ");
+    sb.append("size:");
+    sb.append(this.size);
+    first=false;
+  }
+  if (__isset.bitrate) {
+    if (!first)     sb.append(", ");
+    sb.append("bitrate:");
+    sb.append(this.bitrate);
+    first=false;
+  }
+  if (__isset.person) {
+    if (!first)     sb.append(", ");
+    sb.append("person:");
+    sb.append(this.person);
+    first=false;
+  }
+  if (__isset.player) {
+    if (!first)     sb.append(", ");
+    sb.append("player:");
+    sb.append(this.player);
+    first=false;
+  }
+  if (__isset.copyright) {
+    if (!first)     sb.append(", ");
+    sb.append("copyright:");
+    sb.append(this.copyright);
+    first=false;
+  }
+  sb.append(")");
+  return sb.toString();
+}

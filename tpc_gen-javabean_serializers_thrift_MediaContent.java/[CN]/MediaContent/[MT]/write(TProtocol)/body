@@ -1,0 +1,33 @@
+{
+  TStruct struct=new TStruct("MediaContent");
+  oprot.writeStructBegin(struct);
+  TField field=new TField();
+  if (this.image != null) {
+    if (this.__isset.image) {
+      field.name="image";
+      field.type=TType.LIST;
+      field.id=IMAGE;
+      oprot.writeFieldBegin(field);
+{
+        oprot.writeListBegin(new TList(TType.STRUCT,this.image.size()));
+        for (        Image _iter7 : this.image) {
+          _iter7.write(oprot);
+        }
+        oprot.writeListEnd();
+      }
+      oprot.writeFieldEnd();
+    }
+  }
+  if (this.media != null) {
+    if (this.__isset.media) {
+      field.name="media";
+      field.type=TType.STRUCT;
+      field.id=MEDIA;
+      oprot.writeFieldBegin(field);
+      this.media.write(oprot);
+      oprot.writeFieldEnd();
+    }
+  }
+  oprot.writeFieldStop();
+  oprot.writeStructEnd();
+}

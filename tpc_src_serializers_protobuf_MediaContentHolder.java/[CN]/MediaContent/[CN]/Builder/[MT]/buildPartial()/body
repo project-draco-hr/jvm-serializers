@@ -1,0 +1,8 @@
+{
+  if (result.image_ != java.util.Collections.EMPTY_LIST) {
+    result.image_=java.util.Collections.unmodifiableList(result.image_);
+  }
+  serializers.protobuf.MediaContentHolder.MediaContent returnMe=result;
+  result=null;
+  return returnMe;
+}

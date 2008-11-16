@@ -1,0 +1,10 @@
+{
+switch (fieldID) {
+case IMAGE:
+    return getImage();
+case MEDIA:
+  return getMedia();
+default :
+throw new IllegalArgumentException("Field " + fieldID + " doesn't exist!");
+}
+}

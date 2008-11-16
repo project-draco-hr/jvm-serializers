@@ -1,0 +1,4 @@
+{
+  result=new serializers.protobuf.MediaContentHolder.Image();
+  return this;
+}

@@ -1,0 +1,5 @@
+{
+  result.hasFormat=false;
+  result.format_="";
+  return this;
+}

@@ -1,0 +1,5 @@
+{
+  result.hasDuration=false;
+  result.duration_=0L;
+  return this;
+}

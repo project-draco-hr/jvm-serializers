@@ -1,0 +1,34 @@
+{
+  StringBuilder sb=new StringBuilder("Image(");
+  boolean first=true;
+  if (!first)   sb.append(", ");
+  sb.append("uri:");
+  sb.append(this.uri);
+  first=false;
+  if (__isset.title) {
+    if (!first)     sb.append(", ");
+    sb.append("title:");
+    sb.append(this.title);
+    first=false;
+  }
+  if (__isset.width) {
+    if (!first)     sb.append(", ");
+    sb.append("width:");
+    sb.append(this.width);
+    first=false;
+  }
+  if (__isset.height) {
+    if (!first)     sb.append(", ");
+    sb.append("height:");
+    sb.append(this.height);
+    first=false;
+  }
+  if (__isset.size) {
+    if (!first)     sb.append(", ");
+    sb.append("size:");
+    sb.append(this.size);
+    first=false;
+  }
+  sb.append(")");
+  return sb.toString();
+}

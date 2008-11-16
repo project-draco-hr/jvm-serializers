@@ -1,0 +1,4 @@
+{
+  result.image_.set(index,value);
+  return this;
+}

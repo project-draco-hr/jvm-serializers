@@ -1,0 +1,13 @@
+{
+  this();
+  this.uri=uri;
+  this.__isset.uri=(uri != null);
+  this.title=title;
+  this.__isset.title=(title != null);
+  this.width=width;
+  this.__isset.width=true;
+  this.height=height;
+  this.__isset.height=true;
+  this.size=size;
+  this.__isset.size=true;
+}

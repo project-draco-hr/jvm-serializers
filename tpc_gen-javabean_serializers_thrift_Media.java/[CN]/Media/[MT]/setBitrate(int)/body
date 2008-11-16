@@ -1,0 +1,4 @@
+{
+  this.bitrate=bitrate;
+  this.__isset.bitrate=true;
+}

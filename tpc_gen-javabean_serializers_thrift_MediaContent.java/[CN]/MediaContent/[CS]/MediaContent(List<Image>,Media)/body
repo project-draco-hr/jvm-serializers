@@ -1,0 +1,7 @@
+{
+  this();
+  this.image=image;
+  this.__isset.image=(image != null);
+  this.media=media;
+  this.__isset.media=(media != null);
+}

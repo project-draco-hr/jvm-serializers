@@ -1,0 +1,5 @@
+{
+  result.hasWidth=true;
+  result.width_=value;
+  return this;
+}

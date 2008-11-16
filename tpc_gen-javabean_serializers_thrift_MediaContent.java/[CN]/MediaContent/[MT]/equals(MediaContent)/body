@@ -1,0 +1,16 @@
+{
+  if (that == null)   return false;
+  boolean this_present_image=true && (this.__isset.image) && (this.image != null);
+  boolean that_present_image=true && (that.__isset.image) && (that.image != null);
+  if (this_present_image || that_present_image) {
+    if (!(this_present_image && that_present_image))     return false;
+    if (!this.image.equals(that.image))     return false;
+  }
+  boolean this_present_media=true && (this.__isset.media) && (this.media != null);
+  boolean that_present_media=true && (that.__isset.media) && (that.media != null);
+  if (this_present_media || that_present_media) {
+    if (!(this_present_media && that_present_media))     return false;
+    if (!this.media.equals(that.media))     return false;
+  }
+  return true;
+}

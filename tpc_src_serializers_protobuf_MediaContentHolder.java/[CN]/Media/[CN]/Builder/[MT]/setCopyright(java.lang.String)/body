@@ -1,0 +1,5 @@
+{
+  result.hasCopyright=true;
+  result.copyright_=value;
+  return this;
+}

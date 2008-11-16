@@ -1,0 +1,25 @@
+{
+  this();
+  this.uri=uri;
+  this.__isset.uri=(uri != null);
+  this.title=title;
+  this.__isset.title=(title != null);
+  this.width=width;
+  this.__isset.width=true;
+  this.height=height;
+  this.__isset.height=true;
+  this.format=format;
+  this.__isset.format=(format != null);
+  this.duration=duration;
+  this.__isset.duration=true;
+  this.size=size;
+  this.__isset.size=true;
+  this.bitrate=bitrate;
+  this.__isset.bitrate=true;
+  this.person=person;
+  this.__isset.person=(person != null);
+  this.player=player;
+  this.__isset.player=true;
+  this.copyright=copyright;
+  this.__isset.copyright=(copyright != null);
+}

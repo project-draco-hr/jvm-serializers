@@ -1,0 +1,3 @@
+{
+  return (this.image == null) ? null : this.image.iterator();
+}

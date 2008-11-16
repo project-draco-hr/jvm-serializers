@@ -1,0 +1,4 @@
+{
+  this.copyright=copyright;
+  this.__isset.copyright=(copyright != null);
+}

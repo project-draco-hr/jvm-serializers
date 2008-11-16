@@ -1,0 +1,12 @@
+{
+switch (fieldID) {
+case IMAGE:
+    setImage((List<Image>)value);
+  break;
+case MEDIA:
+setMedia((Media)value);
+break;
+default :
+throw new IllegalArgumentException("Field " + fieldID + " doesn't exist!");
+}
+}

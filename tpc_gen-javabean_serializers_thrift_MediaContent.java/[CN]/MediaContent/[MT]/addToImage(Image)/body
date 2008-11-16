@@ -1,0 +1,7 @@
+{
+  if (this.image == null) {
+    this.image=new ArrayList<Image>();
+  }
+  this.image.add(elem);
+  this.__isset.image=true;
+}

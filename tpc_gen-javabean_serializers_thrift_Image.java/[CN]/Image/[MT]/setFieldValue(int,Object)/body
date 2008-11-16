@@ -1,0 +1,21 @@
+{
+switch (fieldID) {
+case URI:
+    setUri((String)value);
+  break;
+case TITLE:
+setTitle((String)value);
+break;
+case WIDTH:
+setWidth((Integer)value);
+break;
+case HEIGHT:
+setHeight((Integer)value);
+break;
+case SIZE:
+setSize((Integer)value);
+break;
+default :
+throw new IllegalArgumentException("Field " + fieldID + " doesn't exist!");
+}
+}

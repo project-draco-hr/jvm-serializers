@@ -1,0 +1,3 @@
+{
+  return serializers.protobuf.MediaContentHolder.Media.getDescriptor().getEnumTypes().get(0);
+}

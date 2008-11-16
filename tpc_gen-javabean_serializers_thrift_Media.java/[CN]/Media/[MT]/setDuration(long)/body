@@ -1,0 +1,4 @@
+{
+  this.duration=duration;
+  this.__isset.duration=true;
+}

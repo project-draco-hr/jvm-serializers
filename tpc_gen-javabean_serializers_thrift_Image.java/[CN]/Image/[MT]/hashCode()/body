@@ -1,0 +1,19 @@
+{
+  HashCodeBuilder builder=new HashCodeBuilder();
+  boolean present_uri=true && (uri != null);
+  builder.append(present_uri);
+  if (present_uri)   builder.append(uri);
+  boolean present_title=true && (__isset.title) && (title != null);
+  builder.append(present_title);
+  if (present_title)   builder.append(title);
+  boolean present_width=true && (__isset.width);
+  builder.append(present_width);
+  if (present_width)   builder.append(width);
+  boolean present_height=true && (__isset.height);
+  builder.append(present_height);
+  if (present_height)   builder.append(height);
+  boolean present_size=true && (__isset.size);
+  builder.append(present_size);
+  if (present_size)   builder.append(size);
+  return builder.toHashCode();
+}

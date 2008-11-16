@@ -1,0 +1,18 @@
+{
+  StringBuilder sb=new StringBuilder("MediaContent(");
+  boolean first=true;
+  if (__isset.image) {
+    if (!first)     sb.append(", ");
+    sb.append("image:");
+    sb.append(this.image);
+    first=false;
+  }
+  if (__isset.media) {
+    if (!first)     sb.append(", ");
+    sb.append("media:");
+    sb.append(this.media);
+    first=false;
+  }
+  sb.append(")");
+  return sb.toString();
+}

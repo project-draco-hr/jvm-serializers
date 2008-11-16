@@ -1,0 +1,49 @@
+{
+  TStruct struct=new TStruct("Image");
+  oprot.writeStructBegin(struct);
+  TField field=new TField();
+  if (this.uri != null) {
+    field.name="uri";
+    field.type=TType.STRING;
+    field.id=URI;
+    oprot.writeFieldBegin(field);
+    oprot.writeString(this.uri);
+    oprot.writeFieldEnd();
+  }
+  if (this.title != null) {
+    if (this.__isset.title) {
+      field.name="title";
+      field.type=TType.STRING;
+      field.id=TITLE;
+      oprot.writeFieldBegin(field);
+      oprot.writeString(this.title);
+      oprot.writeFieldEnd();
+    }
+  }
+  if (this.__isset.width) {
+    field.name="width";
+    field.type=TType.I32;
+    field.id=WIDTH;
+    oprot.writeFieldBegin(field);
+    oprot.writeI32(this.width);
+    oprot.writeFieldEnd();
+  }
+  if (this.__isset.height) {
+    field.name="height";
+    field.type=TType.I32;
+    field.id=HEIGHT;
+    oprot.writeFieldBegin(field);
+    oprot.writeI32(this.height);
+    oprot.writeFieldEnd();
+  }
+  if (this.__isset.size) {
+    field.name="size";
+    field.type=TType.I32;
+    field.id=SIZE;
+    oprot.writeFieldBegin(field);
+    oprot.writeI32(this.size);
+    oprot.writeFieldEnd();
+  }
+  oprot.writeFieldStop();
+  oprot.writeStructEnd();
+}

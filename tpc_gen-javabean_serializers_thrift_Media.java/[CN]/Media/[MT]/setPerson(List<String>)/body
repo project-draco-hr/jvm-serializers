@@ -1,0 +1,4 @@
+{
+  this.person=person;
+  this.__isset.person=(person != null);
+}

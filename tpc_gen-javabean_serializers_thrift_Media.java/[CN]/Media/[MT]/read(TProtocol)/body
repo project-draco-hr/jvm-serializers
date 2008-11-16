@@ -1,0 +1,125 @@
+{
+  TField field;
+  iprot.readStructBegin();
+  while (true) {
+    field=iprot.readFieldBegin();
+    if (field.type == TType.STOP) {
+      break;
+    }
+switch (field.id) {
+case URI:
+      if (field.type == TType.STRING) {
+        this.uri=iprot.readString();
+        this.__isset.uri=true;
+      }
+ else {
+        TProtocolUtil.skip(iprot,field.type);
+      }
+    break;
+case TITLE:
+  if (field.type == TType.STRING) {
+    this.title=iprot.readString();
+    this.__isset.title=true;
+  }
+ else {
+    TProtocolUtil.skip(iprot,field.type);
+  }
+break;
+case WIDTH:
+if (field.type == TType.I32) {
+this.width=iprot.readI32();
+this.__isset.width=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case HEIGHT:
+if (field.type == TType.I32) {
+this.height=iprot.readI32();
+this.__isset.height=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case FORMAT:
+if (field.type == TType.STRING) {
+this.format=iprot.readString();
+this.__isset.format=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case DURATION:
+if (field.type == TType.I64) {
+this.duration=iprot.readI64();
+this.__isset.duration=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case SIZE:
+if (field.type == TType.I64) {
+this.size=iprot.readI64();
+this.__isset.size=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case BITRATE:
+if (field.type == TType.I32) {
+this.bitrate=iprot.readI32();
+this.__isset.bitrate=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case PERSON:
+if (field.type == TType.LIST) {
+{
+TList _list0=iprot.readListBegin();
+this.person=new ArrayList<String>(_list0.size);
+for (int _i1=0; _i1 < _list0.size; ++_i1) {
+String _elem2=null;
+_elem2=iprot.readString();
+this.person.add(_elem2);
+}
+iprot.readListEnd();
+}
+this.__isset.person=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case PLAYER:
+if (field.type == TType.I32) {
+this.player=iprot.readI32();
+this.__isset.player=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case COPYRIGHT:
+if (field.type == TType.STRING) {
+this.copyright=iprot.readString();
+this.__isset.copyright=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+default :
+TProtocolUtil.skip(iprot,field.type);
+break;
+}
+iprot.readFieldEnd();
+}
+iprot.readStructEnd();
+}

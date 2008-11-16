@@ -1,0 +1,5 @@
+{
+  result.hasPlayer=true;
+  result.player_=value;
+  return this;
+}

@@ -1,0 +1,4 @@
+{
+  this.media=media;
+  this.__isset.media=(media != null);
+}

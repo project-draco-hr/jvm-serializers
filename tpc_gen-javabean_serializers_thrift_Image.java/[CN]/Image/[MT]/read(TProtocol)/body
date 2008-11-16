@@ -1,0 +1,62 @@
+{
+  TField field;
+  iprot.readStructBegin();
+  while (true) {
+    field=iprot.readFieldBegin();
+    if (field.type == TType.STOP) {
+      break;
+    }
+switch (field.id) {
+case URI:
+      if (field.type == TType.STRING) {
+        this.uri=iprot.readString();
+        this.__isset.uri=true;
+      }
+ else {
+        TProtocolUtil.skip(iprot,field.type);
+      }
+    break;
+case TITLE:
+  if (field.type == TType.STRING) {
+    this.title=iprot.readString();
+    this.__isset.title=true;
+  }
+ else {
+    TProtocolUtil.skip(iprot,field.type);
+  }
+break;
+case WIDTH:
+if (field.type == TType.I32) {
+this.width=iprot.readI32();
+this.__isset.width=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case HEIGHT:
+if (field.type == TType.I32) {
+this.height=iprot.readI32();
+this.__isset.height=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case SIZE:
+if (field.type == TType.I32) {
+this.size=iprot.readI32();
+this.__isset.size=true;
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+default :
+TProtocolUtil.skip(iprot,field.type);
+break;
+}
+iprot.readFieldEnd();
+}
+iprot.readStructEnd();
+}

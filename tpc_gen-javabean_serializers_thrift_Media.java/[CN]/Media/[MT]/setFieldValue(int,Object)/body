@@ -1,0 +1,39 @@
+{
+switch (fieldID) {
+case URI:
+    setUri((String)value);
+  break;
+case TITLE:
+setTitle((String)value);
+break;
+case WIDTH:
+setWidth((Integer)value);
+break;
+case HEIGHT:
+setHeight((Integer)value);
+break;
+case FORMAT:
+setFormat((String)value);
+break;
+case DURATION:
+setDuration((Long)value);
+break;
+case SIZE:
+setSize((Long)value);
+break;
+case BITRATE:
+setBitrate((Integer)value);
+break;
+case PERSON:
+setPerson((List<String>)value);
+break;
+case PLAYER:
+setPlayer((Integer)value);
+break;
+case COPYRIGHT:
+setCopyright((String)value);
+break;
+default :
+throw new IllegalArgumentException("Field " + fieldID + " doesn't exist!");
+}
+}

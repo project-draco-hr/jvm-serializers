@@ -1,0 +1,5 @@
+{
+  result.hasMedia=true;
+  result.media_=value;
+  return this;
+}

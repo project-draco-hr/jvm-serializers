@@ -1,0 +1,4 @@
+{
+  this.image=null;
+  this.__isset.image=false;
+}

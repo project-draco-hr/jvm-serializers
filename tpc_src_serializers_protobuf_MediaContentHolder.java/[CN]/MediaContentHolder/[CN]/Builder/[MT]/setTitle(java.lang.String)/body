@@ -1,0 +1,5 @@
+{
+  result.hasTitle=true;
+  result.title_=value;
+  return this;
+}

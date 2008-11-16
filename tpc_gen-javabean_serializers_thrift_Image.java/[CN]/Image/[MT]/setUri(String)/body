@@ -1,0 +1,4 @@
+{
+  this.uri=uri;
+  this.__isset.uri=(uri != null);
+}

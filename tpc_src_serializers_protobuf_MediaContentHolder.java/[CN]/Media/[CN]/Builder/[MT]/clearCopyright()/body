@@ -1,0 +1,5 @@
+{
+  result.hasCopyright=false;
+  result.copyright_="";
+  return this;
+}

@@ -1,0 +1,16 @@
+{
+switch (fieldID) {
+case URI:
+    return getUri();
+case TITLE:
+  return getTitle();
+case WIDTH:
+return new Integer(getWidth());
+case HEIGHT:
+return new Integer(getHeight());
+case SIZE:
+return getSize();
+default :
+throw new IllegalArgumentException("Field " + fieldID + " doesn't exist!");
+}
+}

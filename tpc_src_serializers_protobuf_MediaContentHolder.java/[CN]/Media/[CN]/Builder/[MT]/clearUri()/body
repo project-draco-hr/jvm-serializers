@@ -1,0 +1,5 @@
+{
+  result.hasUri=false;
+  result.uri_="";
+  return this;
+}

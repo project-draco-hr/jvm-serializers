@@ -1,0 +1,7 @@
+{
+  if (this.person == null) {
+    this.person=new ArrayList<String>();
+  }
+  this.person.add(elem);
+  this.__isset.person=true;
+}

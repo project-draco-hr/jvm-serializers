@@ -1,0 +1,37 @@
+{
+  HashCodeBuilder builder=new HashCodeBuilder();
+  boolean present_uri=true && (uri != null);
+  builder.append(present_uri);
+  if (present_uri)   builder.append(uri);
+  boolean present_title=true && (__isset.title) && (title != null);
+  builder.append(present_title);
+  if (present_title)   builder.append(title);
+  boolean present_width=true && (__isset.width);
+  builder.append(present_width);
+  if (present_width)   builder.append(width);
+  boolean present_height=true && (__isset.height);
+  builder.append(present_height);
+  if (present_height)   builder.append(height);
+  boolean present_format=true && (__isset.format) && (format != null);
+  builder.append(present_format);
+  if (present_format)   builder.append(format);
+  boolean present_duration=true && (__isset.duration);
+  builder.append(present_duration);
+  if (present_duration)   builder.append(duration);
+  boolean present_size=true && (__isset.size);
+  builder.append(present_size);
+  if (present_size)   builder.append(size);
+  boolean present_bitrate=true && (__isset.bitrate);
+  builder.append(present_bitrate);
+  if (present_bitrate)   builder.append(bitrate);
+  boolean present_person=true && (__isset.person) && (person != null);
+  builder.append(present_person);
+  if (present_person)   builder.append(person);
+  boolean present_player=true && (__isset.player);
+  builder.append(present_player);
+  if (present_player)   builder.append(player);
+  boolean present_copyright=true && (__isset.copyright) && (copyright != null);
+  builder.append(present_copyright);
+  if (present_copyright)   builder.append(copyright);
+  return builder.toHashCode();
+}
