@@ -1,0 +1,15 @@
+{
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  XMLOutputFactory factory=XMLOutputFactory.newInstance();
+  XMLStreamWriter writer=factory.createXMLStreamWriter(out);
+  writer.writeStartDocument("ISO-8859-1","1.0");
+  writer.writeStartElement("mc");
+  writeMedia(writer,content.getMedia());
+  writeImage(writer,content.getImage(0));
+  writeImage(writer,content.getImage(1));
+  writer.writeEndElement();
+  writer.writeEndDocument();
+  writer.flush();
+  writer.close();
+  return out.toByteArray();
+}

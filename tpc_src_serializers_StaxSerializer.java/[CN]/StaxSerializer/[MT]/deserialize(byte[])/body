@@ -1,0 +1,10 @@
+{
+  MediaContent content=new MediaContent();
+  XMLInputFactory factory=XMLInputFactory.newInstance();
+  XMLStreamReader parser=factory.createXMLStreamReader(new ByteArrayInputStream(array));
+  searchTag(parser,"mc");
+  content.setMedia(readMedia(parser));
+  content.addImage(readImage(parser));
+  content.addImage(readImage(parser));
+  return content;
+}

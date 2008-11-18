@@ -1,0 +1,9 @@
+{
+  Image image=new Image();
+  image.setUri(readElement(parser,"ul"));
+  image.setTitle(readElement(parser,"tl"));
+  image.setWidth(Integer.valueOf(readElement(parser,"wd")));
+  image.setHeight(Integer.valueOf(readElement(parser,"hg")));
+  image.setSize(Size.valueOf(readElement(parser,"sz")));
+  return image;
+}

@@ -3,5 +3,6 @@
   runner.addObjectSerializer(new ProtobufSerializer());
   runner.addObjectSerializer(new ThriftSerializer());
   runner.addObjectSerializer(new JavaSerializer());
+  runner.addObjectSerializer(new StaxSerializer());
   runner.start();
 }

@@ -1,0 +1,9 @@
+{
+  writer.writeStartElement("im");
+  writeElement(writer,"ul",image.getUri());
+  writeElement(writer,"tl",image.getTitle());
+  writeElement(writer,"wd",String.valueOf(image.getWidth()));
+  writeElement(writer,"hg",String.valueOf(image.getHeight()));
+  writeElement(writer,"sz",String.valueOf(image.getSize()));
+  writer.writeEndElement();
+}
