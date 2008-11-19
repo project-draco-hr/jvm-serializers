@@ -1,0 +1,41 @@
+{
+  int size=memoizedSerializedSize;
+  if (size != -1)   return size;
+  size=0;
+  if (hasUri()) {
+    size+=com.google.protobuf.CodedOutputStream.computeStringSize(1,getUri());
+  }
+  if (hasTitle()) {
+    size+=com.google.protobuf.CodedOutputStream.computeStringSize(2,getTitle());
+  }
+  if (hasWidth()) {
+    size+=com.google.protobuf.CodedOutputStream.computeInt32Size(3,getWidth());
+  }
+  if (hasHeight()) {
+    size+=com.google.protobuf.CodedOutputStream.computeInt32Size(4,getHeight());
+  }
+  if (hasFormat()) {
+    size+=com.google.protobuf.CodedOutputStream.computeStringSize(5,getFormat());
+  }
+  if (hasDuration()) {
+    size+=com.google.protobuf.CodedOutputStream.computeInt64Size(6,getDuration());
+  }
+  if (hasSize()) {
+    size+=com.google.protobuf.CodedOutputStream.computeInt64Size(7,getSize());
+  }
+  if (hasBitrate()) {
+    size+=com.google.protobuf.CodedOutputStream.computeInt32Size(8,getBitrate());
+  }
+  for (  java.lang.String element : getPersonList()) {
+    size+=com.google.protobuf.CodedOutputStream.computeStringSize(9,element);
+  }
+  if (hasPlayer()) {
+    size+=com.google.protobuf.CodedOutputStream.computeEnumSize(10,getPlayer().getNumber());
+  }
+  if (hasCopyright()) {
+    size+=com.google.protobuf.CodedOutputStream.computeStringSize(11,getCopyright());
+  }
+  size+=getUnknownFields().getSerializedSize();
+  memoizedSerializedSize=size;
+  return size;
+}

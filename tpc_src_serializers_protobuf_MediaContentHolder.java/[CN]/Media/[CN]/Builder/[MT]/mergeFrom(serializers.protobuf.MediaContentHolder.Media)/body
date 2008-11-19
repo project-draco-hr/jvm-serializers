@@ -1,0 +1,41 @@
+{
+  if (other == serializers.protobuf.MediaContentHolder.Media.getDefaultInstance())   return this;
+  if (other.hasUri()) {
+    setUri(other.getUri());
+  }
+  if (other.hasTitle()) {
+    setTitle(other.getTitle());
+  }
+  if (other.hasWidth()) {
+    setWidth(other.getWidth());
+  }
+  if (other.hasHeight()) {
+    setHeight(other.getHeight());
+  }
+  if (other.hasFormat()) {
+    setFormat(other.getFormat());
+  }
+  if (other.hasDuration()) {
+    setDuration(other.getDuration());
+  }
+  if (other.hasSize()) {
+    setSize(other.getSize());
+  }
+  if (other.hasBitrate()) {
+    setBitrate(other.getBitrate());
+  }
+  if (!other.person_.isEmpty()) {
+    if (result.person_.isEmpty()) {
+      result.person_=new java.util.ArrayList<java.lang.String>();
+    }
+    result.person_.addAll(other.person_);
+  }
+  if (other.hasPlayer()) {
+    setPlayer(other.getPlayer());
+  }
+  if (other.hasCopyright()) {
+    setCopyright(other.getCopyright());
+  }
+  this.mergeUnknownFields(other.getUnknownFields());
+  return this;
+}

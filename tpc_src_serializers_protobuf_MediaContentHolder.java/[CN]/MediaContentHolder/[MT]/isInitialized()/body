@@ -1,0 +1,4 @@
+{
+  if (!hasUri)   return false;
+  return true;
+}
