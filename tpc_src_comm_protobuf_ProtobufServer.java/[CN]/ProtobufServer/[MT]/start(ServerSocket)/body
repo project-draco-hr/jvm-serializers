@@ -1,0 +1,33 @@
+{
+  System.out.println("listening");
+  final Socket socket=serverSocket.accept();
+  System.out.println("accepted");
+  try {
+    RpcCallback<Message> done=new RpcCallback<Message>(){
+      DataOutputStream dos=new DataOutputStream(socket.getOutputStream());
+      public void run(      Message content){
+        try {
+          byte[] array=_serializer.serialize((MediaContent)content);
+          dos.writeInt(array.length);
+          dos.write(array);
+        }
+ catch (        Exception e) {
+          e.printStackTrace();
+        }
+      }
+    }
+;
+    DataInputStream dis=new DataInputStream(socket.getInputStream());
+    while (true) {
+      int index=dis.readInt();
+      MethodDescriptor method=getDescriptor().getMethods().get(index);
+      byte[] array=new byte[dis.readInt()];
+      dis.readFully(array);
+      Message request=getRequestPrototype(method).newBuilderForType().mergeFrom(array).build();
+      callMethod(method,null,request,done);
+    }
+  }
+  finally {
+    socket.close();
+  }
+}

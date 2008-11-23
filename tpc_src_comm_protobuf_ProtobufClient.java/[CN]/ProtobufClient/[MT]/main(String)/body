@@ -1,0 +1,25 @@
+{
+  Socket socket=new Socket("127.0.0.1",7777);
+  final DataInputStream dis=new DataInputStream(socket.getInputStream());
+  final DataOutputStream dos=new DataOutputStream(socket.getOutputStream());
+  RpcChannel channel=new RpcChannel(){
+    public void callMethod(    MethodDescriptor method,    RpcController controller,    Message request,    Message responsePrototype,    RpcCallback<Message> done){
+      try {
+        dos.writeInt(method.getIndex());
+        byte[] array=request.toByteArray();
+        dos.writeInt(array.length);
+        dos.write(array);
+        int size=dis.readInt();
+        array=new byte[size];
+        dis.readFully(array);
+        done.run(responsePrototype.newBuilderForType().mergeFrom(array).build());
+      }
+ catch (      IOException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+;
+  ProtobufClient pc=new ProtobufClient(MediaServer.newStub(channel));
+  pc.start();
+}

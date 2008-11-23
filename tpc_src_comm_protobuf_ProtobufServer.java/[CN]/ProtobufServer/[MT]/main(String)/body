@@ -1,0 +1,12 @@
+{
+  ProtobufServer ps=new ProtobufServer();
+  ServerSocket serverSocket=ServerSocketFactory.getDefault().createServerSocket(7777);
+  while (true) {
+    try {
+      ps.start(serverSocket);
+    }
+ catch (    Exception e) {
+      System.out.println(e);
+    }
+  }
+}
