@@ -1,0 +1,32 @@
+{
+  final HttpClient client=new HttpClient();
+  RpcChannel channel=new RpcChannel(){
+    public void callMethod(    MethodDescriptor method,    RpcController controller,    Message request,    Message responsePrototype,    RpcCallback<Message> done){
+      try {
+        PostMethod post=new PostMethod("http://localhost:8080/protowar/ProtoWar");
+        ByteArrayOutputStream baos=new ByteArrayOutputStream();
+        DataOutputStream dos=new DataOutputStream(baos);
+        dos.writeInt(method.getIndex());
+        byte[] array=request.toByteArray();
+        dos.writeInt(array.length);
+        dos.write(array);
+        dos.flush();
+        byte[] toSend=baos.toByteArray();
+        post.setRequestEntity(new ByteArrayRequestEntity(toSend));
+        client.executeMethod(post);
+        DataInputStream dis=new DataInputStream(post.getResponseBodyAsStream());
+        int size=dis.readInt();
+        array=new byte[size];
+        dis.readFully(array);
+        done.run(responsePrototype.newBuilderForType().mergeFrom(array).build());
+        post.releaseConnection();
+      }
+ catch (      IOException e) {
+        e.printStackTrace();
+      }
+    }
+  }
+;
+  ProtobufHttpClient pc=new ProtobufHttpClient(MediaServer.newStub(channel));
+  pc.start();
+}
