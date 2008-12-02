@@ -1,14 +1,14 @@
 {
   warmObjects();
+  System.out.printf(" ,Object create, Serializaton, Deserialization, Serilized Size\n");
   for (  ObjectSerializer serializer : _serializers) {
-    double time=createObjects(serializer);
-    System.out.printf("[%s] Object create time = %1.5f mili\n",serializer.getName(),time);
-    time=serializeObjects(serializer);
-    System.out.printf("[%s] Object serialize time = %1.5f mili\n",serializer.getName(),time);
-    time=deserializeObjects(serializer);
-    System.out.printf("[%s] Object dserialize time = %1.5f mili\n",serializer.getName(),time);
+    double timeCreate=createObjects(serializer);
+    for (int i=0; i < TRIALS; i++)     timeCreate=Math.min(timeCreate,createObjects(serializer));
+    double timeSer=serializeObjects(serializer);
+    for (int i=0; i < TRIALS; i++)     timeSer=Math.min(timeSer,serializeObjects(serializer));
+    double timeDSer=deserializeObjects(serializer);
+    for (int i=0; i < TRIALS; i++)     timeDSer=Math.min(timeDSer,deserializeObjects(serializer));
     byte[] array=serializer.serialize(serializer.create());
-    System.out.println("[" + serializer.getName() + "] Serialized size = "+ array.length);
-    System.out.println(new String(array));
+    System.out.printf("%s, %1.5f, %1.5f, %1.5f, %d\n",serializer.getName(),timeCreate,timeSer,timeDSer,array.length);
   }
 }

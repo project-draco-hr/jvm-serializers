@@ -1,7 +1,7 @@
 {
   System.gc();
   byte[] array=serializer.serialize(serializer.create());
-  long start=System.currentTimeMillis();
+  long start=System.nanoTime();
   for (int i=0; i < ITERATIONS; i++) {
     serializer.deserialize(array);
   }
