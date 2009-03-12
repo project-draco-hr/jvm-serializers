@@ -1,7 +1,6 @@
 {
   ByteArrayOutputStream out=new ByteArrayOutputStream();
-  XMLOutputFactory factory=XMLOutputFactory.newInstance();
-  XMLStreamWriter writer=factory.createXMLStreamWriter(out);
+  XMLStreamWriter writer=outFactory.createXMLStreamWriter(out);
   writer.writeStartDocument("ISO-8859-1","1.0");
   writer.writeStartElement("mc");
   writeMedia(writer,content.getMedia());

@@ -1,0 +1,4 @@
+{
+  inFactory=XMLInputFactory.newInstance();
+  outFactory=XMLOutputFactory.newInstance();
+}
