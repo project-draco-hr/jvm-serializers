@@ -1,0 +1,16 @@
+{
+  generator.writeFieldName("md");
+  generator.writeStartObject();
+  writeStringElement(generator,"pl",media.getPlayer().name());
+  writeStringElement(generator,"ul",media.getUri());
+  writeStringElement(generator,"tl",media.getTitle());
+  writeLongElement(generator,"wd",media.getWidth());
+  writeLongElement(generator,"hg",media.getHeight());
+  writeStringElement(generator,"fr",media.getFormat());
+  writeLongElement(generator,"dr",media.getDuration());
+  writeLongElement(generator,"sz",media.getSize());
+  writeLongElement(generator,"br",media.getBitrate());
+  writeStringElement(generator,"pr",media.getPersons().get(0));
+  writeStringElement(generator,"pr",media.getPersons().get(1));
+  generator.writeEndObject();
+}

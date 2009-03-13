@@ -1,0 +1,12 @@
+{
+  parser.nextToken();
+  parser.nextToken();
+  Image image=new Image();
+  image.setUri(readStringElement(parser,"ul"));
+  image.setTitle(readStringElement(parser,"tl"));
+  image.setWidth(readIntElement(parser,"wd"));
+  image.setHeight(readIntElement(parser,"hg"));
+  image.setSize(Image.Size.valueOf(readStringElement(parser,"sz")));
+  parser.nextToken();
+  return image;
+}

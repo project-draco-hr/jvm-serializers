@@ -1,0 +1,11 @@
+{
+  while (parser.nextToken() != null) {
+    if (parser.getCurrentName().equals(name)) {
+      if (parser.nextToken() == null) {
+        throw new IllegalStateException("Missing value for attribute: " + name);
+      }
+      return;
+    }
+  }
+  throw new IllegalStateException("Could not find expected token: " + name);
+}

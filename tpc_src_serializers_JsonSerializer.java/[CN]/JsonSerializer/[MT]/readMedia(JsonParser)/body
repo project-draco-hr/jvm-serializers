@@ -1,0 +1,18 @@
+{
+  parser.nextToken();
+  parser.nextToken();
+  Media media=new Media();
+  media.setPlayer(Media.Player.valueOf(readStringElement(parser,"pl")));
+  media.setUri(readStringElement(parser,"ul"));
+  media.setTitle(readStringElement(parser,"tl"));
+  media.setWidth(readIntElement(parser,"wd"));
+  media.setHeight(readIntElement(parser,"hg"));
+  media.setFormat(readStringElement(parser,"fr"));
+  media.setDuration(readLongElement(parser,"dr"));
+  media.setSize(readLongElement(parser,"sz"));
+  media.setBitrate(readIntElement(parser,"br"));
+  media.addToPerson(readStringElement(parser,"pr"));
+  media.addToPerson(readStringElement(parser,"pr"));
+  parser.nextToken();
+  return media;
+}

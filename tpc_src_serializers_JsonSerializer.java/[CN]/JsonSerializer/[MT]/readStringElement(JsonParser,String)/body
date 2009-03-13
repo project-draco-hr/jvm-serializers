@@ -1,0 +1,4 @@
+{
+  findToken(parser,name);
+  return parser.getText();
+}

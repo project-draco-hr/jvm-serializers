@@ -1,0 +1,10 @@
+{
+  JsonParser parser=_factory.createJsonParser(array);
+  parser.nextToken();
+  MediaContent mc=new MediaContent(readMedia(parser));
+  mc.addImage(readImage(parser));
+  mc.addImage(readImage(parser));
+  parser.nextToken();
+  parser.close();
+  return mc;
+}
