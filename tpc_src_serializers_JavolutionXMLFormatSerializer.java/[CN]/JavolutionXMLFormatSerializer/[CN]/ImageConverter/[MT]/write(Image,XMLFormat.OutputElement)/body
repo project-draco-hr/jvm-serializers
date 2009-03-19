@@ -1,0 +1,7 @@
+{
+  xml.setAttribute("ul",image.getUri());
+  xml.setAttribute("tl",image.getTitle());
+  xml.setAttribute("wd",image.getWidth());
+  xml.setAttribute("hg",image.getHeight());
+  xml.setAttribute("sz",image.getSize().ordinal());
+}

@@ -1,0 +1,15 @@
+{
+  media.setPlayer(Player.values()[xml.getAttribute("pl",0)]);
+  media.setUri(xml.getAttribute("ul").toString());
+  media.setTitle(xml.getAttribute("tl").toString());
+  media.setWidth(xml.getAttribute("wd",0));
+  media.setHeight(xml.getAttribute("hg",0));
+  media.setFormat(xml.getAttribute("fr").toString());
+  media.setDuration(xml.getAttribute("dr",0l));
+  media.setSize(xml.getAttribute("sz",0l));
+  media.setBitrate(xml.getAttribute("br",0));
+  int ps=xml.getAttribute("ps",0);
+  for (int i=0; i < ps; i++) {
+    media.addToPerson((String)xml.getNext());
+  }
+}

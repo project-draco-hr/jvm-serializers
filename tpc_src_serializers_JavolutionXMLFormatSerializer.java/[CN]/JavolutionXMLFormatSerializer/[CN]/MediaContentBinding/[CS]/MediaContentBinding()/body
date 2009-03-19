@@ -1,0 +1,6 @@
+{
+  setAlias(MediaContent.class,"mc");
+  setAlias(Image.class,"im");
+  setAlias(Media.class,"me");
+  setAlias(String.class,"str");
+}
