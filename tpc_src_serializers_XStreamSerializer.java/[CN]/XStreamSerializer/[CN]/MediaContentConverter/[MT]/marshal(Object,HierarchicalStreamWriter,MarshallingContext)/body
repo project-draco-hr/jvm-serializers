@@ -1,6 +1,6 @@
 {
   MediaContent content=(MediaContent)obj;
-  writer.startNode("mc");
+  writer.startNode("md");
   context.convertAnother(content.getMedia());
   writer.endNode();
   writer.startNode("im");

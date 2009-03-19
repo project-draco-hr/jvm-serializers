@@ -1,6 +1,0 @@
-{
-  if (withSpecialConverter) {
-    registerConverters();
-    name="xstream with conv";
-  }
-}

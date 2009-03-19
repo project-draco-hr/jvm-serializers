@@ -1,6 +1,6 @@
 {
   Media media=(Media)obj;
-  writer.addAttribute("pl",media.getPlayer().name());
+  writer.addAttribute("pl",String.valueOf(media.getPlayer().ordinal()));
   writer.addAttribute("ul",media.getUri());
   writer.addAttribute("tl",media.getTitle());
   writer.addAttribute("wd",String.valueOf(media.getWidth()));

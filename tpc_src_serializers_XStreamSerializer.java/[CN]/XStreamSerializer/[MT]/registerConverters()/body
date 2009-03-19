@@ -1,8 +1,8 @@
 {
-  ImageConverter imgCnv=new ImageConverter();
-  xstream.registerConverter(imgCnv);
-  MediaConverter mediaCnv=new MediaConverter();
-  xstream.registerConverter(mediaCnv);
+  xstream.alias("im",Image.class);
+  xstream.registerConverter(new ImageConverter());
+  xstream.alias("md",Image.class);
+  xstream.registerConverter(new MediaConverter());
   xstream.alias("mc",MediaContent.class);
   xstream.registerConverter(new MediaContentConverter());
 }

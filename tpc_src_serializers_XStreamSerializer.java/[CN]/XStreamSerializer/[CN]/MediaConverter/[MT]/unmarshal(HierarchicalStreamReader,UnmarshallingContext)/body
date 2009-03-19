@@ -1,6 +1,6 @@
 {
   Media media=new Media();
-  media.setPlayer(Player.valueOf(reader.getAttribute("pl")));
+  media.setPlayer(Player.values()[Integer.valueOf(reader.getAttribute("pl"))]);
   media.setUri(reader.getAttribute("ul"));
   media.setTitle(reader.getAttribute("tl"));
   media.setWidth(Integer.valueOf(reader.getAttribute("wd")));
