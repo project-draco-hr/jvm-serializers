@@ -1,0 +1,21 @@
+{
+  out.writeByte(_player.ordinal());
+  out.writeObject(_uri);
+  out.writeObject(_title);
+  out.writeInt(_width);
+  out.writeInt(_height);
+  out.writeObject(_format);
+  out.writeLong(_duration);
+  out.writeLong(_size);
+  out.writeInt(_bitrate);
+  out.writeObject(_copyright);
+  if (_persons == null) {
+    out.writeInt(0);
+  }
+ else {
+    out.writeInt(_persons.size());
+    for (int i=0; i < _persons.size(); i++) {
+      out.writeUTF(_persons.get(i));
+    }
+  }
+}

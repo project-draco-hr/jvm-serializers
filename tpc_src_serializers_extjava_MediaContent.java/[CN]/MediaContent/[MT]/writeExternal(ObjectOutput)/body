@@ -1,0 +1,13 @@
+{
+  out.writeObject(_media);
+  if (_images == null) {
+    out.writeInt(0);
+  }
+ else {
+    int nbImages=_images.size();
+    out.writeInt(nbImages);
+    for (int i=0; i < nbImages; i++) {
+      out.writeObject(_images.get(i));
+    }
+  }
+}

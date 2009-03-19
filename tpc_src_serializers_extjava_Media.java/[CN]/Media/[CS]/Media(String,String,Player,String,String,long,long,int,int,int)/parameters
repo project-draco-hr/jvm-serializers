@@ -1,0 +1,10 @@
+String copyright
+String format
+Player player
+String title
+String uri
+long duration
+long size
+int height
+int width
+int bitrate

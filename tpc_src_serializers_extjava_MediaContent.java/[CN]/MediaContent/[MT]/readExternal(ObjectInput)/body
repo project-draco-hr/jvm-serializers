@@ -1,0 +1,8 @@
+{
+  _media=(Media)in.readObject();
+  int nbImages=in.readInt();
+  _images=new ArrayList<Image>(nbImages);
+  for (int i=0; i < nbImages; i++) {
+    _images.add((Image)in.readObject());
+  }
+}

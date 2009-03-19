@@ -1,0 +1,19 @@
+{
+  _player=Player.values()[in.readByte()];
+  _uri=(String)in.readObject();
+  _title=(String)in.readObject();
+  _width=in.readInt();
+  _height=in.readInt();
+  _format=(String)in.readObject();
+  _duration=in.readLong();
+  _size=in.readLong();
+  _bitrate=in.readInt();
+  _copyright=(String)in.readObject();
+  int nbPersons=in.readInt();
+  if (nbPersons > 0) {
+    _persons=new ArrayList<String>(nbPersons);
+    for (int i=0; i < nbPersons; i++) {
+      _persons.add(in.readUTF());
+    }
+  }
+}
