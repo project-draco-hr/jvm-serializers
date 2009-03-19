@@ -1,0 +1,13 @@
+{
+  reader.moveDown();
+  Media media=(Media)context.convertAnother(null,Media.class);
+  reader.moveUp();
+  MediaContent content=new MediaContent(media);
+  reader.moveDown();
+  content.addImage((Image)context.convertAnother(content,Image.class));
+  reader.moveUp();
+  reader.moveDown();
+  content.addImage((Image)context.convertAnother(content,Image.class));
+  reader.moveUp();
+  return content;
+}

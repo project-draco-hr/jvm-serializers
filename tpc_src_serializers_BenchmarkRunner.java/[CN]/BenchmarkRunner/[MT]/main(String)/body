@@ -3,8 +3,11 @@
   runner.addObjectSerializer(new ProtobufSerializer());
   runner.addObjectSerializer(new ThriftSerializer());
   runner.addObjectSerializer(new JavaSerializer());
+  runner.addObjectSerializer(new JavaExtSerializer());
   runner.addObjectSerializer(new ScalaSerializer());
   runner.addObjectSerializer(new StaxSerializer());
   runner.addObjectSerializer(new JsonSerializer());
+  runner.addObjectSerializer(new XStreamSerializer(false));
+  runner.addObjectSerializer(new XStreamSerializer(true));
   runner.start();
 }
