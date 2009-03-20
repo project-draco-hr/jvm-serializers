@@ -1,14 +1,12 @@
 {
+  super(name);
   if (withStax) {
     xstream=new XStream(new StaxDriver());
-    name=name + "(stax)";
   }
  else {
     xstream=new XStream(new XppDriver());
-    name=name + "(xpp)";
   }
   if (withSpecialConverter) {
     registerConverters();
-    name=name + " with conv";
   }
 }
