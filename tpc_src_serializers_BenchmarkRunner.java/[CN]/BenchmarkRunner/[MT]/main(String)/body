@@ -7,9 +7,9 @@
   runner.addObjectSerializer(new ScalaSerializer());
   runner.addObjectSerializer(new StaxSerializer());
   runner.addObjectSerializer(new JsonSerializer());
-  runner.addObjectSerializer(new XStreamSerializer("xstream ()",false,false));
-  runner.addObjectSerializer(new XStreamSerializer("xstream ()",true,false));
-  runner.addObjectSerializer(new XStreamSerializer("xstream ()",true,true));
+  runner.addObjectSerializer(new XStreamSerializer("xstream (xpp)",false,false));
+  runner.addObjectSerializer(new XStreamSerializer("xstream (stax)",true,false));
+  runner.addObjectSerializer(new XStreamSerializer("xstream (stax with conv)",true,true));
   runner.addObjectSerializer(new JavolutionXMLFormatSerializer());
   runner.addObjectSerializer(new SbinarySerializer());
   runner.start();
