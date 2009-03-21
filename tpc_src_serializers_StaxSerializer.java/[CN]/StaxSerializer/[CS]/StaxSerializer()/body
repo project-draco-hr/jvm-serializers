@@ -1,5 +1,0 @@
-{
-  super("Stax/woodstox");
-  inFactory=XMLInputFactory.newInstance();
-  outFactory=XMLOutputFactory.newInstance();
-}

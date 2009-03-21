@@ -1,6 +1,0 @@
-{
-  ByteArrayOutputStream baos=new ByteArrayOutputStream();
-  xstream.toXML(content,baos);
-  baos.close();
-  return baos.toByteArray();
-}

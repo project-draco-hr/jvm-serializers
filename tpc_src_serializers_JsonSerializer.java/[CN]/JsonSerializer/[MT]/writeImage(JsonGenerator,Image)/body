@@ -3,8 +3,8 @@
   generator.writeStartObject();
   writeStringElement(generator,"ul",image.getUri());
   writeStringElement(generator,"tl",image.getTitle());
-  writeLongElement(generator,"wd",image.getWidth());
-  writeLongElement(generator,"hg",image.getHeight());
+  writeInt(generator,"wd",image.getWidth());
+  writeInt(generator,"hg",image.getHeight());
   writeStringElement(generator,"sz",image.getSize().name());
   generator.writeEndObject();
 }

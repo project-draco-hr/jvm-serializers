@@ -1,4 +1,3 @@
 {
-  generator.writeFieldName(name);
-  generator.writeString(value);
+  generator.writeStringField(name,value);
 }

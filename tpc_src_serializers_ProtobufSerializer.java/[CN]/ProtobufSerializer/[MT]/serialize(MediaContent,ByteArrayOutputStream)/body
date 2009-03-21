@@ -1,0 +1,4 @@
+{
+  content.writeTo(baos);
+  return baos.toByteArray();
+}

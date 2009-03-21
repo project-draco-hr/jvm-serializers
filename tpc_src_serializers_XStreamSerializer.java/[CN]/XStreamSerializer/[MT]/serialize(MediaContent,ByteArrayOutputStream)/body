@@ -1,0 +1,4 @@
+{
+  xstream.toXML(content,baos);
+  return baos.toByteArray();
+}
