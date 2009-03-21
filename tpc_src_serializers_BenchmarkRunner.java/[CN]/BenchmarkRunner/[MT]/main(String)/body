@@ -7,6 +7,7 @@
   runner.addObjectSerializer(new ScalaSerializer());
   runner.addObjectSerializer(new StaxSerializer("stax/woodstox",new com.ctc.wstx.stax.WstxInputFactory(),new com.ctc.wstx.stax.WstxOutputFactory()));
   runner.addObjectSerializer(new StaxSerializer("stax/aalto",new com.fasterxml.aalto.stax.InputFactoryImpl(),new com.fasterxml.aalto.stax.OutputFactoryImpl()));
+  runner.addObjectSerializer(new StaxSerializer("binaryxml/FI",new com.sun.xml.fastinfoset.stax.factory.StAXInputFactory(),new com.sun.xml.fastinfoset.stax.factory.StAXOutputFactory()));
   runner.addObjectSerializer(new JsonSerializer());
   runner.addObjectSerializer(new XStreamSerializer("xstream (xpp)",false,false));
   runner.addObjectSerializer(new XStreamSerializer("xstream (stax)",true,false));

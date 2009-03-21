@@ -1,7 +1,7 @@
 {
   System.gc();
   long start=System.nanoTime();
-  for (int i=0; i < ITERATIONS * 10; i++) {
+  for (int i=0, len=ITERATIONS * 10; i < len; i++) {
     serializer.create();
   }
   return timePerIteration(start) / 10d;
