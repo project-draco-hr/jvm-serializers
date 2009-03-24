@@ -1,0 +1,4 @@
+String name
+boolean withSpecialConverter
+XMLInputFactory inf
+XMLOutputFactory outf
