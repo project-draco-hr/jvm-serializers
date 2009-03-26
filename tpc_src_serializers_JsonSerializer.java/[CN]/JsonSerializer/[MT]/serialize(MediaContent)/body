@@ -1,0 +1,13 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream(expectedSize);
+  JsonGenerator generator=_factory.createJsonGenerator(baos,JsonEncoding.UTF8);
+  generator.writeStartObject();
+  writeMedia(generator,content.getMedia());
+  writeImage(generator,content.getImage(0));
+  writeImage(generator,content.getImage(1));
+  generator.writeEndObject();
+  generator.close();
+  byte[] array=baos.toByteArray();
+  expectedSize=array.length;
+  return array;
+}

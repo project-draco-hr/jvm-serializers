@@ -1,6 +1,0 @@
-{
-  TIOStreamTransport trans=new TIOStreamTransport(baos);
-  TBinaryProtocol oprot=new TBinaryProtocol(trans);
-  content.write(oprot);
-  return baos.toByteArray();
-}

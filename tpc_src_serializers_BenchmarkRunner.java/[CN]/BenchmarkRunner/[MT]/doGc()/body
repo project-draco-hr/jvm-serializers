@@ -5,6 +5,9 @@
  catch (  InterruptedException ie) {
   }
   System.gc();
+  System.gc();
+  System.gc();
+  System.gc();
   try {
     Thread.sleep(100L);
   }
