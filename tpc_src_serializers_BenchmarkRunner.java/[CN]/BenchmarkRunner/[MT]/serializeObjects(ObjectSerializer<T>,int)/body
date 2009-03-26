@@ -1,10 +1,12 @@
 {
   ByteArrayOutputStream bos=new ByteArrayOutputStream();
   T obj=serializer.create();
-  long start=System.nanoTime();
+  long delta=0;
   for (int i=0; i < iterations; i++) {
     bos.reset();
+    long start=System.nanoTime();
     serializer.serialize(obj,bos);
+    delta+=System.nanoTime() - start;
   }
-  return timePerIteration(start,iterations);
+  return iterationTime(delta) / 10d;
 }

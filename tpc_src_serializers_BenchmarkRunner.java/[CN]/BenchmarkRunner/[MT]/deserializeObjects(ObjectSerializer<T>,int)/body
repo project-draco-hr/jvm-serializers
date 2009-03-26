@@ -1,8 +1,10 @@
 {
   byte[] array=serializer.serialize(serializer.create(),new ByteArrayOutputStream(200));
-  long start=System.nanoTime();
+  long delta=0;
   for (int i=0; i < iterations; i++) {
+    long start=System.nanoTime();
     serializer.deserialize(array);
+    delta+=System.nanoTime() - start;
   }
-  return timePerIteration(start,iterations);
+  return iterationTime(delta) / 10d;
 }
