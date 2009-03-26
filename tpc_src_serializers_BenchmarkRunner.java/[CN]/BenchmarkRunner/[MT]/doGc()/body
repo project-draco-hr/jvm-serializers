@@ -1,0 +1,13 @@
+{
+  try {
+    Thread.sleep(100L);
+  }
+ catch (  InterruptedException ie) {
+  }
+  System.gc();
+  try {
+    Thread.sleep(100L);
+  }
+ catch (  InterruptedException ie) {
+  }
+}

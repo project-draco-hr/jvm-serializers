@@ -1,0 +1,7 @@
+{
+  long endTime=System.currentTimeMillis() + WARMUP_MSECS;
+  do {
+    serializeObjects(serializer,1);
+  }
+ while (System.currentTimeMillis() < endTime);
+}

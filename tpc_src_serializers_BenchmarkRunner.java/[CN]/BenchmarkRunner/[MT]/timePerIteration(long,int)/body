@@ -1,0 +1,3 @@
+{
+  return ((double)System.nanoTime() - (double)start) / (double)(iterations);
+}

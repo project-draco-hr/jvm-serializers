@@ -15,5 +15,6 @@
   runner.addObjectSerializer(new XStreamSerializer("xstream (stax with conv)",true,new com.ctc.wstx.stax.WstxInputFactory(),new com.ctc.wstx.stax.WstxOutputFactory()));
   runner.addObjectSerializer(new JavolutionXMLFormatSerializer());
   runner.addObjectSerializer(new SbinarySerializer());
+  System.out.println("Starting");
   runner.start();
 }
