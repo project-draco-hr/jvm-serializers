@@ -1,4 +1,3 @@
 {
-  content.writeTo(baos);
-  return baos.toByteArray();
+  return content.toByteArray();
 }
