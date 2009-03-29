@@ -3,12 +3,12 @@
   media.setPlayer(Player.valueOf(readElement(parser,"pl")));
   media.setUri(readElement(parser,"ul"));
   media.setTitle(readElement(parser,"tl"));
-  media.setWidth(Integer.valueOf(readElement(parser,"wd")));
-  media.setHeight(Integer.valueOf(readElement(parser,"hg")));
+  media.setWidth(Integer.parseInt(readElement(parser,"wd")));
+  media.setHeight(Integer.parseInt(readElement(parser,"hg")));
   media.setFormat(readElement(parser,"fr"));
-  media.setDuration(Long.valueOf(readElement(parser,"dr")));
-  media.setSize(Long.valueOf(readElement(parser,"sz")));
-  media.setBitrate(Integer.valueOf(readElement(parser,"br")));
+  media.setDuration(Long.parseLong(readElement(parser,"dr")));
+  media.setSize(Long.parseLong(readElement(parser,"sz")));
+  media.setBitrate(Integer.parseInt(readElement(parser,"br")));
   media.addToPerson(readElement(parser,"pr"));
   media.addToPerson(readElement(parser,"pr"));
   return media;
