@@ -1,0 +1,9 @@
+{
+  ByteArrayOutputStream out=new ByteArrayOutputStream(expectedSize);
+  Hessian2StreamingOutput hout=new Hessian2StreamingOutput(out);
+  hout.writeObject(content);
+  out.close();
+  byte[] array=out.toByteArray();
+  expectedSize=array.length;
+  return array;
+}
