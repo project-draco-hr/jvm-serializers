@@ -5,5 +5,5 @@
     serializer.create();
     delta+=System.nanoTime() - start;
   }
-  return iterationTime(delta) / 10d;
+  return iterationTime(delta,iterations);
 }
