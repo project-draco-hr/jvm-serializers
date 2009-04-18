@@ -1,0 +1,1 @@
+EnumMap<measurements,Map<String,Double>> values

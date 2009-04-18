@@ -1,10 +1,12 @@
 {
   System.out.printf("%-24s, %15s, %15s, %15s, %15s, %10s\n"," ","Object create","Serialization","Deserialization","Total Time","Serialized Size");
+  EnumMap<measurements,Map<String,Double>> values=new EnumMap<measurements,Map<String,Double>>(measurements.class);
+  for (  measurements m : measurements.values())   values.put(m,new HashMap<String,Double>());
   for (  ObjectSerializer serializer : _serializers) {
     warmCreation(serializer);
     doGc();
     double timeCreate=Double.MAX_VALUE;
-    for (int i=0; i < TRIALS; i++)     timeCreate=Math.min(timeCreate,createObjects(serializer,ITERATIONS));
+    for (int i=0; i < TRIALS; i++)     timeCreate=Math.min(timeCreate,createObjects(serializer,ITERATIONS * 100));
     warmSerialization(serializer);
     doGc();
     double timeSer=Double.MAX_VALUE;
@@ -14,6 +16,9 @@
     double timeDSer=Double.MAX_VALUE;
     for (int i=0; i < TRIALS; i++)     timeDSer=Math.min(timeDSer,deserializeObjects(serializer,ITERATIONS));
     byte[] array=serializer.serialize(serializer.create());
-    System.out.printf("%-24s, %15.5f, %15.5f, %15.5f, %15.5f, %10d\n",serializer.getName(),timeCreate,timeSer,timeDSer,timeCreate + timeSer + timeDSer,array.length);
+    double totalTime=timeCreate + timeSer + timeDSer;
+    System.out.printf("%-24s, %15.5f, %15.5f, %15.5f, %15.5f, %10d\n",serializer.getName(),timeCreate,timeSer,timeDSer,totalTime,array.length);
+    addValue(values,serializer.getName(),timeCreate,timeSer,timeDSer,totalTime,array.length);
   }
+  printImages(values);
 }

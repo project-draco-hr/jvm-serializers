@@ -1,0 +1,7 @@
+{
+  values.get(measurements.timeCreate).put(name,timeCreate);
+  values.get(measurements.timeSer).put(name,timeSer);
+  values.get(measurements.timeDSer).put(name,timeDSer);
+  values.get(measurements.totalTime).put(name,totalTime);
+  values.get(measurements.length).put(name,length);
+}
