@@ -8,6 +8,7 @@
     double timeCreate=Double.MAX_VALUE;
     for (int i=0; i < TRIALS; i++)     timeCreate=Math.min(timeCreate,createObjects(serializer,ITERATIONS * 100));
     warmSerialization(serializer);
+    checkCorrectness(serializer);
     doGc();
     double timeSer=Double.MAX_VALUE;
     for (int i=0; i < TRIALS; i++)     timeSer=Math.min(timeSer,serializeObjects(serializer,ITERATIONS));
