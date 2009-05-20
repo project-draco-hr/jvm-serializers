@@ -1,0 +1,4 @@
+{
+  GenericDatumReader<GenericRecord> reader=new GenericDatumReader<GenericRecord>(MEDIA_CONTENT_SCHEMA);
+  return reader.read(null,new ValueReader(new ByteArrayInputStream(array)));
+}

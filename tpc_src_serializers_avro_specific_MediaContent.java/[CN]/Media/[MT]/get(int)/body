@@ -1,0 +1,28 @@
+{
+switch (_field) {
+case 0:
+    return uri;
+case 1:
+  return title;
+case 2:
+return width;
+case 3:
+return height;
+case 4:
+return format;
+case 5:
+return duration;
+case 6:
+return size;
+case 7:
+return bitrate;
+case 8:
+return person;
+case 9:
+return player;
+case 10:
+return copyright;
+default :
+throw new AvroRuntimeException("Bad index");
+}
+}

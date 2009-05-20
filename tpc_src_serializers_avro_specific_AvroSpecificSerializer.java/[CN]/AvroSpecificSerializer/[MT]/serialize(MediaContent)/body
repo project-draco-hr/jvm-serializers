@@ -1,0 +1,6 @@
+{
+  SpecificDatumWriter writer=new SpecificDatumWriter(SCHEMA);
+  ByteArrayOutputStream out=new ByteArrayOutputStream();
+  writer.write(content,new ValueWriter(out));
+  return out.toByteArray();
+}

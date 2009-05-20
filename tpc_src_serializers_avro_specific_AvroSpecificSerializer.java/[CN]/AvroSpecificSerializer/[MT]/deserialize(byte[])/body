@@ -1,0 +1,4 @@
+{
+  SpecificDatumReader reader=new SpecificDatumReader(SCHEMA,"serializers.avro.specific.");
+  return (MediaContent)reader.read(null,new ValueReader(new ByteArrayInputStream(array)));
+}

@@ -1,5 +1,7 @@
 {
   BenchmarkRunner runner=new BenchmarkRunner();
+  runner.addObjectSerializer(new AvroGenericSerializer());
+  runner.addObjectSerializer(new AvroSpecificSerializer());
   runner.addObjectSerializer(new ProtobufSerializer());
   runner.addObjectSerializer(new ThriftSerializer());
   runner.addObjectSerializer(new HessianSerializer());
