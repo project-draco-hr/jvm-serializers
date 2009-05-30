@@ -1,6 +1,5 @@
 {
-  GenericDatumWriter<GenericRecord> writer=new GenericDatumWriter<GenericRecord>(MEDIA_CONTENT_SCHEMA);
   ByteArrayOutputStream out=new ByteArrayOutputStream();
-  writer.write(content,new ValueWriter(out));
+  WRITER.write(content,new ValueWriter(out));
   return out.toByteArray();
 }
