@@ -3,8 +3,12 @@
   JsonGenerator generator=_factory.createJsonGenerator(baos,JsonEncoding.UTF8);
   generator.writeStartObject();
   writeMedia(generator,content.getMedia());
-  writeImage(generator,content.getImage(0));
-  writeImage(generator,content.getImage(1));
+  generator.writeFieldName("im");
+  generator.writeStartArray();
+  for (int i=0, len=content.imageCount(); i < len; ++i) {
+    writeImage(generator,content.getImage(i));
+  }
+  generator.writeEndArray();
   generator.writeEndObject();
   generator.close();
   byte[] array=baos.toByteArray();

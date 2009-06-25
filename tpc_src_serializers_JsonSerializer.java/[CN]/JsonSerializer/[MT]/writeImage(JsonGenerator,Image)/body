@@ -1,10 +1,9 @@
 {
-  generator.writeFieldName("im");
   generator.writeStartObject();
-  writeStringElement(generator,"ul",image.getUri());
-  writeStringElement(generator,"tl",image.getTitle());
-  writeInt(generator,"wd",image.getWidth());
-  writeInt(generator,"hg",image.getHeight());
-  writeStringElement(generator,"sz",image.getSize().name());
+  generator.writeStringField("ul",image.getUri());
+  generator.writeStringField("tl",image.getTitle());
+  generator.writeNumberField("wd",image.getWidth());
+  generator.writeNumberField("hg",image.getHeight());
+  generator.writeStringField("sz",image.getSize().name());
   generator.writeEndObject();
 }

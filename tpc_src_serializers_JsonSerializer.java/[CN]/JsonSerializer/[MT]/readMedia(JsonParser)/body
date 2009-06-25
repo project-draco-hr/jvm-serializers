@@ -11,8 +11,14 @@
   media.setDuration(readLongElement(parser,"dr"));
   media.setSize(readLongElement(parser,"sz"));
   media.setBitrate(readIntElement(parser,"br"));
-  media.addToPerson(readStringElement(parser,"pr"));
-  media.addToPerson(readStringElement(parser,"pr"));
-  parser.nextToken();
+  if (findToken(parser,"pr") != JsonToken.START_ARRAY) {
+    reportIllegal(parser,JsonToken.START_ARRAY);
+  }
+  while (parser.nextToken() != JsonToken.END_ARRAY) {
+    media.addToPerson(parser.getText());
+  }
+  if (parser.nextToken() != JsonToken.END_OBJECT) {
+    reportIllegal(parser,JsonToken.END_OBJECT);
+  }
   return media;
 }

@@ -1,11 +1,13 @@
 {
-  while (parser.nextToken() != null) {
-    if (parser.getCurrentName().equals(name)) {
-      if (parser.nextToken() == null) {
+  JsonToken t;
+  while ((t=parser.nextToken()) != null) {
+    if (t == JsonToken.FIELD_NAME && parser.getCurrentName().equals(name)) {
+      t=parser.nextToken();
+      if (t == null) {
         throw new IllegalStateException("Missing value for attribute: " + name);
       }
-      return;
+      return t;
     }
   }
-  throw new IllegalStateException("Could not find expected token: " + name);
+  throw new IllegalStateException("Could not find expected field: " + name);
 }

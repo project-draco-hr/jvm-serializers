@@ -1,10 +1,21 @@
 {
   JsonParser parser=_factory.createJsonParser(array);
-  parser.nextToken();
+  if (parser.nextToken() != JsonToken.START_OBJECT) {
+    reportIllegal(parser,JsonToken.START_OBJECT);
+  }
   MediaContent mc=new MediaContent(readMedia(parser));
-  mc.addImage(readImage(parser));
-  mc.addImage(readImage(parser));
-  parser.nextToken();
+  if (parser.nextToken() != JsonToken.FIELD_NAME || !"im".equals(parser.getCurrentName())) {
+    reportIllegal(parser,JsonToken.FIELD_NAME);
+  }
+  if (parser.nextToken() != JsonToken.START_ARRAY) {
+    reportIllegal(parser,JsonToken.START_ARRAY);
+  }
+  while (parser.nextToken() == JsonToken.START_OBJECT) {
+    mc.addImage(readImage(parser));
+  }
+  if (parser.nextToken() != JsonToken.END_OBJECT) {
+    reportIllegal(parser,JsonToken.END_OBJECT);
+  }
   parser.close();
   return mc;
 }

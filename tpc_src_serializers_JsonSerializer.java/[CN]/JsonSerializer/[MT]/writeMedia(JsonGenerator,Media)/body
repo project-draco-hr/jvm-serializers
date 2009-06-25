@@ -1,16 +1,20 @@
 {
   generator.writeFieldName("md");
   generator.writeStartObject();
-  writeStringElement(generator,"pl",media.getPlayer().name());
-  writeStringElement(generator,"ul",media.getUri());
-  writeStringElement(generator,"tl",media.getTitle());
-  writeInt(generator,"wd",media.getWidth());
-  writeInt(generator,"hg",media.getHeight());
-  writeStringElement(generator,"fr",media.getFormat());
-  writeLong(generator,"dr",media.getDuration());
-  writeLong(generator,"sz",media.getSize());
-  writeInt(generator,"br",media.getBitrate());
-  writeStringElement(generator,"pr",media.getPersons().get(0));
-  writeStringElement(generator,"pr",media.getPersons().get(1));
+  generator.writeStringField("pl",media.getPlayer().name());
+  generator.writeStringField("ul",media.getUri());
+  generator.writeStringField("tl",media.getTitle());
+  generator.writeNumberField("wd",media.getWidth());
+  generator.writeNumberField("hg",media.getHeight());
+  generator.writeStringField("fr",media.getFormat());
+  generator.writeNumberField("dr",media.getDuration());
+  generator.writeNumberField("sz",media.getSize());
+  generator.writeNumberField("br",media.getBitrate());
+  generator.writeFieldName("pr");
+  generator.writeStartArray();
+  for (  String person : media.getPersons()) {
+    generator.writeString(person);
+  }
+  generator.writeEndArray();
   generator.writeEndObject();
 }
