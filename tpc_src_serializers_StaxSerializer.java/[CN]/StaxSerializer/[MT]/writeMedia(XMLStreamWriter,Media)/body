@@ -9,7 +9,8 @@
   writeElement(writer,"dr",String.valueOf(media.getDuration()));
   writeElement(writer,"sz",String.valueOf(media.getSize()));
   writeElement(writer,"br",String.valueOf(media.getBitrate()));
-  writeElement(writer,"pr",media.getPersons().get(0));
-  writeElement(writer,"pr",media.getPersons().get(1));
+  for (  String person : media.getPersons()) {
+    writeElement(writer,"pr",person);
+  }
   writer.writeEndElement();
 }

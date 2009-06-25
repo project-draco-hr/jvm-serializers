@@ -4,8 +4,9 @@
   writer.writeStartDocument("ISO-8859-1","1.0");
   writer.writeStartElement("mc");
   writeMedia(writer,content.getMedia());
-  writeImage(writer,content.getImage(0));
-  writeImage(writer,content.getImage(1));
+  for (int i=0, len=content.imageCount(); i < len; ++i) {
+    writeImage(writer,content.getImage(i));
+  }
   writer.writeEndElement();
   writer.writeEndDocument();
   writer.flush();

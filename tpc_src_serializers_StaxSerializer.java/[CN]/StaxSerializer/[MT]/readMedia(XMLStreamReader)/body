@@ -9,7 +9,13 @@
   media.setDuration(Long.parseLong(readElement(parser,"dr")));
   media.setSize(Long.parseLong(readElement(parser,"sz")));
   media.setBitrate(Integer.parseInt(readElement(parser,"br")));
-  media.addToPerson(readElement(parser,"pr"));
-  media.addToPerson(readElement(parser,"pr"));
+  searchTag(parser,"pr");
+  do {
+    media.addToPerson(parser.getElementText());
+  }
+ while (parser.nextTag() == XMLStreamConstants.START_ELEMENT && "pr".equals(parser.getLocalName()));
+  if (!"md".equals(parser.getLocalName())) {
+    throw new IllegalStateException("Expected closing </md>, got </" + parser.getLocalName() + ">");
+  }
   return media;
 }

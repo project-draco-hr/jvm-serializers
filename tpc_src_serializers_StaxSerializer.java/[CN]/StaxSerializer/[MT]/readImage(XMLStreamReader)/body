@@ -5,5 +5,8 @@
   image.setWidth(Integer.parseInt(readElement(parser,"wd")));
   image.setHeight(Integer.parseInt(readElement(parser,"hg")));
   image.setSize(Size.valueOf(readElement(parser,"sz")));
+  if (parser.nextTag() != XMLStreamConstants.END_ELEMENT) {
+    throw new IllegalStateException("Expected closing </im>");
+  }
   return image;
 }
