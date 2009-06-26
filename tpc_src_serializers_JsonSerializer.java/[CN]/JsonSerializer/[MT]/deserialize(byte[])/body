@@ -3,19 +3,31 @@
   if (parser.nextToken() != JsonToken.START_OBJECT) {
     reportIllegal(parser,JsonToken.START_OBJECT);
   }
-  MediaContent mc=new MediaContent(readMedia(parser));
-  if (parser.nextToken() != JsonToken.FIELD_NAME || !"im".equals(parser.getCurrentName())) {
-    reportIllegal(parser,JsonToken.FIELD_NAME);
-  }
-  if (parser.nextToken() != JsonToken.START_ARRAY) {
-    reportIllegal(parser,JsonToken.START_ARRAY);
-  }
+  MediaContent mc=new MediaContent();
+  JsonToken t;
+  while ((t=parser.nextToken()) != JsonToken.END_OBJECT) {
+    if (t != JsonToken.FIELD_NAME) {
+      reportIllegal(parser,JsonToken.FIELD_NAME);
+    }
+    String field=parser.getCurrentName();
+    Integer I=fieldToIndex.get(field);
+    if (I != null) {
+switch (I.intValue()) {
+case FIELD_IX_MEDIA:
+        mc.setMedia(readMedia(parser));
+      continue;
+case FIELD_IX_IMAGES:
+    if (parser.nextToken() != JsonToken.START_ARRAY) {
+      reportIllegal(parser,JsonToken.START_ARRAY);
+    }
   while (parser.nextToken() == JsonToken.START_OBJECT) {
     mc.addImage(readImage(parser));
   }
-  if (parser.nextToken() != JsonToken.END_OBJECT) {
-    reportIllegal(parser,JsonToken.END_OBJECT);
-  }
-  parser.close();
-  return mc;
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+parser.close();
+return mc;
 }

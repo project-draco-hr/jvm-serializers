@@ -1,4 +1,0 @@
-{
-  findToken(parser,name);
-  return parser.getLongValue();
-}

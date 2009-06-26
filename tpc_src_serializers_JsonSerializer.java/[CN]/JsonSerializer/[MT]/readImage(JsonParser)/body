@@ -1,12 +1,33 @@
 {
+  JsonToken t;
   Image image=new Image();
-  image.setUri(readStringElement(parser,"ul"));
-  image.setTitle(readStringElement(parser,"tl"));
-  image.setWidth(readIntElement(parser,"wd"));
-  image.setHeight(readIntElement(parser,"hg"));
-  image.setSize(Image.Size.valueOf(readStringElement(parser,"sz")));
-  if (parser.nextToken() != JsonToken.END_OBJECT) {
-    reportIllegal(parser,JsonToken.END_OBJECT);
-  }
-  return image;
+  while ((t=parser.nextToken()) != JsonToken.END_OBJECT) {
+    if (t != JsonToken.FIELD_NAME) {
+      reportIllegal(parser,JsonToken.FIELD_NAME);
+    }
+    String field=parser.getCurrentName();
+    t=parser.nextToken();
+    Integer I=fieldToIndex.get(field);
+    if (I != null) {
+switch (I.intValue()) {
+case FIELD_IX_URI:
+        image.setUri(parser.getText());
+      continue;
+case FIELD_IX_TITLE:
+    image.setTitle(parser.getText());
+  continue;
+case FIELD_IX_WIDTH:
+image.setWidth(parser.getIntValue());
+continue;
+case FIELD_IX_HEIGHT:
+image.setHeight(parser.getIntValue());
+continue;
+case FIELD_IX_SIZE:
+image.setSize(Image.Size.valueOf(parser.getText()));
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+return image;
 }

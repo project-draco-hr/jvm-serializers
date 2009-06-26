@@ -1,16 +1,16 @@
 {
-  generator.writeFieldName("md");
+  generator.writeFieldName(FIELD_NAME_MEDIA);
   generator.writeStartObject();
-  generator.writeStringField("pl",media.getPlayer().name());
-  generator.writeStringField("ul",media.getUri());
-  generator.writeStringField("tl",media.getTitle());
-  generator.writeNumberField("wd",media.getWidth());
-  generator.writeNumberField("hg",media.getHeight());
-  generator.writeStringField("fr",media.getFormat());
-  generator.writeNumberField("dr",media.getDuration());
-  generator.writeNumberField("sz",media.getSize());
-  generator.writeNumberField("br",media.getBitrate());
-  generator.writeFieldName("pr");
+  generator.writeStringField(FIELD_NAME_PLAYER,media.getPlayer().name());
+  generator.writeStringField(FIELD_NAME_URI,media.getUri());
+  generator.writeStringField(FIELD_NAME_TITLE,media.getTitle());
+  generator.writeNumberField(FIELD_NAME_WIDTH,media.getWidth());
+  generator.writeNumberField(FIELD_NAME_HEIGHT,media.getHeight());
+  generator.writeStringField(FIELD_NAME_FORMAT,media.getFormat());
+  generator.writeNumberField(FIELD_NAME_DURATION,media.getDuration());
+  generator.writeNumberField(FIELD_NAME_SIZE,media.getSize());
+  generator.writeNumberField(FIELD_NAME_BITRATE,media.getBitrate());
+  generator.writeFieldName(FIELD_NAME_PERSONS);
   generator.writeStartArray();
   for (  String person : media.getPersons()) {
     generator.writeString(person);
