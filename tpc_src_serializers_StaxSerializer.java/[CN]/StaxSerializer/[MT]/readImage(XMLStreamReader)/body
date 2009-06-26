@@ -1,12 +1,12 @@
 {
   Image image=new Image();
-  image.setUri(readElement(parser,"ul"));
-  image.setTitle(readElement(parser,"tl"));
-  image.setWidth(Integer.parseInt(readElement(parser,"wd")));
-  image.setHeight(Integer.parseInt(readElement(parser,"hg")));
-  image.setSize(Size.valueOf(readElement(parser,"sz")));
+  image.setUri(readElement(parser,FIELD_NAME_URI));
+  image.setTitle(readElement(parser,FIELD_NAME_TITLE));
+  image.setWidth(Integer.parseInt(readElement(parser,FIELD_NAME_WIDTH)));
+  image.setHeight(Integer.parseInt(readElement(parser,FIELD_NAME_HEIGHT)));
+  image.setSize(Size.valueOf(readElement(parser,FIELD_NAME_SIZE)));
   if (parser.nextTag() != XMLStreamConstants.END_ELEMENT) {
-    throw new IllegalStateException("Expected closing </im>");
+    throw new IllegalStateException("Expected closing </" + FIELD_NAME_IMAGES + ">");
   }
   return image;
 }

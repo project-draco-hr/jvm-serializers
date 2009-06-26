@@ -1,7 +1,7 @@
 {
   ByteArrayOutputStream baos=new ByteArrayOutputStream(expectedSize);
-  XMLStreamWriter writer=outFactory.createXMLStreamWriter(baos);
-  writer.writeStartDocument("ISO-8859-1","1.0");
+  XMLStreamWriter writer=outFactory.createXMLStreamWriter(baos,"UTF-8");
+  writer.writeStartDocument("UTF-8","1.0");
   writer.writeStartElement("mc");
   writeMedia(writer,content.getMedia());
   for (int i=0, len=content.imageCount(); i < len; ++i) {
