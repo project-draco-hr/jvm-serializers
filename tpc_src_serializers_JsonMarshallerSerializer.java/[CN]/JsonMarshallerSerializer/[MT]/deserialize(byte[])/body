@@ -1,0 +1,4 @@
+{
+  ByteArrayInputStream in=new ByteArrayInputStream(array);
+  return _marshaller.unmarshall((Json.Object)Json.read(new InputStreamReader(in,_charset)));
+}

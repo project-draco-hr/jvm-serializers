@@ -1,0 +1,9 @@
+{
+  ByteArrayOutputStream out=new ByteArrayOutputStream(_expectedSize);
+  OutputStreamWriter writer=new OutputStreamWriter(out,_charset);
+  _marshaller.marshall(content).write(writer);
+  writer.flush();
+  byte[] result=out.toByteArray();
+  _expectedSize=result.length;
+  return result;
+}

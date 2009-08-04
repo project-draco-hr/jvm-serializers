@@ -9,6 +9,7 @@
   runner.addObjectSerializer(new JavaExtSerializer());
   runner.addObjectSerializer(new ScalaSerializer());
   runner.addObjectSerializer(new JsonSerializer());
+  runner.addObjectSerializer(new JsonMarshallerSerializer());
   runner.addObjectSerializer(new StaxSerializer("stax/woodstox",new com.ctc.wstx.stax.WstxInputFactory(),new com.ctc.wstx.stax.WstxOutputFactory()));
   runner.addObjectSerializer(new StaxSerializer("stax/aalto",new com.fasterxml.aalto.stax.InputFactoryImpl(),new com.fasterxml.aalto.stax.OutputFactoryImpl()));
   runner.addObjectSerializer(new StaxSerializer("binaryxml/FI",new com.sun.xml.fastinfoset.stax.factory.StAXInputFactory(),new com.sun.xml.fastinfoset.stax.factory.StAXOutputFactory()));
