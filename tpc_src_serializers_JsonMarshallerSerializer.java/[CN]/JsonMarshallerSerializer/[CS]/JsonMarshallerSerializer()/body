@@ -1,5 +1,5 @@
 {
   super("JsonMarshaller");
   _marshaller=TwoLattes.createMarshaller(MediaContent.class);
-  _charset=Charset.forName("UTF8");
+  _charset=Charset.forName("UTF-8");
 }
