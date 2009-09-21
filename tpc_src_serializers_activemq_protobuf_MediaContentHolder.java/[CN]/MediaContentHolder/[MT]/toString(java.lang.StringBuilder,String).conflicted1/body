@@ -1,0 +1,28 @@
+{
+  if (hasUri()) {
+    sb.append(prefix + "uri: ");
+    sb.append(getUri());
+    sb.append("\n");
+  }
+  if (hasTitle()) {
+    sb.append(prefix + "title: ");
+    sb.append(getTitle());
+    sb.append("\n");
+  }
+  if (hasWidth()) {
+    sb.append(prefix + "width: ");
+    sb.append(getWidth());
+    sb.append("\n");
+  }
+  if (hasHeight()) {
+    sb.append(prefix + "height: ");
+    sb.append(getHeight());
+    sb.append("\n");
+  }
+  if (hasSize()) {
+    sb.append(prefix + "size: ");
+    sb.append(getSize());
+    sb.append("\n");
+  }
+  return sb;
+}

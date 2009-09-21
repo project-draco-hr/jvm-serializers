@@ -1,0 +1,7 @@
+{
+  clearUri();
+  clearTitle();
+  clearWidth();
+  clearHeight();
+  clearSize();
+}

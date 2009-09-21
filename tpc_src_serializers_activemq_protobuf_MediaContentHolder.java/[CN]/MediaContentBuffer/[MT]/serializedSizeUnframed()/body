@@ -1,0 +1,16 @@
+{
+  if (buffer != null) {
+    return buffer.length;
+  }
+  if (size != -1)   return size;
+  size=0;
+  if (hasImage()) {
+    for (    Image i : getImageList()) {
+      size+=org.apache.activemq.protobuf.MessageBufferSupport.computeMessageSize(1,i.freeze());
+    }
+  }
+  if (hasMedia()) {
+    size+=org.apache.activemq.protobuf.MessageBufferSupport.computeMessageSize(2,getMedia().freeze());
+  }
+  return size;
+}

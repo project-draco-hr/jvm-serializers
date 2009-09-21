@@ -1,0 +1,5 @@
+{
+  org.apache.activemq.protobuf.CodedOutputStream codedOutput=new org.apache.activemq.protobuf.CodedOutputStream(output);
+  writeUnframed(codedOutput);
+  codedOutput.flush();
+}

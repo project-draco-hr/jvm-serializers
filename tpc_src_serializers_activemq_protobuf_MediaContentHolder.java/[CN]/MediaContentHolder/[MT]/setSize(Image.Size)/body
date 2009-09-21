@@ -1,0 +1,6 @@
+{
+  copyCheck();
+  this.b_size=true;
+  this.f_size=size;
+  return this;
+}

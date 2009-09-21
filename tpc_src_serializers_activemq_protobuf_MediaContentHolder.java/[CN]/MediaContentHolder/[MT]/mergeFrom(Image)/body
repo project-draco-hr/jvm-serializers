@@ -1,0 +1,19 @@
+{
+  copyCheck();
+  if (other.hasUri()) {
+    setUri(other.getUri());
+  }
+  if (other.hasTitle()) {
+    setTitle(other.getTitle());
+  }
+  if (other.hasWidth()) {
+    setWidth(other.getWidth());
+  }
+  if (other.hasHeight()) {
+    setHeight(other.getHeight());
+  }
+  if (other.hasSize()) {
+    setSize(other.getSize());
+  }
+  return this;
+}
