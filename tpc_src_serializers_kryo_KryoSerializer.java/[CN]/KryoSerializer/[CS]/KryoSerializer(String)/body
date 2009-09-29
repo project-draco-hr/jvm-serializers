@@ -1,0 +1,11 @@
+{
+  super(name);
+  kryo=new Kryo();
+  kryo.register(ArrayList.class);
+  kryo.register(MediaContent.class);
+  kryo.register(Media.class);
+  kryo.register(Media.Player.class);
+  kryo.register(Image.class);
+  kryo.register(Image.Size.class);
+  objectBuffer=new ObjectBuffer(kryo);
+}
