@@ -2,13 +2,11 @@
   BenchmarkRunner runner=new BenchmarkRunner();
   runner.addObjectSerializer(new AvroGenericSerializer());
   runner.addObjectSerializer(new AvroSpecificSerializer());
-  runner.addObjectSerializer(new ActiveMQProtobufSerializer());
   runner.addObjectSerializer(new ProtobufSerializer());
   runner.addObjectSerializer(new ThriftSerializer());
   runner.addObjectSerializer(new HessianSerializer());
   runner.addObjectSerializer(new KryoSerializer());
   runner.addObjectSerializer(new KryoOptimizedSerializer());
-  runner.addObjectSerializer(new KryoCompressedSerializer());
   runner.addObjectSerializer(new JavaSerializer());
   runner.addObjectSerializer(new JavaExtSerializer());
   runner.addObjectSerializer(new ScalaSerializer());
