@@ -1,5 +1,6 @@
 {
   _title=(String)in.readObject();
+  _uri=(String)in.readObject();
   _width=in.readInt();
   _height=in.readInt();
   _size=Size.values()[in.readByte()];
