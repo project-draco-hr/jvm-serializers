@@ -5,7 +5,7 @@
   media.put("title",new Utf8("Javaone Keynote"));
   media.put("duration",1234567L);
   media.put("bitrate",0);
-  GenericData.Array<Utf8> person=new GenericData.Array<Utf8>(2);
+  GenericData.Array<Utf8> person=new GenericData.Array<Utf8>(2,null);
   person.add(new Utf8("Bill Gates"));
   person.add(new Utf8("Steve Jobs"));
   media.put("person",person);
@@ -26,7 +26,7 @@
   image2.put("height",0);
   image2.put("size",1);
   image2.put("title",new Utf8("Javaone Keynote"));
-  GenericData.Array<GenericRecord> images=new GenericData.Array<GenericRecord>(2);
+  GenericData.Array<GenericRecord> images=new GenericData.Array<GenericRecord>(2,null);
   images.add(image1);
   images.add(image2);
   GenericRecord content=new GenericData.Record(MEDIA_CONTENT_SCHEMA);
