@@ -1,0 +1,10 @@
+{
+  for (Iterator<Map.Entry<FieldDescriptor,Object>> iter=message.getAllFields().entrySet().iterator(); iter.hasNext(); ) {
+    Map.Entry<FieldDescriptor,Object> field=iter.next();
+    printField(field.getKey(),field.getValue(),generator);
+    if (iter.hasNext()) {
+      generator.print(",");
+    }
+  }
+  printUnknownFields(message.getUnknownFields(),generator);
+}

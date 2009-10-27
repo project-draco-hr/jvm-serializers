@@ -1,0 +1,10 @@
+{
+  try {
+    int result=parseInt32(currentToken);
+    nextToken();
+    return result;
+  }
+ catch (  NumberFormatException e) {
+    throw integerParseException(e);
+  }
+}

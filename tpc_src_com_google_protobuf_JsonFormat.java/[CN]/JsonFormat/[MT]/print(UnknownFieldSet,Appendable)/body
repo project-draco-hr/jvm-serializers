@@ -1,0 +1,6 @@
+{
+  JsonGenerator generator=new JsonGenerator(output);
+  generator.print("{");
+  printUnknownFields(fields,generator);
+  generator.print("}");
+}

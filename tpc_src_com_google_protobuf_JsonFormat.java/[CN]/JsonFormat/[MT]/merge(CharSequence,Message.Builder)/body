@@ -1,0 +1,3 @@
+{
+  merge(input,ExtensionRegistry.getEmptyRegistry(),builder);
+}

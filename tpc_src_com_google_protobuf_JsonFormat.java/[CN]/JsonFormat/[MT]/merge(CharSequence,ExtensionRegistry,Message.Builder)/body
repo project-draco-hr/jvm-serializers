@@ -1,0 +1,7 @@
+{
+  Tokenizer tokenizer=new Tokenizer(input);
+  tokenizer.consume("{");
+  while (!tokenizer.tryConsume("}")) {
+    mergeField(tokenizer,extensionRegistry,builder);
+  }
+}

@@ -1,0 +1,7 @@
+{
+  int length=indent.length();
+  if (length == 0) {
+    throw new IllegalArgumentException(" Outdent() without matching Indent().");
+  }
+  indent.delete(length - 2,length);
+}

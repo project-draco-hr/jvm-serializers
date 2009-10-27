@@ -1,0 +1,7 @@
+{
+  if (currentToken.length() == 0) {
+    return false;
+  }
+  char c=currentToken.charAt(0);
+  return (('0' <= c) && (c <= '9')) || (c == '-') || (c == '+');
+}

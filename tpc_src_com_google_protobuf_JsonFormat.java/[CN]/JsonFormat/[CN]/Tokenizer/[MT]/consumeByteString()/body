@@ -1,0 +1,18 @@
+{
+  char quote=currentToken.length() > 0 ? currentToken.charAt(0) : '\0';
+  if ((quote != '\"') && (quote != '\'')) {
+    throw parseException("Expected string.");
+  }
+  if ((currentToken.length() < 2) || (currentToken.charAt(currentToken.length() - 1) != quote)) {
+    throw parseException("String missing ending quote.");
+  }
+  try {
+    String escaped=currentToken.substring(1,currentToken.length() - 1);
+    ByteString result=unescapeBytes(escaped);
+    nextToken();
+    return result;
+  }
+ catch (  InvalidEscapeSequence e) {
+    throw parseException(e.getMessage());
+  }
+}

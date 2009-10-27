@@ -1,0 +1,14 @@
+{
+  for (int i=0; i < currentToken.length(); i++) {
+    char c=currentToken.charAt(i);
+    if ((('a' <= c) && (c <= 'z')) || (('A' <= c) && (c <= 'Z')) || (('0' <= c) && (c <= '9'))|| (c == '_')|| (c == '.')|| (c == '"')) {
+    }
+ else {
+      throw parseException("Expected identifier. -" + c);
+    }
+  }
+  String result=currentToken;
+  result=result.replaceAll("\"|'","");
+  nextToken();
+  return result;
+}

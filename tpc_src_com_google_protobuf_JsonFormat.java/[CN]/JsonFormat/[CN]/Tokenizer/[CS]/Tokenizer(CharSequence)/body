@@ -1,0 +1,6 @@
+{
+  this.text=text;
+  matcher=WHITESPACE.matcher(text);
+  skipWhitespace();
+  nextToken();
+}

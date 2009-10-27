@@ -1,0 +1,13 @@
+{
+  if (currentToken.equals("true")) {
+    nextToken();
+    return true;
+  }
+ else   if (currentToken.equals("false")) {
+    nextToken();
+    return false;
+  }
+ else {
+    throw parseException("Expected \"true\" or \"false\".");
+  }
+}

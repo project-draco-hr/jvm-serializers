@@ -1,0 +1,29 @@
+{
+  previousLine=line;
+  previousColumn=column;
+  while (pos < matcher.regionStart()) {
+    if (text.charAt(pos) == '\n') {
+      ++line;
+      column=0;
+    }
+ else {
+      ++column;
+    }
+    ++pos;
+  }
+  if (matcher.regionStart() == matcher.regionEnd()) {
+    currentToken="";
+  }
+ else {
+    matcher.usePattern(TOKEN);
+    if (matcher.lookingAt()) {
+      currentToken=matcher.group();
+      matcher.region(matcher.end(),matcher.regionEnd());
+    }
+ else {
+      currentToken=String.valueOf(text.charAt(pos));
+      matcher.region(pos + 1,matcher.regionEnd());
+    }
+    skipWhitespace();
+  }
+}

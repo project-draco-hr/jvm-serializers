@@ -1,0 +1,52 @@
+{
+  FieldDescriptor field;
+  Descriptor type=builder.getDescriptorForType();
+  ExtensionRegistry.ExtensionInfo extension=null;
+  if (tokenizer.tryConsume("[")) {
+    StringBuilder name=new StringBuilder(tokenizer.consumeIdentifier());
+    while (tokenizer.tryConsume(".")) {
+      name.append(".");
+      name.append(tokenizer.consumeIdentifier());
+    }
+    extension=extensionRegistry.findExtensionByName(name.toString());
+    if (extension == null) {
+      throw tokenizer.parseExceptionPreviousToken("Extension \"" + name + "\" not found in the ExtensionRegistry.");
+    }
+ else     if (extension.descriptor.getContainingType() != type) {
+      throw tokenizer.parseExceptionPreviousToken("Extension \"" + name + "\" does not extend message type \""+ type.getFullName()+ "\".");
+    }
+    tokenizer.consume("]");
+    field=extension.descriptor;
+  }
+ else {
+    String name=tokenizer.consumeIdentifier();
+    field=type.findFieldByName(name);
+    if (field == null) {
+      String lowerName=name.toLowerCase(Locale.US);
+      field=type.findFieldByName(lowerName);
+      if ((field != null) && (field.getType() != FieldDescriptor.Type.GROUP)) {
+        field=null;
+      }
+    }
+    if ((field != null) && (field.getType() == FieldDescriptor.Type.GROUP) && !field.getMessageType().getName().equals(name)) {
+      field=null;
+    }
+    if (field == null) {
+      throw tokenizer.parseExceptionPreviousToken("Message type \"" + type.getFullName() + "\" has no field named \""+ name+ "\".");
+    }
+  }
+  tokenizer.consume(":");
+  boolean array=tokenizer.tryConsume("[");
+  if (array) {
+    while (!tokenizer.tryConsume("]")) {
+      handleValue(tokenizer,extensionRegistry,builder,field,extension);
+      tokenizer.tryConsume(",");
+    }
+  }
+ else {
+    handleValue(tokenizer,extensionRegistry,builder,field,extension);
+  }
+  if (tokenizer.tryConsume(",")) {
+    mergeField(tokenizer,extensionRegistry,builder);
+  }
+}
