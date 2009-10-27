@@ -1,0 +1,5 @@
+{
+  Builder builder=new Builder();
+  builder.result=new serializers.protobuf.MediaContentHolder.Image();
+  return builder;
+}

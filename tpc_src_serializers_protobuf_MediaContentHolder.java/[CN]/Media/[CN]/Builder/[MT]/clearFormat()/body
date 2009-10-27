@@ -1,5 +1,5 @@
 {
   result.hasFormat=false;
-  result.format_="";
+  result.format_=getDefaultInstance().getFormat();
   return this;
 }

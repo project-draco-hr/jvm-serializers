@@ -7,6 +7,6 @@ case 0:
     this.updateMedia(controller,(serializers.protobuf.MediaContentHolder.MediaContent)request,com.google.protobuf.RpcUtil.<serializers.protobuf.MediaContentHolder.MediaContent>specializeCallback(done));
   return;
 default :
-throw new java.lang.RuntimeException("Can't get here.");
+throw new java.lang.AssertionError("Can't get here.");
 }
 }

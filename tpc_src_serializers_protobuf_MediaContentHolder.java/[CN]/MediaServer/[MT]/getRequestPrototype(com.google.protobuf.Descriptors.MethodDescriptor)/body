@@ -6,6 +6,6 @@ switch (method.getIndex()) {
 case 0:
     return serializers.protobuf.MediaContentHolder.MediaContent.getDefaultInstance();
 default :
-  throw new java.lang.RuntimeException("Can't get here.");
+  throw new java.lang.AssertionError("Can't get here.");
 }
 }

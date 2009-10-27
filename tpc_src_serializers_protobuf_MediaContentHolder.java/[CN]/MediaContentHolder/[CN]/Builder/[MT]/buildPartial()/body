@@ -1,4 +1,7 @@
 {
+  if (result == null) {
+    throw new IllegalStateException("build() has already been called on this Builder.");
+  }
   serializers.protobuf.MediaContentHolder.Image returnMe=result;
   result=null;
   return returnMe;

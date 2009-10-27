@@ -1,5 +1,5 @@
 {
   result.hasCopyright=false;
-  result.copyright_="";
+  result.copyright_=getDefaultInstance().getCopyright();
   return this;
 }

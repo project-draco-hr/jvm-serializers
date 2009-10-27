@@ -26,8 +26,13 @@
   if (hasBitrate()) {
     size+=com.google.protobuf.CodedOutputStream.computeInt32Size(8,getBitrate());
   }
-  for (  java.lang.String element : getPersonList()) {
-    size+=com.google.protobuf.CodedOutputStream.computeStringSize(9,element);
+{
+    int dataSize=0;
+    for (    java.lang.String element : getPersonList()) {
+      dataSize+=com.google.protobuf.CodedOutputStream.computeStringSizeNoTag(element);
+    }
+    size+=dataSize;
+    size+=1 * getPersonList().size();
   }
   if (hasPlayer()) {
     size+=com.google.protobuf.CodedOutputStream.computeEnumSize(10,getPlayer().getNumber());

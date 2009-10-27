@@ -1,4 +1,7 @@
 {
+  if (value == null) {
+    throw new NullPointerException();
+  }
   result.image_.set(index,value);
   return this;
 }

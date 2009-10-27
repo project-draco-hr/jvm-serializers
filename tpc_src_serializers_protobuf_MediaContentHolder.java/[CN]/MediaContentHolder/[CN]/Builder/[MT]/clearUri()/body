@@ -1,5 +1,5 @@
 {
   result.hasUri=false;
-  result.uri_="";
+  result.uri_=getDefaultInstance().getUri();
   return this;
 }
