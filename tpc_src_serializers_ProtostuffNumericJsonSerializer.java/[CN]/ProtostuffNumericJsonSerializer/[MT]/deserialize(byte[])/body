@@ -1,0 +1,7 @@
+{
+  MediaContent.Builder builder=MediaContent.newBuilder();
+  JsonParser parser=json.getJsonFactory().createJsonParser(array);
+  json.mergeFrom(parser,builder);
+  parser.close();
+  return builder.build();
+}
