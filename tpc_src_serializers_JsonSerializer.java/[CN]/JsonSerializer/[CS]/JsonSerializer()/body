@@ -1,4 +1,3 @@
 {
-  super("json (jackson)");
-  _factory=new JsonFactory();
+  this("json (jackson)");
 }
