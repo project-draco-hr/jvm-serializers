@@ -1,33 +1,6 @@
 {
-  JsonParser parser=_factory.createJsonParser(array);
-  if (parser.nextToken() != JsonToken.START_OBJECT) {
-    reportIllegal(parser,JsonToken.START_OBJECT);
-  }
-  MediaContent mc=new MediaContent();
-  JsonToken t;
-  while ((t=parser.nextToken()) != JsonToken.END_OBJECT) {
-    if (t != JsonToken.FIELD_NAME) {
-      reportIllegal(parser,JsonToken.FIELD_NAME);
-    }
-    String field=parser.getCurrentName();
-    Integer I=fieldToIndex.get(field);
-    if (I != null) {
-switch (I.intValue()) {
-case FIELD_IX_MEDIA:
-        mc.setMedia(readMedia(parser));
-      continue;
-case FIELD_IX_IMAGES:
-    if (parser.nextToken() != JsonToken.START_ARRAY) {
-      reportIllegal(parser,JsonToken.START_ARRAY);
-    }
-  while (parser.nextToken() == JsonToken.START_OBJECT) {
-    mc.addImage(readImage(parser));
-  }
-continue;
-}
-}
-throw new IllegalStateException("Unexpected field '" + field + "'");
-}
-parser.close();
-return mc;
+  JsonParser parser=constructParser(array);
+  MediaContent mc=readMediaContent(parser);
+  parser.close();
+  return mc;
 }
