@@ -1,0 +1,3 @@
+{
+  return _mapper.readValue(parser,MediaContent.class);
+}

@@ -11,6 +11,7 @@
   runner.addObjectSerializer(new JavaExtSerializer());
   runner.addObjectSerializer(new ScalaSerializer());
   runner.addObjectSerializer(new JsonSerializer());
+  runner.addObjectSerializer(new JsonDataBindingSerializer());
   runner.addObjectSerializer(new JsonMarshallerSerializer());
   runner.addObjectSerializer(new ProtostuffJsonSerializer());
   runner.addObjectSerializer(new ProtostuffNumericJsonSerializer());
