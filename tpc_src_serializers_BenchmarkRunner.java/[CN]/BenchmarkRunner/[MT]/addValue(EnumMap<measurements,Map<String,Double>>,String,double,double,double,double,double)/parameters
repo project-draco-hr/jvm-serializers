@@ -1,7 +1,0 @@
-EnumMap<measurements,Map<String,Double>> values
-String name
-double timeCreate
-double timeSer
-double timeDSer
-double totalTime
-double length

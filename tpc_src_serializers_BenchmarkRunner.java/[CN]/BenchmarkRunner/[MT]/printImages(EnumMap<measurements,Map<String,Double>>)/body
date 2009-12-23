@@ -9,8 +9,12 @@
       }
     }
 );
-    LinkedHashMap sortedMap=new LinkedHashMap();
-    for (    Entry entry : list)     sortedMap.put(entry.getKey(),entry.getValue());
+    LinkedHashMap<String,Double> sortedMap=new LinkedHashMap<String,Double>();
+    for (    Entry<String,Double> entry : list) {
+      if (!entry.getValue().isNaN()) {
+        sortedMap.put(entry.getKey(),entry.getValue());
+      }
+    }
     printImage(sortedMap,m);
   }
 }
