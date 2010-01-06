@@ -1,5 +1,6 @@
 {
-  out.writeObject(_media);
+  out.writeBoolean(_media != null);
+  if (_media != null)   _media.writeExternal(out);
   if (_images == null) {
     out.writeInt(0);
   }
@@ -7,7 +8,7 @@
     int nbImages=_images.size();
     out.writeInt(nbImages);
     for (int i=0; i < nbImages; i++) {
-      out.writeObject(_images.get(i));
+      _images.get(i).writeExternal(out);
     }
   }
 }

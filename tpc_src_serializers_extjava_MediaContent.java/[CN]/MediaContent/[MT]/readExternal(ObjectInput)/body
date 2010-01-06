@@ -1,8 +1,14 @@
 {
-  _media=(Media)in.readObject();
+  _media=null;
+  if (in.readBoolean()) {
+    _media=new Media();
+    _media.readExternal(in);
+  }
   int nbImages=in.readInt();
   _images=new ArrayList<Image>(nbImages);
   for (int i=0; i < nbImages; i++) {
-    _images.add((Image)in.readObject());
+    Image image=new Image();
+    image.readExternal(in);
+    _images.add(image);
   }
 }

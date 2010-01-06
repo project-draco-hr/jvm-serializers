@@ -1,6 +1,6 @@
 {
-  _title=(String)in.readObject();
-  _uri=(String)in.readObject();
+  _title=ExternalizationHelper.readString(in);
+  _uri=ExternalizationHelper.readString(in);
   _width=in.readInt();
   _height=in.readInt();
   _size=Size.values()[in.readByte()];

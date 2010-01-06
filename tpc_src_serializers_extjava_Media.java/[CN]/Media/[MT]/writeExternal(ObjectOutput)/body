@@ -1,14 +1,14 @@
 {
   out.writeByte(_player.ordinal());
-  out.writeObject(_uri);
-  out.writeObject(_title);
+  ExternalizationHelper.writeString(out,_uri);
+  ExternalizationHelper.writeString(out,_title);
   out.writeInt(_width);
   out.writeInt(_height);
-  out.writeObject(_format);
+  ExternalizationHelper.writeString(out,_format);
   out.writeLong(_duration);
   out.writeLong(_size);
   out.writeInt(_bitrate);
-  out.writeObject(_copyright);
+  ExternalizationHelper.writeString(out,_copyright);
   if (_persons == null) {
     out.writeInt(0);
   }

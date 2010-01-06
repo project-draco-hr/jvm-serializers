@@ -1,4 +1,9 @@
 {
   ObjectInputStream ois=new ObjectInputStream(new ByteArrayInputStream(array));
-  return (MediaContent)ois.readObject();
+  MediaContent mediaContent=null;
+  if (ois.readBoolean()) {
+    mediaContent=new MediaContent();
+    mediaContent.readExternal(ois);
+  }
+  return mediaContent;
 }
