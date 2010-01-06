@@ -21,6 +21,7 @@
     for (int i=0; i < TRIALS; i++)     timeDeserializeNoFieldAccess=Math.min(timeDeserializeNoFieldAccess,deserializeNoFieldAccess(serializer,ITERATIONS));
     double timeDeserializeAndCheckAllFields=Double.NaN;
     double timeDeserializeAndCheckMediaField=Double.NaN;
+    double totalTime=timeSerializeDifferentObjects + timeDeserializeNoFieldAccess;
     if (serializer instanceof CheckingObjectSerializer) {
       CheckingObjectSerializer checkingSerializer=(CheckingObjectSerializer)serializer;
       timeDeserializeAndCheckMediaField=Double.MAX_VALUE;
@@ -29,9 +30,9 @@
       timeDeserializeAndCheckAllFields=Double.MAX_VALUE;
       doGc();
       for (int i=0; i < TRIALS; i++)       timeDeserializeAndCheckAllFields=Math.min(timeDeserializeAndCheckAllFields,deserializeAndCheckAllFields(checkingSerializer,ITERATIONS));
+      totalTime=timeSerializeDifferentObjects + timeDeserializeAndCheckAllFields;
     }
     byte[] array=serializer.serialize(serializer.create());
-    double totalTime=timeSerializeDifferentObjects + timeDeserializeNoFieldAccess;
     System.out.printf("%-24s, %15.5f, %15.5f, %15.5f, %15.5f, %15.5f, %15.5f, %15.5f, %10d\n",serializer.getName(),timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckMediaField,timeDeserializeAndCheckAllFields,totalTime,array.length);
     addValue(values,serializer.getName(),timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckMediaField,timeDeserializeAndCheckAllFields,totalTime,array.length);
   }
