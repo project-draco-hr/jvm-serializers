@@ -1,7 +1,7 @@
 {
   long endTime=System.currentTimeMillis() + WARMUP_MSECS;
   do {
-    deserializeNoFeildAcess(serializer,1);
+    deserializeNoFieldAccess(serializer,1);
   }
  while (System.currentTimeMillis() < endTime);
 }

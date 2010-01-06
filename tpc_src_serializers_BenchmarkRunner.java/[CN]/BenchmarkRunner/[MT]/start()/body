@@ -18,7 +18,7 @@
     warmDeserialization(serializer);
     doGc();
     double timeDeserializeNoFieldAccess=Double.MAX_VALUE;
-    for (int i=0; i < TRIALS; i++)     timeDeserializeNoFieldAccess=Math.min(timeDeserializeNoFieldAccess,deserializeNoFeildAcess(serializer,ITERATIONS));
+    for (int i=0; i < TRIALS; i++)     timeDeserializeNoFieldAccess=Math.min(timeDeserializeNoFieldAccess,deserializeNoFieldAccess(serializer,ITERATIONS));
     double timeDeserializeAndCheckAllFields=Double.NaN;
     double timeDeserializeAndCheckMediaField=Double.NaN;
     if (serializer instanceof CheckingObjectSerializer) {
