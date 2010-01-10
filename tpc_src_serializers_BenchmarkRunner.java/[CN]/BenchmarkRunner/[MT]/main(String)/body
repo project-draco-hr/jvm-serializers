@@ -6,7 +6,6 @@
   runner.addObjectSerializer(new ProtobufSerializer());
   runner.addObjectSerializer(new ThriftSerializer());
   runner.addObjectSerializer(new KryoSerializer());
-  runner.addObjectSerializer(new KryoAsmSerializer());
   runner.addObjectSerializer(new KryoOptimizedSerializer());
   runner.addObjectSerializer(new JavaSerializer());
   runner.addObjectSerializer(new JavaExtSerializer());
@@ -22,5 +21,8 @@
   runner.addObjectSerializer(new JavolutionXMLFormatSerializer());
   runner.addObjectSerializer(new SbinarySerializer());
   System.out.println("Starting");
+  runner._serializers.clear();
+  runner.addObjectSerializer(new KryoSerializer());
+  runner.addObjectSerializer(new KryoOptimizedSerializer());
   runner.start();
 }
