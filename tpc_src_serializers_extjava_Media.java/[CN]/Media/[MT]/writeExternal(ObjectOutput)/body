@@ -10,7 +10,7 @@
   out.writeInt(_bitrate);
   ExternalizationHelper.writeString(out,_copyright);
   if (_persons == null) {
-    out.writeInt(0);
+    out.writeInt(-1);
   }
  else {
     out.writeInt(_persons.size());
