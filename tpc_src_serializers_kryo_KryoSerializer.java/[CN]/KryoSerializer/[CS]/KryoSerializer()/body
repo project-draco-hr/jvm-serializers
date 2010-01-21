@@ -1,3 +1,10 @@
 {
-  this("kryo");
+  kryo=new Kryo();
+  kryo.register(ArrayList.class);
+  kryo.register(MediaContent.class);
+  kryo.register(Media.Player.class);
+  kryo.register(Media.class);
+  kryo.register(Image.Size.class);
+  kryo.register(Image.class);
+  objectBuffer=new ObjectBuffer(kryo,1024);
 }

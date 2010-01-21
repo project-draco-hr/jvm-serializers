@@ -1,0 +1,12 @@
+{
+  _copyright=copyright;
+  _duration=duration;
+  _format=format;
+  _height=height;
+  _player=player;
+  _size=size;
+  _title=title;
+  _uri=uri;
+  _width=width;
+  _bitrate=bitrate;
+}

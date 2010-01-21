@@ -1,3 +1,4 @@
 {
-  this("kryo-compressed");
+  Serializer mediaContentSerializer=kryo.getRegisteredClass(MediaContent.class).getSerializer();
+  kryo.register(MediaContent.class,new DeflateCompressor(mediaContentSerializer));
 }
