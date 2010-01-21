@@ -1,6 +1,5 @@
 {
-  if (name.equals("json/google-gson") || name.equals("hessian")) {
-    values.get(measurements.timeCreate).put(name,timeCreate);
+  if (!name.equals("json/google-gson") && !name.equals("scala")) {
     values.get(measurements.timeSerializeDifferentObjects).put(name,timeSerializeDifferentObjects);
     values.get(measurements.timeSerializeSameObject).put(name,timeSerializeSameObject);
     values.get(measurements.timeDeserializeNoFieldAccess).put(name,timeDeserializeNoFieldAccess);
@@ -9,4 +8,5 @@
     values.get(measurements.totalTime).put(name,totalTime);
   }
   values.get(measurements.length).put(name,length);
+  values.get(measurements.timeCreate).put(name,timeCreate);
 }
