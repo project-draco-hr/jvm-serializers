@@ -1,6 +1,6 @@
 {
   ByteArrayOutputStream baos=new ByteArrayOutputStream(expectedSize);
-  ObjectOutputStream oos=new ObjectOutputStream(baos);
+  ObjectOutput oos=new ExternalizableObjectOutput(baos);
   oos.writeBoolean(content != null);
   if (content != null)   content.writeExternal(oos);
   oos.close();
