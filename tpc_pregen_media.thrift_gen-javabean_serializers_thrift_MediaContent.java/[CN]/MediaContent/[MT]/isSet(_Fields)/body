@@ -1,0 +1,9 @@
+{
+switch (field) {
+case IMAGE:
+    return isSetImage();
+case MEDIA:
+  return isSetMedia();
+}
+throw new IllegalStateException();
+}

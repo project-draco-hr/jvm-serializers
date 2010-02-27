@@ -1,0 +1,6 @@
+{
+  JsonGenerator generator=new JsonGenerator(output);
+  generator.print("{");
+  print(message,generator);
+  generator.print("}");
+}

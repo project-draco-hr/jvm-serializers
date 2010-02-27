@@ -1,0 +1,3 @@
+{
+  return mergeUnframed(new org.apache.activemq.protobuf.CodedInputStream(input));
+}

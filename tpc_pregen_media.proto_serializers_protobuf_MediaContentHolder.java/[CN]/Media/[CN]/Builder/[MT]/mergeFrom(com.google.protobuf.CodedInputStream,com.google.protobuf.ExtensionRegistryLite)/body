@@ -1,0 +1,81 @@
+{
+  com.google.protobuf.UnknownFieldSet.Builder unknownFields=com.google.protobuf.UnknownFieldSet.newBuilder(this.getUnknownFields());
+  while (true) {
+    int tag=input.readTag();
+switch (tag) {
+case 0:
+      this.setUnknownFields(unknownFields.build());
+    return this;
+default :
+{
+    if (!parseUnknownField(input,unknownFields,extensionRegistry,tag)) {
+      this.setUnknownFields(unknownFields.build());
+      return this;
+    }
+    break;
+  }
+case 10:
+{
+  setUri(input.readString());
+  break;
+}
+case 18:
+{
+setTitle(input.readString());
+break;
+}
+case 24:
+{
+setWidth(input.readInt32());
+break;
+}
+case 32:
+{
+setHeight(input.readInt32());
+break;
+}
+case 42:
+{
+setFormat(input.readString());
+break;
+}
+case 48:
+{
+setDuration(input.readInt64());
+break;
+}
+case 56:
+{
+setSize(input.readInt64());
+break;
+}
+case 64:
+{
+setBitrate(input.readInt32());
+break;
+}
+case 74:
+{
+addPerson(input.readString());
+break;
+}
+case 80:
+{
+int rawValue=input.readEnum();
+serializers.protobuf.MediaContentHolder.Media.Player value=serializers.protobuf.MediaContentHolder.Media.Player.valueOf(rawValue);
+if (value == null) {
+unknownFields.mergeVarintField(10,rawValue);
+}
+ else {
+setPlayer(value);
+}
+break;
+}
+case 90:
+{
+setCopyright(input.readString());
+break;
+}
+}
+}
+}

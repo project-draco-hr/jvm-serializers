@@ -1,0 +1,7 @@
+{
+  if (result.person_.isEmpty()) {
+    result.person_=new java.util.ArrayList<java.lang.String>();
+  }
+  super.addAll(values,result.person_);
+  return this;
+}

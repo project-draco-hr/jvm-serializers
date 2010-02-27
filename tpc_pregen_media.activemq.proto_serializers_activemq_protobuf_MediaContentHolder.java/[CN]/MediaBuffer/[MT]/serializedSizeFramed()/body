@@ -1,0 +1,4 @@
+{
+  int t=serializedSizeUnframed();
+  return org.apache.activemq.protobuf.CodedOutputStream.computeRawVarint32Size(t) + t;
+}

@@ -1,0 +1,3 @@
+{
+  JsonFormat.merge(input,ExtensionRegistry.getEmptyRegistry(),builder);
+}

@@ -1,0 +1,41 @@
+{
+  if (buffer != null) {
+    return buffer.length;
+  }
+  if (size != -1)   return size;
+  size=0;
+  size+=org.apache.activemq.protobuf.CodedOutputStream.computeStringSize(1,getUri());
+  if (hasTitle()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeStringSize(2,getTitle());
+  }
+  if (hasWidth()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeInt32Size(3,getWidth());
+  }
+  if (hasHeight()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeInt32Size(4,getHeight());
+  }
+  if (hasFormat()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeStringSize(5,getFormat());
+  }
+  if (hasDuration()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeInt64Size(6,getDuration());
+  }
+  if (hasSize()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeInt64Size(7,getSize());
+  }
+  if (hasBitrate()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeInt32Size(8,getBitrate());
+  }
+  if (hasPerson()) {
+    for (    java.lang.String i : getPersonList()) {
+      size+=org.apache.activemq.protobuf.CodedOutputStream.computeStringSize(9,i);
+    }
+  }
+  if (hasPlayer()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeEnumSize(10,getPlayer().getNumber());
+  }
+  if (hasCopyright()) {
+    size+=org.apache.activemq.protobuf.CodedOutputStream.computeStringSize(11,getCopyright());
+  }
+  return size;
+}

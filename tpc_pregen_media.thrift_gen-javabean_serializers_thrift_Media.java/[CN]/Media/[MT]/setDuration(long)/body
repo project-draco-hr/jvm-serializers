@@ -1,0 +1,5 @@
+{
+  this.duration=duration;
+  setDurationIsSet(true);
+  return this;
+}

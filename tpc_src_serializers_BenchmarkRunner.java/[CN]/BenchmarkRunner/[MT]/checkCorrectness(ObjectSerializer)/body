@@ -1,0 +1,9 @@
+{
+  Object input=serializer.create();
+  byte[] array=serializer.serialize(input);
+  Object output=serializer.deserialize(array);
+  if (!input.equals(output)) {
+    String msg="serializer '" + serializer.getName() + "' failed round-trip test (ser+deser produces Object different from input), input="+ input+ ", output="+ output;
+    System.err.println("WARN: " + msg);
+  }
+}

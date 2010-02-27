@@ -1,0 +1,23 @@
+{
+  Object value;
+  Message.Builder subBuilder;
+  if (extension == null) {
+    subBuilder=builder.newBuilderForField(field);
+  }
+ else {
+    subBuilder=extension.defaultInstance.newBuilderForType();
+  }
+  tokenizer.consume("{");
+  String endToken="}";
+  while (!tokenizer.tryConsume(endToken)) {
+    if (tokenizer.atEnd()) {
+      throw tokenizer.parseException("Expected \"" + endToken + "\".");
+    }
+    mergeField(tokenizer,extensionRegistry,subBuilder);
+    if (tokenizer.tryConsume(",")) {
+      continue;
+    }
+  }
+  value=subBuilder.build();
+  return value;
+}

@@ -1,0 +1,34 @@
+{
+  if (that == null)   return false;
+  boolean this_present_uri=true && this.isSetUri();
+  boolean that_present_uri=true && that.isSetUri();
+  if (this_present_uri || that_present_uri) {
+    if (!(this_present_uri && that_present_uri))     return false;
+    if (!this.uri.equals(that.uri))     return false;
+  }
+  boolean this_present_title=true && this.isSetTitle();
+  boolean that_present_title=true && that.isSetTitle();
+  if (this_present_title || that_present_title) {
+    if (!(this_present_title && that_present_title))     return false;
+    if (!this.title.equals(that.title))     return false;
+  }
+  boolean this_present_width=true && this.isSetWidth();
+  boolean that_present_width=true && that.isSetWidth();
+  if (this_present_width || that_present_width) {
+    if (!(this_present_width && that_present_width))     return false;
+    if (this.width != that.width)     return false;
+  }
+  boolean this_present_height=true && this.isSetHeight();
+  boolean that_present_height=true && that.isSetHeight();
+  if (this_present_height || that_present_height) {
+    if (!(this_present_height && that_present_height))     return false;
+    if (this.height != that.height)     return false;
+  }
+  boolean this_present_size=true && this.isSetSize();
+  boolean that_present_size=true && that.isSetSize();
+  if (this_present_size || that_present_size) {
+    if (!(this_present_size && that_present_size))     return false;
+    if (!this.size.equals(that.size))     return false;
+  }
+  return true;
+}

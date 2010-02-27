@@ -1,0 +1,19 @@
+{
+  getSerializedSize();
+  if (hasUri()) {
+    output.writeString(1,getUri());
+  }
+  if (hasTitle()) {
+    output.writeString(2,getTitle());
+  }
+  if (hasWidth()) {
+    output.writeInt32(3,getWidth());
+  }
+  if (hasHeight()) {
+    output.writeInt32(4,getHeight());
+  }
+  if (hasSize()) {
+    output.writeEnum(5,getSize().getNumber());
+  }
+  getUnknownFields().writeTo(output);
+}

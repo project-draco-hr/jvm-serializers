@@ -1,0 +1,17 @@
+{
+  Media media=(Media)obj;
+  writer.addAttribute("pl",String.valueOf(media.getPlayer().ordinal()));
+  writer.addAttribute("ul",media.getUri());
+  writer.addAttribute("tl",media.getTitle());
+  writer.addAttribute("wd",String.valueOf(media.getWidth()));
+  writer.addAttribute("hg",String.valueOf(media.getHeight()));
+  writer.addAttribute("fr",media.getFormat());
+  writer.addAttribute("dr",String.valueOf(media.getDuration()));
+  writer.addAttribute("sz",String.valueOf(media.getSize()));
+  writer.addAttribute("br",String.valueOf(media.getBitrate()));
+  for (  String p : media.getPersons()) {
+    writer.startNode("pr");
+    writer.setValue(p);
+    writer.endNode();
+  }
+}

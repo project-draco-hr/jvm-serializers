@@ -1,0 +1,8 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream(expectedSize);
+  ObjectOutputStream oos=new ObjectOutputStream(baos);
+  oos.writeObject(content);
+  byte[] array=baos.toByteArray();
+  expectedSize=array.length;
+  return array;
+}

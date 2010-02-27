@@ -1,0 +1,8 @@
+{
+  StringWriter sw=new StringWriter(_expectedSize);
+  _marshaller.marshall(content).write(sw);
+  sw.flush();
+  byte[] result=sw.toString().getBytes(_charset.toString());
+  _expectedSize=result.length;
+  return result;
+}

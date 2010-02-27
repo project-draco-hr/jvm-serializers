@@ -1,0 +1,28 @@
+{
+  BenchmarkRunner runner=new BenchmarkRunner();
+  runner.addObjectSerializer(new AvroGenericSerializer());
+  runner.addObjectSerializer(new AvroSpecificSerializer());
+  runner.addObjectSerializer(new ActiveMQProtobufSerializer());
+  runner.addObjectSerializer(new ProtobufSerializer());
+  runner.addObjectSerializer(new ThriftSerializer());
+  runner.addObjectSerializer(new HessianSerializer());
+  runner.addObjectSerializer(new KryoSerializer());
+  runner.addObjectSerializer(new KryoOptimizedSerializer());
+  runner.addObjectSerializer(new JavaSerializer());
+  runner.addObjectSerializer(new JavaExtSerializer());
+  runner.addObjectSerializer(new ScalaSerializer());
+  runner.addObjectSerializer(new JsonSerializer());
+  runner.addObjectSerializer(new JsonDataBindingSerializer());
+  runner.addObjectSerializer(new JsonMarshallerSerializer());
+  runner.addObjectSerializer(new ProtostuffJsonSerializer());
+  runner.addObjectSerializer(new ProtostuffNumericJsonSerializer());
+  runner.addObjectSerializer(new GsonSerializer());
+  runner.addObjectSerializer(new StaxSerializer("stax/woodstox",new com.ctc.wstx.stax.WstxInputFactory(),new com.ctc.wstx.stax.WstxOutputFactory()));
+  runner.addObjectSerializer(new StaxSerializer("stax/aalto",new com.fasterxml.aalto.stax.InputFactoryImpl(),new com.fasterxml.aalto.stax.OutputFactoryImpl()));
+  runner.addObjectSerializer(new StaxSerializer("binaryxml/FI",new com.sun.xml.fastinfoset.stax.factory.StAXInputFactory(),new com.sun.xml.fastinfoset.stax.factory.StAXOutputFactory()));
+  runner.addObjectSerializer(new XStreamSerializer("xstream (stax with conv)",true,new com.ctc.wstx.stax.WstxInputFactory(),new com.ctc.wstx.stax.WstxOutputFactory()));
+  runner.addObjectSerializer(new JavolutionXMLFormatSerializer());
+  runner.addObjectSerializer(new SbinarySerializer());
+  System.out.println("Starting");
+  runner.start();
+}

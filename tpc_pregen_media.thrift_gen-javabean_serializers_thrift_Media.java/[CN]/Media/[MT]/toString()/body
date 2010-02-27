@@ -1,0 +1,107 @@
+{
+  StringBuilder sb=new StringBuilder("Media(");
+  boolean first=true;
+  sb.append("uri:");
+  if (this.uri == null) {
+    sb.append("null");
+  }
+ else {
+    sb.append(this.uri);
+  }
+  first=false;
+  if (isSetTitle()) {
+    if (!first)     sb.append(", ");
+    sb.append("title:");
+    if (this.title == null) {
+      sb.append("null");
+    }
+ else {
+      sb.append(this.title);
+    }
+    first=false;
+  }
+  if (isSetWidth()) {
+    if (!first)     sb.append(", ");
+    sb.append("width:");
+    sb.append(this.width);
+    first=false;
+  }
+  if (isSetHeight()) {
+    if (!first)     sb.append(", ");
+    sb.append("height:");
+    sb.append(this.height);
+    first=false;
+  }
+  if (isSetFormat()) {
+    if (!first)     sb.append(", ");
+    sb.append("format:");
+    if (this.format == null) {
+      sb.append("null");
+    }
+ else {
+      sb.append(this.format);
+    }
+    first=false;
+  }
+  if (isSetDuration()) {
+    if (!first)     sb.append(", ");
+    sb.append("duration:");
+    sb.append(this.duration);
+    first=false;
+  }
+  if (isSetSize()) {
+    if (!first)     sb.append(", ");
+    sb.append("size:");
+    sb.append(this.size);
+    first=false;
+  }
+  if (isSetBitrate()) {
+    if (!first)     sb.append(", ");
+    sb.append("bitrate:");
+    sb.append(this.bitrate);
+    first=false;
+  }
+  if (isSetPerson()) {
+    if (!first)     sb.append(", ");
+    sb.append("person:");
+    if (this.person == null) {
+      sb.append("null");
+    }
+ else {
+      sb.append(this.person);
+    }
+    first=false;
+  }
+  if (isSetPlayer()) {
+    if (!first)     sb.append(", ");
+    sb.append("player:");
+    if (this.player == null) {
+      sb.append("null");
+    }
+ else {
+      String player_name=player.name();
+      if (player_name != null) {
+        sb.append(player_name);
+        sb.append(" (");
+      }
+      sb.append(this.player);
+      if (player_name != null) {
+        sb.append(")");
+      }
+    }
+    first=false;
+  }
+  if (isSetCopyright()) {
+    if (!first)     sb.append(", ");
+    sb.append("copyright:");
+    if (this.copyright == null) {
+      sb.append("null");
+    }
+ else {
+      sb.append(this.copyright);
+    }
+    first=false;
+  }
+  sb.append(")");
+  return sb.toString();
+}

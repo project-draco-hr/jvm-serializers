@@ -1,0 +1,7 @@
+{
+  if (result.image_.isEmpty()) {
+    result.image_=new java.util.ArrayList<serializers.protobuf.MediaContentHolder.Image>();
+  }
+  super.addAll(values,result.image_);
+  return this;
+}

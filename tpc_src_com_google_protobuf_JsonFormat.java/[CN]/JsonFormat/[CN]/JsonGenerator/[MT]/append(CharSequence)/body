@@ -1,0 +1,12 @@
+{
+  int size=text.length();
+  int pos=0;
+  for (int i=0; i < size; i++) {
+    if (text.charAt(i) == '\n') {
+      write(text.subSequence(pos,size),i - pos + 1);
+      pos=i + 1;
+      atStartOfLine=false;
+    }
+  }
+  write(text.subSequence(pos,size),size - pos);
+}

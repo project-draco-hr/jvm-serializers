@@ -1,0 +1,6 @@
+{
+  matcher.usePattern(WHITESPACE);
+  if (matcher.lookingAt()) {
+    matcher.region(matcher.end(),matcher.regionEnd());
+  }
+}

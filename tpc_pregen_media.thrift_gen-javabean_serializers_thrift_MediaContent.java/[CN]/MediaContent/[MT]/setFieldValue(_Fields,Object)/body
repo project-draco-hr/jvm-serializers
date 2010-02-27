@@ -1,0 +1,20 @@
+{
+switch (field) {
+case IMAGE:
+    if (value == null) {
+      unsetImage();
+    }
+ else {
+      setImage((List<Image>)value);
+    }
+  break;
+case MEDIA:
+if (value == null) {
+  unsetMedia();
+}
+ else {
+  setMedia((Media)value);
+}
+break;
+}
+}

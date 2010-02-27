@@ -1,0 +1,5 @@
+{
+  this.bitrate=bitrate;
+  setBitrateIsSet(true);
+  return this;
+}

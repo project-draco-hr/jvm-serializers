@@ -1,0 +1,31 @@
+{
+  __isset_bit_vector.clear();
+  __isset_bit_vector.or(other.__isset_bit_vector);
+  if (other.isSetUri()) {
+    this.uri=other.uri;
+  }
+  if (other.isSetTitle()) {
+    this.title=other.title;
+  }
+  this.width=other.width;
+  this.height=other.height;
+  if (other.isSetFormat()) {
+    this.format=other.format;
+  }
+  this.duration=other.duration;
+  this.size=other.size;
+  this.bitrate=other.bitrate;
+  if (other.isSetPerson()) {
+    List<String> __this__person=new ArrayList<String>();
+    for (    String other_element : other.person) {
+      __this__person.add(other_element);
+    }
+    this.person=__this__person;
+  }
+  if (other.isSetPlayer()) {
+    this.player=other.player;
+  }
+  if (other.isSetCopyright()) {
+    this.copyright=other.copyright;
+  }
+}

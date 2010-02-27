@@ -1,0 +1,3 @@
+{
+  return (int)parseInteger(text,true,false);
+}

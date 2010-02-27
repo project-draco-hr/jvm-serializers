@@ -1,0 +1,10 @@
+{
+  HashCodeBuilder builder=new HashCodeBuilder();
+  boolean present_image=true && (isSetImage());
+  builder.append(present_image);
+  if (present_image)   builder.append(image);
+  boolean present_media=true && (isSetMedia());
+  builder.append(present_media);
+  if (present_media)   builder.append(media);
+  return builder.toHashCode();
+}

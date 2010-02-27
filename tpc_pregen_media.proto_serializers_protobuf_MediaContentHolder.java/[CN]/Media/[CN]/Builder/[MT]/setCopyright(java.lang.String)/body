@@ -1,0 +1,8 @@
+{
+  if (value == null) {
+    throw new NullPointerException();
+  }
+  result.hasCopyright=true;
+  result.copyright_=value;
+  return this;
+}

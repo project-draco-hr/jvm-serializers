@@ -1,0 +1,5 @@
+{
+  result.hasTitle=false;
+  result.title_=getDefaultInstance().getTitle();
+  return this;
+}

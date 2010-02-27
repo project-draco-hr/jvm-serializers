@@ -1,0 +1,10 @@
+EnumMap<measurements,Map<String,Double>> values
+String name
+double timeCreate
+double timeSerializeDifferentObjects
+double timeSerializeSameObject
+double timeDeserializeNoFieldAccess
+double timeDeserializeAndCheckMediaField
+double timeDeserializeAndCheckAllFields
+double totalTime
+double length

@@ -1,0 +1,20 @@
+{
+  for (  measurements m : values.keySet()) {
+    Map<String,Double> map=values.get(m);
+    ArrayList<Entry> list=new ArrayList(map.entrySet());
+    Collections.sort(list,new Comparator<Entry>(){
+      public int compare(      Entry o1,      Entry o2){
+        double diff=(Double)o1.getValue() - (Double)o2.getValue();
+        return diff > 0 ? 1 : (diff < 0 ? -1 : 0);
+      }
+    }
+);
+    LinkedHashMap<String,Double> sortedMap=new LinkedHashMap<String,Double>();
+    for (    Entry<String,Double> entry : list) {
+      if (!entry.getValue().isNaN()) {
+        sortedMap.put(entry.getKey(),entry.getValue());
+      }
+    }
+    if (!sortedMap.isEmpty())     printImage(sortedMap,m);
+  }
+}

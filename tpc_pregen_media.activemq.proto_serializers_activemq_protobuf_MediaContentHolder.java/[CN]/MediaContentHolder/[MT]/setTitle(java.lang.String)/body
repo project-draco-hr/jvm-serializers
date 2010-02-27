@@ -1,0 +1,6 @@
+{
+  copyCheck();
+  this.b_title=true;
+  this.f_title=title;
+  return this;
+}

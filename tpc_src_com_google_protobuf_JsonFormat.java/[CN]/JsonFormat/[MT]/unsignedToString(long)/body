@@ -1,0 +1,8 @@
+{
+  if (value >= 0) {
+    return Long.toString(value);
+  }
+ else {
+    return BigInteger.valueOf(value & 0x7FFFFFFFFFFFFFFFL).setBit(63).toString();
+  }
+}

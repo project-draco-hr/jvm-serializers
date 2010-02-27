@@ -1,0 +1,13 @@
+{
+  if (hasUri() ^ obj.hasUri())   return false;
+  if (hasUri() && (!getUri().equals(obj.getUri())))   return false;
+  if (hasTitle() ^ obj.hasTitle())   return false;
+  if (hasTitle() && (!getTitle().equals(obj.getTitle())))   return false;
+  if (hasWidth() ^ obj.hasWidth())   return false;
+  if (hasWidth() && (getWidth() != obj.getWidth()))   return false;
+  if (hasHeight() ^ obj.hasHeight())   return false;
+  if (hasHeight() && (getHeight() != obj.getHeight()))   return false;
+  if (hasSize() ^ obj.hasSize())   return false;
+  if (hasSize() && (!getSize().equals(obj.getSize())))   return false;
+  return true;
+}

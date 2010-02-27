@@ -1,0 +1,6 @@
+{
+  if (messageType == MediaContent.class)   return (ProtobufConvertor<T,B>)CONVERTOR_MediaContent;
+  if (messageType == Media.class)   return (ProtobufConvertor<T,B>)CONVERTOR_Media;
+  if (messageType == Image.class)   return (ProtobufConvertor<T,B>)CONVERTOR_Image;
+  return null;
+}

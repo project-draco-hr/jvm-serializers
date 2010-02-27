@@ -1,0 +1,15 @@
+{
+  if (bean == null) {
+    try {
+      bean=new MediaContentBean().mergeUnframed(new org.apache.activemq.protobuf.CodedInputStream(buffer));
+      bean.frozen=this;
+    }
+ catch (    org.apache.activemq.protobuf.InvalidProtocolBufferException e) {
+      throw new RuntimeException(e);
+    }
+catch (    java.io.IOException e) {
+      throw new RuntimeException("An IOException was thrown (should never happen in this method).",e);
+    }
+  }
+  return bean;
+}

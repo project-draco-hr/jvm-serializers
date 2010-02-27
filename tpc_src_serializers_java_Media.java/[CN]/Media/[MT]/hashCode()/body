@@ -1,0 +1,16 @@
+{
+  final int prime=31;
+  int result=1;
+  result=prime * result + _bitrate;
+  result=prime * result + ((_copyright == null) ? 0 : _copyright.hashCode());
+  result=prime * result + (int)(_duration ^ (_duration >>> 32));
+  result=prime * result + ((_format == null) ? 0 : _format.hashCode());
+  result=prime * result + _height;
+  result=prime * result + ((_persons == null) ? 0 : _persons.hashCode());
+  result=prime * result + ((_player == null) ? 0 : _player.hashCode());
+  result=prime * result + (int)(_size ^ (_size >>> 32));
+  result=prime * result + ((_title == null) ? 0 : _title.hashCode());
+  result=prime * result + ((_uri == null) ? 0 : _uri.hashCode());
+  result=prime * result + _width;
+  return result;
+}

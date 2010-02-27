@@ -1,0 +1,8 @@
+{
+  if (value == null) {
+    throw new NullPointerException();
+  }
+  result.hasSize=true;
+  result.size_=value;
+  return this;
+}

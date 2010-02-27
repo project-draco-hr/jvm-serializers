@@ -1,0 +1,4 @@
+{
+  frozen.serializedSizeUnframed();
+  return true;
+}

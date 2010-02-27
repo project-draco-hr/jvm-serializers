@@ -1,0 +1,48 @@
+{
+switch (field.getType()) {
+case INT32:
+case INT64:
+case SINT32:
+case SINT64:
+case SFIXED32:
+case SFIXED64:
+case FLOAT:
+case DOUBLE:
+case BOOL:
+    generator.print(value.toString());
+  break;
+case UINT32:
+case FIXED32:
+generator.print(unsignedToString((Integer)value));
+break;
+case UINT64:
+case FIXED64:
+generator.print(unsignedToString((Long)value));
+break;
+case STRING:
+generator.print("\"");
+generator.print(escapeText((String)value));
+generator.print("\"");
+break;
+case BYTES:
+{
+generator.print("\"");
+generator.print(escapeBytes((ByteString)value));
+generator.print("\"");
+break;
+}
+case ENUM:
+{
+generator.print("\"");
+generator.print(((EnumValueDescriptor)value).getName());
+generator.print("\"");
+break;
+}
+case MESSAGE:
+case GROUP:
+generator.print("{");
+print((Message)value,generator);
+generator.print("}");
+break;
+}
+}

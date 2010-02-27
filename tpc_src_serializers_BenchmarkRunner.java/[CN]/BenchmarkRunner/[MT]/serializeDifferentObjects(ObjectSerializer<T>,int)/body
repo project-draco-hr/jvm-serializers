@@ -1,0 +1,8 @@
+{
+  long start=System.nanoTime();
+  for (int i=0; i < iterations; i++) {
+    T obj=serializer.create();
+    serializer.serialize(obj);
+  }
+  return iterationTime(System.nanoTime() - start,iterations);
+}

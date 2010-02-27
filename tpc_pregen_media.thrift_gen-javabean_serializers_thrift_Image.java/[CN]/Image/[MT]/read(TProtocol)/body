@@ -1,0 +1,63 @@
+{
+  TField field;
+  iprot.readStructBegin();
+  while (true) {
+    field=iprot.readFieldBegin();
+    if (field.type == TType.STOP) {
+      break;
+    }
+    _Fields fieldId=_Fields.findByThriftId(field.id);
+    if (fieldId == null) {
+      TProtocolUtil.skip(iprot,field.type);
+    }
+ else {
+switch (fieldId) {
+case URI:
+        if (field.type == TType.STRING) {
+          this.uri=iprot.readString();
+        }
+ else {
+          TProtocolUtil.skip(iprot,field.type);
+        }
+      break;
+case TITLE:
+    if (field.type == TType.STRING) {
+      this.title=iprot.readString();
+    }
+ else {
+      TProtocolUtil.skip(iprot,field.type);
+    }
+  break;
+case WIDTH:
+if (field.type == TType.I32) {
+  this.width=iprot.readI32();
+  setWidthIsSet(true);
+}
+ else {
+  TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case HEIGHT:
+if (field.type == TType.I32) {
+this.height=iprot.readI32();
+setHeightIsSet(true);
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+case SIZE:
+if (field.type == TType.I32) {
+this.size=Size.findByValue(iprot.readI32());
+}
+ else {
+TProtocolUtil.skip(iprot,field.type);
+}
+break;
+}
+iprot.readFieldEnd();
+}
+}
+iprot.readStructEnd();
+validate();
+}

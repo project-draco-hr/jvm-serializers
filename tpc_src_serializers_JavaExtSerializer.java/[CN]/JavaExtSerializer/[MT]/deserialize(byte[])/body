@@ -1,0 +1,10 @@
+{
+  ObjectInput ois=new ExternalizableObjectInput(new ByteArrayInputStream(array));
+  MediaContent mediaContent=null;
+  if (ois.readBoolean()) {
+    mediaContent=new MediaContent();
+    mediaContent.readExternal(ois);
+  }
+  ois.close();
+  return mediaContent;
+}

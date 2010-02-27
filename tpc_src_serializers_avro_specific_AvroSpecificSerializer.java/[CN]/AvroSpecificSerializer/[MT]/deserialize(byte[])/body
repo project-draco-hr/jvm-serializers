@@ -1,0 +1,3 @@
+{
+  return (MediaContent)READER.read(null,new BinaryDecoder(new ByteArrayInputStream(array)));
+}

@@ -1,0 +1,27 @@
+{
+switch (field) {
+case URI:
+    return isSetUri();
+case TITLE:
+  return isSetTitle();
+case WIDTH:
+return isSetWidth();
+case HEIGHT:
+return isSetHeight();
+case FORMAT:
+return isSetFormat();
+case DURATION:
+return isSetDuration();
+case SIZE:
+return isSetSize();
+case BITRATE:
+return isSetBitrate();
+case PERSON:
+return isSetPerson();
+case PLAYER:
+return isSetPlayer();
+case COPYRIGHT:
+return isSetCopyright();
+}
+throw new IllegalStateException();
+}

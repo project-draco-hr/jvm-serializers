@@ -1,0 +1,19 @@
+{
+  if (FLOAT_INFINITY.matcher(currentToken).matches()) {
+    boolean negative=currentToken.startsWith("-");
+    nextToken();
+    return negative ? Float.NEGATIVE_INFINITY : Float.POSITIVE_INFINITY;
+  }
+  if (FLOAT_NAN.matcher(currentToken).matches()) {
+    nextToken();
+    return Float.NaN;
+  }
+  try {
+    float result=Float.parseFloat(currentToken);
+    nextToken();
+    return result;
+  }
+ catch (  NumberFormatException e) {
+    throw floatParseException(e);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  result.hasBitrate=false;
+  result.bitrate_=0;
+  return this;
+}

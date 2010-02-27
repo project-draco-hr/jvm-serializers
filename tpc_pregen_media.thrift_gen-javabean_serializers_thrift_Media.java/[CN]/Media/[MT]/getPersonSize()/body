@@ -1,0 +1,3 @@
+{
+  return (this.person == null) ? 0 : this.person.size();
+}

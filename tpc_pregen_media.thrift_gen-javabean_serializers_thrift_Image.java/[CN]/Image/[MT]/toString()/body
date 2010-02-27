@@ -1,0 +1,56 @@
+{
+  StringBuilder sb=new StringBuilder("Image(");
+  boolean first=true;
+  sb.append("uri:");
+  if (this.uri == null) {
+    sb.append("null");
+  }
+ else {
+    sb.append(this.uri);
+  }
+  first=false;
+  if (isSetTitle()) {
+    if (!first)     sb.append(", ");
+    sb.append("title:");
+    if (this.title == null) {
+      sb.append("null");
+    }
+ else {
+      sb.append(this.title);
+    }
+    first=false;
+  }
+  if (isSetWidth()) {
+    if (!first)     sb.append(", ");
+    sb.append("width:");
+    sb.append(this.width);
+    first=false;
+  }
+  if (isSetHeight()) {
+    if (!first)     sb.append(", ");
+    sb.append("height:");
+    sb.append(this.height);
+    first=false;
+  }
+  if (isSetSize()) {
+    if (!first)     sb.append(", ");
+    sb.append("size:");
+    if (this.size == null) {
+      sb.append("null");
+    }
+ else {
+      String size_name=size.name();
+      if (size_name != null) {
+        sb.append(size_name);
+        sb.append(" (");
+      }
+      sb.append(this.size);
+      if (size_name != null) {
+        sb.append(")");
+      }
+    }
+    first=false;
+  }
+  sb.append(")");
+  return sb.toString();
+}

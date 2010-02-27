@@ -1,0 +1,5 @@
+{
+  result.hasMedia=true;
+  result.media_=builderForValue.build();
+  return this;
+}

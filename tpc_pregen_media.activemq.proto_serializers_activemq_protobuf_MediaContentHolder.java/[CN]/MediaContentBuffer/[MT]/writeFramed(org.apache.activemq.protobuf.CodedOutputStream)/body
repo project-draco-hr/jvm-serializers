@@ -1,0 +1,4 @@
+{
+  output.writeRawVarint32(serializedSizeUnframed());
+  writeUnframed(output);
+}

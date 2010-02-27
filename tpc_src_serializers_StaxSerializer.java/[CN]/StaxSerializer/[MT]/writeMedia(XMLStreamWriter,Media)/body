@@ -1,0 +1,16 @@
+{
+  writer.writeStartElement(FIELD_NAME_MEDIA);
+  writeElement(writer,FIELD_NAME_PLAYER,media.getPlayer().name());
+  writeElement(writer,FIELD_NAME_URI,media.getUri());
+  writeElement(writer,FIELD_NAME_TITLE,media.getTitle());
+  writeElement(writer,FIELD_NAME_WIDTH,String.valueOf(media.getWidth()));
+  writeElement(writer,FIELD_NAME_HEIGHT,String.valueOf(media.getHeight()));
+  writeElement(writer,FIELD_NAME_FORMAT,media.getFormat());
+  writeElement(writer,FIELD_NAME_DURATION,String.valueOf(media.getDuration()));
+  writeElement(writer,FIELD_NAME_SIZE,String.valueOf(media.getSize()));
+  writeElement(writer,FIELD_NAME_BITRATE,String.valueOf(media.getBitrate()));
+  for (  String person : media.getPersons()) {
+    writeElement(writer,FIELD_NAME_PERSONS,person);
+  }
+  writer.writeEndElement();
+}

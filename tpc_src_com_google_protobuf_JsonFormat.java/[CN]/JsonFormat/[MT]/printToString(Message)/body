@@ -1,0 +1,10 @@
+{
+  try {
+    StringBuilder text=new StringBuilder();
+    print(message,text);
+    return text.toString();
+  }
+ catch (  IOException e) {
+    throw new RuntimeException("Writing to a StringBuilder threw an IOException (should never " + "happen).",e);
+  }
+}

@@ -1,0 +1,12 @@
+{
+switch (_field) {
+case 0:
+    image=(GenericArray<Image>)_value;
+  break;
+case 1:
+media=(Media)_value;
+break;
+default :
+throw new AvroRuntimeException("Bad index");
+}
+}

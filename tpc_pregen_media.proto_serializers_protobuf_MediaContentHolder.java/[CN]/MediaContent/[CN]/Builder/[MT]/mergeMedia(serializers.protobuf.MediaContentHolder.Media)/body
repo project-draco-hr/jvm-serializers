@@ -1,0 +1,10 @@
+{
+  if (result.hasMedia() && result.media_ != serializers.protobuf.MediaContentHolder.Media.getDefaultInstance()) {
+    result.media_=serializers.protobuf.MediaContentHolder.Media.newBuilder(result.media_).mergeFrom(value).buildPartial();
+  }
+ else {
+    result.media_=value;
+  }
+  result.hasMedia=true;
+  return this;
+}

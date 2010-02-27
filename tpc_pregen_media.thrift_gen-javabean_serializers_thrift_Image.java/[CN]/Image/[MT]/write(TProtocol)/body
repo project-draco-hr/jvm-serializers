@@ -1,0 +1,35 @@
+{
+  validate();
+  oprot.writeStructBegin(STRUCT_DESC);
+  if (this.uri != null) {
+    oprot.writeFieldBegin(URI_FIELD_DESC);
+    oprot.writeString(this.uri);
+    oprot.writeFieldEnd();
+  }
+  if (this.title != null) {
+    if (isSetTitle()) {
+      oprot.writeFieldBegin(TITLE_FIELD_DESC);
+      oprot.writeString(this.title);
+      oprot.writeFieldEnd();
+    }
+  }
+  if (isSetWidth()) {
+    oprot.writeFieldBegin(WIDTH_FIELD_DESC);
+    oprot.writeI32(this.width);
+    oprot.writeFieldEnd();
+  }
+  if (isSetHeight()) {
+    oprot.writeFieldBegin(HEIGHT_FIELD_DESC);
+    oprot.writeI32(this.height);
+    oprot.writeFieldEnd();
+  }
+  if (this.size != null) {
+    if (isSetSize()) {
+      oprot.writeFieldBegin(SIZE_FIELD_DESC);
+      oprot.writeI32(this.size.getValue());
+      oprot.writeFieldEnd();
+    }
+  }
+  oprot.writeFieldStop();
+  oprot.writeStructEnd();
+}

@@ -1,0 +1,9 @@
+{
+  if (currentToken.equals(token)) {
+    nextToken();
+    return true;
+  }
+ else {
+    return false;
+  }
+}

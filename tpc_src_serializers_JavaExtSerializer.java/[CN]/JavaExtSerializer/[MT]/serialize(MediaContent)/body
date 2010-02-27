@@ -1,0 +1,10 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream(expectedSize);
+  ObjectOutput oos=new ExternalizableObjectOutput(baos);
+  oos.writeBoolean(content != null);
+  if (content != null)   content.writeExternal(oos);
+  oos.close();
+  byte[] array=baos.toByteArray();
+  expectedSize=array.length;
+  return array;
+}

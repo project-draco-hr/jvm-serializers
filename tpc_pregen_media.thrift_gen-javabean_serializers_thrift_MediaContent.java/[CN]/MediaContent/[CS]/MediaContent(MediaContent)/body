@@ -1,0 +1,12 @@
+{
+  if (other.isSetImage()) {
+    List<Image> __this__image=new ArrayList<Image>();
+    for (    Image other_element : other.image) {
+      __this__image.add(new Image(other_element));
+    }
+    this.image=__this__image;
+  }
+  if (other.isSetMedia()) {
+    this.media=new Media(other.media);
+  }
+}

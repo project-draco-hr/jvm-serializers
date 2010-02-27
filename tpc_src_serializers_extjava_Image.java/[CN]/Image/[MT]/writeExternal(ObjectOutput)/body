@@ -1,0 +1,7 @@
+{
+  ExternalizationHelper.writeString(out,_title);
+  ExternalizationHelper.writeString(out,_uri);
+  out.writeInt(_width);
+  out.writeInt(_height);
+  out.writeByte(_size.ordinal());
+}

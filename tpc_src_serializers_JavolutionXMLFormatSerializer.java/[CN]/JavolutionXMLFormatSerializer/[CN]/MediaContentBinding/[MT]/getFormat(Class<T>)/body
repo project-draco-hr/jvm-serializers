@@ -1,0 +1,6 @@
+{
+  if (MediaContent.class.equals(cls))   return (XMLFormat<T>)_mediaContentCnv;
+  if (Media.class.equals(cls))   return (XMLFormat<T>)_mediaCnv;
+  if (Image.class.equals(cls))   return (XMLFormat<T>)_imageCnv;
+  return super.getFormat(cls);
+}

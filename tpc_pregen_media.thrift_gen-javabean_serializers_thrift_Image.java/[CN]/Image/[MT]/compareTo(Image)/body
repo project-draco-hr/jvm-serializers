@@ -1,0 +1,48 @@
+{
+  if (!getClass().equals(other.getClass())) {
+    return getClass().getName().compareTo(other.getClass().getName());
+  }
+  int lastComparison=0;
+  Image typedOther=(Image)other;
+  lastComparison=Boolean.valueOf(isSetUri()).compareTo(isSetUri());
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=TBaseHelper.compareTo(uri,typedOther.uri);
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=Boolean.valueOf(isSetTitle()).compareTo(isSetTitle());
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=TBaseHelper.compareTo(title,typedOther.title);
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=Boolean.valueOf(isSetWidth()).compareTo(isSetWidth());
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=TBaseHelper.compareTo(width,typedOther.width);
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=Boolean.valueOf(isSetHeight()).compareTo(isSetHeight());
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=TBaseHelper.compareTo(height,typedOther.height);
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=Boolean.valueOf(isSetSize()).compareTo(isSetSize());
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=TBaseHelper.compareTo(size,typedOther.size);
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  return 0;
+}

@@ -1,0 +1,37 @@
+{
+  getSerializedSize();
+  if (hasUri()) {
+    output.writeString(1,getUri());
+  }
+  if (hasTitle()) {
+    output.writeString(2,getTitle());
+  }
+  if (hasWidth()) {
+    output.writeInt32(3,getWidth());
+  }
+  if (hasHeight()) {
+    output.writeInt32(4,getHeight());
+  }
+  if (hasFormat()) {
+    output.writeString(5,getFormat());
+  }
+  if (hasDuration()) {
+    output.writeInt64(6,getDuration());
+  }
+  if (hasSize()) {
+    output.writeInt64(7,getSize());
+  }
+  if (hasBitrate()) {
+    output.writeInt32(8,getBitrate());
+  }
+  for (  java.lang.String element : getPersonList()) {
+    output.writeString(9,element);
+  }
+  if (hasPlayer()) {
+    output.writeEnum(10,getPlayer().getNumber());
+  }
+  if (hasCopyright()) {
+    output.writeString(11,getCopyright());
+  }
+  getUnknownFields().writeTo(output);
+}

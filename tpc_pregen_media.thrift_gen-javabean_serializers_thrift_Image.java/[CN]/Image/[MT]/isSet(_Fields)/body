@@ -1,0 +1,15 @@
+{
+switch (field) {
+case URI:
+    return isSetUri();
+case TITLE:
+  return isSetTitle();
+case WIDTH:
+return isSetWidth();
+case HEIGHT:
+return isSetHeight();
+case SIZE:
+return isSetSize();
+}
+throw new IllegalStateException();
+}

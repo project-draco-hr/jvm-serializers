@@ -1,0 +1,5 @@
+{
+  this.width=width;
+  setWidthIsSet(true);
+  return this;
+}

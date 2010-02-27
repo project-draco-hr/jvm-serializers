@@ -1,0 +1,8 @@
+{
+switch (value) {
+case 0:
+    return JAVA;
+default :
+  return null;
+}
+}

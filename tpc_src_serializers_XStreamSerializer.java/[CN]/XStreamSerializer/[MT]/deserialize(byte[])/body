@@ -1,0 +1,3 @@
+{
+  return (MediaContent)xstream.fromXML(new ByteArrayInputStream(array));
+}

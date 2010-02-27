@@ -1,0 +1,5 @@
+{
+  result.hasDuration=true;
+  result.duration_=value;
+  return this;
+}

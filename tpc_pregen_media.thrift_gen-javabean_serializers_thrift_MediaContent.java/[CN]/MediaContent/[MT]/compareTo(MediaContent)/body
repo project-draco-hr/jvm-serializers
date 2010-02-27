@@ -1,0 +1,24 @@
+{
+  if (!getClass().equals(other.getClass())) {
+    return getClass().getName().compareTo(other.getClass().getName());
+  }
+  int lastComparison=0;
+  MediaContent typedOther=(MediaContent)other;
+  lastComparison=Boolean.valueOf(isSetImage()).compareTo(isSetImage());
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=TBaseHelper.compareTo(image,typedOther.image);
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=Boolean.valueOf(isSetMedia()).compareTo(isSetMedia());
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  lastComparison=TBaseHelper.compareTo(media,typedOther.media);
+  if (lastComparison != 0) {
+    return lastComparison;
+  }
+  return 0;
+}

@@ -1,0 +1,14 @@
+{
+  try {
+    org.apache.activemq.protobuf.CodedInputStream input=new org.apache.activemq.protobuf.CodedInputStream(data);
+    ImageBuffer rc=parseFramed(input);
+    input.checkLastTagWas(0);
+    return rc;
+  }
+ catch (  org.apache.activemq.protobuf.InvalidProtocolBufferException e) {
+    throw e;
+  }
+catch (  java.io.IOException e) {
+    throw new RuntimeException("An IOException was thrown (should never happen in this method).",e);
+  }
+}

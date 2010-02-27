@@ -1,0 +1,27 @@
+{
+  if (this == obj)   return true;
+  if (obj == null)   return false;
+  if (getClass() != obj.getClass())   return false;
+  Image other=(Image)obj;
+  if (height == null) {
+    if (other.height != null)     return false;
+  }
+ else   if (!height.equals(other.height))   return false;
+  if (size == null) {
+    if (other.size != null)     return false;
+  }
+ else   if (!size.equals(other.size))   return false;
+  if (title == null) {
+    if (other.title != null)     return false;
+  }
+ else   if (!title.equals(other.title))   return false;
+  if (uri == null) {
+    if (other.uri != null)     return false;
+  }
+ else   if (!uri.equals(other.uri))   return false;
+  if (width == null) {
+    if (other.width != null)     return false;
+  }
+ else   if (!width.equals(other.width))   return false;
+  return true;
+}

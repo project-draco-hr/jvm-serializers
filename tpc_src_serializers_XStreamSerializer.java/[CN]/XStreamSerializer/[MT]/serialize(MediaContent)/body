@@ -1,0 +1,7 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream(expectedSize);
+  xstream.toXML(content,baos);
+  byte[] array=baos.toByteArray();
+  expectedSize=array.length;
+  return array;
+}

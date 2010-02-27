@@ -1,0 +1,10 @@
+{
+switch (_field) {
+case 0:
+    return image;
+case 1:
+  return media;
+default :
+throw new AvroRuntimeException("Bad index");
+}
+}

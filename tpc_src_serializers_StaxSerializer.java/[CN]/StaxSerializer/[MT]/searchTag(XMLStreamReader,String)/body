@@ -1,0 +1,7 @@
+{
+  while (true) {
+    if (parser.nextTag() == XMLStreamConstants.START_ELEMENT && parser.getLocalName().equals(string)) {
+      return;
+    }
+  }
+}

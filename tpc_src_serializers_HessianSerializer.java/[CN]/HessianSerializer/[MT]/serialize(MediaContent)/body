@@ -1,0 +1,7 @@
+{
+  out.reset();
+  Hessian2StreamingOutput hout=new Hessian2StreamingOutput(out);
+  hout.writeObject(content);
+  byte[] array=out.toByteArray();
+  return array;
+}

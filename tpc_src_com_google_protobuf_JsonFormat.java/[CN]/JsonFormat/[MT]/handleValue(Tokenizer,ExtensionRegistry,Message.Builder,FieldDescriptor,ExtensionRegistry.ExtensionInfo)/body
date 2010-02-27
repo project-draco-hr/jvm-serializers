@@ -1,0 +1,15 @@
+{
+  Object value=null;
+  if (field.getJavaType() == FieldDescriptor.JavaType.MESSAGE) {
+    value=handleObject(tokenizer,extensionRegistry,builder,field,extension);
+  }
+ else {
+    value=handlePrimitive(tokenizer,field);
+  }
+  if (field.isRepeated()) {
+    builder.addRepeatedField(field,value);
+  }
+ else {
+    builder.setField(field,value);
+  }
+}

@@ -1,0 +1,27 @@
+{
+switch (field) {
+case URI:
+    return getUri();
+case TITLE:
+  return getTitle();
+case WIDTH:
+return new Integer(getWidth());
+case HEIGHT:
+return new Integer(getHeight());
+case FORMAT:
+return getFormat();
+case DURATION:
+return new Long(getDuration());
+case SIZE:
+return new Long(getSize());
+case BITRATE:
+return new Integer(getBitrate());
+case PERSON:
+return getPerson();
+case PLAYER:
+return getPlayer();
+case COPYRIGHT:
+return getCopyright();
+}
+throw new IllegalStateException();
+}

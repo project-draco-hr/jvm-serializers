@@ -1,0 +1,44 @@
+{
+switch (field) {
+case URI:
+    if (value == null) {
+      unsetUri();
+    }
+ else {
+      setUri((String)value);
+    }
+  break;
+case TITLE:
+if (value == null) {
+  unsetTitle();
+}
+ else {
+  setTitle((String)value);
+}
+break;
+case WIDTH:
+if (value == null) {
+unsetWidth();
+}
+ else {
+setWidth((Integer)value);
+}
+break;
+case HEIGHT:
+if (value == null) {
+unsetHeight();
+}
+ else {
+setHeight((Integer)value);
+}
+break;
+case SIZE:
+if (value == null) {
+unsetSize();
+}
+ else {
+setSize((Size)value);
+}
+break;
+}
+}

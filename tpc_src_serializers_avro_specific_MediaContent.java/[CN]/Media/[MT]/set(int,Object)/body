@@ -1,0 +1,39 @@
+{
+switch (_field) {
+case 0:
+    uri=(Utf8)_value;
+  break;
+case 1:
+title=(Utf8)_value;
+break;
+case 2:
+width=(Integer)_value;
+break;
+case 3:
+height=(Integer)_value;
+break;
+case 4:
+format=(Utf8)_value;
+break;
+case 5:
+duration=(Long)_value;
+break;
+case 6:
+size=(Long)_value;
+break;
+case 7:
+bitrate=(Integer)_value;
+break;
+case 8:
+person=(GenericArray<Utf8>)_value;
+break;
+case 9:
+player=(Integer)_value;
+break;
+case 10:
+copyright=(Utf8)_value;
+break;
+default :
+throw new AvroRuntimeException("Bad index");
+}
+}

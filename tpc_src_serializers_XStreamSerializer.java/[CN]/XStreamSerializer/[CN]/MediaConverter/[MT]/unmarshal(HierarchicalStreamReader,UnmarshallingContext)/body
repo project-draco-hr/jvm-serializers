@@ -1,0 +1,18 @@
+{
+  Media media=new Media();
+  media.setPlayer(Player.values()[Integer.valueOf(reader.getAttribute("pl"))]);
+  media.setUri(reader.getAttribute("ul"));
+  media.setTitle(reader.getAttribute("tl"));
+  media.setWidth(Integer.valueOf(reader.getAttribute("wd")));
+  media.setHeight(Integer.valueOf(reader.getAttribute("hg")));
+  media.setFormat(reader.getAttribute("fr"));
+  media.setDuration(Long.valueOf(reader.getAttribute("dr")));
+  media.setSize(Long.valueOf(reader.getAttribute("sz")));
+  media.setBitrate(Integer.valueOf(reader.getAttribute("br")));
+  while (reader.hasMoreChildren()) {
+    reader.moveDown();
+    media.addToPerson(reader.getValue());
+    reader.moveUp();
+  }
+  return media;
+}

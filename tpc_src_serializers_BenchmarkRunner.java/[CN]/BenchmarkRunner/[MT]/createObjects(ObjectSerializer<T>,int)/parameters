@@ -1,0 +1,2 @@
+ObjectSerializer<T> serializer
+int iterations

@@ -1,0 +1,11 @@
+{
+  byte[] array=serializer.serialize(serializer.create());
+  long delta=0;
+  for (int i=0; i < iterations; i++) {
+    long start=System.nanoTime();
+    T obj=serializer.deserialize(array);
+    serializer.checkAllFields(obj);
+    delta+=System.nanoTime() - start;
+  }
+  return iterationTime(delta,iterations);
+}

@@ -1,0 +1,47 @@
+{
+  if (field.isExtension()) {
+    generator.print("[");
+    generator.print("\"");
+    if (field.getContainingType().getOptions().getMessageSetWireFormat() && (field.getType() == FieldDescriptor.Type.MESSAGE) && (field.isOptional())&& (field.getExtensionScope() == field.getMessageType())) {
+      generator.print(field.getMessageType().getFullName());
+    }
+ else {
+      generator.print(field.getFullName());
+    }
+    generator.print("\"");
+    generator.print("]");
+  }
+ else {
+    generator.print("\"");
+    if (field.getType() == FieldDescriptor.Type.GROUP) {
+      generator.print(field.getMessageType().getName());
+    }
+ else {
+      generator.print(field.getName());
+    }
+    generator.print("\"");
+  }
+  if (field.getJavaType() == FieldDescriptor.JavaType.MESSAGE) {
+    generator.print(": ");
+    generator.indent();
+  }
+ else {
+    generator.print(": ");
+  }
+  if (field.isRepeated()) {
+    generator.print("[");
+    for (Iterator iter=((List)value).iterator(); iter.hasNext(); ) {
+      printFieldValue(field,iter.next(),generator);
+      if (iter.hasNext()) {
+        generator.print(",");
+      }
+    }
+    generator.print("]");
+  }
+ else {
+    printFieldValue(field,value,generator);
+    if (field.getJavaType() == FieldDescriptor.JavaType.MESSAGE) {
+      generator.outdent();
+    }
+  }
+}

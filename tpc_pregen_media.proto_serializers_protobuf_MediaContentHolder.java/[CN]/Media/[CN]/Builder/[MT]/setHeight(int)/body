@@ -1,0 +1,5 @@
+{
+  result.hasHeight=true;
+  result.height_=value;
+  return this;
+}

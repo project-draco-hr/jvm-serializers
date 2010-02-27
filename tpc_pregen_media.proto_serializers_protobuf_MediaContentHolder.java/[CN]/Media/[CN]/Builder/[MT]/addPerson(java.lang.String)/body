@@ -1,0 +1,10 @@
+{
+  if (value == null) {
+    throw new NullPointerException();
+  }
+  if (result.person_.isEmpty()) {
+    result.person_=new java.util.ArrayList<java.lang.String>();
+  }
+  result.person_.add(value);
+  return this;
+}

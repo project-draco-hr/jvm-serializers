@@ -1,0 +1,9 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream(expectedSize);
+  JsonGenerator generator=constructGenerator(baos);
+  writeMediaContent(generator,content);
+  generator.close();
+  byte[] array=baos.toByteArray();
+  expectedSize=array.length;
+  return array;
+}

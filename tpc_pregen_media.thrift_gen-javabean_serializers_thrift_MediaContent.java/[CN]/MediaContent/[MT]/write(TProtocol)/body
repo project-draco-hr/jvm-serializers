@@ -1,0 +1,26 @@
+{
+  validate();
+  oprot.writeStructBegin(STRUCT_DESC);
+  if (this.image != null) {
+    if (isSetImage()) {
+      oprot.writeFieldBegin(IMAGE_FIELD_DESC);
+{
+        oprot.writeListBegin(new TList(TType.STRUCT,this.image.size()));
+        for (        Image _iter7 : this.image) {
+          _iter7.write(oprot);
+        }
+        oprot.writeListEnd();
+      }
+      oprot.writeFieldEnd();
+    }
+  }
+  if (this.media != null) {
+    if (isSetMedia()) {
+      oprot.writeFieldBegin(MEDIA_FIELD_DESC);
+      this.media.write(oprot);
+      oprot.writeFieldEnd();
+    }
+  }
+  oprot.writeFieldStop();
+  oprot.writeStructEnd();
+}
