@@ -2,7 +2,9 @@
 switch (value) {
 case 0:
     return JAVA;
+case 1:
+  return FLASH;
 default :
-  return null;
+return null;
 }
 }
