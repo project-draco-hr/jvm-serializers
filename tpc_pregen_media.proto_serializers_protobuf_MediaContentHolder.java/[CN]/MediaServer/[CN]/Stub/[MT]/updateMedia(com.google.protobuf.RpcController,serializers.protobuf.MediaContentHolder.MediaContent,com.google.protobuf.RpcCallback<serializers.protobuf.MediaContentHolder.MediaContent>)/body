@@ -1,3 +1,0 @@
-{
-  channel.callMethod(getDescriptor().getMethods().get(0),controller,request,serializers.protobuf.MediaContentHolder.MediaContent.getDefaultInstance(),com.google.protobuf.RpcUtil.generalizeCallback(done,serializers.protobuf.MediaContentHolder.MediaContent.class,serializers.protobuf.MediaContentHolder.MediaContent.getDefaultInstance()));
-}

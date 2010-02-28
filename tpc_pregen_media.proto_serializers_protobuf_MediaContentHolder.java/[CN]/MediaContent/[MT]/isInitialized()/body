@@ -1,9 +1,0 @@
-{
-  for (  serializers.protobuf.MediaContentHolder.Image element : getImageList()) {
-    if (!element.isInitialized())     return false;
-  }
-  if (hasMedia()) {
-    if (!getMedia().isInitialized())     return false;
-  }
-  return true;
-}

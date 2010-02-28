@@ -1,0 +1,37 @@
+{
+  if (this == obj)   return true;
+  if (obj == null)   return false;
+  if (getClass() != obj.getClass())   return false;
+  Media other=(Media)obj;
+  if (hasBitrate != other.hasBitrate)   return false;
+  if (hasBitrate && (bitrate != other.bitrate))   return false;
+  if (copyright == null) {
+    if (other.copyright != null)     return false;
+  }
+ else   if (!copyright.equals(other.copyright))   return false;
+  if (duration != other.duration)   return false;
+  if (format == null) {
+    if (other.format != null)     return false;
+  }
+ else   if (!format.equals(other.format))   return false;
+  if (height != other.height)   return false;
+  if (persons == null) {
+    if (other.persons != null)     return false;
+  }
+ else   if (!persons.equals(other.persons))   return false;
+  if (player == null) {
+    if (other.player != null)     return false;
+  }
+ else   if (!player.equals(other.player))   return false;
+  if (size != other.size)   return false;
+  if (title == null) {
+    if (other.title != null)     return false;
+  }
+ else   if (!title.equals(other.title))   return false;
+  if (uri == null) {
+    if (other.uri != null)     return false;
+  }
+ else   if (!uri.equals(other.uri))   return false;
+  if (width != other.width)   return false;
+  return true;
+}

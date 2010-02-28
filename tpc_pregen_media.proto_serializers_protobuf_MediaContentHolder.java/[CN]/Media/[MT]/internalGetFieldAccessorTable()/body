@@ -1,3 +1,0 @@
-{
-  return serializers.protobuf.MediaContentHolder.internal_static_serializers_protobuf_Media_fieldAccessorTable;
-}

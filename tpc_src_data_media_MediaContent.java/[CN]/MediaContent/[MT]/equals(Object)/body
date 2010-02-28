@@ -1,0 +1,15 @@
+{
+  if (this == obj)   return true;
+  if (obj == null)   return false;
+  if (getClass() != obj.getClass())   return false;
+  MediaContent other=(MediaContent)obj;
+  if (images == null) {
+    if (other.images != null)     return false;
+  }
+ else   if (!images.equals(other.images))   return false;
+  if (media == null) {
+    if (other.media != null)     return false;
+  }
+ else   if (!media.equals(other.media))   return false;
+  return true;
+}

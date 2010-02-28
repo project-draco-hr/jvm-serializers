@@ -1,3 +1,0 @@
-{
-  return JsonFormat.printToString(content).getBytes(_charset.name());
-}

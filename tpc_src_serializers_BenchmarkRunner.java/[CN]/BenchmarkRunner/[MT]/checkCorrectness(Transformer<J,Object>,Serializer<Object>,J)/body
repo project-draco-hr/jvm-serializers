@@ -1,0 +1,10 @@
+{
+  Object specialInput=transformer.forward(value);
+  byte[] array=serializer.serialize(specialInput);
+  Object specialOutput=serializer.deserialize(array);
+  J output=transformer.reverse(specialOutput);
+  if (!value.equals(output)) {
+    String msg="serializer '" + serializer.getName() + "' failed round-trip test (ser+deser produces Object different from input), input="+ value+ ", output="+ output;
+    System.err.println("WARN: " + msg);
+  }
+}

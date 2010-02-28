@@ -1,3 +1,0 @@
-{
-  return serializers.protobuf.MediaContentHolder.getDescriptor().getServices().get(0);
-}

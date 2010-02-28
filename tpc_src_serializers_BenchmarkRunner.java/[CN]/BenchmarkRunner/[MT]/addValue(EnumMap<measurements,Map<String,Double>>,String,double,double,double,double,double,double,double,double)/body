@@ -3,8 +3,8 @@
     values.get(measurements.timeSerializeDifferentObjects).put(name,timeSerializeDifferentObjects);
     values.get(measurements.timeSerializeSameObject).put(name,timeSerializeSameObject);
     values.get(measurements.timeDeserializeNoFieldAccess).put(name,timeDeserializeNoFieldAccess);
-    values.get(measurements.timeDeserializeAndCheckMediaField).put(name,timeDeserializeAndCheckMediaField);
-    values.get(measurements.timeDeserializeAndCheckAllFields).put(name,timeDeserializeAndCheckAllFields);
+    values.get(measurements.timeDeserializeAndCheckShallow).put(name,timeDeserializeAndCheckShallow);
+    values.get(measurements.timeDeserializeAndCheck).put(name,timeDeserializeAndCheck);
     values.get(measurements.totalTime).put(name,totalTime);
   }
   values.get(measurements.length).put(name,length);

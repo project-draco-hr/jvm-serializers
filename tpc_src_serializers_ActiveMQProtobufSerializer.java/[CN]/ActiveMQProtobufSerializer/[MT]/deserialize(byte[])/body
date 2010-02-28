@@ -1,3 +1,0 @@
-{
-  return MediaContentBuffer.parseUnframed(array);
-}

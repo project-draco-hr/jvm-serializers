@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") Transformer<T,T> t=(Transformer<T,T>)Identity;
+  return t;
+}

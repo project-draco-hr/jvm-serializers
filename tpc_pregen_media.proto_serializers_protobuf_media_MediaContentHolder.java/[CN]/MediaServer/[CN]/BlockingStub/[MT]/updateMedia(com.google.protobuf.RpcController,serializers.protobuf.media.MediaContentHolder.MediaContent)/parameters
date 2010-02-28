@@ -1,0 +1,2 @@
+com.google.protobuf.RpcController controller
+serializers.protobuf.media.MediaContentHolder.MediaContent request

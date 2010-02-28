@@ -1,0 +1,207 @@
+{
+  Boolean filterIsInclude=null;
+  Set<String> filterStrings=null;
+  Integer iterations=null;
+  Integer trials=null;
+  Long warmupTime=null;
+  boolean printChart=false;
+  for (  String arg : args) {
+    String remainder;
+    if (arg.startsWith("--")) {
+      remainder=arg.substring(2);
+    }
+ else     if (arg.startsWith("-")) {
+      remainder=arg.substring(1);
+    }
+ else {
+      System.err.println("Invalid argument \"" + arg + "\".");
+      System.err.println("Expecting \"-option\" or \"-option=value\".");
+      System.exit(1);
+      return;
+    }
+    String option, value;
+    int eqPos=remainder.indexOf('=');
+    if (eqPos >= 0) {
+      option=remainder.substring(0,eqPos);
+      value=remainder.substring(eqPos + 1);
+    }
+ else {
+      option=remainder;
+      value=null;
+    }
+    if (option.equals("include")) {
+      if (value == null) {
+        System.err.println("The \"include\" option requires a value.");
+        System.exit(1);
+        return;
+      }
+      if (filterIsInclude == null) {
+        filterIsInclude=true;
+        filterStrings=new HashSet<String>(Arrays.asList(value.split(",")));
+      }
+ else       if (filterIsInclude) {
+        System.err.println("Repeated option: \"" + arg + "\"");
+        System.exit(1);
+        return;
+      }
+ else {
+        System.err.println("Can't use 'include' and 'exclude' options at the same time.");
+        System.exit(1);
+        return;
+      }
+    }
+ else     if (option.equals("exclude")) {
+      if (value == null) {
+        System.err.println("The \"exclude\" option requires a value.");
+        System.exit(1);
+        return;
+      }
+      if (filterIsInclude == null) {
+        filterIsInclude=false;
+        filterStrings=new HashSet<String>(Arrays.asList(value.split(",")));
+      }
+ else       if (!filterIsInclude) {
+        System.err.println("Repeated option: \"" + arg + "\"");
+        System.exit(1);
+        return;
+      }
+ else {
+        System.err.println("Can't use 'include' and 'exclude' options at the same time.");
+        System.exit(1);
+        return;
+      }
+    }
+ else     if (option.equals("iterations")) {
+      if (value == null) {
+        System.err.println("The \"iterations\" option requires a value.");
+        System.exit(1);
+        return;
+      }
+      if (iterations != null) {
+        System.err.println("Repeated \"iterations\" option: \"" + arg + "\"");
+        System.exit(1);
+        return;
+      }
+      try {
+        iterations=Integer.parseInt(value);
+      }
+ catch (      NumberFormatException ex) {
+        System.err.println("Invalid value for \"iterations\" option: \"" + value + "\"");
+        System.exit(1);
+        return;
+      }
+      if (iterations < 1) {
+        System.err.println("Invalid value for \"iterations\" option: \"" + value + "\"");
+        System.exit(1);
+        return;
+      }
+    }
+ else     if (option.equals("trials")) {
+      if (value == null) {
+        System.err.println("The \"trials\" option requires a value.");
+        System.exit(1);
+        return;
+      }
+      if (trials != null) {
+        System.err.println("Repeated \"trials\" option: \"" + arg + "\"");
+        System.exit(1);
+        return;
+      }
+      try {
+        trials=Integer.parseInt(value);
+      }
+ catch (      NumberFormatException ex) {
+        System.err.println("Invalid value for \"trials\" option: \"" + value + "\"");
+        System.exit(1);
+        return;
+      }
+      if (trials < 1) {
+        System.err.println("Invalid value for \"trials\" option: \"" + value + "\"");
+        System.exit(1);
+        return;
+      }
+    }
+ else     if (option.equals("warmup-time")) {
+      if (value == null) {
+        System.err.println("The \"warmup-time\" option requires a value.");
+        System.exit(1);
+        return;
+      }
+      if (warmupTime != null) {
+        System.err.println("Repeated \"warmup-time\" option: \"" + arg + "\"");
+        System.exit(1);
+        return;
+      }
+      try {
+        warmupTime=Long.parseLong(value);
+      }
+ catch (      NumberFormatException ex) {
+        System.err.println("Invalid value for \"warmup-time\" option: \"" + value + "\"");
+        System.exit(1);
+        return;
+      }
+      if (warmupTime < 0) {
+        System.err.println("Invalid value for \"warmup-time\" option: \"" + value + "\"");
+        System.exit(1);
+        return;
+      }
+    }
+ else     if (option.equals("chart")) {
+      if (value != null) {
+        System.err.println("The \"chart\" option does not take a value: \"" + arg + "\"");
+        System.exit(1);
+        return;
+      }
+      if (printChart) {
+        System.err.println("Dupliate \"warmup-time\" option: \"" + arg + "\"");
+        System.exit(1);
+        return;
+      }
+      printChart=true;
+    }
+ else     if (option.equals("help")) {
+      if (value != null) {
+        System.err.println("The \"help\" option does not take a value: \"" + arg + "\"");
+        System.exit(1);
+        return;
+      }
+      if (args.length != 1) {
+        System.err.println("The \"help\" option cannot be combined with any other option.");
+        System.exit(1);
+        return;
+      }
+      System.out.println();
+      System.out.println("Usage: COMMAND [options]");
+      System.out.println();
+      System.out.println("  -include=impl1,impl2,impl3,...");
+      System.out.println("  -exclude=impl1,impl2,impl3,...");
+      System.out.println("  -iterations=num [default=" + DEFAULT_ITERATIONS + "]");
+      System.out.println("  -trials=num  [default=" + DEFAULT_TRIALS + "]");
+      System.out.println("  -warmup-time=milliseconds  [default=" + DEFAULT_WARMUP_MSECS + "]");
+      System.out.println("  -chart");
+      System.out.println("  -help");
+      System.out.println();
+      System.exit(0);
+      return;
+    }
+ else {
+      System.err.println("Unknown option \"" + option + "\": \""+ arg+ "\"");
+      System.err.println("Use \"-help\" for usage information.");
+      System.exit(1);
+      return;
+    }
+  }
+  if (iterations == null)   iterations=DEFAULT_ITERATIONS;
+  if (trials == null)   trials=DEFAULT_TRIALS;
+  if (warmupTime == null)   warmupTime=DEFAULT_WARMUP_MSECS;
+  TestGroups groups=new TestGroups();
+  Protobuf.register(groups);
+  Thrift.register(groups);
+  ProtobufJson.register(groups);
+  ProtostuffJson.register(groups);
+  ActiveMQProtobuf.register(groups);
+  EnumMap<measurements,Map<String,Double>> values=start(filterIsInclude,filterStrings,iterations,trials,warmupTime,groups.media,data.media.TestValues.v1);
+  if (printChart) {
+    printImages(values);
+  }
+}

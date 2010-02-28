@@ -1,8 +1,0 @@
-{
-  ByteArrayInputStream bais=new ByteArrayInputStream(array);
-  TIOStreamTransport trans=new TIOStreamTransport(bais);
-  TBinaryProtocol oprot=new TBinaryProtocol(trans);
-  MediaContent content=new MediaContent();
-  content.read(oprot);
-  return content;
-}

@@ -1,9 +1,0 @@
-{
-  ByteArrayOutputStream baos=new ByteArrayOutputStream(expectedSize);
-  TIOStreamTransport trans=new TIOStreamTransport(baos);
-  TBinaryProtocol oprot=new TBinaryProtocol(trans);
-  content.write(oprot);
-  byte[] array=baos.toByteArray();
-  expectedSize=array.length;
-  return array;
-}

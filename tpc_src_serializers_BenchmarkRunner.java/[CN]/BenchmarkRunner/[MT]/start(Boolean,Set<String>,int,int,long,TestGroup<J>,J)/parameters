@@ -1,0 +1,7 @@
+Boolean filterIsInclude
+Set<String> filterStrings
+int iterations
+int trials
+long warmupTime
+TestGroup<J> group
+J value

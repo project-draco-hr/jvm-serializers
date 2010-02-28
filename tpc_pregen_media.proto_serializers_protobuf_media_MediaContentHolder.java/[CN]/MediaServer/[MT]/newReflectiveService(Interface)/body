@@ -1,0 +1,8 @@
+{
+  return new MediaServer(){
+    @Override public void updateMedia(    com.google.protobuf.RpcController controller,    serializers.protobuf.media.MediaContentHolder.MediaContent request,    com.google.protobuf.RpcCallback<serializers.protobuf.media.MediaContentHolder.MediaContent> done){
+      impl.updateMedia(controller,request,done);
+    }
+  }
+;
+}

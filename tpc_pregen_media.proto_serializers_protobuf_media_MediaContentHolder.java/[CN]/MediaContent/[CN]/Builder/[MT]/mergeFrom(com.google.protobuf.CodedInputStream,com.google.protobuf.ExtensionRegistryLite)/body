@@ -1,0 +1,36 @@
+{
+  com.google.protobuf.UnknownFieldSet.Builder unknownFields=com.google.protobuf.UnknownFieldSet.newBuilder(this.getUnknownFields());
+  while (true) {
+    int tag=input.readTag();
+switch (tag) {
+case 0:
+      this.setUnknownFields(unknownFields.build());
+    return this;
+default :
+{
+    if (!parseUnknownField(input,unknownFields,extensionRegistry,tag)) {
+      this.setUnknownFields(unknownFields.build());
+      return this;
+    }
+    break;
+  }
+case 10:
+{
+  serializers.protobuf.media.MediaContentHolder.Image.Builder subBuilder=serializers.protobuf.media.MediaContentHolder.Image.newBuilder();
+  input.readMessage(subBuilder,extensionRegistry);
+  addImage(subBuilder.buildPartial());
+  break;
+}
+case 18:
+{
+serializers.protobuf.media.MediaContentHolder.Media.Builder subBuilder=serializers.protobuf.media.MediaContentHolder.Media.newBuilder();
+if (hasMedia()) {
+  subBuilder.mergeFrom(getMedia());
+}
+input.readMessage(subBuilder,extensionRegistry);
+setMedia(subBuilder.buildPartial());
+break;
+}
+}
+}
+}

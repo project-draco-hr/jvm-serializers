@@ -1,0 +1,4 @@
+Transformer<J,Object> transformer
+Serializer<Object> serializer
+J value
+int iterations

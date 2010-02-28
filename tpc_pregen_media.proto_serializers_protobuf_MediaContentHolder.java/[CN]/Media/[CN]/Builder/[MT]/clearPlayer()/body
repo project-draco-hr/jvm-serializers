@@ -1,5 +1,0 @@
-{
-  result.hasPlayer=false;
-  result.player_=serializers.protobuf.MediaContentHolder.Media.Player.JAVA;
-  return this;
-}

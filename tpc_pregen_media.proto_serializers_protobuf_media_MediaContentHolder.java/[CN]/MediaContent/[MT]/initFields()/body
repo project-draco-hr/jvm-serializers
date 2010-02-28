@@ -1,0 +1,3 @@
+{
+  media_=serializers.protobuf.media.MediaContentHolder.Media.getDefaultInstance();
+}

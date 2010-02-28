@@ -1,0 +1,9 @@
+{
+  if (other instanceof serializers.protobuf.media.MediaContentHolder.Image) {
+    return mergeFrom((serializers.protobuf.media.MediaContentHolder.Image)other);
+  }
+ else {
+    super.mergeFrom(other);
+    return this;
+  }
+}

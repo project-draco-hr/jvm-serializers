@@ -2,7 +2,7 @@
   StringBuilder valSb=new StringBuilder();
   String names="";
   double max=Double.MIN_NORMAL;
-  for (  Entry<String,Double> entry : map.entrySet()) {
+  for (  Map.Entry<String,Double> entry : map.entrySet()) {
     valSb.append(entry.getValue()).append(',');
     max=Math.max(max,entry.getValue());
     names=entry.getKey() + '|' + names;

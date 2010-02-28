@@ -4,7 +4,7 @@ double timeCreate
 double timeSerializeDifferentObjects
 double timeSerializeSameObject
 double timeDeserializeNoFieldAccess
-double timeDeserializeAndCheckMediaField
-double timeDeserializeAndCheckAllFields
+double timeDeserializeAndCheckShallow
+double timeDeserializeAndCheck
 double totalTime
 double length

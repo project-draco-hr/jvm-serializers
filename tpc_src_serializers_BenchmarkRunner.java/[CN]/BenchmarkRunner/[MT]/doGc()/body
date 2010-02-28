@@ -3,11 +3,13 @@
     Thread.sleep(50L);
   }
  catch (  InterruptedException ie) {
+    System.err.println("Interrupted while sleeping in serializers.BenchmarkRunner.doGc()");
   }
   System.gc();
   try {
     Thread.sleep(200L);
   }
  catch (  InterruptedException ie) {
+    System.err.println("Interrupted while sleeping in serializers.BenchmarkRunner.doGc()");
   }
 }

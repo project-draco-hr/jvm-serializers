@@ -1,0 +1,3 @@
+{
+  player_=serializers.protobuf.media.MediaContentHolder.Media.Player.JAVA;
+}

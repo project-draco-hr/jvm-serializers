@@ -1,0 +1,5 @@
+{
+  result.hasSize=false;
+  result.size_=serializers.protobuf.media.MediaContentHolder.Image.Size.SMALL;
+  return this;
+}

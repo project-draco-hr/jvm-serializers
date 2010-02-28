@@ -1,0 +1,14 @@
+{
+  if (other == serializers.protobuf.media.MediaContentHolder.MediaContent.getDefaultInstance())   return this;
+  if (!other.image_.isEmpty()) {
+    if (result.image_.isEmpty()) {
+      result.image_=new java.util.ArrayList<serializers.protobuf.media.MediaContentHolder.Image>();
+    }
+    result.image_.addAll(other.image_);
+  }
+  if (other.hasMedia()) {
+    mergeMedia(other.getMedia());
+  }
+  this.mergeUnknownFields(other.getUnknownFields());
+  return this;
+}

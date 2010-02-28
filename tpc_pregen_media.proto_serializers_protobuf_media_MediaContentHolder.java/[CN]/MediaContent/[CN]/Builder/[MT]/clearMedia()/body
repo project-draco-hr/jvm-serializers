@@ -1,0 +1,5 @@
+{
+  result.hasMedia=false;
+  result.media_=serializers.protobuf.media.MediaContentHolder.Media.getDefaultInstance();
+  return this;
+}

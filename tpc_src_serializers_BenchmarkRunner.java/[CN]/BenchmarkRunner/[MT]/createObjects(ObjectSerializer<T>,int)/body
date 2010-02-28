@@ -1,7 +1,0 @@
-{
-  long start=System.nanoTime();
-  for (int i=0; i < iterations; i++) {
-    serializer.create();
-  }
-  return iterationTime(System.nanoTime() - start,iterations);
-}

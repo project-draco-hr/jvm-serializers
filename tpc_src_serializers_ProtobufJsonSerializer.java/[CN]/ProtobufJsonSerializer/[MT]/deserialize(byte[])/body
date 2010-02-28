@@ -1,5 +1,0 @@
-{
-  MediaContentHolder.MediaContent.Builder builder=MediaContentHolder.MediaContent.newBuilder();
-  JsonFormat.merge(new String(array,_charset.name()),builder);
-  return builder.build();
-}

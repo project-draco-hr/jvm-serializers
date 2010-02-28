@@ -1,0 +1,3 @@
+{
+  size_=serializers.protobuf.media.MediaContentHolder.Image.Size.SMALL;
+}

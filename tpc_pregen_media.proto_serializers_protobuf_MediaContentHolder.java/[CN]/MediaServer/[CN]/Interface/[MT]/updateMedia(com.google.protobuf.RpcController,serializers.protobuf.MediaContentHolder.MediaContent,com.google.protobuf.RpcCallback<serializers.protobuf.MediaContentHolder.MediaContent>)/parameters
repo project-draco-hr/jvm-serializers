@@ -1,3 +1,0 @@
-com.google.protobuf.RpcController controller
-serializers.protobuf.MediaContentHolder.MediaContent request
-com.google.protobuf.RpcCallback<serializers.protobuf.MediaContentHolder.MediaContent> done

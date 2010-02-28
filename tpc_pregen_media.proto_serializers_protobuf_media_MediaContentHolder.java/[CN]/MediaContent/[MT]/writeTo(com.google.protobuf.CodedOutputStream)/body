@@ -1,0 +1,10 @@
+{
+  getSerializedSize();
+  for (  serializers.protobuf.media.MediaContentHolder.Image element : getImageList()) {
+    output.writeMessage(1,element);
+  }
+  if (hasMedia()) {
+    output.writeMessage(2,getMedia());
+  }
+  getUnknownFields().writeTo(output);
+}
