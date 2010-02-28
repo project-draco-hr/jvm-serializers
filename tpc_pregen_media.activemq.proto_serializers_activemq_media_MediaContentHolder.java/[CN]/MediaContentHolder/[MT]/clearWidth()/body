@@ -1,5 +1,0 @@
-{
-  copyCheck();
-  this.b_width=false;
-  this.f_width=0;
-}

@@ -1,6 +1,0 @@
-{
-  if (buffer != null) {
-    return buffer;
-  }
-  return org.apache.activemq.protobuf.MessageBufferSupport.toUnframedBuffer(this);
-}

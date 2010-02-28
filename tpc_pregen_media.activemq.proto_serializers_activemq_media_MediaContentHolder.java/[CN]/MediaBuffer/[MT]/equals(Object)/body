@@ -1,5 +1,0 @@
-{
-  if (obj == this)   return true;
-  if (obj == null || obj.getClass() != MediaBuffer.class)   return false;
-  return equals((MediaBuffer)obj);
-}

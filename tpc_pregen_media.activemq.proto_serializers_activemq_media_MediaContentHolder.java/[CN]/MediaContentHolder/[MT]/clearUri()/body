@@ -1,5 +1,0 @@
-{
-  copyCheck();
-  this.b_uri=false;
-  this.f_uri=null;
-}

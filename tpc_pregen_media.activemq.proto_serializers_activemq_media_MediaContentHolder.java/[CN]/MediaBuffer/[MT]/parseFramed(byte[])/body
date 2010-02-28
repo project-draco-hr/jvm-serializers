@@ -1,3 +1,0 @@
-{
-  return parseFramed(new org.apache.activemq.util.buffer.Buffer(data));
-}

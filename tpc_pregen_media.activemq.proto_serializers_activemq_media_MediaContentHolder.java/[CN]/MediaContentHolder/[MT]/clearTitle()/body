@@ -1,5 +1,0 @@
-{
-  copyCheck();
-  this.b_title=false;
-  this.f_title=null;
-}

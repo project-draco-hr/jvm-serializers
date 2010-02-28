@@ -1,3 +1,0 @@
-{
-  return org.apache.activemq.protobuf.MessageBufferSupport.toFramedBuffer(this);
-}

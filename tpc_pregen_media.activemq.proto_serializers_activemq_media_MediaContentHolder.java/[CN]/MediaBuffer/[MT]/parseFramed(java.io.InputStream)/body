@@ -1,3 +1,0 @@
-{
-  return parseUnframed(org.apache.activemq.protobuf.MessageBufferSupport.readFrame(data));
-}

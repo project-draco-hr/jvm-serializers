@@ -1,6 +1,0 @@
-{
-  if (hashCode == 0) {
-    hashCode=-937877157 ^ toUnframedBuffer().hashCode();
-  }
-  return hashCode;
-}

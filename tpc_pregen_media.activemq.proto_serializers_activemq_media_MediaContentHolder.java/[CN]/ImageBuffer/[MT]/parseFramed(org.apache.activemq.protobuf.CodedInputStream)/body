@@ -1,7 +1,0 @@
-{
-  int length=data.readRawVarint32();
-  int oldLimit=data.pushLimit(length);
-  ImageBuffer rc=parseUnframed(data.readRawBytes(length));
-  data.popLimit(oldLimit);
-  return rc;
-}

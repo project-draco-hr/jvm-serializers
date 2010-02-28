@@ -1,3 +1,0 @@
-{
-  return parseUnframed(new org.apache.activemq.protobuf.CodedInputStream(data));
-}
