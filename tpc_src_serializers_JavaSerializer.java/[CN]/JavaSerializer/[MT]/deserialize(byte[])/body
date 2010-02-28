@@ -1,4 +1,0 @@
-{
-  ObjectInputStream ois=new ObjectInputStream(new ByteArrayInputStream(array));
-  return (MediaContent)ois.readObject();
-}
