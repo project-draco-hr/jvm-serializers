@@ -197,10 +197,11 @@
   TestGroups groups=new TestGroups();
   Protobuf.register(groups);
   Thrift.register(groups);
-  ProtobufJson.register(groups);
-  ProtostuffJson.register(groups);
+  CksBinary.register(groups);
   ActiveMQProtobuf.register(groups);
   JavaBuiltIn.register(groups);
+  ProtostuffJson.register(groups);
+  ProtobufJson.register(groups);
   Gson.register(groups);
   EnumMap<measurements,Map<String,Double>> values=start(filterIsInclude,filterStrings,iterations,trials,warmupTime,groups.media,data.media.TestValues.v1);
   if (printChart) {
