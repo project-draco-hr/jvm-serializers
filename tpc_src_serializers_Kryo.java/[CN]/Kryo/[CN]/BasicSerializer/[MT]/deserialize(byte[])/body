@@ -1,0 +1,3 @@
+{
+  return objectBuffer.readObjectData(array,type);
+}

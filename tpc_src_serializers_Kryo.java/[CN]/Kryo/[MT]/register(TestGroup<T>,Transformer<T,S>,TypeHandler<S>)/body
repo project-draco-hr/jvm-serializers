@@ -1,0 +1,4 @@
+{
+  group.add(transformer,new BasicSerializer<S>(handler));
+  group.add(transformer,new OptimizedSerializer<S>(handler));
+}
