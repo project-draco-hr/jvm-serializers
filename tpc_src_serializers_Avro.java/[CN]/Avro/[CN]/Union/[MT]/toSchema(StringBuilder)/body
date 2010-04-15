@@ -1,0 +1,10 @@
+{
+  b.append("[");
+  String sep="";
+  for (  Type t : members) {
+    b.append(sep);
+    sep=", ";
+    t.toSchema(b);
+  }
+  b.append("]");
+}

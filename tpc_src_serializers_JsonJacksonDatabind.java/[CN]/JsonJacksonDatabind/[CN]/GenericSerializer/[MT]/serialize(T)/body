@@ -1,0 +1,7 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  JsonGenerator generator=constructGenerator(baos);
+  _mapper.writeValue(generator,data);
+  generator.close();
+  return baos.toByteArray();
+}

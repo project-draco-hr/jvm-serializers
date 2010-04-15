@@ -1,0 +1,4 @@
+{
+  WRITER=new GenericDatumWriter<GenericRecord>(schema);
+  READER=new GenericDatumReader<GenericRecord>(schema);
+}

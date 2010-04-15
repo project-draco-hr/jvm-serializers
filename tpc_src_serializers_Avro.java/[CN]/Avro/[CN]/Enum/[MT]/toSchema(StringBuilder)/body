@@ -1,0 +1,10 @@
+{
+  b.append("{\"type\": \"enum\", \"name\": \"").append(name).append("\", \"symbols\": [");
+  String sep="";
+  for (  String option : options) {
+    b.append(sep);
+    sep=", ";
+    b.append('"').append(option).append('"');
+  }
+  b.append("]}");
+}

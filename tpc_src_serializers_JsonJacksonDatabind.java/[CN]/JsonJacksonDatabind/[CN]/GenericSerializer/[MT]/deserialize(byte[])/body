@@ -1,0 +1,5 @@
+{
+  JsonParser parser=constructParser(array);
+  T o=_mapper.readValue(parser,clazz);
+  return o;
+}
