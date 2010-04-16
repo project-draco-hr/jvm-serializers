@@ -1,0 +1,6 @@
+{
+  StringWriter sw=new StringWriter();
+  _marshaller.marshall(content).write(sw);
+  sw.flush();
+  return sw.toString().getBytes(_charset.toString());
+}
