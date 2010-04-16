@@ -1,7 +1,5 @@
 {
-  Entry<J,S> entry=new Entry<J,S>(transformer,serializer);
-  @SuppressWarnings("unchecked") Entry<J,Object> entry_=(Entry<J,Object>)entry;
-  entries.add(entry_);
+  Entry<J,Object> entry_=add_(transformer,serializer);
   Object displaced=extensionMap.put(extension,entry_);
   if (displaced != null) {
     throw new AssertionError("Duplicate entry for file extension \"" + extension + "\"");

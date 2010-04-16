@@ -1,0 +1,4 @@
+{
+  this.READER=new SpecificDatumReader<T>(clazz);
+  this.WRITER=new SpecificDatumWriter<T>(clazz);
+}

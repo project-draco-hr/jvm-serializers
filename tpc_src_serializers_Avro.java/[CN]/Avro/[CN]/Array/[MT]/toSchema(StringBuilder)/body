@@ -1,5 +1,0 @@
-{
-  b.append("{\"type\": \"array\", \"items\": ");
-  elementType.toSchema(b);
-  b.append("}");
-}

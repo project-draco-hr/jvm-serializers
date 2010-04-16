@@ -1,5 +1,0 @@
-{
-  ByteArrayOutputStream out=new ByteArrayOutputStream();
-  WRITER.write(content,new BinaryEncoder(out));
-  return out.toByteArray();
-}

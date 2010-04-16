@@ -1,3 +1,0 @@
-{
-  return (MediaContent)READER.read(null,FACTORY.createBinaryDecoder(array,null));
-}

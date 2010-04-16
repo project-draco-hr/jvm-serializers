@@ -1,5 +1,0 @@
-{
-  this.name=name;
-  this.namespace=namespace;
-  this.fields=fields;
-}

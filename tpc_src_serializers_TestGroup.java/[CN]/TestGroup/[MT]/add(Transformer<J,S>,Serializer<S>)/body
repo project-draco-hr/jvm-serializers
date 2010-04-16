@@ -1,5 +1,3 @@
 {
-  Entry<J,S> entry=new Entry<J,S>(transformer,serializer);
-  @SuppressWarnings("unchecked") Entry<J,Object> entry_=(Entry<J,Object>)entry;
-  entries.add(entry_);
+  add_(transformer,serializer);
 }

@@ -1,0 +1,11 @@
+{
+  Entry<J,S> entry=new Entry<J,S>(transformer,serializer);
+  @SuppressWarnings("unchecked") Entry<J,Object> entry_=(Entry<J,Object>)entry;
+  entries.add(entry_);
+  String name=entry_.serializer.getName();
+  boolean isUnique=entryNames.add(name);
+  if (!isUnique) {
+    throw new AssertionError("duplicate serializer name \"" + name + "\"");
+  }
+  return entry_;
+}
