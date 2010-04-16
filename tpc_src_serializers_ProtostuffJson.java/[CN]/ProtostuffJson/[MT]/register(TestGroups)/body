@@ -1,3 +1,4 @@
 {
-  groups.media.add(Protobuf.MediaTransformer,MediaSerializer);
+  groups.media.add(Protobuf.MediaTransformer,new MediaSerializer("json",json));
+  groups.media.add(Protobuf.MediaTransformer,new MediaSerializer("numeric-json",numericJson));
 }
