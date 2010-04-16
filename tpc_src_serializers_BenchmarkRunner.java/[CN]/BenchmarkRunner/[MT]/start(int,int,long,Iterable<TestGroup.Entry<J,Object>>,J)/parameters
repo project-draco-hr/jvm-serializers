@@ -1,0 +1,5 @@
+int iterations
+int trials
+long warmupTime
+Iterable<TestGroup.Entry<J,Object>> groups
+J value

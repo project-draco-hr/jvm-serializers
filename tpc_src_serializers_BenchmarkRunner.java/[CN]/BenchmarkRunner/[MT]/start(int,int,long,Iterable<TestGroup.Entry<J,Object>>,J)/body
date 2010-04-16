@@ -2,12 +2,9 @@
   System.out.printf("%-24s %6s %7s %7s %8s %8s %8s %8s %7s\n","","create","ser","+same","deser","+shal","+deep","total","size");
   EnumMap<measurements,Map<String,Double>> values=new EnumMap<measurements,Map<String,Double>>(measurements.class);
   for (  measurements m : measurements.values())   values.put(m,new HashMap<String,Double>());
-  for (  TestGroup.Entry<J,Object> entry : group.entries) {
+  for (  TestGroup.Entry<J,Object> entry : groups) {
     TestCaseRunner<J> runner=new TestCaseRunner<J>(entry.transformer,entry.serializer,value);
     String name=entry.serializer.getName();
-    if (filterIsInclude != null) {
-      if (filterIsInclude != filterStrings.contains(name))       continue;
-    }
     warmCreation(runner,warmupTime);
     doGc();
     double timeCreate=runner.runTakeMin(trials,Create,iterations * 100);
