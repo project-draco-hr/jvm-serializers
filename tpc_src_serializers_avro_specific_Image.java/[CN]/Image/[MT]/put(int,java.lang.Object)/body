@@ -1,0 +1,21 @@
+{
+switch (field$) {
+case 0:
+    uri=(org.apache.avro.util.Utf8)value$;
+  break;
+case 1:
+title=(org.apache.avro.util.Utf8)value$;
+break;
+case 2:
+width=(java.lang.Integer)value$;
+break;
+case 3:
+height=(java.lang.Integer)value$;
+break;
+case 4:
+size=(java.lang.Integer)value$;
+break;
+default :
+throw new org.apache.avro.AvroRuntimeException("Bad index");
+}
+}
