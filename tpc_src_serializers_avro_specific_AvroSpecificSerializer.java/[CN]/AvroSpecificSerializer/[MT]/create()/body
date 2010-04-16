@@ -5,7 +5,7 @@
   media.title=new Utf8("Javaone Keynote");
   media.duration=1234567L;
   media.bitrate=0;
-  media.person=new GenericData.Array<Utf8>(2,null);
+  media.person=new GenericData.Array<Utf8>(2,PERSON_SCHEMA);
   media.person.add(new Utf8("Bill Gates"));
   media.person.add(new Utf8("Steve Jobs"));
   media.player=0;
@@ -27,7 +27,7 @@
   image2.title=new Utf8("Javaone Keynote");
   MediaContent content=new MediaContent();
   content.media=media;
-  content.image=new GenericData.Array<Image>(2,null);
+  content.image=new GenericData.Array<Image>(2,IMAGES_SCHEMA);
   content.image.add(image1);
   content.image.add(image2);
   return content;

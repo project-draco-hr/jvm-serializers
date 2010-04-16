@@ -1,10 +1,10 @@
 {
-switch (_field) {
+switch (field$) {
 case 0:
     return image;
 case 1:
   return media;
 default :
-throw new AvroRuntimeException("Bad index");
+throw new org.apache.avro.AvroRuntimeException("Bad index");
 }
 }
