@@ -1,5 +1,0 @@
-{
-  ByteArrayInputStream in=new ByteArrayInputStream(array);
-  Hessian2StreamingInput hin=new Hessian2StreamingInput(in);
-  return (MediaContent)hin.readObject();
-}
