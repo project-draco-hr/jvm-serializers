@@ -1,0 +1,15 @@
+{
+  try {
+    ByteArrayOutputStream bout=new ByteArrayOutputStream();
+    DeflaterOutputStream compresser=new DeflaterOutputStream(bout);
+    compresser.write(data,0,data.length);
+    compresser.finish();
+    compresser.flush();
+    return bout.toByteArray();
+  }
+ catch (  IOException ex) {
+    AssertionError ae=new AssertionError("IOException while writing to ByteArrayOutputStream!");
+    ae.initCause(ex);
+    throw ae;
+  }
+}

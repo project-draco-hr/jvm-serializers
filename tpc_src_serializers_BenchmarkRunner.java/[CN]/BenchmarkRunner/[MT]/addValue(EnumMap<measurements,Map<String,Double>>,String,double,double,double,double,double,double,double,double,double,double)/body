@@ -8,5 +8,7 @@
     values.get(measurements.totalTime).put(name,totalTime);
   }
   values.get(measurements.length).put(name,length);
+  values.get(measurements.lengthQlz).put(name,lengthQlz);
+  values.get(measurements.lengthDeflate).put(name,lengthDeflate);
   values.get(measurements.timeCreate).put(name,timeCreate);
 }

@@ -1,5 +1,5 @@
 {
-  System.out.printf("%-24s %6s %7s %7s %8s %8s %8s %8s %7s\n","","create","ser","+same","deser","+shal","+deep","total","size");
+  System.out.printf("%-24s %6s %7s %7s %7s %7s %7s %7s %6s %5s %5s\n","","create","ser","+same","deser","+shal","+deep","total","size","+qlz","+dfl");
   EnumMap<measurements,Map<String,Double>> values=new EnumMap<measurements,Map<String,Double>>(measurements.class);
   for (  measurements m : measurements.values())   values.put(m,new HashMap<String,Double>());
   for (  TestGroup.Entry<J,Object> entry : groups) {
@@ -23,8 +23,10 @@
     double timeDeserializeAndCheck=runner.runTakeMin(trials,DeserializeAndCheck,iterations);
     double totalTime=timeSerializeDifferentObjects + timeDeserializeAndCheck;
     byte[] array=entry.serializer.serialize(entry.transformer.forward(value));
-    System.out.printf("%-24s %6.0f %7.0f %7.0f %8.0f %8.0f %8.0f %8.0f %7d\n",name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length);
-    addValue(values,name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length);
+    byte[] compressQlz=QuickLZ.compress(array);
+    byte[] compressDeflate=compressDeflate(array);
+    System.out.printf("%-24s %6.0f %7.0f %7.0f %7.0f %7.0f %7.0f %7.0f %6d %5d %5d\n",name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressQlz.length,compressDeflate.length);
+    addValue(values,name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressQlz.length,compressDeflate.length);
   }
   return values;
 }
