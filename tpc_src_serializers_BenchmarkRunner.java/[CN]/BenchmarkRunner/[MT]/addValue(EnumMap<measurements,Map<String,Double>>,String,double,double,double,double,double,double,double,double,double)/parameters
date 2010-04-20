@@ -8,5 +8,4 @@ double timeDeserializeAndCheckShallow
 double timeDeserializeAndCheck
 double totalTime
 double length
-double lengthQlz
 double lengthDeflate
