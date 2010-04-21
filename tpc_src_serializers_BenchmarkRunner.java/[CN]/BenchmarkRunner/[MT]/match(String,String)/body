@@ -1,0 +1,18 @@
+{
+  StringBuilder regex=new StringBuilder();
+  while (pattern.length() > 0) {
+    int starPos=pattern.indexOf('*');
+    if (starPos < 0) {
+      regex.append(Pattern.quote(pattern));
+      break;
+    }
+ else {
+      String beforeStar=pattern.substring(0,starPos);
+      String afterStar=pattern.substring(starPos + 1);
+      regex.append(Pattern.quote(beforeStar));
+      regex.append(".*");
+      pattern=afterStar;
+    }
+  }
+  return Pattern.matches(regex.toString(),name);
+}
