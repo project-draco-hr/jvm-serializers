@@ -1,5 +1,5 @@
 {
-  return new ConverterSerializer<T>(handler.name + "-xstrm" + suffix,new com.thoughtworks.xstream.XStream(new StaxDriver(){
+  return new ConverterSerializer<T>(handler.name + "-xstream" + suffix,new com.thoughtworks.xstream.XStream(new StaxDriver(){
     public XMLInputFactory getInputFactory(){
       return handler.inFactory;
     }
