@@ -1,15 +1,15 @@
 {
   StringBuilder sb=new StringBuilder();
   sb.append("[Media ");
-  sb.append("uri=").append(uri);
-  sb.append(", title=").append(title);
+  sb.append("uri=").append(repr(uri));
+  sb.append(", title=").append(repr(title));
   sb.append(", width=").append(width);
   sb.append(", height=").append(height);
-  sb.append(", format=").append(format);
+  sb.append(", format=").append(repr(format));
   sb.append(", duration=").append(duration);
   sb.append(", size=").append(size);
   sb.append(", bitrate=").append(hasBitrate ? Integer.toString(bitrate) : "?");
-  sb.append(", persons=").append(persons);
+  sb.append(", persons=").append(repr(persons));
   sb.append(", player=").append(player);
   sb.append(", copyright=").append(copyright);
   sb.append("]");

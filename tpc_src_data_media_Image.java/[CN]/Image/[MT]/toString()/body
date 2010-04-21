@@ -1,8 +1,8 @@
 {
   StringBuilder sb=new StringBuilder();
   sb.append("[Image ");
-  sb.append("uri=").append(uri);
-  sb.append(", title=").append(title);
+  sb.append("uri=").append(repr(uri));
+  sb.append(", title=").append(repr(title));
   sb.append(", width=").append(width);
   sb.append(", height=").append(height);
   sb.append(", size=").append(size);

@@ -1,15 +1,8 @@
 {
-  if (this == obj)   return true;
-  if (obj == null)   return false;
-  if (getClass() != obj.getClass())   return false;
-  MediaContent other=(MediaContent)obj;
-  if (images == null) {
-    if (other.images != null)     return false;
-  }
- else   if (!images.equals(other.images))   return false;
-  if (media == null) {
-    if (other.media != null)     return false;
-  }
- else   if (!media.equals(other.media))   return false;
+  if (this == o)   return true;
+  if (o == null || getClass() != o.getClass())   return false;
+  MediaContent that=(MediaContent)o;
+  if (images != null ? !images.equals(that.images) : that.images != null)   return false;
+  if (media != null ? !media.equals(that.media) : that.media != null)   return false;
   return true;
 }

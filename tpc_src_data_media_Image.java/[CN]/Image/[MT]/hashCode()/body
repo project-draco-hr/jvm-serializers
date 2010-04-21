@@ -1,10 +1,8 @@
 {
-  final int prime=31;
-  int result=1;
-  result=prime * result + height;
-  result=prime * result + ((size == null) ? 0 : size.hashCode());
-  result=prime * result + ((title == null) ? 0 : title.hashCode());
-  result=prime * result + ((uri == null) ? 0 : uri.hashCode());
-  result=prime * result + width;
+  int result=uri != null ? uri.hashCode() : 0;
+  result=31 * result + (title != null ? title.hashCode() : 0);
+  result=31 * result + width;
+  result=31 * result + height;
+  result=31 * result + (size != null ? size.hashCode() : 0);
   return result;
 }
