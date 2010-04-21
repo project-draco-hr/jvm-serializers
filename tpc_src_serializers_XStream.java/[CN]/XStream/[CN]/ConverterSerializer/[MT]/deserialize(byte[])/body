@@ -1,0 +1,4 @@
+{
+  @SuppressWarnings("unchecked") T value=(T)xstream.fromXML(new ByteArrayInputStream(array));
+  return value;
+}

@@ -1,0 +1,3 @@
+String name
+com.thoughtworks.xstream.XStream xstream
+Configuration config

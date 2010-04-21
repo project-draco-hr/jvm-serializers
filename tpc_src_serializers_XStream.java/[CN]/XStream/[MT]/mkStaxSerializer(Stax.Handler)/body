@@ -1,0 +1,11 @@
+{
+  return new ConverterSerializer<T>(handler.name + "-xstrm",new com.thoughtworks.xstream.XStream(new StaxDriver(){
+    public XMLInputFactory getInputFactory(){
+      return handler.inFactory;
+    }
+    public XMLOutputFactory getOutputFactory(){
+      return handler.outFactory;
+    }
+  }
+),MediaConfiguration);
+}

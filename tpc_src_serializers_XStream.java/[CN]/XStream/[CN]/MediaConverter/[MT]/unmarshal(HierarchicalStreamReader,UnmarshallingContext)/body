@@ -1,0 +1,25 @@
+{
+  Media media=new Media();
+  media.player=Player.values()[Integer.valueOf(reader.getAttribute("pl"))];
+  media.uri=reader.getAttribute("ul");
+  media.title=reader.getAttribute("tl");
+  media.width=Integer.valueOf(reader.getAttribute("wd"));
+  media.height=Integer.valueOf(reader.getAttribute("hg"));
+  media.format=reader.getAttribute("fr");
+  media.duration=Long.valueOf(reader.getAttribute("dr"));
+  media.size=Long.valueOf(reader.getAttribute("sz"));
+  String stringBitrate=reader.getAttribute("br");
+  if (stringBitrate != null) {
+    media.hasBitrate=true;
+    media.bitrate=Integer.valueOf(stringBitrate);
+  }
+  media.copyright=reader.getAttribute("cp");
+  List<String> persons=new ArrayList<String>();
+  while (reader.hasMoreChildren()) {
+    reader.moveDown();
+    persons.add(reader.getValue());
+    reader.moveUp();
+  }
+  media.persons=persons;
+  return media;
+}
