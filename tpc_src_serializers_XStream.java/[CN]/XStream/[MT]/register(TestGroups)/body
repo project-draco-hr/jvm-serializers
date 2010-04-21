@@ -4,8 +4,15 @@
       return new CompactWriter(out,xmlFriendlyReplacer());
     }
   }
+),EmptyConfiguration));
+  groups.media.add(JavaBuiltIn.MediaTransformer,new ConverterSerializer<MediaContent>("xml/xstrm+",new com.thoughtworks.xstream.XStream(new XppDriver(){
+    public HierarchicalStreamWriter createWriter(    Writer out){
+      return new CompactWriter(out,xmlFriendlyReplacer());
+    }
+  }
 ),MediaConfiguration));
   for (  Stax.Handler h : Stax.Handlers) {
-    groups.media.add(JavaBuiltIn.MediaTransformer,XStream.<MediaContent>mkStaxSerializer(h));
+    groups.media.add(JavaBuiltIn.MediaTransformer,XStream.<MediaContent>mkStaxSerializer(h,"",EmptyConfiguration));
+    groups.media.add(JavaBuiltIn.MediaTransformer,XStream.<MediaContent>mkStaxSerializer(h,"+",MediaConfiguration));
   }
 }
