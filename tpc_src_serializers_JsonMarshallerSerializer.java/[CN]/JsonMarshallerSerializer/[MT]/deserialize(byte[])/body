@@ -1,4 +1,0 @@
-{
-  String str=new String(array,_charset.toString());
-  return _marshaller.unmarshall((Json.Object)Json.read(new StringReader(str)));
-}

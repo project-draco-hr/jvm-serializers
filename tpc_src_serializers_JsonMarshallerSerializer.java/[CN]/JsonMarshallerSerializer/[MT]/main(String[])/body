@@ -1,4 +1,0 @@
-{
-  JsonMarshallerSerializer serializer=new JsonMarshallerSerializer();
-  serializer.deserialize(serializer.serialize(serializer.create()));
-}

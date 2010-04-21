@@ -1,6 +1,0 @@
-{
-  if (_images == null) {
-    _images=new ArrayList<Image>();
-  }
-  _images.add(image);
-}

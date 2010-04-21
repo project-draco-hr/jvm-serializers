@@ -1,9 +1,0 @@
-{
-  Media media=new Media(null,"video/mpg4",Media.Player.JAVA,"Javaone Keynote","http://javaone.com/keynote.mpg",1234567,123,0,0,0);
-  media.addToPerson("Bill Gates");
-  media.addToPerson("Steve Jobs");
-  MediaContent content=new MediaContent(media);
-  content.addImage(new Image(0,"Javaone Keynote","http://javaone.com/keynote_large.jpg",0,Image.Size.LARGE));
-  content.addImage(new Image(0,"Javaone Keynote","http://javaone.com/keynote_thumbnail.jpg",0,Image.Size.SMALL));
-  return content;
-}

@@ -1,7 +1,0 @@
-{
-  Media media=(Media)xml.getNext();
-  MediaContent content=new MediaContent(media);
-  content.addImage((Image)xml.getNext());
-  content.addImage((Image)xml.getNext());
-  return content;
-}

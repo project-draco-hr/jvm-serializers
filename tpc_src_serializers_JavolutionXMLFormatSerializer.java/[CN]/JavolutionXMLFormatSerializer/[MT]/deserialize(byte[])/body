@@ -1,9 +1,0 @@
-{
-  XMLObjectReader reader=XMLObjectReader.newInstance(new ByteArrayInputStream(array)).setBinding(_binding);
-  try {
-    return reader.read("mc",MediaContent.class);
-  }
-  finally {
-    reader.close();
-  }
-}

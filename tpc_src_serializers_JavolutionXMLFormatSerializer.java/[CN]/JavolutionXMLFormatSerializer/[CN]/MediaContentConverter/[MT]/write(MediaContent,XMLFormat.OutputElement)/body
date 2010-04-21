@@ -1,5 +1,0 @@
-{
-  xml.add(content.getMedia());
-  xml.add(content.getImage(0));
-  xml.add(content.getImage(1));
-}
