@@ -1,0 +1,9 @@
+{
+  XMLObjectReader reader=XMLObjectReader.newInstance(new ByteArrayInputStream(array)).setBinding(binding);
+  try {
+    return reader.read("mc",clazz);
+  }
+  finally {
+    reader.close();
+  }
+}

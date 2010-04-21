@@ -1,7 +1,7 @@
 {
   long endTime=System.currentTimeMillis() + warmupTime;
   do {
-    runner.run(Create,100);
+    runner.run(Create,10);
   }
  while (System.currentTimeMillis() < endTime);
 }

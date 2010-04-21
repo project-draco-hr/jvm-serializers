@@ -1,0 +1,7 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  XMLObjectWriter writer=XMLObjectWriter.newInstance(baos).setBinding(binding);
+  writer.write(content,"mc",clazz);
+  writer.close();
+  return baos.toByteArray();
+}

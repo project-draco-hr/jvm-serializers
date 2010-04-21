@@ -1,7 +1,7 @@
 {
   long endTime=System.currentTimeMillis() + warmupTime;
   do {
-    runner.run(Serialize,100);
+    runner.run(Serialize,10);
   }
  while (System.currentTimeMillis() < endTime);
 }
