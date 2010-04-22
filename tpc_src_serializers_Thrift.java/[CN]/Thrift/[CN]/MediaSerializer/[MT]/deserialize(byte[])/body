@@ -1,0 +1,5 @@
+{
+  MediaContent content=new MediaContent();
+  new TDeserializer(spec.factory).deserialize(content,array);
+  return content;
+}

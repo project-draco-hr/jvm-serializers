@@ -1,0 +1,3 @@
+{
+  return "thrift" + spec.suffix;
+}

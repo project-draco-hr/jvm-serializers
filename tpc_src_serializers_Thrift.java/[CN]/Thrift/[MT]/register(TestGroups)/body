@@ -1,3 +1,4 @@
 {
-  groups.media.add(MediaTransformer,MediaSerializer);
+  groups.media.add(MediaTransformer,new MediaSerializer(ProtocolSpec.DefaultBinary));
+  groups.media.add(MediaTransformer,new MediaSerializer(ProtocolSpec.CompactBinary));
 }
