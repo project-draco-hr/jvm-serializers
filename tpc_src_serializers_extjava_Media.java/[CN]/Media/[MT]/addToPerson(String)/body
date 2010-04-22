@@ -1,6 +1,0 @@
-{
-  if (null == _persons) {
-    _persons=new ArrayList<String>();
-  }
-  _persons.add(person);
-}

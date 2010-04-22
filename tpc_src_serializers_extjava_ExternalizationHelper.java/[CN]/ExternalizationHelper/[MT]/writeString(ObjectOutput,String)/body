@@ -1,4 +1,0 @@
-{
-  out.writeBoolean(s != null);
-  if (s != null)   out.writeUTF(s);
-}

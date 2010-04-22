@@ -1,8 +1,0 @@
-{
-  xstream.alias("im",Image.class);
-  xstream.registerConverter(new ImageConverter());
-  xstream.alias("md",Media.class);
-  xstream.registerConverter(new MediaConverter());
-  xstream.alias("mc",MediaContent.class);
-  xstream.registerConverter(new MediaContentConverter());
-}

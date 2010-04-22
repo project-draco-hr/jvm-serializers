@@ -1,4 +1,0 @@
-{
-  if (!in.readBoolean())   return null;
-  return in.readUTF();
-}

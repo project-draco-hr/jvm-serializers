@@ -1,9 +1,0 @@
-{
-  Image image=new Image();
-  image.setUri(reader.getAttribute("ul"));
-  image.setTitle(reader.getAttribute("tl"));
-  image.setWidth(Integer.valueOf(reader.getAttribute("wd")));
-  image.setHeight(Integer.valueOf(reader.getAttribute("hg")));
-  image.setSize(Size.values()[Integer.valueOf(reader.getAttribute("sz"))]);
-  return image;
-}

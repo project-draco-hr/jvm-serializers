@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("This implementation of ObjectOutput does not provide writeObject(). Use x.writeExternal(in) instead.");
-}

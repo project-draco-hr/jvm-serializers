@@ -1,3 +1,0 @@
-{
-  throw new UnsupportedOperationException("This implementation of ObjectInput does not provide readObject(). Use constructor and x.readExternal(in) instead.");
-}

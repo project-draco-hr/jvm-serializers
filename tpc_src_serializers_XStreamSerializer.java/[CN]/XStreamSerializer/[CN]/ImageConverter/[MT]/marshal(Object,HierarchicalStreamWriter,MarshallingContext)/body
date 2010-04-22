@@ -1,8 +1,0 @@
-{
-  Image image=(Image)obj;
-  writer.addAttribute("ul",image.getUri());
-  writer.addAttribute("tl",image.getTitle());
-  writer.addAttribute("wd",String.valueOf(image.getWidth()));
-  writer.addAttribute("hg",String.valueOf(image.getHeight()));
-  writer.addAttribute("sz",String.valueOf(image.getSize().ordinal()));
-}
