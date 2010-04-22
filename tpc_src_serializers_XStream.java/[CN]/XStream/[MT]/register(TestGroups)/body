@@ -1,11 +1,11 @@
 {
-  groups.media.add(JavaBuiltIn.MediaTransformer,new ConverterSerializer<MediaContent>("xml/xstrm",new com.thoughtworks.xstream.XStream(new XppDriver(){
+  groups.media.add(JavaBuiltIn.MediaTransformer,new ConverterSerializer<MediaContent>("xml/xstream",new com.thoughtworks.xstream.XStream(new XppDriver(){
     public HierarchicalStreamWriter createWriter(    Writer out){
       return new CompactWriter(out,xmlFriendlyReplacer());
     }
   }
 ),EmptyConfiguration));
-  groups.media.add(JavaBuiltIn.MediaTransformer,new ConverterSerializer<MediaContent>("xml/xstrm+",new com.thoughtworks.xstream.XStream(new XppDriver(){
+  groups.media.add(JavaBuiltIn.MediaTransformer,new ConverterSerializer<MediaContent>("xml/xstream+c",new com.thoughtworks.xstream.XStream(new XppDriver(){
     public HierarchicalStreamWriter createWriter(    Writer out){
       return new CompactWriter(out,xmlFriendlyReplacer());
     }
