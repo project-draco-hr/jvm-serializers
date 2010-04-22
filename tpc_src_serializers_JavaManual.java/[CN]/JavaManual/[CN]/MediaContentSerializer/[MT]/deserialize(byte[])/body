@@ -1,0 +1,4 @@
+{
+  DataInputStream in=new DataInputStream(new ByteArrayInputStream(array));
+  return readMediaContent(in);
+}

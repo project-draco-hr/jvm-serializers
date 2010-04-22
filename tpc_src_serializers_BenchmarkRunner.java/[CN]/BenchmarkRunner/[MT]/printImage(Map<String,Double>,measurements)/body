@@ -3,7 +3,8 @@
   String names="";
   double max=Double.MIN_NORMAL;
   for (  Map.Entry<String,Double> entry : map.entrySet()) {
-    valSb.append(entry.getValue()).append(',');
+    double value=entry.getValue();
+    valSb.append((int)value).append(',');
     max=Math.max(max,entry.getValue());
     names=urlEncode(entry.getKey()) + '|' + names;
   }

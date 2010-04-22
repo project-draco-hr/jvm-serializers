@@ -1,0 +1,8 @@
+{
+  String uri=in.readUTF();
+  String title=readMaybeString(in);
+  int width=in.readInt();
+  int height=in.readInt();
+  Image.Size size=Image.Size.values()[in.readByte()];
+  return new Image(uri,title,width,height,size);
+}

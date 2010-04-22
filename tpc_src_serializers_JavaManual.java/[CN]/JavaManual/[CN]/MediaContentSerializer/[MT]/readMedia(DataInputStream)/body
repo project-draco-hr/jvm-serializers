@@ -1,0 +1,20 @@
+{
+  String uri=in.readUTF();
+  String title=readMaybeString(in);
+  int width=in.readInt();
+  int height=in.readInt();
+  String format=in.readUTF();
+  long duration=in.readLong();
+  long size=in.readLong();
+  boolean hasBitrate=in.readBoolean();
+  int bitrate=0;
+  if (hasBitrate)   bitrate=in.readInt();
+  int numPersons=in.readInt();
+  ArrayList<String> persons=new ArrayList<String>(numPersons);
+  for (int i=0; i < numPersons; i++) {
+    persons.add(in.readUTF());
+  }
+  Media.Player player=Media.Player.values()[in.readByte()];
+  String copyright=readMaybeString(in);
+  return new Media(uri,title,width,height,format,duration,size,bitrate,hasBitrate,persons,player,copyright);
+}

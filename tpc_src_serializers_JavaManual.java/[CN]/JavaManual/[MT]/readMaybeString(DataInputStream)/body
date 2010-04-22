@@ -1,0 +1,8 @@
+{
+  if (in.readBoolean()) {
+    return in.readUTF();
+  }
+ else {
+    return null;
+  }
+}

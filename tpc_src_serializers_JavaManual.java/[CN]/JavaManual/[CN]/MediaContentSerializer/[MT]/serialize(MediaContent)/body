@@ -1,0 +1,7 @@
+{
+  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  DataOutputStream oos=new DataOutputStream(baos);
+  writeMediaContent(oos,data);
+  oos.flush();
+  return baos.toByteArray();
+}
