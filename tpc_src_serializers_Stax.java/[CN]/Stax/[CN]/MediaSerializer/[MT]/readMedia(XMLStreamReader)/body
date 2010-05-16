@@ -20,8 +20,8 @@
     persons.add(parser.getElementText());
   }
  while (parser.nextTag() == XMLStreamConstants.START_ELEMENT && FIELD_NAME_PERSONS.equals(parser.getLocalName()));
-  if (!"md".equals(parser.getLocalName())) {
-    throw new IllegalStateException("Expected closing </md>, got </" + parser.getLocalName() + ">");
+  if (!FIELD_NAME_MEDIA.equals(parser.getLocalName())) {
+    throw new IllegalStateException("Expected closing </" + FIELD_NAME_MEDIA + ">, got </"+ parser.getLocalName()+ ">");
   }
   media.persons=persons;
   return media;
