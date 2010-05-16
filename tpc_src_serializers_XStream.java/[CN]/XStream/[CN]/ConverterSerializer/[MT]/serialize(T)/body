@@ -1,5 +1,5 @@
 {
-  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  ByteArrayOutputStream baos=outputStream(content);
   xstream.toXML(content,baos);
   return baos.toByteArray();
 }

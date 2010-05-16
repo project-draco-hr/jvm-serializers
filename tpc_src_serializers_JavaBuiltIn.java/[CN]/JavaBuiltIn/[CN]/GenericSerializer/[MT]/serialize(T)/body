@@ -1,5 +1,5 @@
 {
-  ByteArrayOutputStream baos=new ByteArrayOutputStream();
+  ByteArrayOutputStream baos=outputStream(data);
   ObjectOutputStream oos=new ObjectOutputStream(baos);
   oos.writeObject(data);
   return baos.toByteArray();

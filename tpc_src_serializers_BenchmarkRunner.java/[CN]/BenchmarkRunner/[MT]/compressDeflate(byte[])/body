@@ -1,6 +1,6 @@
 {
   try {
-    ByteArrayOutputStream bout=new ByteArrayOutputStream();
+    ByteArrayOutputStream bout=new ByteArrayOutputStream(500);
     DeflaterOutputStream compresser=new DeflaterOutputStream(bout);
     compresser.write(data,0,data.length);
     compresser.finish();
