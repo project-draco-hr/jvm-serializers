@@ -1,5 +1,0 @@
-{
-  ByteArrayOutputStream out=outputStream(content);
-  json.writeTo(out,content);
-  return out.toByteArray();
-}

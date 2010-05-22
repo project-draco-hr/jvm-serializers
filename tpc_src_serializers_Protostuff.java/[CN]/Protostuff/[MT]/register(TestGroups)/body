@@ -1,6 +1,4 @@
 {
   groups.media.add(MediaTransformer,MediaSerializer);
-  groups.media.add(MediaTransformer,JsonMediaSerializer);
   groups.media.add(JavaBuiltIn.MediaTransformer,RuntimeMediaSerializer);
-  groups.media.add(JavaBuiltIn.MediaTransformer,RuntimeJsonMediaSerializer);
 }
