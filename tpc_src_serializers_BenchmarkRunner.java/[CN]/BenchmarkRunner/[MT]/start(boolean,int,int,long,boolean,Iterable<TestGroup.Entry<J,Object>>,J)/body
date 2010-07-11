@@ -1,0 +1,66 @@
+{
+  System.out.println("Checking correctness...");
+  boolean failed=false;
+  for (  TestGroup.Entry<J,Object> entry : groups) {
+    boolean ok=checkCorrectness(verbose,entry.transformer,entry.serializer,value);
+    if (!ok)     failed=true;
+  }
+  if (failed && !verbose) {
+    System.out.println("Run with \"-verbose\" for more information about correctness failures.");
+  }
+  System.out.println("[done]");
+  if (prewarm) {
+    System.out.print("Pre-warmup...");
+    for (    TestGroup.Entry<J,Object> entry : groups) {
+      TestCaseRunner<J> runner=new TestCaseRunner<J>(entry.transformer,entry.serializer,value);
+      String name=entry.serializer.getName();
+      System.out.print(" " + name);
+      warmCreation(runner,warmupTime);
+      warmSerialization(runner,warmupTime);
+      warmDeserialization(runner,warmupTime);
+    }
+    System.out.println();
+    System.out.println("[done]");
+  }
+  System.out.printf("%-28s %6s %7s %7s %7s %7s %7s %7s %6s %5s\n","","create","ser","+same","deser","+shal","+deep","total","size","+dfl");
+  EnumMap<measurements,Map<String,Double>> values=new EnumMap<measurements,Map<String,Double>>(measurements.class);
+  for (  measurements m : measurements.values())   values.put(m,new HashMap<String,Double>());
+  boolean errorOccurred=false;
+  for (  TestGroup.Entry<J,Object> entry : groups) {
+    TestCaseRunner<J> runner=new TestCaseRunner<J>(entry.transformer,entry.serializer,value);
+    String name=entry.serializer.getName();
+    try {
+      warmCreation(runner,warmupTime);
+      doGc();
+      double timeCreate=runner.runTakeMin(trials,Create,iterations * 100);
+      warmSerialization(runner,warmupTime);
+      doGc();
+      double timeSerializeDifferentObjects=runner.runTakeMin(trials,Serialize,iterations);
+      doGc();
+      double timeSerializeSameObject=runner.runTakeMin(trials,SerializeSameObject,iterations);
+      warmDeserialization(runner,warmupTime);
+      doGc();
+      double timeDeserializeNoFieldAccess=runner.runTakeMin(trials,Deserialize,iterations);
+      doGc();
+      double timeDeserializeAndCheckShallow=runner.runTakeMin(trials,DeserializeAndCheckShallow,iterations);
+      doGc();
+      double timeDeserializeAndCheck=runner.runTakeMin(trials,DeserializeAndCheck,iterations);
+      double totalTime=timeSerializeDifferentObjects + timeDeserializeAndCheck;
+      byte[] array=entry.serializer.serialize(entry.transformer.forward(value));
+      byte[] compressDeflate=compressDeflate(array);
+      System.out.printf("%-28s %6.0f %7.0f %7.0f %7.0f %7.0f %7.0f %7.0f %6d %5d\n",name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
+      addValue(values,name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
+    }
+ catch (    Exception ex) {
+      errorOccurred=true;
+      if (verbose) {
+        System.out.println("ERROR: \"" + name + "\" failed with an exception.");
+        if (verbose)         ex.printStackTrace(System.out);
+      }
+    }
+  }
+  if (errorOccurred & !verbose) {
+    System.out.println("Errors occurred during testing.  Run with \"-verbose\" to see stack traces.");
+  }
+  return values;
+}

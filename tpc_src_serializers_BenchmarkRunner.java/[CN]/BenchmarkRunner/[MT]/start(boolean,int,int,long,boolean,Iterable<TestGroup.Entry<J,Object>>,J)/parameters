@@ -1,3 +1,4 @@
+boolean verbose
 int iterations
 int trials
 long warmupTime
