@@ -1,3 +1,4 @@
 {
   groups.media.add(Protostuff.MediaTransformer,JsonMediaSerializer);
+  groups.media.add(Protostuff.MediaTransformer,JsonMediaSerializerNumeric);
 }
