@@ -50,6 +50,5 @@
     errors.println("\"" + name + "\" failed round-trip check.");
     errors.println("ORIGINAL:  " + value);
     errors.println("ROUNDTRIP: " + output);
-    return;
   }
 }
