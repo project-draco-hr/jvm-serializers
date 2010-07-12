@@ -1,12 +1,7 @@
 {
   System.out.println("Checking correctness...");
-  boolean failed=false;
   for (  TestGroup.Entry<J,Object> entry : groups) {
-    boolean ok=checkCorrectness(verbose,entry.transformer,entry.serializer,value);
-    if (!ok)     failed=true;
-  }
-  if (failed && !verbose) {
-    System.out.println("Run with \"-verbose\" for more information about correctness failures.");
+    checkCorrectness(errors,entry.transformer,entry.serializer,value);
   }
   System.out.println("[done]");
   if (prewarm) {
@@ -25,7 +20,6 @@
   System.out.printf("%-28s %6s %7s %7s %7s %7s %7s %7s %6s %5s\n","","create","ser","+same","deser","+shal","+deep","total","size","+dfl");
   EnumMap<measurements,Map<String,Double>> values=new EnumMap<measurements,Map<String,Double>>(measurements.class);
   for (  measurements m : measurements.values())   values.put(m,new HashMap<String,Double>());
-  boolean errorOccurred=false;
   for (  TestGroup.Entry<J,Object> entry : groups) {
     TestCaseRunner<J> runner=new TestCaseRunner<J>(entry.transformer,entry.serializer,value);
     String name=entry.serializer.getName();
@@ -52,15 +46,11 @@
       addValue(values,name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
     }
  catch (    Exception ex) {
-      errorOccurred=true;
-      if (verbose) {
-        System.out.println("ERROR: \"" + name + "\" failed with an exception.");
-        if (verbose)         ex.printStackTrace(System.out);
-      }
+      System.out.println("ERROR: \"" + name + "\" crashed during benchmarking.");
+      errors.println(ERROR_DIVIDER);
+      errors.println("\"" + name + "\" crashed during benchmarking.");
+      ex.printStackTrace(errors);
     }
-  }
-  if (errorOccurred & !verbose) {
-    System.out.println("Errors occurred during testing.  Run with \"-verbose\" to see stack traces.");
   }
   return values;
 }

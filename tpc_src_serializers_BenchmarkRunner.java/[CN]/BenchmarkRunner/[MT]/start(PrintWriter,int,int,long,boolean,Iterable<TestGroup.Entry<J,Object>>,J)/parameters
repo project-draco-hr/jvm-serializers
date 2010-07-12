@@ -1,4 +1,4 @@
-boolean verbose
+PrintWriter errors
 int iterations
 int trials
 long warmupTime

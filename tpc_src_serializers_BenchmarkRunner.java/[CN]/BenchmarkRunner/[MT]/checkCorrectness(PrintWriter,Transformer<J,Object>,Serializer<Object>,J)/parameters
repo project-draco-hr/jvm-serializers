@@ -1,4 +1,4 @@
-boolean verbose
+PrintWriter errors
 Transformer<J,Object> transformer
 Serializer<Object> serializer
 J value
