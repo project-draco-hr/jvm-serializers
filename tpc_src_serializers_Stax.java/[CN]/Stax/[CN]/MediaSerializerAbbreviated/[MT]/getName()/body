@@ -1,0 +1,3 @@
+{
+  return "xml/manual-abbrev-" + handler.name;
+}

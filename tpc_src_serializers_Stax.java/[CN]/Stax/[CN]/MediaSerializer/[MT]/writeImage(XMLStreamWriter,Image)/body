@@ -1,9 +1,9 @@
 {
-  writer.writeStartElement(FIELD_NAME_IMAGES);
-  writeElement(writer,FIELD_NAME_URI,image.uri);
-  if (image.title != null)   writeElement(writer,FIELD_NAME_TITLE,image.title);
-  writeElement(writer,FIELD_NAME_WIDTH,String.valueOf(image.width));
-  writeElement(writer,FIELD_NAME_HEIGHT,String.valueOf(image.height));
-  writeElement(writer,FIELD_NAME_SIZE,image.size.name());
+  writer.writeStartElement(FULL_FIELD_NAME_IMAGES);
+  writeElement(writer,FULL_FIELD_NAME_URI,image.uri);
+  if (image.title != null)   writeElement(writer,FULL_FIELD_NAME_TITLE,image.title);
+  writeElement(writer,FULL_FIELD_NAME_WIDTH,String.valueOf(image.width));
+  writeElement(writer,FULL_FIELD_NAME_HEIGHT,String.valueOf(image.height));
+  writeElement(writer,FULL_FIELD_NAME_SIZE,image.size.name());
   writer.writeEndElement();
 }

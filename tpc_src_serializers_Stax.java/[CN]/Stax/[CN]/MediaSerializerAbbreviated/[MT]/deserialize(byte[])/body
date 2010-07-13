@@ -7,8 +7,8 @@
     throw new IllegalStateException("Expected <im>, no START_ELEMENT encountered but " + parser.getEventType());
   }
   do {
-    if (!FULL_FIELD_NAME_IMAGES.equals(parser.getLocalName())) {
-      throw new IllegalStateException("Expected <" + FULL_FIELD_NAME_IMAGES + ">, got <"+ parser.getLocalName()+ ">");
+    if (!FIELD_NAME_IMAGES.equals(parser.getLocalName())) {
+      throw new IllegalStateException("Expected <" + FIELD_NAME_IMAGES + ">, got <"+ parser.getLocalName()+ ">");
     }
     images.add(readImage(parser));
   }

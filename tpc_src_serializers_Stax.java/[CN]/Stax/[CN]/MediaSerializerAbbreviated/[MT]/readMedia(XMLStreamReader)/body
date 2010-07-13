@@ -1,0 +1,28 @@
+{
+  Media media=new Media();
+  media.player=Media.Player.valueOf(readElement(parser,FIELD_NAME_PLAYER));
+  media.uri=readElement(parser,FIELD_NAME_URI);
+  media.title=readElementMaybe(parser,FIELD_NAME_TITLE);
+  media.width=Integer.parseInt(readElement(parser,FIELD_NAME_WIDTH));
+  media.height=Integer.parseInt(readElement(parser,FIELD_NAME_HEIGHT));
+  media.format=readElement(parser,FIELD_NAME_FORMAT);
+  media.duration=Long.parseLong(readElement(parser,FIELD_NAME_DURATION));
+  media.size=Long.parseLong(readElement(parser,FIELD_NAME_SIZE));
+  String bitrateString=readElement(parser,FIELD_NAME_BITRATE);
+  if (bitrateString != null) {
+    media.hasBitrate=true;
+    media.bitrate=Integer.parseInt(bitrateString);
+  }
+  media.copyright=readElementMaybe(parser,FIELD_NAME_COPYRIGHT);
+  searchTag(parser,FIELD_NAME_PERSONS);
+  List<String> persons=new ArrayList<String>();
+  do {
+    persons.add(parser.getElementText());
+  }
+ while (parser.nextTag() == XMLStreamConstants.START_ELEMENT && FIELD_NAME_PERSONS.equals(parser.getLocalName()));
+  if (!FIELD_NAME_MEDIA.equals(parser.getLocalName())) {
+    throw new IllegalStateException("Expected closing </" + FIELD_NAME_MEDIA + ">, got </"+ parser.getLocalName()+ ">");
+  }
+  media.persons=persons;
+  return media;
+}
