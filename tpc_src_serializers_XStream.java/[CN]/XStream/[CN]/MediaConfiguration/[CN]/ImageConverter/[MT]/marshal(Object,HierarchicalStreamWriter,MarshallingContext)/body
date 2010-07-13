@@ -1,0 +1,8 @@
+{
+  Image image=(Image)obj;
+  writer.addAttribute("uri",image.uri);
+  if (image.title != null)   writer.addAttribute("title",image.title);
+  writer.addAttribute("width",String.valueOf(image.width));
+  writer.addAttribute("height",String.valueOf(image.height));
+  writer.addAttribute("size",String.valueOf(image.size.ordinal()));
+}

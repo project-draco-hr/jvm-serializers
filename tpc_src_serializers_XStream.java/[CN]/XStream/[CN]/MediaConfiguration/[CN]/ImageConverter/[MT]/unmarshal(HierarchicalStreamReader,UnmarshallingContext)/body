@@ -1,0 +1,9 @@
+{
+  Image image=new Image();
+  image.uri=reader.getAttribute("uri");
+  image.title=reader.getAttribute("title");
+  image.width=Integer.valueOf(reader.getAttribute("width"));
+  image.height=Integer.valueOf(reader.getAttribute("height"));
+  image.size=Size.values()[Integer.valueOf(reader.getAttribute("size"))];
+  return image;
+}

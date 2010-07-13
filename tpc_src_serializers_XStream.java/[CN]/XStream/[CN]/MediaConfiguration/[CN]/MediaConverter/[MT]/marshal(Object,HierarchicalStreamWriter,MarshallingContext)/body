@@ -1,0 +1,18 @@
+{
+  Media media=(Media)obj;
+  writer.addAttribute("player",String.valueOf(media.player.ordinal()));
+  writer.addAttribute("uri",media.uri);
+  if (media.title != null)   writer.addAttribute("title",media.title);
+  writer.addAttribute("width",String.valueOf(media.width));
+  writer.addAttribute("height",String.valueOf(media.height));
+  writer.addAttribute("format",media.format);
+  writer.addAttribute("duration",String.valueOf(media.duration));
+  writer.addAttribute("size",String.valueOf(media.size));
+  if (media.hasBitrate)   writer.addAttribute("bitrate",String.valueOf(media.bitrate));
+  if (media.copyright != null)   writer.addAttribute("copyright",media.copyright);
+  for (  String p : media.persons) {
+    writer.startNode("person");
+    writer.setValue(p);
+    writer.endNode();
+  }
+}
