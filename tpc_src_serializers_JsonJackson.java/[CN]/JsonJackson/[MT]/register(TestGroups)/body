@@ -1,3 +1,4 @@
 {
   groups.media.add(JavaBuiltIn.MediaTransformer,MediaSerializer);
+  groups.media.add(JavaBuiltIn.MediaTransformer,MediaSerializerAbbreviated);
 }
