@@ -1,0 +1,8 @@
+{
+  bytes.reset();
+  int count;
+  while ((count=in.read(buffer)) > 0) {
+    bytes.write(buffer,0,count);
+  }
+  return bytes.toByteArray();
+}

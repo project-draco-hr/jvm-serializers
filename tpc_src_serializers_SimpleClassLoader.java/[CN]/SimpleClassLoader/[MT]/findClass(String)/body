@@ -1,0 +1,5 @@
+{
+  byte[] bytecode=loadedByteCode.get(name);
+  if (bytecode == null)   return null;
+  return defineClass(name,bytecode,0,bytecode.length);
+}
