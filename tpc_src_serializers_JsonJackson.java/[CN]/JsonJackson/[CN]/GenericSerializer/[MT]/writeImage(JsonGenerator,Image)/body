@@ -1,0 +1,9 @@
+{
+  generator.writeStartObject();
+  generator.writeStringField(FULL_FIELD_NAME_URI,image.uri);
+  if (image.title != null)   generator.writeStringField(FULL_FIELD_NAME_TITLE,image.title);
+  generator.writeNumberField(FULL_FIELD_NAME_WIDTH,image.width);
+  generator.writeNumberField(FULL_FIELD_NAME_HEIGHT,image.height);
+  generator.writeStringField(FULL_FIELD_NAME_SIZE,image.size.name());
+  generator.writeEndObject();
+}

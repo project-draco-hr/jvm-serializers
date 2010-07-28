@@ -1,3 +1,4 @@
 {
-  groups.media.add(JavaBuiltIn.MediaTransformer,new GenericSerializer<MediaContent>(MediaContent.class));
+  ObjectMapper mapper=new ObjectMapper();
+  groups.media.add(JavaBuiltIn.MediaTransformer,new GenericSerializer<MediaContent>("json/jackson-databind",mapper,MediaContent.class));
 }

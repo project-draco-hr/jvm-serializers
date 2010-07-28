@@ -1,0 +1,21 @@
+{
+  generator.writeFieldName(FIELD_NAME_MEDIA);
+  generator.writeStartObject();
+  generator.writeStringField(FIELD_NAME_PLAYER,media.player.name());
+  generator.writeStringField(FIELD_NAME_URI,media.uri);
+  if (media.title != null)   generator.writeStringField(FIELD_NAME_TITLE,media.title);
+  generator.writeNumberField(FIELD_NAME_WIDTH,media.width);
+  generator.writeNumberField(FIELD_NAME_HEIGHT,media.height);
+  generator.writeStringField(FIELD_NAME_FORMAT,media.format);
+  generator.writeNumberField(FIELD_NAME_DURATION,media.duration);
+  generator.writeNumberField(FIELD_NAME_SIZE,media.size);
+  if (media.hasBitrate)   generator.writeNumberField(FIELD_NAME_BITRATE,media.bitrate);
+  if (media.copyright != null)   generator.writeStringField(FIELD_NAME_COPYRIGHT,media.copyright);
+  generator.writeFieldName(FIELD_NAME_PERSONS);
+  generator.writeStartArray();
+  for (  String person : media.persons) {
+    generator.writeString(person);
+  }
+  generator.writeEndArray();
+  generator.writeEndObject();
+}
