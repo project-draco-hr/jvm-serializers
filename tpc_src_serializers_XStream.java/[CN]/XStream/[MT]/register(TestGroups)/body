@@ -18,8 +18,6 @@
   }
 ),MediaConfigurationAbbreviated));
   for (  Stax.Handler h : Stax.Handlers) {
-    groups.media.add(JavaBuiltIn.MediaTransformer,XStream.<MediaContent>mkStaxSerializer(h,"",EmptyConfiguration));
     groups.media.add(JavaBuiltIn.MediaTransformer,XStream.<MediaContent>mkStaxSerializer(h,"+c",MediaConfiguration));
-    groups.media.add(JavaBuiltIn.MediaTransformer,XStream.<MediaContent>mkStaxSerializer(h,"+c-abbrev",MediaConfigurationAbbreviated));
   }
 }
