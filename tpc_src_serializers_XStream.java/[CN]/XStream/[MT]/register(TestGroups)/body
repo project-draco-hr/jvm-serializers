@@ -11,12 +11,6 @@
     }
   }
 ),MediaConfiguration));
-  groups.media.add(JavaBuiltIn.MediaTransformer,new ConverterSerializer<MediaContent>("xml/xstream+c-abbrev",new com.thoughtworks.xstream.XStream(new XppDriver(){
-    public HierarchicalStreamWriter createWriter(    Writer out){
-      return new CompactWriter(out,xmlFriendlyReplacer());
-    }
-  }
-),MediaConfigurationAbbreviated));
   for (  Stax.Handler h : Stax.Handlers) {
     groups.media.add(JavaBuiltIn.MediaTransformer,XStream.<MediaContent>mkStaxSerializer(h,"+c",MediaConfiguration));
   }
