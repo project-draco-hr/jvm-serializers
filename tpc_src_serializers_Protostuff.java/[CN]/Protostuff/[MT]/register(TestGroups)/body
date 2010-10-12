@@ -1,6 +1,6 @@
 {
-  groups.media.add(MediaTransformer,MediaSerializer);
-  groups.media.add(JavaBuiltIn.MediaTransformer,RuntimeMediaSerializer);
-  groups.media.add(MediaTransformer,MediaSerializerGE);
-  groups.media.add(JavaBuiltIn.MediaTransformer,RuntimeMediaSerializerGE);
+  groups.media.add(MediaTransformer,ProtostuffMediaSerializer);
+  groups.media.add(JavaBuiltIn.MediaTransformer,ProtostuffRuntimeMediaSerializer);
+  groups.media.add(MediaTransformer,ProtobufMediaSerializer);
+  groups.media.add(JavaBuiltIn.MediaTransformer,ProtobufRuntimeMediaSerializer);
 }
