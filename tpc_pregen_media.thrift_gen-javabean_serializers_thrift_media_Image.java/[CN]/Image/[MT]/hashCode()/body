@@ -6,10 +6,10 @@
   boolean present_title=true && (isSetTitle());
   builder.append(present_title);
   if (present_title)   builder.append(title);
-  boolean present_width=true && (isSetWidth());
+  boolean present_width=true;
   builder.append(present_width);
   if (present_width)   builder.append(width);
-  boolean present_height=true && (isSetHeight());
+  boolean present_height=true;
   builder.append(present_height);
   if (present_height)   builder.append(height);
   boolean present_size=true && (isSetSize());

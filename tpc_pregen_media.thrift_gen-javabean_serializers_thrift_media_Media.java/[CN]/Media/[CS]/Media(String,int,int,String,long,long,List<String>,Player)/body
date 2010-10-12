@@ -1,0 +1,15 @@
+{
+  this();
+  this.uri=uri;
+  this.width=width;
+  setWidthIsSet(true);
+  this.height=height;
+  setHeightIsSet(true);
+  this.format=format;
+  this.duration=duration;
+  setDurationIsSet(true);
+  this.size=size;
+  setSizeIsSet(true);
+  this.person=person;
+  this.player=player;
+}

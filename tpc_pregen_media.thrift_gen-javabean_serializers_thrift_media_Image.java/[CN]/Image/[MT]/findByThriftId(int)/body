@@ -1,3 +1,16 @@
 {
-  return byId.get(fieldId);
+switch (fieldId) {
+case 1:
+    return URI;
+case 2:
+  return TITLE;
+case 3:
+return WIDTH;
+case 4:
+return HEIGHT;
+case 5:
+return SIZE;
+default :
+return null;
+}
 }

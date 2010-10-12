@@ -1,2 +1,23 @@
 {
+  if (!isSetWidth()) {
+    throw new TProtocolException("Required field 'width' is unset! Struct:" + toString());
+  }
+  if (!isSetHeight()) {
+    throw new TProtocolException("Required field 'height' is unset! Struct:" + toString());
+  }
+  if (!isSetFormat()) {
+    throw new TProtocolException("Required field 'format' is unset! Struct:" + toString());
+  }
+  if (!isSetDuration()) {
+    throw new TProtocolException("Required field 'duration' is unset! Struct:" + toString());
+  }
+  if (!isSetSize()) {
+    throw new TProtocolException("Required field 'size' is unset! Struct:" + toString());
+  }
+  if (!isSetPerson()) {
+    throw new TProtocolException("Required field 'person' is unset! Struct:" + toString());
+  }
+  if (!isSetPlayer()) {
+    throw new TProtocolException("Required field 'player' is unset! Struct:" + toString());
+  }
 }

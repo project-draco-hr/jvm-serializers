@@ -1,3 +1,28 @@
 {
-  return byId.get(fieldId);
+switch (fieldId) {
+case 1:
+    return URI;
+case 2:
+  return TITLE;
+case 3:
+return WIDTH;
+case 4:
+return HEIGHT;
+case 5:
+return FORMAT;
+case 6:
+return DURATION;
+case 7:
+return SIZE;
+case 8:
+return BITRATE;
+case 9:
+return PERSON;
+case 10:
+return PLAYER;
+case 11:
+return COPYRIGHT;
+default :
+return null;
+}
 }

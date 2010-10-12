@@ -13,57 +13,43 @@
       oprot.writeFieldEnd();
     }
   }
-  if (isSetWidth()) {
-    oprot.writeFieldBegin(WIDTH_FIELD_DESC);
-    oprot.writeI32(this.width);
-    oprot.writeFieldEnd();
-  }
-  if (isSetHeight()) {
-    oprot.writeFieldBegin(HEIGHT_FIELD_DESC);
-    oprot.writeI32(this.height);
-    oprot.writeFieldEnd();
-  }
+  oprot.writeFieldBegin(WIDTH_FIELD_DESC);
+  oprot.writeI32(this.width);
+  oprot.writeFieldEnd();
+  oprot.writeFieldBegin(HEIGHT_FIELD_DESC);
+  oprot.writeI32(this.height);
+  oprot.writeFieldEnd();
   if (this.format != null) {
-    if (isSetFormat()) {
-      oprot.writeFieldBegin(FORMAT_FIELD_DESC);
-      oprot.writeString(this.format);
-      oprot.writeFieldEnd();
-    }
-  }
-  if (isSetDuration()) {
-    oprot.writeFieldBegin(DURATION_FIELD_DESC);
-    oprot.writeI64(this.duration);
+    oprot.writeFieldBegin(FORMAT_FIELD_DESC);
+    oprot.writeString(this.format);
     oprot.writeFieldEnd();
   }
-  if (isSetSize()) {
-    oprot.writeFieldBegin(SIZE_FIELD_DESC);
-    oprot.writeI64(this.size);
-    oprot.writeFieldEnd();
-  }
+  oprot.writeFieldBegin(DURATION_FIELD_DESC);
+  oprot.writeI64(this.duration);
+  oprot.writeFieldEnd();
+  oprot.writeFieldBegin(SIZE_FIELD_DESC);
+  oprot.writeI64(this.size);
+  oprot.writeFieldEnd();
   if (isSetBitrate()) {
     oprot.writeFieldBegin(BITRATE_FIELD_DESC);
     oprot.writeI32(this.bitrate);
     oprot.writeFieldEnd();
   }
   if (this.person != null) {
-    if (isSetPerson()) {
-      oprot.writeFieldBegin(PERSON_FIELD_DESC);
+    oprot.writeFieldBegin(PERSON_FIELD_DESC);
 {
-        oprot.writeListBegin(new TList(TType.STRING,this.person.size()));
-        for (        String _iter3 : this.person) {
-          oprot.writeString(_iter3);
-        }
-        oprot.writeListEnd();
+      oprot.writeListBegin(new TList(TType.STRING,this.person.size()));
+      for (      String _iter3 : this.person) {
+        oprot.writeString(_iter3);
       }
-      oprot.writeFieldEnd();
+      oprot.writeListEnd();
     }
+    oprot.writeFieldEnd();
   }
   if (this.player != null) {
-    if (isSetPlayer()) {
-      oprot.writeFieldBegin(PLAYER_FIELD_DESC);
-      oprot.writeI32(this.player.getValue());
-      oprot.writeFieldEnd();
-    }
+    oprot.writeFieldBegin(PLAYER_FIELD_DESC);
+    oprot.writeI32(this.player.getValue());
+    oprot.writeFieldEnd();
   }
   if (this.copyright != null) {
     if (isSetCopyright()) {

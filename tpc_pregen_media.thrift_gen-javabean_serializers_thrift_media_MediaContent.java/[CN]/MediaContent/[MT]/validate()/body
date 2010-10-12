@@ -1,2 +1,8 @@
 {
+  if (!isSetImage()) {
+    throw new TProtocolException("Required field 'image' is unset! Struct:" + toString());
+  }
+  if (!isSetMedia()) {
+    throw new TProtocolException("Required field 'media' is unset! Struct:" + toString());
+  }
 }

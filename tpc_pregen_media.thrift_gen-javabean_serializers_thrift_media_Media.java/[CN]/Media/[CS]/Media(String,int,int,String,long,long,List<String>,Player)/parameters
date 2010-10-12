@@ -1,0 +1,8 @@
+String uri
+int width
+int height
+String format
+long duration
+long size
+List<String> person
+Player player

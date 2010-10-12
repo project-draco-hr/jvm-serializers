@@ -1,0 +1,4 @@
+String uri
+int width
+int height
+Size size

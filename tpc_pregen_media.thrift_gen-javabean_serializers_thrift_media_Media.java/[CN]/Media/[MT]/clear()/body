@@ -1,0 +1,18 @@
+{
+  this.uri=null;
+  this.title=null;
+  setWidthIsSet(false);
+  this.width=0;
+  setHeightIsSet(false);
+  this.height=0;
+  this.format=null;
+  setDurationIsSet(false);
+  this.duration=0;
+  setSizeIsSet(false);
+  this.size=0;
+  setBitrateIsSet(false);
+  this.bitrate=0;
+  this.person=null;
+  this.player=null;
+  this.copyright=null;
+}

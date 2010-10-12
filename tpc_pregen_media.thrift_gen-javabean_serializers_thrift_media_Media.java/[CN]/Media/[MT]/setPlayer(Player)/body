@@ -1,4 +1,3 @@
 {
   this.player=player;
-  return this;
 }

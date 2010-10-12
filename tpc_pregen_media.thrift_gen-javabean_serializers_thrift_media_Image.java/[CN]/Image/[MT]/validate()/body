@@ -1,2 +1,11 @@
 {
+  if (!isSetWidth()) {
+    throw new TProtocolException("Required field 'width' is unset! Struct:" + toString());
+  }
+  if (!isSetHeight()) {
+    throw new TProtocolException("Required field 'height' is unset! Struct:" + toString());
+  }
+  if (!isSetSize()) {
+    throw new TProtocolException("Required field 'size' is unset! Struct:" + toString());
+  }
 }

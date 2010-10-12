@@ -4,93 +4,115 @@
   }
   int lastComparison=0;
   Media typedOther=(Media)other;
-  lastComparison=Boolean.valueOf(isSetUri()).compareTo(isSetUri());
+  lastComparison=Boolean.valueOf(isSetUri()).compareTo(typedOther.isSetUri());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(uri,typedOther.uri);
+  if (isSetUri()) {
+    lastComparison=TBaseHelper.compareTo(this.uri,typedOther.uri);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetTitle()).compareTo(typedOther.isSetTitle());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=Boolean.valueOf(isSetTitle()).compareTo(isSetTitle());
+  if (isSetTitle()) {
+    lastComparison=TBaseHelper.compareTo(this.title,typedOther.title);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetWidth()).compareTo(typedOther.isSetWidth());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(title,typedOther.title);
+  if (isSetWidth()) {
+    lastComparison=TBaseHelper.compareTo(this.width,typedOther.width);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetHeight()).compareTo(typedOther.isSetHeight());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=Boolean.valueOf(isSetWidth()).compareTo(isSetWidth());
+  if (isSetHeight()) {
+    lastComparison=TBaseHelper.compareTo(this.height,typedOther.height);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetFormat()).compareTo(typedOther.isSetFormat());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(width,typedOther.width);
+  if (isSetFormat()) {
+    lastComparison=TBaseHelper.compareTo(this.format,typedOther.format);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetDuration()).compareTo(typedOther.isSetDuration());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=Boolean.valueOf(isSetHeight()).compareTo(isSetHeight());
+  if (isSetDuration()) {
+    lastComparison=TBaseHelper.compareTo(this.duration,typedOther.duration);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetSize()).compareTo(typedOther.isSetSize());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(height,typedOther.height);
+  if (isSetSize()) {
+    lastComparison=TBaseHelper.compareTo(this.size,typedOther.size);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetBitrate()).compareTo(typedOther.isSetBitrate());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=Boolean.valueOf(isSetFormat()).compareTo(isSetFormat());
+  if (isSetBitrate()) {
+    lastComparison=TBaseHelper.compareTo(this.bitrate,typedOther.bitrate);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetPerson()).compareTo(typedOther.isSetPerson());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(format,typedOther.format);
+  if (isSetPerson()) {
+    lastComparison=TBaseHelper.compareTo(this.person,typedOther.person);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetPlayer()).compareTo(typedOther.isSetPlayer());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=Boolean.valueOf(isSetDuration()).compareTo(isSetDuration());
+  if (isSetPlayer()) {
+    lastComparison=TBaseHelper.compareTo(this.player,typedOther.player);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetCopyright()).compareTo(typedOther.isSetCopyright());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(duration,typedOther.duration);
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=Boolean.valueOf(isSetSize()).compareTo(isSetSize());
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=TBaseHelper.compareTo(size,typedOther.size);
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=Boolean.valueOf(isSetBitrate()).compareTo(isSetBitrate());
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=TBaseHelper.compareTo(bitrate,typedOther.bitrate);
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=Boolean.valueOf(isSetPerson()).compareTo(isSetPerson());
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=TBaseHelper.compareTo(person,typedOther.person);
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=Boolean.valueOf(isSetPlayer()).compareTo(isSetPlayer());
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=TBaseHelper.compareTo(player,typedOther.player);
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=Boolean.valueOf(isSetCopyright()).compareTo(isSetCopyright());
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=TBaseHelper.compareTo(copyright,typedOther.copyright);
-  if (lastComparison != 0) {
-    return lastComparison;
+  if (isSetCopyright()) {
+    lastComparison=TBaseHelper.compareTo(this.copyright,typedOther.copyright);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
   }
   return 0;
 }

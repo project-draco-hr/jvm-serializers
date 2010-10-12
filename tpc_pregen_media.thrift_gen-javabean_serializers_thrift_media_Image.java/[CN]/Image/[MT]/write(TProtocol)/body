@@ -13,22 +13,16 @@
       oprot.writeFieldEnd();
     }
   }
-  if (isSetWidth()) {
-    oprot.writeFieldBegin(WIDTH_FIELD_DESC);
-    oprot.writeI32(this.width);
-    oprot.writeFieldEnd();
-  }
-  if (isSetHeight()) {
-    oprot.writeFieldBegin(HEIGHT_FIELD_DESC);
-    oprot.writeI32(this.height);
-    oprot.writeFieldEnd();
-  }
+  oprot.writeFieldBegin(WIDTH_FIELD_DESC);
+  oprot.writeI32(this.width);
+  oprot.writeFieldEnd();
+  oprot.writeFieldBegin(HEIGHT_FIELD_DESC);
+  oprot.writeI32(this.height);
+  oprot.writeFieldEnd();
   if (this.size != null) {
-    if (isSetSize()) {
-      oprot.writeFieldBegin(SIZE_FIELD_DESC);
-      oprot.writeI32(this.size.getValue());
-      oprot.writeFieldEnd();
-    }
+    oprot.writeFieldBegin(SIZE_FIELD_DESC);
+    oprot.writeI32(this.size.getValue());
+    oprot.writeFieldEnd();
   }
   oprot.writeFieldStop();
   oprot.writeStructEnd();

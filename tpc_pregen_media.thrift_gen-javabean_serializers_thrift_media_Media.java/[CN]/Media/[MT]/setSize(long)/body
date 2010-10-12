@@ -1,5 +1,4 @@
 {
   this.size=size;
   setSizeIsSet(true);
-  return this;
 }

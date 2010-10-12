@@ -12,14 +12,14 @@
     if (!(this_present_title && that_present_title))     return false;
     if (!this.title.equals(that.title))     return false;
   }
-  boolean this_present_width=true && this.isSetWidth();
-  boolean that_present_width=true && that.isSetWidth();
+  boolean this_present_width=true;
+  boolean that_present_width=true;
   if (this_present_width || that_present_width) {
     if (!(this_present_width && that_present_width))     return false;
     if (this.width != that.width)     return false;
   }
-  boolean this_present_height=true && this.isSetHeight();
-  boolean that_present_height=true && that.isSetHeight();
+  boolean this_present_height=true;
+  boolean that_present_height=true;
   if (this_present_height || that_present_height) {
     if (!(this_present_height && that_present_height))     return false;
     if (this.height != that.height)     return false;
@@ -30,14 +30,14 @@
     if (!(this_present_format && that_present_format))     return false;
     if (!this.format.equals(that.format))     return false;
   }
-  boolean this_present_duration=true && this.isSetDuration();
-  boolean that_present_duration=true && that.isSetDuration();
+  boolean this_present_duration=true;
+  boolean that_present_duration=true;
   if (this_present_duration || that_present_duration) {
     if (!(this_present_duration && that_present_duration))     return false;
     if (this.duration != that.duration)     return false;
   }
-  boolean this_present_size=true && this.isSetSize();
-  boolean that_present_size=true && that.isSetSize();
+  boolean this_present_size=true;
+  boolean that_present_size=true;
   if (this_present_size || that_present_size) {
     if (!(this_present_size && that_present_size))     return false;
     if (this.size != that.size)     return false;

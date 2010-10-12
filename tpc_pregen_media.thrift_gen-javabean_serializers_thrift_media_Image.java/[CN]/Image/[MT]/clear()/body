@@ -1,0 +1,9 @@
+{
+  this.uri=null;
+  this.title=null;
+  setWidthIsSet(false);
+  this.width=0;
+  setHeightIsSet(false);
+  this.height=0;
+  this.size=null;
+}

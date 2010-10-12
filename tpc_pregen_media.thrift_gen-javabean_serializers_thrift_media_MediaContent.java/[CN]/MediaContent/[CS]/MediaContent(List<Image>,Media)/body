@@ -1,0 +1,5 @@
+{
+  this();
+  this.image=image;
+  this.media=media;
+}

@@ -6,38 +6,33 @@
     if (field.type == TType.STOP) {
       break;
     }
-    _Fields fieldId=_Fields.findByThriftId(field.id);
-    if (fieldId == null) {
-      TProtocolUtil.skip(iprot,field.type);
-    }
+switch (field.id) {
+case 1:
+      if (field.type == TType.STRING) {
+        this.uri=iprot.readString();
+      }
  else {
-switch (fieldId) {
-case URI:
-        if (field.type == TType.STRING) {
-          this.uri=iprot.readString();
-        }
+        TProtocolUtil.skip(iprot,field.type);
+      }
+    break;
+case 2:
+  if (field.type == TType.STRING) {
+    this.title=iprot.readString();
+  }
  else {
-          TProtocolUtil.skip(iprot,field.type);
-        }
-      break;
-case TITLE:
-    if (field.type == TType.STRING) {
-      this.title=iprot.readString();
-    }
- else {
-      TProtocolUtil.skip(iprot,field.type);
-    }
-  break;
-case WIDTH:
+    TProtocolUtil.skip(iprot,field.type);
+  }
+break;
+case 3:
 if (field.type == TType.I32) {
-  this.width=iprot.readI32();
-  setWidthIsSet(true);
+this.width=iprot.readI32();
+setWidthIsSet(true);
 }
  else {
-  TProtocolUtil.skip(iprot,field.type);
+TProtocolUtil.skip(iprot,field.type);
 }
 break;
-case HEIGHT:
+case 4:
 if (field.type == TType.I32) {
 this.height=iprot.readI32();
 setHeightIsSet(true);
@@ -46,7 +41,7 @@ setHeightIsSet(true);
 TProtocolUtil.skip(iprot,field.type);
 }
 break;
-case FORMAT:
+case 5:
 if (field.type == TType.STRING) {
 this.format=iprot.readString();
 }
@@ -54,7 +49,7 @@ this.format=iprot.readString();
 TProtocolUtil.skip(iprot,field.type);
 }
 break;
-case DURATION:
+case 6:
 if (field.type == TType.I64) {
 this.duration=iprot.readI64();
 setDurationIsSet(true);
@@ -63,7 +58,7 @@ setDurationIsSet(true);
 TProtocolUtil.skip(iprot,field.type);
 }
 break;
-case SIZE:
+case 7:
 if (field.type == TType.I64) {
 this.size=iprot.readI64();
 setSizeIsSet(true);
@@ -72,7 +67,7 @@ setSizeIsSet(true);
 TProtocolUtil.skip(iprot,field.type);
 }
 break;
-case BITRATE:
+case 8:
 if (field.type == TType.I32) {
 this.bitrate=iprot.readI32();
 setBitrateIsSet(true);
@@ -81,7 +76,7 @@ setBitrateIsSet(true);
 TProtocolUtil.skip(iprot,field.type);
 }
 break;
-case PERSON:
+case 9:
 if (field.type == TType.LIST) {
 {
 TList _list0=iprot.readListBegin();
@@ -98,7 +93,7 @@ iprot.readListEnd();
 TProtocolUtil.skip(iprot,field.type);
 }
 break;
-case PLAYER:
+case 10:
 if (field.type == TType.I32) {
 this.player=Player.findByValue(iprot.readI32());
 }
@@ -106,7 +101,7 @@ this.player=Player.findByValue(iprot.readI32());
 TProtocolUtil.skip(iprot,field.type);
 }
 break;
-case COPYRIGHT:
+case 11:
 if (field.type == TType.STRING) {
 this.copyright=iprot.readString();
 }
@@ -114,9 +109,10 @@ this.copyright=iprot.readString();
 TProtocolUtil.skip(iprot,field.type);
 }
 break;
+default :
+TProtocolUtil.skip(iprot,field.type);
 }
 iprot.readFieldEnd();
-}
 }
 iprot.readStructEnd();
 validate();

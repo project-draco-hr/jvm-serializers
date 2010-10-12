@@ -1,4 +1,3 @@
 {
   this.image=image;
-  return this;
 }

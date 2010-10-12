@@ -4,45 +4,55 @@
   }
   int lastComparison=0;
   Image typedOther=(Image)other;
-  lastComparison=Boolean.valueOf(isSetUri()).compareTo(isSetUri());
+  lastComparison=Boolean.valueOf(isSetUri()).compareTo(typedOther.isSetUri());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(uri,typedOther.uri);
+  if (isSetUri()) {
+    lastComparison=TBaseHelper.compareTo(this.uri,typedOther.uri);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetTitle()).compareTo(typedOther.isSetTitle());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=Boolean.valueOf(isSetTitle()).compareTo(isSetTitle());
+  if (isSetTitle()) {
+    lastComparison=TBaseHelper.compareTo(this.title,typedOther.title);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetWidth()).compareTo(typedOther.isSetWidth());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(title,typedOther.title);
+  if (isSetWidth()) {
+    lastComparison=TBaseHelper.compareTo(this.width,typedOther.width);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetHeight()).compareTo(typedOther.isSetHeight());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=Boolean.valueOf(isSetWidth()).compareTo(isSetWidth());
+  if (isSetHeight()) {
+    lastComparison=TBaseHelper.compareTo(this.height,typedOther.height);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
+  }
+  lastComparison=Boolean.valueOf(isSetSize()).compareTo(typedOther.isSetSize());
   if (lastComparison != 0) {
     return lastComparison;
   }
-  lastComparison=TBaseHelper.compareTo(width,typedOther.width);
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=Boolean.valueOf(isSetHeight()).compareTo(isSetHeight());
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=TBaseHelper.compareTo(height,typedOther.height);
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=Boolean.valueOf(isSetSize()).compareTo(isSetSize());
-  if (lastComparison != 0) {
-    return lastComparison;
-  }
-  lastComparison=TBaseHelper.compareTo(size,typedOther.size);
-  if (lastComparison != 0) {
-    return lastComparison;
+  if (isSetSize()) {
+    lastComparison=TBaseHelper.compareTo(this.size,typedOther.size);
+    if (lastComparison != 0) {
+      return lastComparison;
+    }
   }
   return 0;
 }
