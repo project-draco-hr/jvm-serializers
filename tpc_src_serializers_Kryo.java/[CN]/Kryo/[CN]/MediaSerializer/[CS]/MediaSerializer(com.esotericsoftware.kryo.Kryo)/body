@@ -1,0 +1,6 @@
+{
+  _kryo=kryo;
+  _personsSerializer=new CollectionSerializer(kryo);
+  _personsSerializer.setElementClass(String.class);
+  _personsSerializer.setElementsCanBeNull(false);
+}

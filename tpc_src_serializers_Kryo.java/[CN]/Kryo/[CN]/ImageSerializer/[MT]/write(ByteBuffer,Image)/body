@@ -1,0 +1,7 @@
+{
+  StringSerializer.put(buffer,obj.uri);
+  _kryo.writeObject(buffer,obj.title);
+  IntSerializer.put(buffer,obj.width,true);
+  IntSerializer.put(buffer,obj.height,true);
+  EnumSerializer.put(buffer,obj.size);
+}
