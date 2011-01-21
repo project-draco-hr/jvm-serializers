@@ -1,0 +1,4 @@
+{
+  groups.media.add(JavaBuiltIn.MediaTransformer,SmileManualMediaSerializer);
+  groups.media.add(JavaBuiltIn.MediaTransformer,SmileRuntimeMediaSerializer);
+}
