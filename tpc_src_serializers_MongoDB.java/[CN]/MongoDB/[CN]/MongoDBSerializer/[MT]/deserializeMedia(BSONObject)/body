@@ -1,0 +1,51 @@
+{
+  Media r=new Media();
+  for (  String name : media.keySet()) {
+    Integer i=fullFieldToIndex.get(name);
+    if (i != null) {
+switch (i) {
+case FIELD_IX_PLAYER:
+        r.player=Media.Player.valueOf((String)media.get(name));
+      continue;
+case FIELD_IX_URI:
+    r.uri=(String)media.get(name);
+  continue;
+case FIELD_IX_TITLE:
+r.title=(String)media.get(name);
+continue;
+case FIELD_IX_WIDTH:
+r.width=(Integer)media.get(name);
+continue;
+case FIELD_IX_HEIGHT:
+r.height=(Integer)media.get(name);
+continue;
+case FIELD_IX_FORMAT:
+r.format=(String)media.get(name);
+continue;
+case FIELD_IX_DURATION:
+r.duration=(Long)media.get(name);
+continue;
+case FIELD_IX_SIZE:
+r.size=(Long)media.get(name);
+continue;
+case FIELD_IX_BITRATE:
+r.bitrate=(Integer)media.get(name);
+r.hasBitrate=true;
+continue;
+case FIELD_IX_PERSONS:
+BasicBSONList pl=(BasicBSONList)media.get(name);
+List<String> persons=new ArrayList<String>();
+for (Object o : pl) {
+persons.add((String)o);
+}
+r.persons=persons;
+continue;
+case FIELD_IX_COPYRIGHT:
+r.copyright=(String)media.get(name);
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + name + "'");
+}
+return r;
+}

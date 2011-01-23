@@ -1,0 +1,9 @@
+{
+  BSONObject r=new BasicBSONObject();
+  r.put(FULL_FIELD_NAME_URI,image.uri);
+  if (image.title != null)   r.put(FULL_FIELD_NAME_TITLE,image.title);
+  r.put(FULL_FIELD_NAME_WIDTH,image.width);
+  r.put(FULL_FIELD_NAME_HEIGHT,image.height);
+  r.put(FULL_FIELD_NAME_SIZE,image.size.name());
+  return r;
+}

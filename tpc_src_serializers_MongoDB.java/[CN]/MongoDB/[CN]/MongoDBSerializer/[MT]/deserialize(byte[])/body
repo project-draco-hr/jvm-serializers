@@ -1,0 +1,20 @@
+{
+  MediaContent r=new MediaContent();
+  BSONDecoder dec=new BSONDecoder();
+  BSONObject o=dec.readObject(array);
+  for (  String name : o.keySet()) {
+    Integer i=fullFieldToIndex.get(name);
+    if (i != null) {
+switch (i) {
+case FIELD_IX_MEDIA:
+        r.media=deserializeMedia((BSONObject)o.get(name));
+      continue;
+case FIELD_IX_IMAGES:
+    r.images=deserializeImages((BasicBSONList)o.get(name));
+  continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + name + "'");
+}
+return r;
+}

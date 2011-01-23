@@ -1,0 +1,27 @@
+{
+  Image r=new Image();
+  for (  String name : image.keySet()) {
+    Integer i=fullFieldToIndex.get(name);
+    if (i != null) {
+switch (i) {
+case FIELD_IX_URI:
+        r.uri=(String)image.get(name);
+      continue;
+case FIELD_IX_TITLE:
+    r.title=(String)image.get(name);
+  continue;
+case FIELD_IX_WIDTH:
+r.width=(Integer)image.get(name);
+continue;
+case FIELD_IX_HEIGHT:
+r.height=(Integer)image.get(name);
+continue;
+case FIELD_IX_SIZE:
+r.size=Image.Size.valueOf((String)image.get(name));
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + name + "'");
+}
+return r;
+}

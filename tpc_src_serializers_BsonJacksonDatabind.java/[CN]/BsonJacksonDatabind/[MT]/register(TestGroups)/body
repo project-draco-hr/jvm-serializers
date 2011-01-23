@@ -1,0 +1,5 @@
+{
+  BsonFactory factory=new BsonFactory();
+  ObjectMapper mapper=new ObjectMapper(factory);
+  groups.media.add(JavaBuiltIn.MediaTransformer,new JsonJacksonDatabind.GenericSerializer<MediaContent>("bson/jackson-databind",mapper,MediaContent.class));
+}

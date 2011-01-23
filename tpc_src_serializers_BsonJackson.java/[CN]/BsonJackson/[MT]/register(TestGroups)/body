@@ -1,0 +1,4 @@
+{
+  BsonFactory factory=new BsonFactory();
+  groups.media.add(JavaBuiltIn.MediaTransformer,new JsonJacksonManual.GenericSerializer("bson/jackson-manual",factory));
+}

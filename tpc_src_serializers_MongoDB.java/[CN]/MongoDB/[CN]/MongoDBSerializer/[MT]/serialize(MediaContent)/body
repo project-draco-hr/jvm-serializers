@@ -1,0 +1,13 @@
+{
+  BSONObject o=new BasicBSONObject();
+  BSONObject media=serializeMedia(data.media);
+  o.put(FULL_FIELD_NAME_MEDIA,media);
+  BSONObject[] images=new BSONObject[data.images.size()];
+  int j=0;
+  for (  Image i : data.images) {
+    images[j++]=serializeImage(i);
+  }
+  o.put(FULL_FIELD_NAME_IMAGES,images);
+  BSONEncoder enc=new BSONEncoder();
+  return enc.encode(o);
+}

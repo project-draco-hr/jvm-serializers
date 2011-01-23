@@ -1,0 +1,15 @@
+{
+  BSONObject r=new BasicBSONObject();
+  r.put(FULL_FIELD_NAME_PLAYER,media.player.name());
+  r.put(FULL_FIELD_NAME_URI,media.uri);
+  if (media.title != null)   r.put(FULL_FIELD_NAME_TITLE,media.title);
+  r.put(FULL_FIELD_NAME_WIDTH,media.width);
+  r.put(FULL_FIELD_NAME_HEIGHT,media.height);
+  r.put(FULL_FIELD_NAME_FORMAT,media.format);
+  r.put(FULL_FIELD_NAME_DURATION,media.duration);
+  r.put(FULL_FIELD_NAME_SIZE,media.size);
+  if (media.hasBitrate)   r.put(FULL_FIELD_NAME_BITRATE,media.bitrate);
+  if (media.copyright != null)   r.put(FULL_FIELD_NAME_COPYRIGHT,media.copyright);
+  r.put(FULL_FIELD_NAME_PERSONS,media.persons);
+  return r;
+}

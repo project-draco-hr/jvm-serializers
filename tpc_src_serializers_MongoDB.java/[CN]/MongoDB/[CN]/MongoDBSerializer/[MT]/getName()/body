@@ -1,0 +1,3 @@
+{
+  return "bson/mongodb";
+}

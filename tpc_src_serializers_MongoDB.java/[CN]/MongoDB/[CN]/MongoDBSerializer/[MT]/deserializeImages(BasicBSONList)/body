@@ -1,0 +1,7 @@
+{
+  List<Image> r=new ArrayList<Image>();
+  for (  Object o : images) {
+    r.add(deserializeImage((BSONObject)o));
+  }
+  return r;
+}
