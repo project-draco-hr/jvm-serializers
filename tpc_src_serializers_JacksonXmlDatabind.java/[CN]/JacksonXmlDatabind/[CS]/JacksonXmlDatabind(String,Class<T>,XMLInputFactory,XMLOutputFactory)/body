@@ -1,0 +1,5 @@
+{
+  this.name=name;
+  type=TypeFactory.type(clazz);
+  mapper=new XmlMapper(new XmlFactory(null,inputF,outputF));
+}

@@ -1,0 +1,3 @@
+{
+  groups.media.add(JavaBuiltIn.MediaTransformer,new JacksonXmlDatabind<MediaContent>("xml/jackson-databind/aalto",MediaContent.class,new InputFactoryImpl(),new OutputFactoryImpl()));
+}

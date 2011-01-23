@@ -1,0 +1,3 @@
+{
+  return (T)mapper.readValue(array,0,array.length,type);
+}
