@@ -1,5 +1,7 @@
 {
   ByteArrayOutputStream out=outputStream(content);
-  WRITER.write(content,new BinaryEncoder(out));
+  encoder=ENCODER_FACTORY.binaryEncoder(out,encoder);
+  WRITER.write(content,encoder);
+  encoder.flush();
   return out.toByteArray();
 }

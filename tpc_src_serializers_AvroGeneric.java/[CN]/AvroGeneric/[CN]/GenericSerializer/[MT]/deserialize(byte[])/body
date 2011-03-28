@@ -1,3 +1,4 @@
 {
-  return READER.read(null,FACTORY.createBinaryDecoder(array,null));
+  decoder=DECODER_FACTORY.binaryDecoder(array,decoder);
+  return READER.read(null,decoder);
 }
