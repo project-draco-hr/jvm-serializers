@@ -1,3 +1,4 @@
 {
-  groups.media.add(Protostuff.MediaTransformer,XmlMediaSerializer);
+  groups.media.add(JavaBuiltIn.MediaTransformer,XmlManualMediaSerializer);
+  groups.media.add(JavaBuiltIn.MediaTransformer,XmlRuntimeMediaSerializer);
 }
