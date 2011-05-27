@@ -1,4 +1,0 @@
-{
-  msgPacker=DynamicPacker.create(t);
-  msgUnpacker=DynamicUnpacker.create(t);
-}

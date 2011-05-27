@@ -1,4 +1,0 @@
-{
-  GenericSerializer<MediaContent> ser=new GenericSerializer<MediaContent>(MediaContent.class);
-  groups.media.add(JavaBuiltIn.MediaTransformer,ser);
-}
