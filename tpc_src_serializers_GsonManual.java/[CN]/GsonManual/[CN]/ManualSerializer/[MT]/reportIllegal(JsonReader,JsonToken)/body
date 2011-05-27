@@ -1,0 +1,8 @@
+{
+  JsonToken curr=parser.peek();
+  String msg="Expected token " + expToken + "; got "+ curr;
+  if (curr == JsonToken.NAME) {
+    msg+=" (current field name '" + parser.nextName() + "')";
+  }
+  throw new IllegalStateException(msg);
+}

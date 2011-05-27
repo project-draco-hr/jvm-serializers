@@ -1,0 +1,6 @@
+{
+  ByteArrayOutputStream out=outputStream(data);
+  Packer packer=new Packer(out);
+  msgPacker.pack(packer,data);
+  return out.toByteArray();
+}

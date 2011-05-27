@@ -1,0 +1,4 @@
+{
+  Unpacker unpacker=new Unpacker(new ByteArrayInputStream(array));
+  return (T)msgUnpacker.unpack(unpacker);
+}

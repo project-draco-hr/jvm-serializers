@@ -1,0 +1,6 @@
+{
+  Reader r=new InputStreamReader(new ByteArrayInputStream(array),"UTF-8");
+  T result=_gson.fromJson(r,type);
+  r.close();
+  return result;
+}

@@ -1,0 +1,11 @@
+{
+  writer.beginObject();
+  writeMedia(writer,content.media);
+  writer.name(FULL_FIELD_NAME_IMAGES);
+  writer.beginArray();
+  for (  Image i : content.images) {
+    writeImage(writer,i);
+  }
+  writer.endArray();
+  writer.endObject();
+}

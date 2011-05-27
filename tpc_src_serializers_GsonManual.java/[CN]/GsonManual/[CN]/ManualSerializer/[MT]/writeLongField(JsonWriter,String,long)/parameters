@@ -1,0 +1,3 @@
+JsonWriter writer
+String field
+long value

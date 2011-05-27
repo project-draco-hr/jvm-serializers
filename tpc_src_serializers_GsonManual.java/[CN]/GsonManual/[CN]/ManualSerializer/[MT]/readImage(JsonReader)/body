@@ -1,0 +1,41 @@
+{
+  JsonToken t;
+  Image image=new Image();
+  boolean haveWidth=false;
+  boolean haveHeight=false;
+  while ((t=parser.peek()) != JsonToken.END_OBJECT) {
+    if (t != JsonToken.NAME) {
+      reportIllegal(parser,JsonToken.NAME);
+    }
+    String field=parser.nextName();
+    Integer I=fullFieldToIndex.get(field);
+    if (I != null) {
+switch (I) {
+case FIELD_IX_URI:
+        image.uri=parser.nextString();
+      continue;
+case FIELD_IX_TITLE:
+    image.title=parser.nextString();
+  continue;
+case FIELD_IX_WIDTH:
+image.width=parser.nextInt();
+haveWidth=true;
+continue;
+case FIELD_IX_HEIGHT:
+image.height=parser.nextInt();
+haveHeight=true;
+continue;
+case FIELD_IX_SIZE:
+image.size=Image.Size.valueOf(parser.nextString());
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+parser.endObject();
+if (image.uri == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_URI);
+if (!haveWidth) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_WIDTH);
+if (!haveHeight) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_HEIGHT);
+if (image.size == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_SIZE);
+return image;
+}

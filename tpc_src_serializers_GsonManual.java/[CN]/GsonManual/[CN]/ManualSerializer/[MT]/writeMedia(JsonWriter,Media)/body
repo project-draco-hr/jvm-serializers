@@ -1,0 +1,27 @@
+{
+  writer.name(FULL_FIELD_NAME_MEDIA);
+  writer.beginObject();
+  writeStringField(writer,FULL_FIELD_NAME_PLAYER,media.player.name());
+  writeStringField(writer,FULL_FIELD_NAME_URI,media.uri);
+  if (media.title != null) {
+    writeStringField(writer,FULL_FIELD_NAME_TITLE,media.title);
+  }
+  writeIntField(writer,FULL_FIELD_NAME_WIDTH,media.width);
+  writeIntField(writer,FULL_FIELD_NAME_HEIGHT,media.height);
+  writeStringField(writer,FULL_FIELD_NAME_FORMAT,media.format);
+  writeLongField(writer,FULL_FIELD_NAME_DURATION,media.duration);
+  writeLongField(writer,FULL_FIELD_NAME_SIZE,media.size);
+  if (media.hasBitrate) {
+    writeIntField(writer,FULL_FIELD_NAME_BITRATE,media.bitrate);
+  }
+  if (media.copyright != null) {
+    writeStringField(writer,FULL_FIELD_NAME_COPYRIGHT,media.copyright);
+  }
+  writer.name(FULL_FIELD_NAME_PERSONS);
+  writer.beginArray();
+  for (  String person : media.persons) {
+    writer.value(person);
+  }
+  writer.endArray();
+  writer.endObject();
+}

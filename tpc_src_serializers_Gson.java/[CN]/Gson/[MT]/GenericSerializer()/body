@@ -1,4 +1,0 @@
-{
-  @SuppressWarnings("unchecked") Serializer<T> s=(Serializer<T>)GenericSerializer;
-  return s;
-}

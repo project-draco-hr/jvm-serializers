@@ -1,0 +1,7 @@
+{
+  Reader r=new InputStreamReader(new ByteArrayInputStream(array),"UTF-8");
+  JsonReader reader=new JsonReader(r);
+  MediaContent content=readMediaContent(reader);
+  r.close();
+  return content;
+}
