@@ -1,0 +1,9 @@
+{
+  GenericSerializer<MediaContent> ser=new GenericSerializer<MediaContent>(MediaContent.class);
+  groups.media.add(JavaBuiltIn.MediaTransformer,ser);
+  MessagePack.register(MediaContent.class);
+  MessagePack.register(Media.class);
+  MessagePack.register(Media.Player.class);
+  MessagePack.register(Image.class);
+  MessagePack.register(Image.Size.class);
+}
