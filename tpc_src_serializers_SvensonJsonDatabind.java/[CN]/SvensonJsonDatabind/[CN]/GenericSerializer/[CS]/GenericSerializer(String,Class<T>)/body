@@ -1,0 +1,7 @@
+{
+  this.name=name;
+  type=clazz;
+  _jsonParser=org.svenson.JSONParser.defaultJSONParser();
+  _jsonParser.addTypeHint(".images[]",Image.class);
+  _jsonWriter=org.svenson.JSON.defaultJSON();
+}
