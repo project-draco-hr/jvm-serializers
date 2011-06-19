@@ -1,0 +1,6 @@
+{
+  this.name=name;
+  type=clazz;
+  net.sf.json.util.JSONUtils.getMorpherRegistry().registerMorpher(new net.sf.json.util.EnumMorpher(Media.Player.class));
+  net.sf.json.util.JSONUtils.getMorpherRegistry().registerMorpher(new net.sf.json.util.EnumMorpher(Image.Size.class));
+}
