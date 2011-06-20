@@ -1,6 +1,15 @@
 {
   this.name=name;
   type=clazz;
-  net.sf.json.util.JSONUtils.getMorpherRegistry().registerMorpher(new net.sf.json.util.EnumMorpher(Media.Player.class));
-  net.sf.json.util.JSONUtils.getMorpherRegistry().registerMorpher(new net.sf.json.util.EnumMorpher(Image.Size.class));
+  net.sf.ezmorph.MorpherRegistry _morpherRegistry=net.sf.json.util.JSONUtils.getMorpherRegistry();
+  _morpherRegistry.registerMorpher(new net.sf.json.util.EnumMorpher(Media.Player.class));
+  _morpherRegistry.registerMorpher(new net.sf.json.util.EnumMorpher(Image.Size.class));
+  _jsonConfig=new net.sf.json.JsonConfig();
+  _jsonConfig.setRootClass(type);
+  _jsonConfig.registerDefaultValueProcessor(String.class,new net.sf.json.processors.DefaultValueProcessor(){
+    @Override public Object getDefaultValue(    Class type){
+      return net.sf.json.JSONNull.getInstance();
+    }
+  }
+);
 }
