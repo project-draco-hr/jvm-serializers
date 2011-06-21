@@ -1,7 +1,4 @@
 {
-  ByteArrayOutputStream baos=outputStream(data);
-  OutputStreamWriter w=new OutputStreamWriter(baos,"UTF-8");
-  _jsonWriter.writeJSONToWriter(data,w);
-  w.close();
-  return baos.toByteArray();
+  String result=_jsonWriter.forValue(data);
+  return result.getBytes();
 }
