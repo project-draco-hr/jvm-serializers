@@ -1,7 +1,6 @@
 {
-  ByteArrayOutputStream baos=outputStream(data);
-  OutputStreamWriter w=new OutputStreamWriter(baos,"UTF-8");
+  StringWriter w=new StringWriter();
   _gson.toJson(data,w);
-  w.close();
-  return baos.toByteArray();
+  w.flush();
+  return w.toString().getBytes("UTF-8");
 }

@@ -1,5 +1,3 @@
 {
-  org.svenson.tokenize.JSONCharacterSource source=new org.svenson.tokenize.InputStreamSource(new ByteArrayInputStream(array),true);
-  T result=_jsonParser.parse(type,source);
-  return result;
+  return _jsonParser.parse(type,new String(array,"UTF-8"));
 }
