@@ -1,0 +1,22 @@
+{
+  JSONObject jsonObject=new JSONObject();
+  if (media.hasBitrate) {
+    jsonObject.put("bitrate",media.bitrate);
+  }
+  jsonObject.put("copyright",media.copyright);
+  jsonObject.put("duration",media.duration);
+  jsonObject.put("format",media.format);
+  jsonObject.put("height",media.height);
+  int size=media.persons.size();
+  JSONArray personsJsonArray=new JSONArray();
+  for (int i=0; i < size; i++) {
+    personsJsonArray.add(media.persons.get(i));
+  }
+  jsonObject.put("persons",personsJsonArray);
+  jsonObject.put("player",media.player.name());
+  jsonObject.put("size",media.size);
+  jsonObject.put("title",media.title);
+  jsonObject.put("uri",media.uri);
+  jsonObject.put("width",media.width);
+  return jsonObject;
+}

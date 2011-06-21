@@ -1,0 +1,4 @@
+{
+  JSONObject mediaJsonObject=(JSONObject)parser.parse(mediaJsonInput);
+  return readMedia(parser,mediaJsonObject);
+}

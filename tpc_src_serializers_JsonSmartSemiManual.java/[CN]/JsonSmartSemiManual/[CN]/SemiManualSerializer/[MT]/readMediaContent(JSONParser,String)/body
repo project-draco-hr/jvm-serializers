@@ -1,0 +1,7 @@
+{
+  JSONObject mediaContentJsonObject=(JSONObject)parser.parse(mediaContentJsonInput);
+  MediaContent mediaContent=new MediaContent();
+  mediaContent.images=readImages(parser,(JSONArray)mediaContentJsonObject.get("images"));
+  mediaContent.media=readMedia(parser,(JSONObject)mediaContentJsonObject.get("media"));
+  return mediaContent;
+}

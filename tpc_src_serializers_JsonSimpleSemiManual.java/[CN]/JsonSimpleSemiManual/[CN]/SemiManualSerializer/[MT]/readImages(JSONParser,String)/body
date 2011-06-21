@@ -1,0 +1,4 @@
+{
+  JSONArray imagesJsonArray=(JSONArray)parser.parse(imagesJsonInput);
+  return readImages(parser,imagesJsonArray);
+}
