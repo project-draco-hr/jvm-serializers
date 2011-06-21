@@ -1,0 +1,4 @@
+{
+  JSONObject imageJsonObject=new JSONObject(imageJsonInput);
+  return readImage(imageJsonObject);
+}

@@ -1,0 +1,9 @@
+{
+  Image image=new Image();
+  image.height=((Integer)imageJsonObject.get("height")).intValue();
+  image.size=Image.Size.valueOf((String)imageJsonObject.get("size"));
+  image.title=(String)imageJsonObject.get("title");
+  image.uri=(String)imageJsonObject.get("uri");
+  image.width=((Integer)imageJsonObject.get("width")).intValue();
+  return image;
+}

@@ -1,0 +1,8 @@
+{
+  jsonWriter.object();
+  jsonWriter.key("media");
+  writeJsonObject(jsonWriter,mediaContent.media);
+  jsonWriter.key("images");
+  writeJsonArray(jsonWriter,mediaContent.images);
+  jsonWriter.endObject();
+}

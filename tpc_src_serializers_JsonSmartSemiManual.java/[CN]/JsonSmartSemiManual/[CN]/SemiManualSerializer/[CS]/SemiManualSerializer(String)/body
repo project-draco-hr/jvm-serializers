@@ -1,0 +1,4 @@
+{
+  this.name=name;
+  parser=new JSONParser(JSONParser.MODE_RFC4627);
+}

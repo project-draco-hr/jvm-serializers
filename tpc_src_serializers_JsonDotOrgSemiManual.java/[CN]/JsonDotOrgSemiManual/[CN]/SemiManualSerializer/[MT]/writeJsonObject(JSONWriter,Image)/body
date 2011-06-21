@@ -1,0 +1,9 @@
+{
+  jsonWriter.object();
+  jsonWriter.key("height").value(image.height);
+  jsonWriter.key("size").value(image.size.name());
+  jsonWriter.key("title").value(image.title);
+  jsonWriter.key("uri").value(image.uri);
+  jsonWriter.key("width").value(image.width);
+  jsonWriter.endObject();
+}

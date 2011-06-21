@@ -1,0 +1,6 @@
+{
+  StringWriter writer=new StringWriter();
+  writeMediaContent(new JSONWriter(writer),mediaContent);
+  writer.flush();
+  return writer.toString().getBytes("UTF-8");
+}
