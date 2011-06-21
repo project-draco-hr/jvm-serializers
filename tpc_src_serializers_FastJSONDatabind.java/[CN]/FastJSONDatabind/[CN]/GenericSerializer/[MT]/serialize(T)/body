@@ -1,0 +1,4 @@
+{
+  String jsonString=JSON.toJSONString(data,SerializerFeature.WriteEnumUsingToString);
+  return jsonString.getBytes("UTF-8");
+}
