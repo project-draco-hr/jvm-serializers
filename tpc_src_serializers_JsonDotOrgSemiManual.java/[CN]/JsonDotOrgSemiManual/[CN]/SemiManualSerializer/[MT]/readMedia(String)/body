@@ -1,0 +1,4 @@
+{
+  JSONObject mediaJsonObject=new JSONObject(mediaJsonInput);
+  return readMedia(mediaJsonObject);
+}

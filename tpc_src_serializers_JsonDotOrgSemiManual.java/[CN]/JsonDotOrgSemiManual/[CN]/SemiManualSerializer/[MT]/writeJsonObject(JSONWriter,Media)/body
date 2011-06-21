@@ -1,0 +1,21 @@
+{
+  jsonWriter.object();
+  if (media.hasBitrate) {
+    jsonWriter.key("bitrate").value(media.bitrate);
+  }
+  jsonWriter.key("copyright").value(media.copyright);
+  jsonWriter.key("duration").value(media.duration);
+  jsonWriter.key("format").value(media.format);
+  jsonWriter.key("height").value(media.height);
+  JSONArray personsJsonArray=new JSONArray();
+  for (int i=0, size=media.persons.size(); i < size; i++) {
+    personsJsonArray.put(media.persons.get(i));
+  }
+  jsonWriter.key("persons").value(personsJsonArray);
+  jsonWriter.key("player").value(media.player.name());
+  jsonWriter.key("size").value(media.size);
+  jsonWriter.key("title").value(media.title);
+  jsonWriter.key("uri").value(media.uri);
+  jsonWriter.key("width").value(media.width);
+  jsonWriter.endObject();
+}

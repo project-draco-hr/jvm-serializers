@@ -1,0 +1,3 @@
+{
+  writeJsonArray(jsonWriter,images);
+}

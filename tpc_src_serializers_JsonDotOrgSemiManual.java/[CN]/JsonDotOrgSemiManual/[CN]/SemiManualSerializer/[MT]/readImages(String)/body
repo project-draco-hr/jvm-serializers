@@ -1,0 +1,4 @@
+{
+  JSONArray imagesJsonArray=new JSONArray(imagesJsonInput);
+  return readImages(imagesJsonArray);
+}

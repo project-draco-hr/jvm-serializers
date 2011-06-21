@@ -1,0 +1,7 @@
+{
+  jsonWriter.array();
+  for (  Image image : images) {
+    writeJsonObject(jsonWriter,image);
+  }
+  jsonWriter.endArray();
+}
