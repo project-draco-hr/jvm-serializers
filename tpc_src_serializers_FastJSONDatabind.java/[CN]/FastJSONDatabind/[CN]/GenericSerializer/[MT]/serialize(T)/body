@@ -1,0 +1,7 @@
+{
+  ByteArrayOutputStream baos=outputStream(data);
+  OutputStreamWriter w=new OutputStreamWriter(baos,"UTF-8");
+  JSONSerializer.write(w,data);
+  w.close();
+  return baos.toByteArray();
+}

@@ -1,0 +1,5 @@
+{
+  String jsonInput=new String(array,"UTF-8");
+  T result=JSON.parseObject(jsonInput,type);
+  return result;
+}
