@@ -1,0 +1,7 @@
+{
+  JsonRootNode root=JDOM_PARSER.parse(mediaContentJsonInput);
+  MediaContent mediaContent=new MediaContent();
+  mediaContent.media=readMedia(root.getNode("media"));
+  mediaContent.images=readImages(root.getNode("images"));
+  return mediaContent;
+}

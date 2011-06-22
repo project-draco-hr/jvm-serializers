@@ -1,0 +1,5 @@
+{
+  JSONParser parser=new JSONParser();
+  JSON.Object mediaJsonObject=(JSON.Object)parser.parse(mediaJsonInput);
+  return readMedia(mediaJsonObject);
+}

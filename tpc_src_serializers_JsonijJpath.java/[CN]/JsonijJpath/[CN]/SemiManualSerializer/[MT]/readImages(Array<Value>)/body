@@ -1,0 +1,10 @@
+{
+  int size=imageValues.size();
+  List<Image> images=new ArrayList<Image>(size);
+  for (int i=0; i < size; i++) {
+    JSON.Object imageJsonObject=(JSON.Object)imageValues.get(i);
+    Image image=readImage(imageJsonObject);
+    images.add(image);
+  }
+  return images;
+}

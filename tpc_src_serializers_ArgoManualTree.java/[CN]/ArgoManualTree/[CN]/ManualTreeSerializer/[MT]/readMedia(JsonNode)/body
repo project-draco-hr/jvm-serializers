@@ -1,0 +1,25 @@
+{
+  Media media=new Media();
+  String bitrate=node.getNullableNumberValue("bitrate");
+  if (bitrate != null && bitrate.length() > 0) {
+    media.bitrate=Integer.parseInt(bitrate);
+    media.hasBitrate=true;
+  }
+  media.copyright=node.getNullableStringValue("copyright");
+  media.duration=Long.parseLong(node.getNumberValue("duration"));
+  media.format=node.getNullableStringValue("format");
+  media.height=Integer.parseInt(node.getNumberValue("height"));
+  List<JsonNode> personJsonNodes=node.getArrayNode("persons");
+  int size=personJsonNodes.size();
+  List<String> persons=new ArrayList<String>(size);
+  for (int i=0; i < size; i++) {
+    persons.add(personJsonNodes.get(i).getText());
+  }
+  media.persons=persons;
+  media.player=Media.Player.valueOf(node.getStringValue("player"));
+  media.size=Long.parseLong(node.getNumberValue("size"));
+  media.title=node.getNullableStringValue("title");
+  media.uri=node.getNullableStringValue("uri");
+  media.width=Integer.parseInt(node.getNumberValue("width"));
+  return media;
+}

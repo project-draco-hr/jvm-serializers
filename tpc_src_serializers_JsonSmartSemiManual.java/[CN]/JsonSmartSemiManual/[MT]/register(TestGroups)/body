@@ -1,3 +1,0 @@
-{
-  groups.media.add(JavaBuiltIn.MediaTransformer,new SemiManualSerializer("json/json-smart/semi-manual"));
-}

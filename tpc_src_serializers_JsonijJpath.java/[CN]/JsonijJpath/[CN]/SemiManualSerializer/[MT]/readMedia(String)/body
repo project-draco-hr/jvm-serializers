@@ -1,0 +1,29 @@
+{
+  JSON json=JSON.parse(mediaJsonInput);
+  Media media=new Media();
+  Value bitrate=JPath.parse("/bitrate").evaluate(json);
+  if (bitrate != null && !bitrate.isNull()) {
+    media.bitrate=bitrate.getInt();
+    media.hasBitrate=true;
+  }
+  Value copyright=JPath.parse("/copyright").evaluate(json);
+  if (copyright != null && !copyright.isNull()) {
+    media.copyright=copyright.getString();
+  }
+  media.duration=JPath.parse("/duration").evaluate(json).getNumber().longValue();
+  media.format=JPath.parse("/format").evaluate(json).getString();
+  media.height=JPath.parse("/height").evaluate(json).getInt();
+  JSON.Array<Value> personValues=(JSON.Array<Value>)JPath.parse("/persons").evaluate(json);
+  int size=personValues.size();
+  List<String> persons=new ArrayList<String>(size);
+  for (int i=0; i < size; i++) {
+    persons.add(personValues.get(i).getString());
+  }
+  media.persons=persons;
+  media.player=Media.Player.valueOf(JPath.parse("/player").evaluate(json).getString());
+  media.size=JPath.parse("/size").evaluate(json).getNumber().longValue();
+  media.title=JPath.parse("/title").evaluate(json).getString();
+  media.uri=JPath.parse("/uri").evaluate(json).getString();
+  media.width=JPath.parse("/width").evaluate(json).getInt();
+  return media;
+}

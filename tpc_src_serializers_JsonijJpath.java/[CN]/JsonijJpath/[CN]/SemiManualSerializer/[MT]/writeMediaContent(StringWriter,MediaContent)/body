@@ -1,0 +1,4 @@
+{
+  JSON json=JSONMarshaler.marshalObject(mediaContent);
+  writer.write(json.toJSON());
+}

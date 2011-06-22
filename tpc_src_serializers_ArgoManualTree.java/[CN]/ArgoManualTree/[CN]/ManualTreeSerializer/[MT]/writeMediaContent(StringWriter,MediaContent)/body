@@ -1,0 +1,5 @@
+{
+  JsonObjectNodeBuilder builder=anObjectBuilder().withField("media",createMediaObjectBuilder(mediaContent.media)).withField("images",createImagesArrayBuilder(mediaContent.images));
+  JsonRootNode json=builder.build();
+  mediaContentWriter.write(JSON_FORMATTER.format(json));
+}
