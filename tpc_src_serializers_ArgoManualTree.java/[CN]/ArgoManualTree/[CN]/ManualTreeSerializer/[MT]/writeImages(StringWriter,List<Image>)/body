@@ -1,0 +1,5 @@
+{
+  JsonArrayNodeBuilder arrayBuilder=createImagesArrayBuilder(images);
+  JsonRootNode json=arrayBuilder.build();
+  imagesWriter.write(JSON_FORMATTER.format(json));
+}

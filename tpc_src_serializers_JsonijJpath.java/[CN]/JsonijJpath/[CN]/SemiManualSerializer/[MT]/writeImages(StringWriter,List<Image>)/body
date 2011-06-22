@@ -1,0 +1,4 @@
+{
+  JSON json=JSONMarshaler.marshalObject(images);
+  writer.write(json.toJSON());
+}

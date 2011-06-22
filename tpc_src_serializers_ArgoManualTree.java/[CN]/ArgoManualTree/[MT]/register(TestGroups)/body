@@ -1,0 +1,3 @@
+{
+  groups.media.add(JavaBuiltIn.MediaTransformer,new ManualTreeSerializer("json/argo-manual/tree"));
+}

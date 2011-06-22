@@ -1,0 +1,10 @@
+{
+  Image image=new Image();
+  JSON json=JSON.parse(imageJsonInput);
+  image.height=JPath.parse("/height").evaluate(json).getInt();
+  image.size=Image.Size.valueOf(JPath.parse("/size").evaluate(json).getString());
+  image.title=JPath.parse("/title").evaluate(json).getString();
+  image.uri=JPath.parse("/uri").evaluate(json).getString();
+  image.width=JPath.parse("/width").evaluate(json).getInt();
+  return image;
+}

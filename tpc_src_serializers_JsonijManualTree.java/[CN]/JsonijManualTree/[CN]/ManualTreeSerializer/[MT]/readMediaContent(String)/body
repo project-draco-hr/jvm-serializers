@@ -1,0 +1,12 @@
+{
+  JSONParser parser=new JSONParser();
+  JSON.Object mediaContentJsonObject=(JSON.Object)parser.parse(mediaContentJsonInput);
+  JSON.Object mediaJsonObject=(JSON.Object)mediaContentJsonObject.get("media");
+  Media media=readMedia(mediaJsonObject);
+  JSON.Array<Value> imageValues=(JSON.Array<Value>)mediaContentJsonObject.get("images");
+  List<Image> images=readImages(imageValues);
+  MediaContent mediaContent=new MediaContent();
+  mediaContent.media=media;
+  mediaContent.images=images;
+  return mediaContent;
+}

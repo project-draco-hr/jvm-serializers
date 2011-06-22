@@ -1,0 +1,3 @@
+String name
+ObjectMapper mapper
+Class<T> clazz

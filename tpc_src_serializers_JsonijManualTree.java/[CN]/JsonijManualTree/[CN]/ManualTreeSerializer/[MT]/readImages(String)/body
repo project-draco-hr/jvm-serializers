@@ -1,0 +1,5 @@
+{
+  JSONParser parser=new JSONParser();
+  JSON.Array<Value> imageValues=(JSON.Array<Value>)parser.parse(imagesJsonInput);
+  return readImages(imageValues);
+}

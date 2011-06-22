@@ -1,0 +1,2 @@
+StringWriter imagesWriter
+List<Image> images

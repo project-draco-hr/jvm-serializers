@@ -1,0 +1,4 @@
+{
+  ObjectMapper mapper=new ObjectMapper();
+  groups.media.add(JavaBuiltIn.MediaTransformer,new GenericSerializer<MediaContent>("json/jackson-databind-strings",mapper,MediaContent.class));
+}

@@ -1,0 +1,3 @@
+{
+  return anObjectBuilder().withField("height",aNumberBuilder(String.valueOf(image.height))).withField("size",aStringBuilder(image.size.name())).withField("title",aStringBuilder(image.title)).withField("uri",aStringBuilder(image.uri)).withField("width",aNumberBuilder(String.valueOf(image.width)));
+}
