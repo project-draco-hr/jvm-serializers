@@ -1,8 +1,8 @@
 {
-  ByteArrayOutputStream baos=outputStream(data);
-  OutputStreamWriter w=new OutputStreamWriter(baos,"UTF-8");
+  StringWriter w=new StringWriter();
   JsonWriter writer=new JsonWriter(w);
   writeMediaContent(writer,data);
   writer.close();
-  return baos.toByteArray();
+  w.flush();
+  return w.toString().getBytes("UTF-8");
 }
