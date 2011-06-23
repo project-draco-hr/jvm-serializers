@@ -10,7 +10,7 @@
   }
   int headerSize=30;
   int maxPixels=300 * 1000;
-  int maxHeight=500;
+  int maxHeight=600;
   int width=maxPixels / maxHeight;
   int barThickness=10;
   int barSpacing=10;
