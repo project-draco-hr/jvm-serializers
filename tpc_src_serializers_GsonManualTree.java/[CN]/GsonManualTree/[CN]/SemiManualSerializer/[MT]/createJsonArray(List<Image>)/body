@@ -1,0 +1,7 @@
+{
+  JsonArray jsonArray=new JsonArray();
+  for (  Image image : images) {
+    jsonArray.add(createJsonObject(image));
+  }
+  return jsonArray;
+}

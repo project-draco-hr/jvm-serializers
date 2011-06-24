@@ -1,0 +1,4 @@
+{
+  JsonArray jsonArray=createJsonArray(images);
+  writer.write(jsonArray.toString());
+}

@@ -1,0 +1,8 @@
+{
+  int size=imagesJsonArray.size();
+  List<Image> images=new ArrayList<Image>(size);
+  for (  JsonElement image : imagesJsonArray) {
+    images.add(readImage(image.getAsJsonObject()));
+  }
+  return images;
+}

@@ -1,0 +1,9 @@
+{
+  JsonObject jsonObject=new JsonObject();
+  jsonObject.addProperty("height",image.height);
+  jsonObject.addProperty("size",image.size.name());
+  jsonObject.addProperty("title",image.title);
+  jsonObject.addProperty("uri",image.uri);
+  jsonObject.addProperty("width",image.width);
+  return jsonObject;
+}
