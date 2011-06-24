@@ -1,0 +1,20 @@
+{
+  Media media=new Media();
+  Object bitrate=JsonPath.read(mediaJsonInput,"$.bitrate");
+  if (bitrate != null && bitrate instanceof Long) {
+    media.bitrate=((Long)bitrate).intValue();
+    media.hasBitrate=true;
+  }
+  media.copyright=JsonPath.read(mediaJsonInput,"$.copyright");
+  media.duration=(Long)JsonPath.read(mediaJsonInput,"$.duration");
+  media.format=JsonPath.read(mediaJsonInput,"$.format");
+  media.height=((Long)JsonPath.read(mediaJsonInput,"$.height")).intValue();
+  List<String> persons=JsonPath.read(mediaJsonInput,"$.persons[*]");
+  media.persons=persons;
+  media.player=Media.Player.valueOf((String)JsonPath.read(mediaJsonInput,"$.player"));
+  media.size=(Long)JsonPath.read(mediaJsonInput,"$.size");
+  media.title=JsonPath.read(mediaJsonInput,"$.title");
+  media.uri=JsonPath.read(mediaJsonInput,"$.uri");
+  media.width=((Long)JsonPath.read(mediaJsonInput,"$.width")).intValue();
+  return media;
+}

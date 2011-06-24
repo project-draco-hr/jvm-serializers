@@ -1,0 +1,25 @@
+{
+  MediaContent mediaContent=new MediaContent();
+  Media media=new Media();
+  Object bitrate=JsonPath.read(mediaContentJsonInput,"$.media.bitrate");
+  if (bitrate != null && bitrate instanceof Long) {
+    media.bitrate=((Long)bitrate).intValue();
+    media.hasBitrate=true;
+  }
+  media.copyright=JsonPath.read(mediaContentJsonInput,"$.media.copyright");
+  media.duration=(Long)JsonPath.read(mediaContentJsonInput,"$.media.duration");
+  media.format=JsonPath.read(mediaContentJsonInput,"$.media.format");
+  media.height=((Long)JsonPath.read(mediaContentJsonInput,"$.media.height")).intValue();
+  List<String> persons=JsonPath.read(mediaContentJsonInput,"$.media.persons[*]");
+  media.persons=persons;
+  media.player=Media.Player.valueOf((String)JsonPath.read(mediaContentJsonInput,"$.media.player"));
+  media.size=(Long)JsonPath.read(mediaContentJsonInput,"$.media.size");
+  media.title=JsonPath.read(mediaContentJsonInput,"$.media.title");
+  media.uri=JsonPath.read(mediaContentJsonInput,"$.media.uri");
+  media.width=((Long)JsonPath.read(mediaContentJsonInput,"$.media.width")).intValue();
+  JSONArray imagesJsonArray=(JSONArray)JsonPath.read(mediaContentJsonInput,"$.images[*]");
+  List<Image> images=readImages(imagesJsonArray);
+  mediaContent.media=media;
+  mediaContent.images=images;
+  return mediaContent;
+}
