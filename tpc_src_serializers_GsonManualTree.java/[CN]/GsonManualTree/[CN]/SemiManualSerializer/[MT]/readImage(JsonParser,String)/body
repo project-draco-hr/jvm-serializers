@@ -1,0 +1,4 @@
+{
+  JsonObject imageJsonObject=parser.parse(imageJsonInput).getAsJsonObject();
+  return readImage(imageJsonObject);
+}

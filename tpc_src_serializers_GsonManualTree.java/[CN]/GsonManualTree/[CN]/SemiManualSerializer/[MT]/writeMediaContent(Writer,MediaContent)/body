@@ -1,0 +1,6 @@
+{
+  JsonObject jsonObject=new JsonObject();
+  jsonObject.add("media",createJsonObject(mediaContent.media));
+  jsonObject.add("images",createJsonArray(mediaContent.images));
+  writer.write(jsonObject.toString());
+}

@@ -1,0 +1,22 @@
+{
+  JsonObject jsonObject=new JsonObject();
+  if (media.hasBitrate) {
+    jsonObject.addProperty("bitrate",media.bitrate);
+  }
+  jsonObject.addProperty("copyright",media.copyright);
+  jsonObject.addProperty("duration",media.duration);
+  jsonObject.addProperty("format",media.format);
+  jsonObject.addProperty("height",media.height);
+  int size=media.persons.size();
+  JsonArray personsJsonArray=new JsonArray();
+  for (int i=0; i < size; i++) {
+    personsJsonArray.add(new JsonPrimitive(media.persons.get(i)));
+  }
+  jsonObject.add("persons",personsJsonArray);
+  jsonObject.addProperty("player",media.player.name());
+  jsonObject.addProperty("size",media.size);
+  jsonObject.addProperty("title",media.title);
+  jsonObject.addProperty("uri",media.uri);
+  jsonObject.addProperty("width",media.width);
+  return jsonObject;
+}

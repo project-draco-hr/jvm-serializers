@@ -1,0 +1,4 @@
+{
+  JsonObject jsonObject=createJsonObject(media);
+  writer.write(jsonObject.toString());
+}

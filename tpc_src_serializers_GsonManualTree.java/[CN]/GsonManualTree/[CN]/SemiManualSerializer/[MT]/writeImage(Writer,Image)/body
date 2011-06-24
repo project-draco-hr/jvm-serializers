@@ -1,0 +1,4 @@
+{
+  JsonObject jsonObject=createJsonObject(image);
+  writer.write(jsonObject.toString());
+}
