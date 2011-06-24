@@ -1,0 +1,4 @@
+{
+  JSONObject jsonObject=createJsonObject(image);
+  jsonObject.writeJSONString(writer);
+}

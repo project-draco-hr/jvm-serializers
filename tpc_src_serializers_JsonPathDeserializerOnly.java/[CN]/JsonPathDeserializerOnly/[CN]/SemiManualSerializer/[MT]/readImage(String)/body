@@ -1,0 +1,9 @@
+{
+  Image image=new Image();
+  image.height=((Long)JsonPath.read(imageJsonInput,"$.height")).intValue();
+  image.size=Image.Size.valueOf((String)JsonPath.read(imageJsonInput,"$.size"));
+  image.title=JsonPath.read(imageJsonInput,"$.title");
+  image.uri=JsonPath.read(imageJsonInput,"$.uri");
+  image.width=((Long)JsonPath.read(imageJsonInput,"$.width")).intValue();
+  return image;
+}

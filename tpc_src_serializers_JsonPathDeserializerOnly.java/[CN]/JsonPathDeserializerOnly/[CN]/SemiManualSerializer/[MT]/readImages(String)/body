@@ -1,0 +1,4 @@
+{
+  JSONArray imagesJsonArray=(JSONArray)JsonPath.read(imagesJsonInput,"$[*]");
+  return readImages(imagesJsonArray);
+}
