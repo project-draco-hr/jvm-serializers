@@ -1,0 +1,4 @@
+{
+  JsonParser parser=jsonFactory.createJsonParser(array);
+  return readMediaContent(parser);
+}

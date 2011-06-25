@@ -1,0 +1,4 @@
+{
+  ObjectNode node=createObjectNode(media);
+  generator.writeTree(node);
+}
