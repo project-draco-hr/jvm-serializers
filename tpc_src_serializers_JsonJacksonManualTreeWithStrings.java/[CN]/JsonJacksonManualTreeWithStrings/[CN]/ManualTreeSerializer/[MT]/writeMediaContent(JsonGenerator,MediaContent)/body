@@ -1,0 +1,6 @@
+{
+  ObjectNode node=nodeFactory.objectNode();
+  node.put("media",createObjectNode(mediaContent.media));
+  node.put("images",createArrayNode(mediaContent.images));
+  generator.writeTree(node);
+}

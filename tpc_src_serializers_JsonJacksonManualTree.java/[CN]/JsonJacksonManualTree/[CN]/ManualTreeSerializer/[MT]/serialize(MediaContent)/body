@@ -1,0 +1,7 @@
+{
+  ByteArrayOutputStream baos=outputStream(mediaContent);
+  JsonGenerator generator=jsonFactory.createJsonGenerator(baos);
+  writeMediaContent(generator,mediaContent);
+  generator.close();
+  return baos.toByteArray();
+}

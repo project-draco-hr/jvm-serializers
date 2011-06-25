@@ -1,0 +1,21 @@
+{
+  ObjectNode mediaNode=nodeFactory.objectNode();
+  if (media.hasBitrate) {
+    mediaNode.put("bitrate",media.bitrate);
+  }
+  mediaNode.put("copyright",media.copyright);
+  mediaNode.put("duration",media.duration);
+  mediaNode.put("format",media.format);
+  mediaNode.put("height",media.height);
+  ArrayNode persons=nodeFactory.arrayNode();
+  for (  String person : media.persons) {
+    persons.add(person);
+  }
+  mediaNode.put("persons",persons);
+  mediaNode.put("player",media.player.name());
+  mediaNode.put("size",media.size);
+  mediaNode.put("title",media.title);
+  mediaNode.put("uri",media.uri);
+  mediaNode.put("width",media.width);
+  return mediaNode;
+}

@@ -1,0 +1,7 @@
+{
+  ArrayNode node=nodeFactory.arrayNode();
+  for (  Image image : images) {
+    node.add(createObjectNode(image));
+  }
+  return node;
+}

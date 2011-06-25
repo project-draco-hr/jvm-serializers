@@ -1,0 +1,4 @@
+{
+  ArrayNode node=createArrayNode(images);
+  generator.writeTree(node);
+}

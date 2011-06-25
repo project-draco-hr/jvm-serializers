@@ -1,0 +1,8 @@
+{
+  StringWriter writer=new StringWriter();
+  JsonGenerator generator=jsonFactory.createJsonGenerator(writer);
+  writeMediaContent(generator,mediaContent);
+  writer.flush();
+  generator.close();
+  return writer.toString().getBytes("UTF-8");
+}
