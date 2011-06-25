@@ -1,0 +1,3 @@
+{
+  return new JSONDeserializer<T>().deserialize(new String(array,"UTF-8"),type);
+}
