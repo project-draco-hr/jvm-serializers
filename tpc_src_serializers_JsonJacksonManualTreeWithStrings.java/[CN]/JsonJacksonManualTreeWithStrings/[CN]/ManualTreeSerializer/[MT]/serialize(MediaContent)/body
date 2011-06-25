@@ -1,6 +1,6 @@
 {
   StringWriter writer=new StringWriter();
-  JsonGenerator generator=jsonFactory.createJsonGenerator(writer);
+  JsonGenerator generator=mapper.getJsonFactory().createJsonGenerator(writer);
   writeMediaContent(generator,mediaContent);
   writer.flush();
   generator.close();

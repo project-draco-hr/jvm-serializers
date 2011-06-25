@@ -1,5 +1,4 @@
 {
   String mediaContentJsonInput=new String(array,"UTF-8");
-  JsonParser parser=jsonFactory.createJsonParser(mediaContentJsonInput);
-  return readMediaContent(parser);
+  return readMediaContent(mediaContentJsonInput);
 }

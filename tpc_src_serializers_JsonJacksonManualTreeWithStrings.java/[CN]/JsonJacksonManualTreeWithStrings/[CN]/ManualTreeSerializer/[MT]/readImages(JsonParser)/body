@@ -1,4 +1,0 @@
-{
-  ArrayNode root=(ArrayNode)parser.readValueAsTree();
-  return readImages(root);
-}

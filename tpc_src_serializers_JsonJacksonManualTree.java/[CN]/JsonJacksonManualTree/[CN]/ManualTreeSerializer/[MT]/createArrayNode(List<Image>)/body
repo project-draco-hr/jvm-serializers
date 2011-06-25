@@ -1,5 +1,5 @@
 {
-  ArrayNode node=nodeFactory.arrayNode();
+  ArrayNode node=mapper.createArrayNode();
   for (  Image image : images) {
     node.add(createObjectNode(image));
   }

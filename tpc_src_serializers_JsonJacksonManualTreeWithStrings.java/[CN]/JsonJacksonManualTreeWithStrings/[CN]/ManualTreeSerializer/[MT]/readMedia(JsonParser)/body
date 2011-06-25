@@ -1,4 +1,0 @@
-{
-  JsonNode root=parser.readValueAsTree();
-  return readMedia(root);
-}
