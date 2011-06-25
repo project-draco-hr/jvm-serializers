@@ -1,4 +1,4 @@
 {
-  String jsonString=new JSONSerializer().exclude("*.class").include("media.persons","images").serialize(data);
+  String jsonString=new JSONSerializer().exclude("*.class").deepSerialize(data);
   return jsonString.getBytes("UTF-8");
 }
