@@ -1,4 +1,4 @@
 {
   ArrayNode node=createArrayNode(images);
-  generator.writeTree(node);
+  mapper.writeTree(generator,node);
 }

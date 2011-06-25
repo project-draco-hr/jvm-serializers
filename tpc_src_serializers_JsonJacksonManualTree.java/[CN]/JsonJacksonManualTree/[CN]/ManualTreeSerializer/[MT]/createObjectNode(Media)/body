@@ -1,21 +1,21 @@
 {
-  ObjectNode mediaNode=nodeFactory.objectNode();
+  ObjectNode node=mapper.createObjectNode();
   if (media.hasBitrate) {
-    mediaNode.put("bitrate",media.bitrate);
+    node.put("bitrate",media.bitrate);
   }
-  mediaNode.put("copyright",media.copyright);
-  mediaNode.put("duration",media.duration);
-  mediaNode.put("format",media.format);
-  mediaNode.put("height",media.height);
-  ArrayNode persons=nodeFactory.arrayNode();
+  node.put("copyright",media.copyright);
+  node.put("duration",media.duration);
+  node.put("format",media.format);
+  node.put("height",media.height);
+  ArrayNode persons=mapper.createArrayNode();
   for (  String person : media.persons) {
     persons.add(person);
   }
-  mediaNode.put("persons",persons);
-  mediaNode.put("player",media.player.name());
-  mediaNode.put("size",media.size);
-  mediaNode.put("title",media.title);
-  mediaNode.put("uri",media.uri);
-  mediaNode.put("width",media.width);
-  return mediaNode;
+  node.put("persons",persons);
+  node.put("player",media.player.name());
+  node.put("size",media.size);
+  node.put("title",media.title);
+  node.put("uri",media.uri);
+  node.put("width",media.width);
+  return node;
 }

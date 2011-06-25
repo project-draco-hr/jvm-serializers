@@ -1,4 +1,4 @@
 {
   ObjectNode node=createObjectNode(media);
-  generator.writeTree(node);
+  mapper.writeTree(generator,node);
 }

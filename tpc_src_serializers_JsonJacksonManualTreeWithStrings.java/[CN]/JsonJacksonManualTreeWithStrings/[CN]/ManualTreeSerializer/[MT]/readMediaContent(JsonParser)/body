@@ -1,7 +1,0 @@
-{
-  JsonNode root=parser.readValueAsTree();
-  MediaContent mediaContent=new MediaContent();
-  mediaContent.media=readMedia(root.get("media"));
-  mediaContent.images=readImages((ArrayNode)root.get("images"));
-  return mediaContent;
-}

@@ -1,0 +1,4 @@
+{
+  String jsonString=new JSONSerializer().exclude("*.class").deepSerialize(data);
+  return jsonString.getBytes("UTF-8");
+}

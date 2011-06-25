@@ -1,0 +1,4 @@
+{
+  JsonNode root=mapper.readTree(json);
+  return readImage(root);
+}
