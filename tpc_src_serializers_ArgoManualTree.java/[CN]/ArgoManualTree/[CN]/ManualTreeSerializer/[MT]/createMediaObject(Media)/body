@@ -1,0 +1,12 @@
+{
+  List<JsonNode> persons=new ArrayList<JsonNode>(media.persons.size() * 2);
+  for (  String person : media.persons) {
+    persons.add(aJsonString(person));
+  }
+  JsonNode value=media.copyright == null ? aJsonNull() : aJsonString(media.copyright);
+  List<JsonField> jsonFields=new ArrayList<JsonField>(asList(new JsonField(URI_KEY,aJsonString(media.uri)),new JsonField(TITLE_KEY,aJsonString(media.title)),new JsonField(WIDTH_KEY,aJsonNumber(String.valueOf(media.width))),new JsonField(HEIGHT_KEY,aJsonNumber(String.valueOf(media.height))),new JsonField(FORMAT_KEY,aJsonString(media.format)),new JsonField(DURATION_KEY,aJsonNumber(String.valueOf(media.duration))),new JsonField(SIZE_KEY,aJsonNumber(String.valueOf(media.size))),new JsonField(PLAYER_KEY,aJsonString(media.player.name())),new JsonField(COPYRIGHT_KEY,value),new JsonField(PERSONS_KEY,aJsonArray(persons))));
+  if (media.hasBitrate) {
+    jsonFields.add(new JsonField(BIT_RATE_KEY,aJsonNumber(String.valueOf(media.bitrate))));
+  }
+  return aJsonObject(jsonFields);
+}

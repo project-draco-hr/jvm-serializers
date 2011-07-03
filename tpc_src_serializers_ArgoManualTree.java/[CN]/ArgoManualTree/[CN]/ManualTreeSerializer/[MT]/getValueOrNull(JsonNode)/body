@@ -1,0 +1,3 @@
+{
+  return textNode.getType() == NULL ? null : textNode.getText();
+}

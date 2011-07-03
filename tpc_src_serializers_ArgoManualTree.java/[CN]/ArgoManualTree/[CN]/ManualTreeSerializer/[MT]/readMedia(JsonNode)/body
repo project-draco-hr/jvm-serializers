@@ -1,25 +1,25 @@
 {
   Media media=new Media();
-  String bitrate=node.getNullableNumberValue("bitrate");
-  if (bitrate != null && bitrate.length() > 0) {
-    media.bitrate=Integer.parseInt(bitrate);
-    media.hasBitrate=true;
-  }
-  media.copyright=node.getNullableStringValue("copyright");
-  media.duration=Long.parseLong(node.getNumberValue("duration"));
-  media.format=node.getNullableStringValue("format");
-  media.height=Integer.parseInt(node.getNumberValue("height"));
-  List<JsonNode> personJsonNodes=node.getArrayNode("persons");
-  int size=personJsonNodes.size();
-  List<String> persons=new ArrayList<String>(size);
-  for (int i=0; i < size; i++) {
-    persons.add(personJsonNodes.get(i).getText());
+  Map<JsonStringNode,JsonNode> fields=jsonNode.getFields();
+  media.copyright=getValueOrNull(fields.get(COPYRIGHT_KEY));
+  media.duration=parseLong(fields.get(DURATION_KEY).getText());
+  media.format=getValueOrNull(fields.get(FORMAT_KEY));
+  media.player=Media.Player.valueOf(fields.get(PLAYER_KEY).getText());
+  media.title=getValueOrNull(fields.get(TITLE_KEY));
+  media.uri=getValueOrNull(fields.get(URI_KEY));
+  media.size=parseLong(fields.get(SIZE_KEY).getText());
+  media.height=parseInt(fields.get(HEIGHT_KEY).getText());
+  media.width=parseInt(fields.get(WIDTH_KEY).getText());
+  List<JsonNode> personNodesElements=fields.get(PERSONS_KEY).getElements();
+  List<String> persons=new ArrayList<String>(personNodesElements.size() * 2);
+  for (  JsonNode personNode : personNodesElements) {
+    persons.add(personNode.getText());
   }
   media.persons=persons;
-  media.player=Media.Player.valueOf(node.getStringValue("player"));
-  media.size=Long.parseLong(node.getNumberValue("size"));
-  media.title=node.getNullableStringValue("title");
-  media.uri=node.getNullableStringValue("uri");
-  media.width=Integer.parseInt(node.getNumberValue("width"));
+  JsonNode bitRate=fields.get(BIT_RATE_KEY);
+  if (bitRate != null && bitRate.getType() != NULL) {
+    media.bitrate=parseInt(bitRate.getText());
+    media.hasBitrate=true;
+  }
   return media;
 }

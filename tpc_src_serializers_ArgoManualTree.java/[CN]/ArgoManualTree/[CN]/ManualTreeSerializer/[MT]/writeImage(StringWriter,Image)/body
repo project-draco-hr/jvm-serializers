@@ -1,5 +1,0 @@
-{
-  JsonObjectNodeBuilder builder=createImageObjectBuilder(image);
-  JsonRootNode json=builder.build();
-  imageWriter.write(JSON_FORMATTER.format(json));
-}

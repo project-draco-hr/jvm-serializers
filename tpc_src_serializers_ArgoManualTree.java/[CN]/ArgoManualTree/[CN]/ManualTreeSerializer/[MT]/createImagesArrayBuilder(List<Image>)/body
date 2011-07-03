@@ -1,7 +1,0 @@
-{
-  JsonArrayNodeBuilder arrayBuilder=anArrayBuilder();
-  for (  Image image : images) {
-    arrayBuilder.withElement(createImageObjectBuilder(image));
-  }
-  return arrayBuilder;
-}

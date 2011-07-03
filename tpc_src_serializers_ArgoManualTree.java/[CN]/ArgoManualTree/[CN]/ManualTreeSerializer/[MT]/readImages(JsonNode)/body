@@ -1,9 +1,9 @@
 {
-  List<JsonNode> nodes=node.getElements();
-  int size=nodes.size();
-  List<Image> images=new ArrayList<Image>(size);
-  for (int i=0; i < size; i++) {
-    images.add(readImage(nodes.get(i)));
+  List<JsonNode> elements=node.getElements();
+  List<Image> images=new ArrayList<Image>(elements.size() * 2);
+  for (  JsonNode jsonNode : elements) {
+    Map<JsonStringNode,JsonNode> fields=jsonNode.getFields();
+    images.add(new Image(fields.get(URI_KEY).getText(),fields.get(TITLE_KEY).getText(),parseInt(fields.get(WIDTH_KEY).getText()),parseInt(fields.get(HEIGHT_KEY).getText()),Image.Size.valueOf(fields.get(SIZE_KEY).getText())));
   }
   return images;
 }

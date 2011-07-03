@@ -1,7 +1,7 @@
 {
-  JsonRootNode root=JDOM_PARSER.parse(mediaContentJsonInput);
   MediaContent mediaContent=new MediaContent();
-  mediaContent.media=readMedia(root.getNode("media"));
-  mediaContent.images=readImages(root.getNode("images"));
+  Map<JsonStringNode,JsonNode> fields=JDOM_PARSER.parse(mediaContentJsonInput).getFields();
+  mediaContent.media=readMedia(fields.get(MEDIA_KEY));
+  mediaContent.images=readImages(fields.get(IMAGES_KEY));
   return mediaContent;
 }
