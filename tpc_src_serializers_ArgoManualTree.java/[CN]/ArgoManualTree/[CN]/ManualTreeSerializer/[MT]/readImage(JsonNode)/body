@@ -1,9 +1,0 @@
-{
-  Image image=new Image();
-  image.height=Integer.parseInt(node.getNumberValue("height"));
-  image.size=Image.Size.valueOf(node.getStringValue("size"));
-  image.title=node.getNullableStringValue("title");
-  image.uri=node.getNullableStringValue("uri");
-  image.width=Integer.parseInt(node.getNumberValue("width"));
-  return image;
-}

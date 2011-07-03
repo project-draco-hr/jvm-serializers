@@ -1,4 +1,0 @@
-{
-  JsonRootNode root=JDOM_PARSER.parse(imageJsonInput);
-  return readImage(root);
-}

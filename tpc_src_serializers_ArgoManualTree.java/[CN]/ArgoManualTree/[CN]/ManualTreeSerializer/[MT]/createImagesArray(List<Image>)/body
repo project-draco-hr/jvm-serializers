@@ -1,0 +1,7 @@
+{
+  List<JsonNode> jsonNodes=new ArrayList<JsonNode>(images.size() * 2);
+  for (  Image image : images) {
+    jsonNodes.add(aJsonObject(new JsonField(HEIGHT_KEY,aJsonNumber(String.valueOf(image.height))),new JsonField(SIZE_KEY,aJsonString(image.size.name())),new JsonField(TITLE_KEY,aJsonString(image.title)),new JsonField(URI_KEY,aJsonString(image.uri)),new JsonField(WIDTH_KEY,aJsonNumber(String.valueOf(image.width)))));
+  }
+  return aJsonArray(jsonNodes);
+}

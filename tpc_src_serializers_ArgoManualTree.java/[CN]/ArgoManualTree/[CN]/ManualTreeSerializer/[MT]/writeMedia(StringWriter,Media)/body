@@ -1,5 +1,0 @@
-{
-  JsonObjectNodeBuilder builder=createMediaObjectBuilder(media);
-  JsonRootNode json=builder.build();
-  mediaWriter.write(JSON_FORMATTER.format(json));
-}

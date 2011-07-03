@@ -1,6 +1,3 @@
 {
-  StringWriter writer=new StringWriter();
-  writeMediaContent(writer,mediaContent);
-  writer.flush();
-  return writer.toString().getBytes("UTF-8");
+  return writeMediaContent(mediaContent).getBytes("UTF-8");
 }
