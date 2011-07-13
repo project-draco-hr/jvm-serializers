@@ -1,0 +1,4 @@
+{
+  String mediaContentJsonInput=new String(array,"UTF-8");
+  return readMediaContent(parser,transformer,mediaContentJsonInput);
+}

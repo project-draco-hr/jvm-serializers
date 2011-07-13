@@ -1,0 +1,70 @@
+{
+switch (state) {
+case READING_MEDIA_URI:
+    mediaContent.media.uri=readString(value);
+  state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_TITLE:
+mediaContent.media.title=readString(value);
+state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_WIDTH:
+mediaContent.media.width=readInt(value);
+state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_HEIGHT:
+mediaContent.media.height=readInt(value);
+state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_FORMAT:
+mediaContent.media.format=readString(value);
+state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_DURATION:
+mediaContent.media.duration=readLong(value);
+state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_SIZE:
+mediaContent.media.size=readLong(value);
+state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_BITRATE:
+mediaContent.media.bitrate=readInt(value);
+mediaContent.media.hasBitrate=value != null;
+state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_PERSON:
+mediaContent.media.persons.add(readString(value));
+return true;
+case READING_MEDIA_PLAYER:
+mediaContent.media.player=Media.Player.valueOf(readString(value));
+state=State.READING_MEDIA;
+return true;
+case READING_MEDIA_COPYRIGHT:
+mediaContent.media.copyright=readString(value);
+state=State.READING_MEDIA;
+return true;
+case READING_IMAGE_URI:
+image.uri=readString(value);
+state=State.READING_IMAGE;
+return true;
+case READING_IMAGE_TITLE:
+image.title=readString(value);
+state=State.READING_IMAGE;
+return true;
+case READING_IMAGE_WIDTH:
+image.width=readInt(value);
+state=State.READING_IMAGE;
+return true;
+case READING_IMAGE_HEIGHT:
+image.height=readInt(value);
+state=State.READING_IMAGE;
+return true;
+case READING_IMAGE_SIZE:
+image.size=Image.Size.valueOf(readString(value));
+state=State.READING_IMAGE;
+return true;
+default :
+throw new RuntimeException("unexpected state transition");
+}
+}

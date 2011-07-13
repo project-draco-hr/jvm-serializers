@@ -1,0 +1,14 @@
+{
+switch (state) {
+case READING_MEDIA:
+    return true;
+case FINISHED_MEDIA:
+  return true;
+case READING_IMAGE:
+return true;
+case FINISHED_IMAGES:
+return true;
+default :
+throw new RuntimeException("unexpected state transition");
+}
+}

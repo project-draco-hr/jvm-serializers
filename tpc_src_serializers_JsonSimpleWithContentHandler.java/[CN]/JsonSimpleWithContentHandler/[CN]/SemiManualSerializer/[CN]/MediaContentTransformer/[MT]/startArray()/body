@@ -1,0 +1,14 @@
+{
+switch (state) {
+case READING_MEDIA_PERSONS:
+    mediaContent.media.persons=new ArrayList<String>();
+  state=State.READING_MEDIA_PERSON;
+return true;
+case READING_IMAGES:
+mediaContent.images=new ArrayList<Image>();
+state=State.READING_IMAGE;
+return true;
+default :
+throw new RuntimeException("unexpected state transition");
+}
+}
