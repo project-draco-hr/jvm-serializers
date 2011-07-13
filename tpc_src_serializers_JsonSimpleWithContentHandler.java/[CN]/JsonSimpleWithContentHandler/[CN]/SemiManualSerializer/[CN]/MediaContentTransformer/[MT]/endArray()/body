@@ -1,0 +1,12 @@
+{
+switch (state) {
+case READING_MEDIA_PERSON:
+    state=State.READING_MEDIA;
+  return true;
+case FINISHED_IMAGE:
+state=State.FINISHED_IMAGES;
+return true;
+default :
+throw new RuntimeException("unexpected state transition");
+}
+}

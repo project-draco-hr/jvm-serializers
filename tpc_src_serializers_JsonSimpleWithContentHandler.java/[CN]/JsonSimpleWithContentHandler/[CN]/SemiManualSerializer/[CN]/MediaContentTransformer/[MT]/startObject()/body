@@ -1,0 +1,18 @@
+{
+switch (state) {
+case INIT:
+    state=State.READING_MEDIA_CONTENT;
+  return true;
+case READING_MEDIA:
+mediaContent.media=new Media();
+return true;
+case READING_IMAGE:
+case FINISHED_IMAGE:
+image=new Image();
+mediaContent.images.add(image);
+state=State.READING_IMAGE;
+return true;
+default :
+throw new RuntimeException("unexpected state transition");
+}
+}
