@@ -1,3 +1,3 @@
 {
-  groups.media.add(JavaBuiltIn.MediaTransformer,new SemiManualSerializer("json/JSON.simple/manual-contenthandler"));
+  groups.media.add(JavaBuiltIn.MediaTransformer,new SemiManualSerializer("json/json.simple/manual"));
 }
