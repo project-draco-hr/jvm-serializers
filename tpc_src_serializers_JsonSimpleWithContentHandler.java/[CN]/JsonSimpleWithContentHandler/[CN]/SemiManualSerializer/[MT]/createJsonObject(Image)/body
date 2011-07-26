@@ -1,0 +1,9 @@
+{
+  JSONObject jsonObject=new JSONObject();
+  jsonObject.put("height",image.height);
+  jsonObject.put("size",image.size.name());
+  jsonObject.put("title",image.title);
+  jsonObject.put("uri",image.uri);
+  jsonObject.put("width",image.width);
+  return jsonObject;
+}

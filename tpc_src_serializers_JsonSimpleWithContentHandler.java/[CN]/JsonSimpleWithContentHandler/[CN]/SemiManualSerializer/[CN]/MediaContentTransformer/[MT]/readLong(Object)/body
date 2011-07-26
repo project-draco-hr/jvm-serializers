@@ -1,0 +1,4 @@
+{
+  if (value == null)   return 0;
+  return ((Long)value).longValue();
+}
