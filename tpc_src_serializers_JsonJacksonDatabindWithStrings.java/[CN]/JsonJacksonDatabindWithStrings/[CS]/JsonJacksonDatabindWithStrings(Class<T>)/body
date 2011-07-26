@@ -1,0 +1,3 @@
+{
+  super("json/jackson-databind-strings",clz,new ObjectMapper());
+}

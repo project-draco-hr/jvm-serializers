@@ -1,4 +1,0 @@
-String name
-Class<T> clazz
-XMLInputFactory inputF
-XMLOutputFactory outputF
