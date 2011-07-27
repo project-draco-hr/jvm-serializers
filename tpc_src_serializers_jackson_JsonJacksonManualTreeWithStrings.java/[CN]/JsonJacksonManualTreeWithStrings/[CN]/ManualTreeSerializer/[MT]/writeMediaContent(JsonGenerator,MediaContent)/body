@@ -1,6 +1,0 @@
-{
-  ObjectNode node=mapper.createObjectNode();
-  node.put("media",createObjectNode(mediaContent.media));
-  node.put("images",createArrayNode(mediaContent.images));
-  mapper.writeTree(generator,node);
-}

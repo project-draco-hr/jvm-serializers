@@ -1,0 +1,5 @@
+{
+  addMedia(mediaContent.media,node.putObject("media"));
+  addImages(mediaContent.images,node.putArray("images"));
+  return node;
+}

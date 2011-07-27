@@ -1,4 +1,0 @@
-{
-  ObjectNode node=createObjectNode(image);
-  mapper.writeTree(generator,node);
-}

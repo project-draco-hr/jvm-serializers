@@ -1,4 +1,0 @@
-{
-  JsonNode root=mapper.readTree(json);
-  return readMedia(root);
-}

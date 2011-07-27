@@ -1,0 +1,4 @@
+{
+  String json=new String(array,"UTF-8");
+  return readMediaContent(mapper.readTree(json));
+}

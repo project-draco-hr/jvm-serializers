@@ -1,0 +1,3 @@
+{
+  groups.media.add(JavaBuiltIn.MediaTransformer,new JacksonJsonTreeWithStrings("json/jackson-manual/tree-strings"));
+}

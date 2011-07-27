@@ -1,7 +1,0 @@
-{
-  ByteArrayOutputStream baos=outputStream(mediaContent);
-  JsonGenerator generator=mapper.getJsonFactory().createJsonGenerator(baos);
-  writeMediaContent(generator,mediaContent);
-  generator.close();
-  return baos.toByteArray();
-}

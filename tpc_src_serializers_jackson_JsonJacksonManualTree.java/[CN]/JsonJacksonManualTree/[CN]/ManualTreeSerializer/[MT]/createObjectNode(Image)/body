@@ -1,9 +1,0 @@
-{
-  ObjectNode node=mapper.createObjectNode();
-  node.put("height",image.height);
-  node.put("size",image.size.name());
-  node.put("title",image.title);
-  node.put("uri",image.uri);
-  node.put("width",image.width);
-  return node;
-}

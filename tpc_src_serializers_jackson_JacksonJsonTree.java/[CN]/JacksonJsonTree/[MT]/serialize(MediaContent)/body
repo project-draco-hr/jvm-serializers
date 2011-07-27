@@ -1,0 +1,4 @@
+{
+  JsonNode root=asTree(mediaContent,mapper.createObjectNode());
+  return mapper.writeValueAsBytes(root);
+}

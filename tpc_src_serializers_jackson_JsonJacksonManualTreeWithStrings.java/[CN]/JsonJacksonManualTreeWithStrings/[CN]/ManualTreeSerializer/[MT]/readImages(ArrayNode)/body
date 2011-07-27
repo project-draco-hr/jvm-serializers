@@ -1,8 +1,0 @@
-{
-  int size=imagesNode.size();
-  List<Image> images=new ArrayList<Image>(size);
-  for (  JsonNode image : imagesNode) {
-    images.add(readImage(image));
-  }
-  return images;
-}

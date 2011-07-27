@@ -1,0 +1,3 @@
+{
+  return readMediaContent(mapper.readTree(new ByteArrayInputStream(array)));
+}
