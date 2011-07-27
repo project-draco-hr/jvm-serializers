@@ -1,0 +1,5 @@
+{
+  for (  Handler h : HANDLERS) {
+    groups.media.add(JavaBuiltIn.MediaTransformer,new MediaSerializer(h));
+  }
+}

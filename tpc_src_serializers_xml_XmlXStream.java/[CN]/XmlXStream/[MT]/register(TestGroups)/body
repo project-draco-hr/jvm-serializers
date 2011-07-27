@@ -1,0 +1,11 @@
+{
+  groups.media.add(JavaBuiltIn.MediaTransformer,new ConverterSerializer<MediaContent>("xml/xstream+c",new com.thoughtworks.xstream.XStream(new XppDriver(){
+    public HierarchicalStreamWriter createWriter(    Writer out){
+      return new CompactWriter(out,xmlFriendlyReplacer());
+    }
+  }
+),MediaConfiguration));
+  for (  XmlStax.Handler h : XmlStax.HANDLERS) {
+    groups.media.add(JavaBuiltIn.MediaTransformer,XmlXStream.<MediaContent>mkStaxSerializer(h,"+c",MediaConfiguration));
+  }
+}
