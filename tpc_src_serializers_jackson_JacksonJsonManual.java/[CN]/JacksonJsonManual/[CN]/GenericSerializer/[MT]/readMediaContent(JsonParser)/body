@@ -20,7 +20,7 @@ case FIELD_IX_IMAGES:
       reportIllegal(parser,JsonToken.START_ARRAY);
     }
   List<Image> images=new ArrayList<Image>();
-while (parser.nextToken() == JsonToken.START_OBJECT) {
+while (parser.nextToken() != JsonToken.END_ARRAY) {
   images.add(readImage(parser));
 }
 mc.images=images;

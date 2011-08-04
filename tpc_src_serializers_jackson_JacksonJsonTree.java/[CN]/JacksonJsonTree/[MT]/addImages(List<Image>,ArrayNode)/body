@@ -1,6 +1,6 @@
 {
   for (  Image image : images) {
-    node.add(addImage(image,node.addObject()));
+    addImage(image,node.addObject());
   }
   return node;
 }
