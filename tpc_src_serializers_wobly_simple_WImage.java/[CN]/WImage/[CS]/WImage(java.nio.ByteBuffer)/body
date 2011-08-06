@@ -1,0 +1,22 @@
+{
+{
+    this.size=Size.values()[com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf)];
+  }
+{
+    this.height=buf.getInt();
+  }
+{
+    this.width=buf.getInt();
+  }
+{
+    this.uri=com.wowd.wobly.WoblyUtils.Buffers.getStringUTF8(buf,true);
+  }
+  int tag=com.wowd.wobly.WoblyUtils.Buffers.getVIntOrMax(buf);
+  tag=readUnknownsUpTo(tag,0,buf);
+  if (com.wowd.wobly.WoblyUtils.getIDFromTag(tag) > 0)   this.title=null;
+ else {
+    this.title=com.wowd.wobly.WoblyUtils.Buffers.getStringUTF8(buf,true);
+    tag=com.wowd.wobly.WoblyUtils.Buffers.getVIntOrMax(buf);
+  }
+  readUnknownsUpTo(tag,Integer.MAX_VALUE,buf);
+}

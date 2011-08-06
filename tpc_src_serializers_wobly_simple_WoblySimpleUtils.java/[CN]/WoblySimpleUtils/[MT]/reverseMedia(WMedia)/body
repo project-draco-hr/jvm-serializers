@@ -1,0 +1,3 @@
+{
+  return new Media(a.uri,a.title,a.width,a.height,a.format,a.duration,a.size,a.bitrate,true,a.persons,a.player,a.copyright);
+}

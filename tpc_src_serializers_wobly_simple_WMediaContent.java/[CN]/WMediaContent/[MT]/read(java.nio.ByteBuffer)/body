@@ -1,0 +1,12 @@
+{
+  try {
+    WMediaContent object=new WMediaContent(buf);
+    return object;
+  }
+ catch (  com.wowd.wobly.exceptions.WoblyReadException e) {
+    throw e;
+  }
+catch (  java.lang.Throwable t) {
+    throw new com.wowd.wobly.exceptions.WoblyReadException(t);
+  }
+}

@@ -1,0 +1,22 @@
+{
+  int size=0;
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(this.size.ordinal());
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(this.height);
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(this.width);
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeStringUTF8(this.uri,true);
+  }
+  if (this.title != null) {
+    size+=1;
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeStringUTF8(this.title,true);
+  }
+  if (unknownFields != null)   for (  com.wowd.wobly.unknown.UnknownField uf : unknownFields)   size+=uf.getSize();
+  size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(size);
+  return size;
+}

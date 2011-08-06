@@ -1,0 +1,56 @@
+{
+{
+    this.player=Player.values()[com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf)];
+  }
+{
+    this.size=com.wowd.wobly.WoblyUtils.Buffers.getVLong(buf);
+  }
+{
+    this.duration=com.wowd.wobly.WoblyUtils.Buffers.getVLong(buf);
+  }
+{
+    this.format=com.wowd.wobly.WoblyUtils.Buffers.getStringUTF8(buf,true);
+  }
+{
+    this.height=com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf);
+  }
+{
+    this.width=com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf);
+  }
+{
+    this.uri=com.wowd.wobly.WoblyUtils.Buffers.getStringUTF8(buf,true);
+  }
+  int tag=com.wowd.wobly.WoblyUtils.Buffers.getVIntOrMax(buf);
+  tag=readUnknownsUpTo(tag,0,buf);
+  if (com.wowd.wobly.WoblyUtils.getIDFromTag(tag) > 0)   this.title=null;
+ else {
+    this.title=com.wowd.wobly.WoblyUtils.Buffers.getStringUTF8(buf,true);
+    tag=com.wowd.wobly.WoblyUtils.Buffers.getVIntOrMax(buf);
+  }
+  tag=readUnknownsUpTo(tag,1,buf);
+  if (com.wowd.wobly.WoblyUtils.getIDFromTag(tag) > 1)   this.bitrate=0;
+ else {
+    this.bitrate=buf.getInt();
+    tag=com.wowd.wobly.WoblyUtils.Buffers.getVIntOrMax(buf);
+  }
+  tag=readUnknownsUpTo(tag,2,buf);
+  if (com.wowd.wobly.WoblyUtils.getIDFromTag(tag) > 2)   this.persons=new java.util.ArrayList<String>(1);
+ else {
+    com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf);
+    int size1=com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf);
+    this.persons=new java.util.ArrayList<String>(size1);
+    for (int i1=0; i1 < size1; i1++) {
+      String tmp1;
+      tmp1=com.wowd.wobly.WoblyUtils.Buffers.getStringUTF8(buf,true);
+      this.persons.add(tmp1);
+    }
+    tag=com.wowd.wobly.WoblyUtils.Buffers.getVIntOrMax(buf);
+  }
+  tag=readUnknownsUpTo(tag,3,buf);
+  if (com.wowd.wobly.WoblyUtils.getIDFromTag(tag) > 3)   this.copyright=null;
+ else {
+    this.copyright=com.wowd.wobly.WoblyUtils.Buffers.getStringUTF8(buf,true);
+    tag=com.wowd.wobly.WoblyUtils.Buffers.getVIntOrMax(buf);
+  }
+  readUnknownsUpTo(tag,Integer.MAX_VALUE,buf);
+}

@@ -1,0 +1,7 @@
+{
+  this.uri=uri;
+  this.title=title;
+  this.width=width;
+  this.height=height;
+  this.size=size;
+}

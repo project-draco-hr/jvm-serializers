@@ -1,0 +1,15 @@
+{
+  int size=0;
+{
+    size+=this.media.getSize();
+  }
+{
+    int helpSize=size;
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(this.images.size());
+    for (    WImage v1 : this.images) {
+      size+=v1.getSize();
+    }
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(size - helpSize);
+  }
+  return size;
+}

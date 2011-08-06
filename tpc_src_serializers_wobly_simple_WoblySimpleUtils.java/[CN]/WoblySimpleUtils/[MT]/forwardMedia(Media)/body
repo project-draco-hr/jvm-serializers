@@ -1,0 +1,3 @@
+{
+  return new WMedia(a.uri,a.title,a.width,a.height,a.format,a.duration,a.size,a.bitrate,a.persons,a.player,a.copyright);
+}

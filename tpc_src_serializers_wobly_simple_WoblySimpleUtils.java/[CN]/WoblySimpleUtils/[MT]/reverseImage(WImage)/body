@@ -1,0 +1,3 @@
+{
+  return new Image(a.uri,a.title,a.width,a.height,a.size);
+}

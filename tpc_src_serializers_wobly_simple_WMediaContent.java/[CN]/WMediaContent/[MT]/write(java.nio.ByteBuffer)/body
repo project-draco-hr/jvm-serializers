@@ -1,0 +1,22 @@
+{
+  try {
+{
+      this.media.write(buf);
+    }
+{
+      int startFieldMark=buf.position();
+      buf.position(buf.position() + 4);
+      com.wowd.wobly.WoblyUtils.Buffers.putVInt(buf,this.images.size());
+      for (      WImage v1 : this.images) {
+        v1.write(buf);
+      }
+      buf.putInt(startFieldMark,buf.position() - startFieldMark - 4);
+    }
+  }
+ catch (  com.wowd.wobly.exceptions.WoblyWriteException e) {
+    throw e;
+  }
+catch (  java.lang.Throwable t) {
+    throw new com.wowd.wobly.exceptions.WoblyWriteException(t);
+  }
+}

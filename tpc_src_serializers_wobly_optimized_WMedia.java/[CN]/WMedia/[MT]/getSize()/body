@@ -1,0 +1,48 @@
+{
+  int size=0;
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(this.player.ordinal());
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVLong(this.size);
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVLong(this.duration);
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeStringUTF8(this.format,true);
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(this.height);
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(this.width);
+  }
+{
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeStringUTF8(this.uri,true);
+  }
+  if (this.title != null) {
+    size+=1;
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeStringUTF8(this.title,true);
+  }
+  if (this.bitrate != 0) {
+    size+=1;
+    size+=4;
+  }
+  if ((this.persons != null) && (this.persons.size() > 0)) {
+    size+=1;
+    int helpSize=size;
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(this.persons.size());
+    for (    String v1 : this.persons) {
+      size+=com.wowd.wobly.WoblyUtils.Buffers.sizeStringUTF8(v1,true);
+    }
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(size - helpSize);
+  }
+  if (this.copyright != null) {
+    size+=1;
+    size+=com.wowd.wobly.WoblyUtils.Buffers.sizeStringUTF8(this.copyright,true);
+  }
+  if (unknownFields != null)   for (  com.wowd.wobly.unknown.UnknownField uf : unknownFields)   size+=uf.getSize();
+  size+=com.wowd.wobly.WoblyUtils.Buffers.sizeVInt(size);
+  return size;
+}

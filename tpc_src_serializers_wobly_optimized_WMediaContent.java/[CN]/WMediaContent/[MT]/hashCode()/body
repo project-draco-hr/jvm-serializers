@@ -1,0 +1,7 @@
+{
+  final int prime=31;
+  int result=1;
+  result=prime * result + ((images == null) ? 0 : images.hashCode());
+  result=prime * result + ((media == null) ? 0 : media.hashCode());
+  return result;
+}

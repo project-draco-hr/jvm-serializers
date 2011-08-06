@@ -1,0 +1,7 @@
+{
+  ArrayList<Image> images=new ArrayList<Image>(a.size());
+  for (  WImage image : a) {
+    images.add(reverseImage(image));
+  }
+  return images;
+}

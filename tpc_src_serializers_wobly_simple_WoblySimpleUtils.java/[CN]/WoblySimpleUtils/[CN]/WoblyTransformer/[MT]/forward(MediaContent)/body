@@ -1,0 +1,3 @@
+{
+  return new WMediaContent(forwardImages(a.images),forwardMedia(a.media));
+}

@@ -1,0 +1,18 @@
+{
+  try {
+    int size=com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf);
+    int originalLimit=buf.limit();
+    int newLimit=buf.position() + size;
+    if (newLimit > originalLimit)     throw new com.wowd.wobly.exceptions.WoblyReadException(newLimit + " " + originalLimit);
+    buf.limit(newLimit);
+    WImage object=new WImage(buf);
+    buf.limit(originalLimit);
+    return object;
+  }
+ catch (  com.wowd.wobly.exceptions.WoblyReadException e) {
+    throw e;
+  }
+catch (  java.lang.Throwable t) {
+    throw new com.wowd.wobly.exceptions.WoblyReadException(t);
+  }
+}

@@ -1,0 +1,7 @@
+{
+  ArrayList<WImage> images=new ArrayList<WImage>(a.size());
+  for (  Image image : a) {
+    images.add(forwardImage(image));
+  }
+  return images;
+}
