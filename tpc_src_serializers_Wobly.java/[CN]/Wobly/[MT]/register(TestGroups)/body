@@ -1,4 +1,4 @@
 {
   groups.media.add(new WoblySimpleUtils.WoblyTransformer(),new WoblySimpleUtils.WoblySerializer());
-  groups.media.add(new WoblyOptimizedUtils.WoblyTransformer(),new WoblyOptimizedUtils.WoblySerializer());
+  groups.media.add(new WoblyCompactUtils.WoblyTransformer(),new WoblyCompactUtils.WoblySerializer());
 }
