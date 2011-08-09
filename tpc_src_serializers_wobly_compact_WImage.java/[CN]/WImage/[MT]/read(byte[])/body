@@ -1,0 +1,3 @@
+{
+  return read(java.nio.ByteBuffer.wrap(buf));
+}

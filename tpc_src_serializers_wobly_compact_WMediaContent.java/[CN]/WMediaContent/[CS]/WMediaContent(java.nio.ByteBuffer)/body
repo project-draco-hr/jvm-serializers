@@ -1,0 +1,15 @@
+{
+{
+    this.media=WMedia.read(buf);
+  }
+{
+    com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf);
+    int size1=com.wowd.wobly.WoblyUtils.Buffers.getVInt(buf);
+    this.images=new java.util.ArrayList<WImage>(size1);
+    for (int i1=0; i1 < size1; i1++) {
+      WImage tmp1;
+      tmp1=WImage.read(buf);
+      this.images.add(tmp1);
+    }
+  }
+}

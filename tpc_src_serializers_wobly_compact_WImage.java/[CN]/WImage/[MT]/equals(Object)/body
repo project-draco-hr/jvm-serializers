@@ -1,0 +1,18 @@
+{
+  if (this == obj)   return true;
+  if (obj == null)   return false;
+  if (getClass() != obj.getClass())   return false;
+  WImage other=(WImage)obj;
+  if (height != other.height)   return false;
+  if (size != other.size)   return false;
+  if (title == null) {
+    if (other.title != null)     return false;
+  }
+ else   if (!title.equals(other.title))   return false;
+  if (uri == null) {
+    if (other.uri != null)     return false;
+  }
+ else   if (!uri.equals(other.uri))   return false;
+  if (width != other.width)   return false;
+  return true;
+}
