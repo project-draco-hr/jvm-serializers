@@ -66,13 +66,13 @@ continue;
 }
 throw new IllegalStateException("Unexpected field '" + field + "'");
 }
-if (media.uri == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_URI);
-if (!haveWidth) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_WIDTH);
-if (!haveHeight) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_HEIGHT);
-if (media.format == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_FORMAT);
-if (!haveDuration) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_DURATION);
-if (!haveSize) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_SIZE);
+if (media.uri == null) throw new IllegalStateException("Missing field: " + FIELD_URI);
+if (!haveWidth) throw new IllegalStateException("Missing field: " + FIELD_WIDTH);
+if (!haveHeight) throw new IllegalStateException("Missing field: " + FIELD_HEIGHT);
+if (media.format == null) throw new IllegalStateException("Missing field: " + FIELD_FORMAT);
+if (!haveDuration) throw new IllegalStateException("Missing field: " + FIELD_DURATION);
+if (!haveSize) throw new IllegalStateException("Missing field: " + FIELD_SIZE);
 if (media.persons == null) media.persons=new ArrayList<String>();
-if (media.player == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_PLAYER);
+if (media.player == null) throw new IllegalStateException("Missing field: " + FIELD_PLAYER);
 return media;
 }

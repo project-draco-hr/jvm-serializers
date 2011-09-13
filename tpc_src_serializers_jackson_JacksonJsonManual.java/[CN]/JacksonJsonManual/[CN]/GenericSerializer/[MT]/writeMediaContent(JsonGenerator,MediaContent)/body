@@ -1,7 +1,7 @@
 {
   generator.writeStartObject();
   writeMedia(generator,content.media);
-  generator.writeFieldName(FULL_FIELD_NAME_IMAGES);
+  generator.writeFieldName(FIELD_IMAGES);
   generator.writeStartArray();
   for (  Image i : content.images) {
     writeImage(generator,i);

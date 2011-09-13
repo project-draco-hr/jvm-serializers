@@ -1,0 +1,11 @@
+{
+  try {
+    XMLStreamReader sr=inputFactory.createXMLStreamReader(new ByteArrayInputStream(data));
+    @SuppressWarnings("unchecked") T result=(T)jaxbContext.createUnmarshaller().unmarshal(sr);
+    sr.close();
+    return result;
+  }
+ catch (  Exception e) {
+    throw new IOException(e);
+  }
+}

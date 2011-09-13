@@ -29,7 +29,7 @@ continue;
 }
 throw new IllegalStateException("Unexpected field '" + field + "'");
 }
-if (mc.media == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_MEDIA);
+if (mc.media == null) throw new IllegalStateException("Missing field: " + FIELD_MEDIA);
 if (mc.images == null) mc.images=new ArrayList<Image>();
 return mc;
 }
