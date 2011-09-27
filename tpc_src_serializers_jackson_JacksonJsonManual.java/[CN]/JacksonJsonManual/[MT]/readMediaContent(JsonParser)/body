@@ -1,0 +1,32 @@
+{
+  MediaContent mc=new MediaContent();
+  if (parser.nextToken() != JsonToken.START_OBJECT) {
+    reportIllegal(parser,JsonToken.START_OBJECT);
+  }
+  if (parser.nextFieldName(FIELD_MEDIA)) {
+    mc.media=readMedia(parser);
+    if (parser.nextFieldName(FIELD_IMAGES)) {
+      mc.images=readImages(parser);
+      return mc;
+    }
+  }
+  for (; parser.getCurrentToken() == JsonToken.FIELD_NAME; parser.nextToken()) {
+    String field=parser.getCurrentName();
+    Integer I=fullFieldToIndex.get(field);
+    if (I != null) {
+switch (I) {
+case FIELD_IX_MEDIA:
+        mc.media=readMedia(parser);
+      continue;
+case FIELD_IX_IMAGES:
+    mc.images=readImages(parser);
+  continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+verifyCurrent(parser,JsonToken.END_OBJECT);
+if (mc.media == null) throw new IllegalStateException("Missing field: " + FIELD_MEDIA);
+if (mc.images == null) mc.images=new ArrayList<Image>();
+return mc;
+}

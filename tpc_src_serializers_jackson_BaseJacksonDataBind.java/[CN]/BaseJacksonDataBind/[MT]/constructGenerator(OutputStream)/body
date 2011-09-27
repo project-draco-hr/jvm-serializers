@@ -1,0 +1,3 @@
+{
+  return mapper.getJsonFactory().createJsonGenerator(out,JsonEncoding.UTF8);
+}

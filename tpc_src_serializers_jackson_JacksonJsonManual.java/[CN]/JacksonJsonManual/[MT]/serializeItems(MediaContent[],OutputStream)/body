@@ -1,0 +1,7 @@
+{
+  JsonGenerator generator=constructGenerator(out);
+  for (int i=0, len=items.length; i < len; ++i) {
+    writeMediaContent(generator,items[i]);
+  }
+  generator.close();
+}

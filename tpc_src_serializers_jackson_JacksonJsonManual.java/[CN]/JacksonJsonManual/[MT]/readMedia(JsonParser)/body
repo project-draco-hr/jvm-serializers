@@ -1,0 +1,106 @@
+{
+  if (parser.nextToken() != JsonToken.START_OBJECT) {
+    reportIllegal(parser,JsonToken.START_OBJECT);
+  }
+  Media media=new Media();
+  boolean haveWidth=false;
+  boolean haveHeight=false;
+  boolean haveDuration=false;
+  boolean haveSize=false;
+  if (parser.nextFieldName(FIELD_PLAYER)) {
+    media.player=Media.Player.valueOf(parser.nextTextValue());
+    if (parser.nextFieldName(FIELD_URI)) {
+      media.uri=parser.nextTextValue();
+      if (parser.nextFieldName(FIELD_TITLE)) {
+        media.title=parser.nextTextValue();
+        if (parser.nextFieldName(FIELD_WIDTH)) {
+          haveWidth=true;
+          media.width=parser.nextIntValue(-1);
+          if (parser.nextFieldName(FIELD_HEIGHT)) {
+            haveHeight=true;
+            media.height=parser.nextIntValue(-1);
+            if (parser.nextFieldName(FIELD_FORMAT)) {
+              media.format=parser.nextTextValue();
+              if (parser.nextFieldName(FIELD_DURATION)) {
+                haveDuration=true;
+                media.duration=parser.nextLongValue(-1L);
+                if (parser.nextFieldName(FIELD_SIZE)) {
+                  haveSize=true;
+                  media.size=parser.nextLongValue(-1L);
+                  if (parser.nextFieldName(FIELD_BITRATE)) {
+                    media.bitrate=parser.nextIntValue(-1);
+                    media.hasBitrate=true;
+                    if (parser.nextFieldName(FIELD_COPYRIGHT)) {
+                      media.copyright=parser.nextTextValue();
+                      if (parser.nextFieldName(FIELD_PERSONS)) {
+                        media.persons=readPersons(parser);
+                        return media;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  for (; parser.getCurrentToken() == JsonToken.FIELD_NAME; parser.nextToken()) {
+    String field=parser.getCurrentName();
+    Integer I=fullFieldToIndex.get(field);
+    if (I != null) {
+switch (I) {
+case FIELD_IX_PLAYER:
+        media.player=Media.Player.valueOf(parser.getText());
+      continue;
+case FIELD_IX_URI:
+    media.uri=parser.nextTextValue();
+  continue;
+case FIELD_IX_TITLE:
+media.title=parser.nextTextValue();
+continue;
+case FIELD_IX_WIDTH:
+media.width=parser.nextIntValue(-1);
+haveWidth=true;
+continue;
+case FIELD_IX_HEIGHT:
+media.height=parser.nextIntValue(-1);
+haveHeight=true;
+continue;
+case FIELD_IX_FORMAT:
+media.format=parser.nextTextValue();
+continue;
+case FIELD_IX_DURATION:
+media.duration=parser.nextLongValue(-1L);
+haveDuration=true;
+continue;
+case FIELD_IX_SIZE:
+media.size=parser.nextLongValue(-1L);
+haveSize=true;
+continue;
+case FIELD_IX_BITRATE:
+media.bitrate=parser.nextIntValue(-1);
+media.hasBitrate=true;
+continue;
+case FIELD_IX_PERSONS:
+media.persons=readPersons(parser);
+continue;
+case FIELD_IX_COPYRIGHT:
+media.copyright=parser.nextTextValue();
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+verifyCurrent(parser,JsonToken.END_OBJECT);
+if (media.uri == null) throw new IllegalStateException("Missing field: " + FIELD_URI);
+if (!haveWidth) throw new IllegalStateException("Missing field: " + FIELD_WIDTH);
+if (!haveHeight) throw new IllegalStateException("Missing field: " + FIELD_HEIGHT);
+if (media.format == null) throw new IllegalStateException("Missing field: " + FIELD_FORMAT);
+if (!haveDuration) throw new IllegalStateException("Missing field: " + FIELD_DURATION);
+if (!haveSize) throw new IllegalStateException("Missing field: " + FIELD_SIZE);
+if (media.persons == null) media.persons=new ArrayList<String>();
+if (media.player == null) throw new IllegalStateException("Missing field: " + FIELD_PLAYER);
+return media;
+}

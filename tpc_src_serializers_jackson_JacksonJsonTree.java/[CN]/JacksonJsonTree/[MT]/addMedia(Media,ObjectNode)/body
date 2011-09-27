@@ -6,7 +6,7 @@
   node.put("duration",media.duration);
   node.put("format",media.format);
   node.put("height",media.height);
-  ArrayNode persons=mapper.createArrayNode();
+  ArrayNode persons=node.arrayNode();
   for (  String person : media.persons) {
     persons.add(person);
   }

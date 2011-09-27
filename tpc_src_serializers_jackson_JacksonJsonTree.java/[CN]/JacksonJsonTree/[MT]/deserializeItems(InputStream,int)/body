@@ -1,0 +1,9 @@
+{
+  JsonParser parser=constructParser(in);
+  MediaContent[] result=new MediaContent[numberOfItems];
+  for (int i=0; i < numberOfItems; ++i) {
+    result[i]=readMediaContent(mapper.readTree(parser));
+  }
+  parser.close();
+  return result;
+}

@@ -1,1 +1,1 @@
-Serializer<MediaContent>
+BaseJacksonDataBind<MediaContent>

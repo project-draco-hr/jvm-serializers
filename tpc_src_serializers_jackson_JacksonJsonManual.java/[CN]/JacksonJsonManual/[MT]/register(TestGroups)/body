@@ -1,4 +1,4 @@
 {
   JsonFactory factory=new JsonFactory();
-  groups.media.add(JavaBuiltIn.MediaTransformer,new GenericSerializer("json/jackson/manual",factory));
+  groups.media.add(JavaBuiltIn.MediaTransformer,new JacksonJsonManual("json/jackson/manual",factory));
 }

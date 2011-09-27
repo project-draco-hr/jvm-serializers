@@ -1,0 +1,57 @@
+{
+  boolean haveWidth=false;
+  boolean haveHeight=false;
+  Image image=new Image();
+  if (parser.nextFieldName(FIELD_URI)) {
+    image.uri=parser.nextTextValue();
+    if (parser.nextFieldName(FIELD_TITLE)) {
+      image.title=parser.nextTextValue();
+      if (parser.nextFieldName(FIELD_WIDTH)) {
+        image.width=parser.nextIntValue(-1);
+        haveWidth=true;
+        if (parser.nextFieldName(FIELD_HEIGHT)) {
+          image.height=parser.nextIntValue(-1);
+          haveHeight=true;
+          if (parser.nextFieldName(FIELD_SIZE)) {
+            image.size=Image.Size.valueOf(parser.nextTextValue());
+            parser.nextToken();
+            verifyCurrent(parser,JsonToken.END_OBJECT);
+            return image;
+          }
+        }
+      }
+    }
+  }
+  for (; parser.getCurrentToken() == JsonToken.FIELD_NAME; parser.nextToken()) {
+    String field=parser.getCurrentName();
+    parser.nextToken();
+    Integer I=fullFieldToIndex.get(field);
+    if (I != null) {
+switch (I) {
+case FIELD_IX_URI:
+        image.uri=parser.getText();
+      continue;
+case FIELD_IX_TITLE:
+    image.title=parser.getText();
+  continue;
+case FIELD_IX_WIDTH:
+image.width=parser.getIntValue();
+haveWidth=true;
+continue;
+case FIELD_IX_HEIGHT:
+image.height=parser.getIntValue();
+haveHeight=true;
+continue;
+case FIELD_IX_SIZE:
+image.size=Image.Size.valueOf(parser.getText());
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+if (image.uri == null) throw new IllegalStateException("Missing field: " + FIELD_URI);
+if (!haveWidth) throw new IllegalStateException("Missing field: " + FIELD_WIDTH);
+if (!haveHeight) throw new IllegalStateException("Missing field: " + FIELD_HEIGHT);
+if (image.size == null) throw new IllegalStateException("Missing field: " + FIELD_SIZE);
+return image;
+}
