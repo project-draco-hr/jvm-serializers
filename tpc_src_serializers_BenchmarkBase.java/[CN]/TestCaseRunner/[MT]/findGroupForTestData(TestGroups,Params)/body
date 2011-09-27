@@ -1,0 +1,9 @@
+{
+  TestGroup<?> group=groups.groupMap.get(params.dataType);
+  if (group == null) {
+    System.out.println("Data file \"" + params.dataFileName + "\" can't be loaded.");
+    System.out.println("Don't know about data type \"" + params.dataType + "\"");
+    System.exit(1);
+  }
+  return group;
+}

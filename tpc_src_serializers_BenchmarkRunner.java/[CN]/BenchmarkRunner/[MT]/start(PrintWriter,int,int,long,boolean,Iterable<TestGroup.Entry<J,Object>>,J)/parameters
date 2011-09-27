@@ -1,7 +1,0 @@
-PrintWriter errors
-int iterations
-int trials
-long warmupTime
-boolean prewarm
-Iterable<TestGroup.Entry<J,Object>> groups
-J value

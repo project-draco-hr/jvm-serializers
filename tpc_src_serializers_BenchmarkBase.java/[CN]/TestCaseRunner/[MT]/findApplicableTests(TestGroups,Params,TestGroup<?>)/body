@@ -1,0 +1,51 @@
+{
+  @SuppressWarnings("unchecked") TestGroup<Object> group_=(TestGroup<Object>)bootstrapGroup;
+  Set<String> matched=new HashSet<String>();
+  Iterable<TestGroup.Entry<Object,Object>> available;
+  if (params.enableHidden) {
+    available=group_.entries;
+  }
+ else {
+    ArrayList<TestGroup.Entry<Object,Object>> unhidden=new ArrayList<TestGroup.Entry<Object,Object>>();
+    for (    TestGroup.Entry<?,Object> entry_ : bootstrapGroup.entries) {
+      @SuppressWarnings("unchecked") TestGroup.Entry<Object,Object> entry=(TestGroup.Entry<Object,Object>)entry_;
+      String name=entry.serializer.getName();
+      if (!HIDDEN.contains(name))       unhidden.add(entry);
+    }
+    available=unhidden;
+  }
+  if (params.filterStrings == null) {
+    return available;
+  }
+  ArrayList<TestGroup.Entry<Object,Object>> matchingEntries=new ArrayList<TestGroup.Entry<Object,Object>>();
+  for (  TestGroup.Entry<?,Object> entry_ : available) {
+    @SuppressWarnings("unchecked") TestGroup.Entry<Object,Object> entry=(TestGroup.Entry<Object,Object>)entry_;
+    String name=entry.serializer.getName();
+    boolean found=false;
+    for (    String s : params.filterStrings) {
+      boolean thisOneMatches=match(s,name);
+      if (thisOneMatches) {
+        matched.add(s);
+        found=true;
+      }
+    }
+    if (found == params.filterIsInclude) {
+      matchingEntries.add(entry);
+    }
+  }
+  Set<String> unmatched=new HashSet<String>(params.filterStrings);
+  unmatched.removeAll(matched);
+  for (  String s : unmatched) {
+    System.err.println("Warning: there is no implementation name matching the pattern \"" + s + "\"");
+    if (!params.enableHidden) {
+      for (      String hiddenName : HIDDEN) {
+        if (match(s,hiddenName)) {
+          System.err.println("(The \"" + hiddenName + "\", serializer is hidden by default.");
+          System.err.println(" Use the \"-hidden\" option to enable hidden serializers)");
+          break;
+        }
+      }
+    }
+  }
+  return matchingEntries;
+}

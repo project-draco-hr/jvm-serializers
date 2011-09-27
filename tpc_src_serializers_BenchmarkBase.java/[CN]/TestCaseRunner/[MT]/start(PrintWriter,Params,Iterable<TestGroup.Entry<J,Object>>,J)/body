@@ -1,0 +1,56 @@
+{
+  System.out.println("Checking correctness...");
+  for (  TestGroup.Entry<J,Object> entry : groups) {
+    checkCorrectness(errors,entry.transformer,entry.serializer,value);
+  }
+  System.out.println("[done]");
+  if (params.prewarm) {
+    System.out.print("Pre-warmup...");
+    for (    TestGroup.Entry<J,Object> entry : groups) {
+      TestCaseRunner<J> runner=new TestCaseRunner<J>(entry.transformer,entry.serializer,value);
+      String name=entry.serializer.getName();
+      System.out.print(" " + name);
+      warmCreation(runner,params.warmupTime);
+      warmSerialization(runner,params.warmupTime);
+      warmDeserialization(runner,params.warmupTime);
+    }
+    System.out.println();
+    System.out.println("[done]");
+  }
+  System.out.printf("%-32s %6s %7s %7s %7s %7s %7s %7s %6s %5s\n","","create","ser","+same","deser","+shal","+deep","total","size","+dfl");
+  EnumMap<measurements,Map<String,Double>> values=new EnumMap<measurements,Map<String,Double>>(measurements.class);
+  for (  measurements m : measurements.values())   values.put(m,new HashMap<String,Double>());
+  for (  TestGroup.Entry<J,Object> entry : groups) {
+    TestCaseRunner<J> runner=new TestCaseRunner<J>(entry.transformer,entry.serializer,value);
+    String name=entry.serializer.getName();
+    try {
+      warmCreation(runner,params.warmupTime);
+      doGc();
+      double timeCreate=runner.runTakeMin(params.trials,Create,params.iterations * 100);
+      warmSerialization(runner,params.warmupTime);
+      doGc();
+      double timeSerializeDifferentObjects=runner.runTakeMin(params.trials,Serialize,params.iterations);
+      doGc();
+      double timeSerializeSameObject=runner.runTakeMin(params.trials,SerializeSameObject,params.iterations);
+      warmDeserialization(runner,params.warmupTime);
+      doGc();
+      double timeDeserializeNoFieldAccess=runner.runTakeMin(params.trials,Deserialize,params.iterations);
+      doGc();
+      double timeDeserializeAndCheckShallow=runner.runTakeMin(params.trials,DeserializeAndCheckShallow,params.iterations);
+      doGc();
+      double timeDeserializeAndCheck=runner.runTakeMin(params.trials,DeserializeAndCheck,params.iterations);
+      double totalTime=timeSerializeDifferentObjects + timeDeserializeAndCheck;
+      byte[] array=entry.serializer.serialize(entry.transformer.forward(value));
+      byte[] compressDeflate=compressDeflate(array);
+      System.out.printf("%-32s %6.0f %7.0f %7.0f %7.0f %7.0f %7.0f %7.0f %6d %5d\n",name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
+      addValue(values,name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
+    }
+ catch (    Exception ex) {
+      System.out.println("ERROR: \"" + name + "\" crashed during benchmarking.");
+      errors.println(ERROR_DIVIDER);
+      errors.println("\"" + name + "\" crashed during benchmarking.");
+      ex.printStackTrace(errors);
+    }
+  }
+  return values;
+}

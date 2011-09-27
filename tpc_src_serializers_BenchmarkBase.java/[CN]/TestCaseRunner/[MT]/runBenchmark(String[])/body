@@ -1,0 +1,7 @@
+{
+  Params params=new Params();
+  findParameters(args,params);
+  TestGroups groups=new TestGroups();
+  addTests(groups);
+  runTests(groups,params);
+}

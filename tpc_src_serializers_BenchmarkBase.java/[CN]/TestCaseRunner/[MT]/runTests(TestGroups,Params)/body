@@ -1,0 +1,26 @@
+{
+  TestGroup<?> bootstrapGroup=findGroupForTestData(groups,params);
+  Object testData=loadTestData(bootstrapGroup,params);
+  Iterable<TestGroup.Entry<Object,Object>> matchingEntries=findApplicableTests(groups,params,bootstrapGroup);
+  StringWriter errors=new StringWriter();
+  PrintWriter errorsPW=new PrintWriter(errors);
+  try {
+    EnumMap<measurements,Map<String,Double>> values=start(errorsPW,params,matchingEntries,testData);
+    if (params.printChart) {
+      printImages(values);
+    }
+  }
+ catch (  Exception ex) {
+    ex.printStackTrace(System.err);
+    System.exit(1);
+    return;
+  }
+  String errorsString=errors.toString();
+  if (errorsString.length() > 0) {
+    System.out.println(ERROR_DIVIDER);
+    System.out.println("Errors occurred during benchmarking:");
+    System.out.print(errorsString);
+    System.exit(1);
+    return;
+  }
+}

@@ -1,0 +1,186 @@
+{
+  Set<String> optionsSeen=new HashSet<String>();
+  for (  String arg : args) {
+    String remainder;
+    if (arg.startsWith("--")) {
+      remainder=arg.substring(2);
+    }
+ else     if (arg.startsWith("-")) {
+      remainder=arg.substring(1);
+    }
+ else     if (params.dataFileName == null) {
+      params.dataFileName=arg;
+      continue;
+    }
+ else {
+      System.err.println("Expecting only one non-option argument (<data-file> = \"" + params.dataFileName + "\").");
+      System.err.println("Found a second one: \"" + arg + "\"");
+      System.err.println("Use \"-help\" for usage information.");
+      System.exit(1);
+      return;
+    }
+    String option, value;
+    int eqPos=remainder.indexOf('=');
+    if (eqPos >= 0) {
+      option=remainder.substring(0,eqPos);
+      value=remainder.substring(eqPos + 1);
+    }
+ else {
+      option=remainder;
+      value=null;
+    }
+    if (!optionsSeen.add(option)) {
+      System.err.println("Repeated option: \"" + arg + "\"");
+      System.exit(1);
+    }
+    if (option.equals("include")) {
+      if (value == null) {
+        System.err.println("The \"include\" option requires a value.");
+        System.exit(1);
+      }
+      if (params.filterIsInclude == null) {
+        params.filterIsInclude=true;
+        params.filterStrings=new HashSet<String>(Arrays.asList(value.split(",")));
+      }
+ else {
+        System.err.println("Can't use 'include' and 'exclude' options at the same time.");
+        System.exit(1);
+      }
+    }
+ else     if (option.equals("exclude")) {
+      if (value == null) {
+        System.err.println("The \"exclude\" option requires a value.");
+        System.exit(1);
+      }
+      if (params.filterIsInclude == null) {
+        params.filterIsInclude=false;
+        params.filterStrings=new HashSet<String>(Arrays.asList(value.split(",")));
+      }
+ else {
+        System.err.println("Can't use 'include' and 'exclude' options at the same time.");
+        System.exit(1);
+      }
+    }
+ else     if (option.equals("iterations")) {
+      if (value == null) {
+        System.err.println("The \"iterations\" option requires a value.");
+        System.exit(1);
+      }
+      try {
+        params.iterations=Integer.parseInt(value);
+      }
+ catch (      NumberFormatException ex) {
+        System.err.println("Invalid value for \"iterations\" option: \"" + value + "\"");
+        System.exit(1);
+      }
+      if (params.iterations < 1) {
+        System.err.println("Invalid value for \"iterations\" option: \"" + value + "\"");
+        System.exit(1);
+      }
+    }
+ else     if (option.equals("trials")) {
+      if (value == null) {
+        System.err.println("The \"trials\" option requires a value.");
+        System.exit(1);
+      }
+      try {
+        params.trials=Integer.parseInt(value);
+      }
+ catch (      NumberFormatException ex) {
+        System.err.println("Invalid value for \"trials\" option: \"" + value + "\"");
+        System.exit(1);
+      }
+      if (params.trials < 1) {
+        System.err.println("Invalid value for \"trials\" option: \"" + value + "\"");
+        System.exit(1);
+      }
+    }
+ else     if (option.equals("warmup-time")) {
+      if (value == null) {
+        System.err.println("The \"warmup-time\" option requires a value.");
+        System.exit(1);
+      }
+      try {
+        params.warmupTime=Long.parseLong(value);
+      }
+ catch (      NumberFormatException ex) {
+        System.err.println("Invalid value for \"warmup-time\" option: \"" + value + "\"");
+        System.exit(1);
+      }
+      if (params.warmupTime < 0) {
+        System.err.println("Invalid value for \"warmup-time\" option: \"" + value + "\"");
+        System.exit(1);
+      }
+    }
+ else     if (option.equals("pre-warmup")) {
+      if (value != null) {
+        System.err.println("The \"pre-warmup\" option does not take a value: \"" + arg + "\"");
+        System.exit(1);
+      }
+      params.prewarm=true;
+    }
+ else     if (option.equals("chart")) {
+      if (value != null) {
+        System.err.println("The \"chart\" option does not take a value: \"" + arg + "\"");
+        System.exit(1);
+      }
+      params.printChart=true;
+    }
+ else     if (option.equals("hidden")) {
+      if (value != null) {
+        System.err.println("The \"hidden\" option does not take a value: \"" + arg + "\"");
+        System.exit(1);
+      }
+      params.enableHidden=true;
+    }
+ else     if (option.equals("help")) {
+      if (value != null) {
+        System.err.println("The \"help\" option does not take a value: \"" + arg + "\"");
+        System.exit(1);
+      }
+      if (args.length != 1) {
+        System.err.println("The \"help\" option cannot be combined with any other option.");
+        System.exit(1);
+      }
+      System.out.println();
+      System.out.println("Usage: run [options] <data-file>");
+      System.out.println();
+      System.out.println("Options:");
+      System.out.println("  -iterations=n         [default=" + DEFAULT_ITERATIONS + "]");
+      System.out.println("  -trials=n             [default=" + DEFAULT_TRIALS + "]");
+      System.out.println("  -warmup-time=millis   [default=" + DEFAULT_WARMUP_MSECS + "]");
+      System.out.println("  -pre-warmup           (warm all serializers before the first measurement)");
+      System.out.println("  -chart                (generate a Google Chart URL for the results)");
+      System.out.println("  -include=impl1,impl2,impl3,...");
+      System.out.println("  -exclude=impl1,impl2,impl3,...");
+      System.out.println("  -hidden               (enable \"hidden\" serializers)");
+      System.out.println("  -help");
+      System.out.println();
+      System.out.println("Example: run  -chart -include=protobuf,thrift  data/media.1.cks");
+      System.out.println();
+      System.exit(0);
+    }
+ else {
+      System.err.println("Unknown option: \"" + arg + "\"");
+      System.err.println("Use \"-help\" for usage information.");
+      System.exit(1);
+    }
+  }
+  if (params.dataFileName == null) {
+    System.err.println("Missing <data-file> argument.");
+    System.err.println("Use \"-help\" for usage information.");
+    System.exit(1);
+  }
+  File dataFile=new File(params.dataFileName);
+  if (!dataFile.exists()) {
+    System.out.println("Couldn't find data file \"" + dataFile.getPath() + "\"");
+    System.exit(1);
+  }
+  String[] parts=dataFile.getName().split("\\.");
+  if (parts.length < 3) {
+    System.out.println("Data file \"" + dataFile.getName() + "\" should be of the form \"<type>.<name>.<extension>\"");
+    System.exit(1);
+  }
+  params.dataType=parts[0];
+  params.dataExtension=parts[parts.length - 1];
+}

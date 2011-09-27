@@ -1,0 +1,19 @@
+{
+  TestGroup.Entry<?,Object> loader=bootstrapGroup.extensionMap.get(params.dataExtension);
+  if (loader == null) {
+    System.out.println("Data file \"" + params.dataFileName + "\" can't be loaded.");
+    System.out.println("No deserializer registered for data type \"" + params.dataType + "\" and file extension \"."+ params.dataExtension+ "\"");
+    System.exit(1);
+  }
+  Object deserialized=null;
+  try {
+    byte[] fileBytes=readFile(new File(params.dataFileName));
+    deserialized=loader.serializer.deserialize(fileBytes);
+  }
+ catch (  Exception ex) {
+    System.err.println("Error loading data from file \"" + params.dataFileName + "\".");
+    System.err.println(ex.getMessage());
+    System.exit(1);
+  }
+  return loader.transformer.reverse(deserialized);
+}
