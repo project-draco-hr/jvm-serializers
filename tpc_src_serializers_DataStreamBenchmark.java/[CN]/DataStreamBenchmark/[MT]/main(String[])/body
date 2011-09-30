@@ -1,0 +1,3 @@
+{
+  new BenchmarkRunner().runBenchmark(args);
+}
