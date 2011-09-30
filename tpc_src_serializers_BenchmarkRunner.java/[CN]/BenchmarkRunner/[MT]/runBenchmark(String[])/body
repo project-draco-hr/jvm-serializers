@@ -1,0 +1,3 @@
+{
+  runBenchmark(args,Create,Serialize,SerializeSameObject,Deserialize,DeserializeAndCheck,DeserializeAndCheckShallow);
+}

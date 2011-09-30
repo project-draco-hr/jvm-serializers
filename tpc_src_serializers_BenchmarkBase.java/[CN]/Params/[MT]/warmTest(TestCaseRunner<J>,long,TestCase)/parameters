@@ -1,2 +1,3 @@
 TestCaseRunner<J> runner
 long warmupTime
+TestCase test

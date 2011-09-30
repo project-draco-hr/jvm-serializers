@@ -5,7 +5,7 @@
   StringWriter errors=new StringWriter();
   PrintWriter errorsPW=new PrintWriter(errors);
   try {
-    EnumMap<measurements,Map<String,Double>> values=start(errorsPW,params,matchingEntries,testData);
+    EnumMap<measurements,Map<String,Double>> values=runMeasurements(errorsPW,params,matchingEntries,testData,testCreate,testSerialize,testSerializeSameObject,testDeserialize,testDeserializeAndCheck,testDeserializeAndCheckShallow);
     if (params.printChart) {
       printImages(values);
     }

@@ -1,0 +1,8 @@
+TestGroups groups
+Params params
+TestCase testCreate
+TestCase testSerialize
+TestCase testSerializeSameObject
+TestCase testDeserialize
+TestCase testDeserializeAndCheck
+TestCase testDeserializeAndCheckShallow
