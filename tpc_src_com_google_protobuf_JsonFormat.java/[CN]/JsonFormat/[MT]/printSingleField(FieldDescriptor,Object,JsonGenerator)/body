@@ -30,7 +30,7 @@
   }
   if (field.isRepeated()) {
     generator.print("[");
-    for (Iterator iter=((List)value).iterator(); iter.hasNext(); ) {
+    for (Iterator<?> iter=((List<?>)value).iterator(); iter.hasNext(); ) {
       printFieldValue(field,iter.next(),generator);
       if (iter.hasNext()) {
         generator.print(",");
