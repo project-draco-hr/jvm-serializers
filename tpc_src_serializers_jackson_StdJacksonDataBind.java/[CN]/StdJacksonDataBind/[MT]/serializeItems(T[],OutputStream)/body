@@ -1,6 +1,5 @@
 {
-  ByteArrayOutputStream baos=outputStream(items[0]);
-  JsonGenerator generator=constructGenerator(baos);
+  JsonGenerator generator=constructGenerator(out);
   for (int i=0, len=items.length; i < len; ++i) {
     mapper.writeValue(generator,items[i]);
   }
