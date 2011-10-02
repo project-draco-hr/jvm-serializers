@@ -1,0 +1,5 @@
+{
+  B[] b=resultArray(a.length);
+  forward(a,b);
+  return b;
+}

@@ -5,15 +5,23 @@
     System.out.println("No deserializer registered for data type \"" + params.dataType + "\" and file extension \"."+ params.dataExtension+ "\"");
     System.exit(1);
   }
-  Object deserialized=null;
+  byte[] fileBytes;
   try {
-    byte[] fileBytes=readFile(new File(params.dataFileName));
-    deserialized=loader.serializer.deserialize(fileBytes);
+    fileBytes=readFile(new File(params.dataFileName));
   }
  catch (  Exception ex) {
     System.err.println("Error loading data from file \"" + params.dataFileName + "\".");
     System.err.println(ex.getMessage());
     System.exit(1);
+    return null;
   }
-  return loader.transformer.reverse(deserialized);
+  try {
+    return convertTestData(loader,params,fileBytes);
+  }
+ catch (  Exception ex) {
+    System.err.println("Error converting test data from file \"" + params.dataFileName + "\".");
+    System.err.println(ex.getMessage());
+    System.exit(1);
+    return null;
+  }
 }

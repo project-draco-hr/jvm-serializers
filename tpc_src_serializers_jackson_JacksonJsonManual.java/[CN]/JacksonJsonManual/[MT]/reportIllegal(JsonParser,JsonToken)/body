@@ -4,5 +4,6 @@
   if (curr == JsonToken.FIELD_NAME) {
     msg+=" (current field name '" + parser.getCurrentName() + "')";
   }
+  msg+=", location: " + parser.getTokenLocation();
   throw new IllegalStateException(msg);
 }

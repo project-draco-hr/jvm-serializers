@@ -1,0 +1,4 @@
+{
+  Object deserialized=loader.serializer.deserialize(data);
+  return loader.transformer.reverse(deserialized);
+}

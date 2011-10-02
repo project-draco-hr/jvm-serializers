@@ -1,8 +1,9 @@
 {
+  JavaManual.register(groups);
   JacksonJsonManual.register(groups);
-  JacksonJsonTree.register(groups);
-  JacksonJsonDatabind.register(groups);
   JacksonSmileManual.register(groups);
-  JacksonSmileDatabind.register(groups);
-  XmlStax.register(groups);
+  CksText.register(groups);
+  if (false) {
+    XmlStax.register(groups);
+  }
 }

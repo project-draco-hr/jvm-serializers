@@ -1,3 +1,3 @@
 {
-  groups.media.add(MediaTransformer,new GenericSerializer<MediaContent>(MediaContent.class));
+  groups.media.add(mediaTransformer,new GenericSerializer<MediaContent>(MediaContent.class));
 }

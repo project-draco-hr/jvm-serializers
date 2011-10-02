@@ -1,0 +1,8 @@
+{
+  DataInputStream in=new DataInputStream(in0);
+  MediaContent[] result=new MediaContent[numberOfItems];
+  for (int i=0; i < numberOfItems; ++i) {
+    result[i]=readMediaContent(in);
+  }
+  return result;
+}

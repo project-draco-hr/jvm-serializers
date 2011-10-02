@@ -1,0 +1,5 @@
+{
+  ByteArrayOutputStream bytes=outputStreamForList(items);
+  serializeItems(items,bytes);
+  return bytes.toByteArray();
+}

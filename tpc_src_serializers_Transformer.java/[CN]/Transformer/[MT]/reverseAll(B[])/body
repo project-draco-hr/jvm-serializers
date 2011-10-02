@@ -1,0 +1,7 @@
+{
+  A[] a=sourceArray(b.length);
+  for (int i=0, len=b.length; i < len; ++i) {
+    a[i]=reverse(b[i]);
+  }
+  return a;
+}

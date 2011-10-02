@@ -1,3 +1,3 @@
 {
-  groups.media.add(MediaTransformer,new GenericSerializer<MediaContent>("java-built-in"));
+  groups.media.add(mediaTransformer,new GenericSerializer<MediaContent>("java-built-in"));
 }

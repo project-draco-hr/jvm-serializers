@@ -1,0 +1,12 @@
+{
+  String extra=params.dataExtra;
+  int count=0;
+  try {
+    count=Integer.parseInt(extra);
+  }
+ catch (  Exception e) {
+    throw new IllegalArgumentException("Non-integer extra part ('" + extra + "') of data file: must be count");
+  }
+  Object[] deserialized=loader.serializer.deserializeItems(new ByteArrayInputStream(data),count);
+  return loader.transformer.reverseAll(deserialized);
+}

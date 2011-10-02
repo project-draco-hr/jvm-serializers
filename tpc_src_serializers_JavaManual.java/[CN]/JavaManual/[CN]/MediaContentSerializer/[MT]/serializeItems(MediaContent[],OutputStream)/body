@@ -1,0 +1,7 @@
+{
+  DataOutputStream out=new DataOutputStream(out0);
+  for (int i=0, len=items.length; i < len; ++i) {
+    writeMediaContent(out,items[i]);
+  }
+  out.flush();
+}

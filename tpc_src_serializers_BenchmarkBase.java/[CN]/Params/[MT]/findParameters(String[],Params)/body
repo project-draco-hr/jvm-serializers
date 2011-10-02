@@ -182,5 +182,6 @@
     System.exit(1);
   }
   params.dataType=parts[0];
+  params.dataExtra=parts[1];
   params.dataExtension=parts[parts.length - 1];
 }

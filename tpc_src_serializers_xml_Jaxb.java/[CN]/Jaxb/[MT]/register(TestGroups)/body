@@ -1,3 +1,3 @@
 {
-  groups.media.add(JavaBuiltIn.MediaTransformer,new Jaxb<MediaContent>("JAXB/aalto",MediaContent.class,new InputFactoryImpl(),new OutputFactoryImpl()));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new Jaxb<MediaContent>("JAXB/aalto",MediaContent.class,new InputFactoryImpl(),new OutputFactoryImpl()));
 }

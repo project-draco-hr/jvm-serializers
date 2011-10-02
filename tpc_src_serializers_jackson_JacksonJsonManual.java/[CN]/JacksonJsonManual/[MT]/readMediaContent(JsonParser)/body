@@ -7,6 +7,8 @@
     mc.media=readMedia(parser);
     if (parser.nextFieldName(FIELD_IMAGES)) {
       mc.images=readImages(parser);
+      parser.nextToken();
+      verifyCurrent(parser,JsonToken.END_OBJECT);
       return mc;
     }
   }

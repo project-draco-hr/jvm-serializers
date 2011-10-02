@@ -40,7 +40,7 @@
       doGc();
       double timeDeserializeAndCheck=runner.runTakeMin(params.trials,testDeserializeAndCheck,params.iterations);
       double totalTime=timeSerializeDifferentObjects + timeDeserializeAndCheck;
-      byte[] array=entry.serializer.serialize(entry.transformer.forward(value));
+      byte[] array=serializeForSize(entry.transformer,entry.serializer,value);
       byte[] compressDeflate=compressDeflate(array);
       System.out.printf("%-32s %6.0f %7.0f %7.0f %7.0f %7.0f %7.0f %7.0f %6d %5d\n",name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
       addValue(values,name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);

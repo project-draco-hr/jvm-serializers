@@ -1,0 +1,10 @@
+{
+  ByteArrayOutputStream bytes=new ByteArrayOutputStream(4000);
+  byte[] buffer=new byte[4000];
+  int count;
+  while ((count=in.read(buffer)) >= 0) {
+    bytes.write(buffer,0,count);
+  }
+  in.close();
+  return bytes.toByteArray();
+}

@@ -1,2 +1,6 @@
 {
+  @SuppressWarnings("unchecked") J[] items=(J[])input;
+  for (  J item : items) {
+    checkSingleItem(errors,transformer,serializer,item);
+  }
 }

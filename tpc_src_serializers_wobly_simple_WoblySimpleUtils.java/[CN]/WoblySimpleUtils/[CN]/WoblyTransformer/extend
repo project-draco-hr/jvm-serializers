@@ -1,1 +1,1 @@
-Transformer<MediaContent,WMediaContent>
+MediaTransformer<WMediaContent>
