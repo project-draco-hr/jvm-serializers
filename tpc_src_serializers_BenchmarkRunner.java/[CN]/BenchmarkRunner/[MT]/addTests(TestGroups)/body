@@ -1,5 +1,4 @@
 {
-  JacksonSmileManual.register(groups);
   JavaBuiltIn.register(groups);
   JavaManual.register(groups);
   Scala.register(groups);
@@ -40,6 +39,7 @@
   JacksonBsonManual.register(groups);
   JacksonBsonDatabind.register(groups);
   MongoDB.register(groups);
+  JacksonSmileManual.register(groups);
   JacksonSmileDatabind.register(groups);
   ProtostuffSmile.register(groups);
   XmlStax.register(groups);
