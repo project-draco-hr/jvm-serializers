@@ -1,0 +1,7 @@
+{
+  encoder=ENCODER_FACTORY.binaryEncoder(out,encoder);
+  for (  T item : items) {
+    WRITER.write(item,encoder);
+  }
+  encoder.flush();
+}
