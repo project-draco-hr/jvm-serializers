@@ -53,5 +53,6 @@ if (image.uri == null) throw new IllegalStateException("Missing field: " + FIELD
 if (!haveWidth) throw new IllegalStateException("Missing field: " + FIELD_WIDTH);
 if (!haveHeight) throw new IllegalStateException("Missing field: " + FIELD_HEIGHT);
 if (image.size == null) throw new IllegalStateException("Missing field: " + FIELD_SIZE);
+verifyCurrent(parser,JsonToken.END_OBJECT);
 return image;
 }

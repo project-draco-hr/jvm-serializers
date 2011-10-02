@@ -34,6 +34,8 @@
                       media.copyright=parser.nextTextValue();
                       if (parser.nextFieldName(FIELD_PERSONS)) {
                         media.persons=readPersons(parser);
+                        parser.nextToken();
+                        verifyCurrent(parser,JsonToken.END_OBJECT);
                         return media;
                       }
                     }
@@ -52,7 +54,7 @@
     if (I != null) {
 switch (I) {
 case FIELD_IX_PLAYER:
-        media.player=Media.Player.valueOf(parser.getText());
+        media.player=Media.Player.find(parser.nextTextValue());
       continue;
 case FIELD_IX_URI:
     media.uri=parser.nextTextValue();
