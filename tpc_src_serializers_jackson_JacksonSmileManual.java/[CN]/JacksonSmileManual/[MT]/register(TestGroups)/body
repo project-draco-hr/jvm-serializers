@@ -1,6 +1,3 @@
 {
-  SmileFactory factory=new SmileFactory();
-  factory.configure(SmileGenerator.Feature.CHECK_SHARED_NAMES,true);
-  factory.configure(SmileGenerator.Feature.CHECK_SHARED_STRING_VALUES,false);
-  groups.media.add(JavaBuiltIn.mediaTransformer,new JacksonJsonManual("smile/jackson/manual",factory));
+  register(groups,true,false);
 }

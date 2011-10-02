@@ -8,7 +8,7 @@
   boolean haveDuration=false;
   boolean haveSize=false;
   if (parser.nextFieldName(FIELD_PLAYER)) {
-    media.player=Media.Player.valueOf(parser.nextTextValue());
+    media.player=Media.Player.find(parser.nextTextValue());
     if (parser.nextFieldName(FIELD_URI)) {
       media.uri=parser.nextTextValue();
       if (parser.nextFieldName(FIELD_TITLE)) {
