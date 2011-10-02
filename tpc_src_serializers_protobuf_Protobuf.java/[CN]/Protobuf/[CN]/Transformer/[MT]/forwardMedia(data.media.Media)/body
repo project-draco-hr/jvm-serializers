@@ -1,0 +1,17 @@
+{
+  Media.Builder mb=Media.newBuilder();
+  mb.setUri(media.uri);
+  if (media.title != null)   mb.setTitle(media.title);
+  mb.setWidth(media.width);
+  mb.setHeight(media.height);
+  mb.setFormat(media.format);
+  mb.setDuration(media.duration);
+  mb.setSize(media.size);
+  if (media.hasBitrate)   mb.setBitrate(media.bitrate);
+  for (  String person : media.persons) {
+    mb.addPerson(person);
+  }
+  mb.setPlayer(forwardPlayer(media.player));
+  if (media.copyright != null)   mb.setCopyright(media.copyright);
+  return mb.build();
+}

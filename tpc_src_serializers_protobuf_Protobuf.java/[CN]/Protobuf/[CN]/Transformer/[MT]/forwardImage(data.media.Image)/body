@@ -1,0 +1,9 @@
+{
+  Image.Builder ib=Image.newBuilder();
+  ib.setUri(image.uri);
+  if (image.title != null)   ib.setTitle(image.title);
+  ib.setWidth(image.width);
+  ib.setHeight(image.height);
+  ib.setSize(forwardSize(image.size));
+  return ib.build();
+}

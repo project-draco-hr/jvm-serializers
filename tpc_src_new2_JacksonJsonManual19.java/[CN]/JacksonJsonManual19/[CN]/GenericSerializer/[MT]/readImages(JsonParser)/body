@@ -1,0 +1,11 @@
+{
+  if (parser.nextToken() != JsonToken.START_ARRAY) {
+    reportIllegal(parser,JsonToken.START_ARRAY);
+  }
+  List<Image> images=new ArrayList<Image>();
+  while (parser.nextToken() == JsonToken.START_OBJECT) {
+    images.add(readImage(parser));
+  }
+  verifyCurrent(parser,JsonToken.END_ARRAY);
+  return images;
+}

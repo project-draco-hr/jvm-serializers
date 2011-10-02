@@ -1,0 +1,3 @@
+{
+  return new data.media.Media(media.getUri(),media.hasTitle() ? media.getTitle() : null,media.getWidth(),media.getHeight(),media.getFormat(),media.getDuration(),media.getSize(),media.hasBitrate() ? media.getBitrate() : 0,media.hasBitrate(),new ArrayList<String>(media.getPersonList()),reversePlayer(media.getPlayer()),media.hasCopyright() ? media.getCopyright() : null);
+}

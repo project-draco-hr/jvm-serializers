@@ -1,5 +1,6 @@
 {
   JavaManual.register(groups);
+  Protobuf.register(groups);
   JacksonJsonManual.register(groups);
   JacksonSmileManual.register(groups);
   CksText.register(groups);

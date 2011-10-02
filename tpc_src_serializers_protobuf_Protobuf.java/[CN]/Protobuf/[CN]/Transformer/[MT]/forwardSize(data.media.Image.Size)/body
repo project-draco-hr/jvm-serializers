@@ -1,0 +1,10 @@
+{
+switch (s) {
+case SMALL:
+    return Image.Size.SMALL;
+case LARGE:
+  return Image.Size.LARGE;
+default :
+throw new AssertionError("invalid case: " + s);
+}
+}

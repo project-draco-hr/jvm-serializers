@@ -1,0 +1,3 @@
+{
+  return _factory.createJsonParser(data,0,data.length);
+}

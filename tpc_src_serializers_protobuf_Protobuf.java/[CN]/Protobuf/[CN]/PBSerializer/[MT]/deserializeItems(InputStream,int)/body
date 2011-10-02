@@ -1,0 +1,11 @@
+{
+  DataInputStream in=new DataInputStream(in0);
+  MediaContent[] result=new MediaContent[numberOfItems];
+  for (int i=0; i < numberOfItems; ++i) {
+    int len=in.readInt();
+    byte[] data=new byte[len];
+    in.readFully(data);
+    result[i]=MediaContent.parseFrom(data);
+  }
+  return result;
+}

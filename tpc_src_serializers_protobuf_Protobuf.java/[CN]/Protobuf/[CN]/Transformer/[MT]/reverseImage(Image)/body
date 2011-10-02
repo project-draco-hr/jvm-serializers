@@ -1,0 +1,3 @@
+{
+  return new data.media.Image(image.getUri(),image.hasTitle() ? image.getTitle() : null,image.getWidth(),image.getHeight(),reverseSize(image.getSize()));
+}

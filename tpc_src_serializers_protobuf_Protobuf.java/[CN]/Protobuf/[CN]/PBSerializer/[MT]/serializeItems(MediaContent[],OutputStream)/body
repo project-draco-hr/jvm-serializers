@@ -1,0 +1,9 @@
+{
+  DataOutputStream out=new DataOutputStream(out0);
+  for (  MediaContent item : items) {
+    byte[] data=item.toByteArray();
+    out.writeInt(data.length);
+    out.write(data);
+  }
+  out.flush();
+}

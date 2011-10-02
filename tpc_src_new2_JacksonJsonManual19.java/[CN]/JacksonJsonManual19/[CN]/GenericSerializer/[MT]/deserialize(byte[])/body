@@ -1,0 +1,6 @@
+{
+  JsonParser parser=constructParser(array);
+  MediaContent mc=readMediaContent(parser);
+  parser.close();
+  return mc;
+}

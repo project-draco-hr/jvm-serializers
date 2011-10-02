@@ -1,0 +1,9 @@
+{
+  MediaContent[] result=new MediaContent[numberOfItems];
+  JsonParser parser=constructParser(input);
+  for (int i=0; i < numberOfItems; ++i) {
+    result[i]=readMediaContent(parser);
+  }
+  parser.close();
+  return result;
+}

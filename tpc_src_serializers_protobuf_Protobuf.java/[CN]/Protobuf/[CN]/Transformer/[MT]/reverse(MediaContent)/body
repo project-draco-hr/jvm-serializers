@@ -1,0 +1,7 @@
+{
+  List<data.media.Image> images=new ArrayList<data.media.Image>(mc.getImageCount());
+  for (  Image image : mc.getImageList()) {
+    images.add(reverseImage(image));
+  }
+  return new data.media.MediaContent(reverseMedia(mc.getMedia()),images);
+}

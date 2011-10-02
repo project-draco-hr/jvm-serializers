@@ -1,3 +1,4 @@
 {
-  return serializer.serializeAsBytes((J[])value);
+  @SuppressWarnings("unchecked") Object[] result=transformer.forwardAll((J[])value);
+  return serializer.serializeAsBytes(result);
 }

@@ -1,0 +1,8 @@
+{
+  MediaContent.Builder cb=MediaContent.newBuilder();
+  cb.setMedia(forwardMedia(mc.media));
+  for (  data.media.Image image : mc.images) {
+    cb.addImage(forwardImage(image));
+  }
+  return cb.build();
+}
