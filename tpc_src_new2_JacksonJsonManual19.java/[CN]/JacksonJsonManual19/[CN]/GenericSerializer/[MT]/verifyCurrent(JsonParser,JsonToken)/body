@@ -1,5 +1,0 @@
-{
-  if (parser.getCurrentToken() != expToken) {
-    reportIllegal(parser,expToken);
-  }
-}
