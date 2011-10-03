@@ -1,0 +1,10 @@
+{
+  DataOutputStream out=new DataOutputStream(out0);
+  TSerializer ser=new TSerializer(spec.factory);
+  for (  MediaContent item : items) {
+    byte[] data=ser.serialize(item);
+    out.writeInt(data.length);
+    out.write(data);
+  }
+  out.flush();
+}

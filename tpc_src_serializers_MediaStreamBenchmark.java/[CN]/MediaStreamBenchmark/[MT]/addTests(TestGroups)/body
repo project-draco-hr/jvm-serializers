@@ -1,6 +1,7 @@
 {
   JavaManual.register(groups);
   Protobuf.register(groups);
+  Thrift.register(groups);
   AvroSpecific.register(groups);
   JacksonJsonManual.register(groups);
   JacksonJsonDatabind.register(groups);

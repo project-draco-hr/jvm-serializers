@@ -1,0 +1,14 @@
+{
+  DataInputStream in=new DataInputStream(in0);
+  TDeserializer deser=new TDeserializer(spec.factory);
+  MediaContent[] result=new MediaContent[numberOfItems];
+  for (int i=0; i < numberOfItems; ++i) {
+    int len=in.readInt();
+    byte[] data=new byte[len];
+    in.readFully(data);
+    MediaContent content=new MediaContent();
+    deser.deserialize(content,data);
+    result[i]=content;
+  }
+  return result;
+}
