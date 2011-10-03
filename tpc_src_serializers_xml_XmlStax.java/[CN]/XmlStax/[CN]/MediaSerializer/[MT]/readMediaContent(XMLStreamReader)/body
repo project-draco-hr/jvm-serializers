@@ -1,0 +1,19 @@
+{
+  searchTag(parser,"mc");
+  Media media=readMedia(parser);
+  List<Image> images=new ArrayList<Image>();
+  if (parser.nextTag() != XMLStreamConstants.START_ELEMENT) {
+    throw new IllegalStateException("Expected <im>, no START_ELEMENT encountered but " + parser.getEventType());
+  }
+  do {
+    if (!FULL_FIELD_NAME_IMAGES.equals(parser.getLocalName())) {
+      throw new IllegalStateException("Expected <" + FULL_FIELD_NAME_IMAGES + ">, got <"+ parser.getLocalName()+ ">");
+    }
+    images.add(readImage(parser));
+  }
+ while (parser.nextTag() == XMLStreamConstants.START_ELEMENT);
+  if (!"mc".equals(parser.getLocalName())) {
+    throw new IllegalStateException("Expected closing </mc>, got </" + parser.getLocalName() + ">");
+  }
+  return new MediaContent(media,images);
+}

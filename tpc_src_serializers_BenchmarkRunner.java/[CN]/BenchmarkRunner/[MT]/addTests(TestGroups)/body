@@ -42,7 +42,7 @@
   JacksonSmileManual.register(groups);
   JacksonSmileDatabind.register(groups);
   ProtostuffSmile.register(groups);
-  XmlStax.register(groups);
+  XmlStax.register(groups,true,true,true);
   XmlXStream.register(groups);
   JacksonXmlDatabind.register(groups);
   XmlJavolution.register(groups);

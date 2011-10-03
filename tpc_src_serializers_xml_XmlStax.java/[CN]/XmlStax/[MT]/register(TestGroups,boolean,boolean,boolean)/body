@@ -1,0 +1,11 @@
+{
+  if (woodstox) {
+    groups.media.add(JavaBuiltIn.mediaTransformer,new MediaSerializer(HANDLERS[0]));
+  }
+  if (aalto) {
+    groups.media.add(JavaBuiltIn.mediaTransformer,new MediaSerializer(HANDLERS[1]));
+  }
+  if (fastinfoset) {
+    groups.media.add(JavaBuiltIn.mediaTransformer,new MediaSerializer(HANDLERS[2]));
+  }
+}

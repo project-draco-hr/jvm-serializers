@@ -1,0 +1,4 @@
+TestGroups groups
+boolean woodstox
+boolean aalto
+boolean fastinfoset

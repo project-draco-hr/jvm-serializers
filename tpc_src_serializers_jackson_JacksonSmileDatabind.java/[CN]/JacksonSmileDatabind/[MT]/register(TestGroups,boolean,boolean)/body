@@ -3,5 +3,6 @@
   factory.configure(SmileGenerator.Feature.CHECK_SHARED_NAMES,sharedNames);
   factory.configure(SmileGenerator.Feature.CHECK_SHARED_STRING_VALUES,sharedValues);
   ObjectMapper mapper=new ObjectMapper(factory);
+  mapper.enable(SerializationConfig.Feature.WRITE_ENUMS_USING_INDEX);
   groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("smile/jackson/databind",MediaContent.class,mapper));
 }

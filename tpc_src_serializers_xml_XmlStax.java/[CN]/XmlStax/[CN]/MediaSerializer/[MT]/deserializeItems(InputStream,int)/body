@@ -1,0 +1,16 @@
+{
+  XMLStreamReader parser=handler.inFactory.createXMLStreamReader(in);
+  MediaContent[] result=new MediaContent[numberOfItems];
+  searchTag(parser,STREAM_ROOT);
+  for (int i=0; i < numberOfItems; ++i) {
+    result[i]=readMediaContent(parser);
+  }
+  if (parser.nextTag() != XMLStreamConstants.END_ELEMENT) {
+    throw new IllegalStateException("Expected closing tag, got: " + parser.getEventType());
+  }
+  if (!STREAM_ROOT.equals(parser.getLocalName())) {
+    throw new IllegalStateException("Expected closing </" + STREAM_ROOT + ">, got </"+ parser.getLocalName()+ ">");
+  }
+  parser.close();
+  return result;
+}
