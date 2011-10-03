@@ -1,0 +1,8 @@
+{
+  Hessian2StreamingOutput hout=new Hessian2StreamingOutput(out);
+  for (  Object item : items) {
+    hout.writeObject(item);
+  }
+  hout.flush();
+  hout.close();
+}
