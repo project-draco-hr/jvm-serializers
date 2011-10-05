@@ -1,11 +1,5 @@
 {
   ObjectMapper mapper=new ObjectMapper();
   mapper.registerModule(new AfterburnerModule());
-  SmileFactory f=new SmileFactory();
-  f.configure(SmileGenerator.Feature.CHECK_SHARED_NAMES,true);
-  f.configure(SmileGenerator.Feature.CHECK_SHARED_STRING_VALUES,false);
-  ObjectMapper smileMapper=new ObjectMapper(f);
-  smileMapper.registerModule(new AfterburnerModule());
-  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("smile/jackson/afterburner",MediaContent.class,smileMapper));
-  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("json/jackson/afterburner",MediaContent.class,mapper));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("json/jackson/databind-afterburner",MediaContent.class,mapper));
 }

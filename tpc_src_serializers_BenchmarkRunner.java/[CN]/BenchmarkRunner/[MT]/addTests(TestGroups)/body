@@ -18,6 +18,7 @@
   JacksonJsonTreeWithStrings.register(groups);
   JacksonJsonDatabind.register(groups);
   JacksonJsonDatabindWithStrings.register(groups);
+  JacksonJsonAfterburner.register(groups);
   JsonTwoLattes.register(groups);
   ProtostuffJson.register(groups);
   JsonGsonManual.register(groups);
@@ -36,12 +37,13 @@
   JsonArgoTree.register(groups);
   JsonPathDeserializerOnly.register(groups);
   CksText.register(groups);
+  JacksonSmileManual.register(groups);
+  JacksonSmileDatabind.register(groups);
+  JacksonSmileAfterburner.register(groups);
+  ProtostuffSmile.register(groups);
   JacksonBsonManual.register(groups);
   JacksonBsonDatabind.register(groups);
   MongoDB.register(groups);
-  JacksonSmileManual.register(groups);
-  JacksonSmileDatabind.register(groups);
-  ProtostuffSmile.register(groups);
   XmlStax.register(groups,true,true,true);
   XmlXStream.register(groups);
   JacksonXmlDatabind.register(groups);
