@@ -1,0 +1,6 @@
+{
+  unpacker.readArrayBegin();
+  to=new Media(Templates.TString.read(unpacker,null,true),Templates.TString.read(unpacker,null,false),Templates.TInteger.read(unpacker,null,true),Templates.TInteger.read(unpacker,null,true),Templates.TString.read(unpacker,null,true),Templates.TLong.read(unpacker,null,true),Templates.TLong.read(unpacker,null,true),Templates.TInteger.read(unpacker,null,true),Templates.TBoolean.read(unpacker,null,true),personsTemplate.read(unpacker,null,true),mediaPlayerTemplate.read(unpacker,null,true),Templates.TString.read(unpacker,null,false));
+  unpacker.readArrayEnd();
+  return to;
+}

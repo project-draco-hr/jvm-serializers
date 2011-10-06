@@ -1,0 +1,7 @@
+{
+  msgpack.register(Image.Size.class);
+  msgpack.register(Image.class);
+  msgpack.register(Media.Player.class);
+  msgpack.register(Media.class);
+  msgpack.register(MediaContent.class);
+}

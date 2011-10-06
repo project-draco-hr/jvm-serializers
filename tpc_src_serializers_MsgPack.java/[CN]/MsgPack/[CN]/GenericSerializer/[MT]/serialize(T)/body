@@ -1,3 +1,0 @@
-{
-  return MessagePack.pack(data);
-}

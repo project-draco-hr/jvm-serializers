@@ -1,0 +1,6 @@
+{
+  unpacker.readArrayBegin();
+  to=new Image(Templates.TString.read(unpacker,null,true),Templates.TString.read(unpacker,null,false),Templates.TInteger.read(unpacker,null,true),Templates.TInteger.read(unpacker,null,true),imageSizeTemplate.read(unpacker,null,true));
+  unpacker.readArrayEnd();
+  return to;
+}

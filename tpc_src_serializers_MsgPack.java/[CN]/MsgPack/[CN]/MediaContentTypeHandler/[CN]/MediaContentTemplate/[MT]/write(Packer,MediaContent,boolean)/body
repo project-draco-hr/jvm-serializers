@@ -1,0 +1,6 @@
+{
+  packer.writeArrayBegin(2);
+  mediaTemplate.write(packer,v.media,true);
+  imageListTemplate.write(packer,v.images,true);
+  packer.writeArrayEnd();
+}

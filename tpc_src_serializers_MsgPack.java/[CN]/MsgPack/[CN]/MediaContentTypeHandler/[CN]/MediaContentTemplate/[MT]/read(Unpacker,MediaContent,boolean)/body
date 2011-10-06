@@ -1,0 +1,6 @@
+{
+  unpacker.readArrayBegin();
+  to=new MediaContent(mediaTemplate.read(unpacker,null,true),imageListTemplate.read(unpacker,null,true));
+  unpacker.readArrayEnd();
+  return to;
+}
