@@ -1,0 +1,6 @@
+{
+  packer.write(content);
+  byte[] array=packer.toByteArray();
+  packer.clear();
+  return array;
+}

@@ -1,0 +1,16 @@
+{
+  packer.writeArrayBegin(12);
+  Templates.TString.write(packer,v.uri,true);
+  Templates.TString.write(packer,v.title,false);
+  Templates.TInteger.write(packer,v.width,true);
+  Templates.TInteger.write(packer,v.height,true);
+  Templates.TString.write(packer,v.format,true);
+  Templates.TLong.write(packer,v.duration,true);
+  Templates.TLong.write(packer,v.size,true);
+  Templates.TInteger.write(packer,v.bitrate,true);
+  Templates.TBoolean.write(packer,v.hasBitrate,true);
+  personsTemplate.write(packer,v.persons,true);
+  mediaPlayerTemplate.write(packer,v.player,true);
+  Templates.TString.write(packer,v.copyright,false);
+  packer.writeArrayEnd();
+}

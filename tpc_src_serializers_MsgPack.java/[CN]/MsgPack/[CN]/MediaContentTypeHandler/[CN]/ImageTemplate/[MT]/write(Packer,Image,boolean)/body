@@ -1,0 +1,9 @@
+{
+  packer.writeArrayBegin(5);
+  Templates.TString.write(packer,v.uri,true);
+  Templates.TString.write(packer,v.title,false);
+  Templates.TInteger.write(packer,v.width,true);
+  Templates.TInteger.write(packer,v.height,true);
+  imageSizeTemplate.write(packer,v.size);
+  packer.writeArrayEnd();
+}

@@ -1,0 +1,4 @@
+{
+  unpacker.wrap(array);
+  return unpacker.read(type);
+}
