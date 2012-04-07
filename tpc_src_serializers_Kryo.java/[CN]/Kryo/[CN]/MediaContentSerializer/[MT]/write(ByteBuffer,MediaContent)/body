@@ -1,4 +1,0 @@
-{
-  _kryo.writeObjectData(buffer,obj.media);
-  _imagesSerializer.writeObjectData(buffer,obj.images);
-}

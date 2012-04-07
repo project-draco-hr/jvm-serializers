@@ -1,0 +1,14 @@
+{
+  output.writeString(obj.uri);
+  output.writeString(obj.title);
+  output.writeInt(obj.width,true);
+  output.writeInt(obj.height,true);
+  output.writeString(obj.format);
+  output.writeLong(obj.duration,true);
+  output.writeLong(obj.size,true);
+  output.writeInt(obj.bitrate,true);
+  output.writeBoolean(obj.hasBitrate);
+  kryo.writeObject(output,obj.persons,_personsSerializer);
+  kryo.writeObject(output,obj.player);
+  output.writeString(obj.copyright);
+}

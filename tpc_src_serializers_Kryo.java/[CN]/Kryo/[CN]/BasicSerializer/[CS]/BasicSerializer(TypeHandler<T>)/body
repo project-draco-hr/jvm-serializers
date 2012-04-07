@@ -1,6 +1,9 @@
 {
   this.type=handler.type;
   this.kryo=new com.esotericsoftware.kryo.Kryo();
-  this.objectBuffer=new com.esotericsoftware.kryo.ObjectBuffer(kryo,2048);
+  kryo.setReferences(false);
+  kryo.setRegistrationRequired(true);
+  this.input=new Input(4096);
+  this.output=new Output(4096);
   handler.register(this.kryo);
 }

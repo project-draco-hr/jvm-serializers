@@ -1,0 +1,3 @@
+{
+  return new Media(input.readString(),input.readString(),input.readInt(true),input.readInt(true),input.readString(),input.readLong(true),input.readLong(true),input.readInt(true),input.readBoolean(),(List<String>)kryo.readObject(input,ArrayList.class,_personsSerializer),kryo.readObject(input,Media.Player.class),input.readString());
+}

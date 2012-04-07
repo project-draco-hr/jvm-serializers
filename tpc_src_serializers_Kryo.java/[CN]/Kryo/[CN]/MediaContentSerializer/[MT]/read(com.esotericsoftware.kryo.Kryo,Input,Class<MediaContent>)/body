@@ -1,0 +1,5 @@
+{
+  final Media media=kryo.readObject(input,Media.class);
+  @SuppressWarnings("unchecked") final List<Image> images=(List<Image>)kryo.readObject(input,ArrayList.class,_imagesSerializer);
+  return new MediaContent(media,images);
+}

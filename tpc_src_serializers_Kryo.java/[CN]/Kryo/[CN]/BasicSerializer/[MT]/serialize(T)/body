@@ -1,3 +1,5 @@
 {
-  return objectBuffer.writeObjectData(content);
+  output.clear();
+  kryo.writeObject(output,content);
+  return output.toBytes();
 }
