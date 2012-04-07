@@ -1,0 +1,5 @@
+{
+  this.name=name;
+  type=mapper.getTypeFactory().constructType(clazz);
+  this.mapper=mapper;
+}

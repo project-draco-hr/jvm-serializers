@@ -1,9 +1,9 @@
 {
   Image image=new Image();
-  image.height=node.get("height").getIntValue();
-  image.size=Image.Size.valueOf(node.get("size").getTextValue());
-  image.title=node.get("title").getTextValue();
-  image.uri=node.get("uri").getTextValue();
-  image.width=node.get("width").getIntValue();
+  image.height=node.get("height").intValue();
+  image.size=Image.Size.valueOf(node.get("size").textValue());
+  image.title=node.get("title").textValue();
+  image.uri=node.get("uri").textValue();
+  image.width=node.get("width").intValue();
   return image;
 }
