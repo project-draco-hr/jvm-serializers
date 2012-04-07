@@ -1,0 +1,8 @@
+{
+  input.setInputStream(inStream);
+  MediaContent[] result=new MediaContent[numberOfItems];
+  for (int i=0; i < numberOfItems; ++i) {
+    result[i]=kryo.readObject(input,MediaContent.class);
+  }
+  return (T[])result;
+}
