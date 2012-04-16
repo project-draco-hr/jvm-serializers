@@ -1,3 +1,0 @@
-{
-  return new Image(StringSerializer.get(buffer),_kryo.readObject(buffer,String.class),IntSerializer.get(buffer,true),IntSerializer.get(buffer,true),EnumSerializer.get(buffer,Size.class));
-}

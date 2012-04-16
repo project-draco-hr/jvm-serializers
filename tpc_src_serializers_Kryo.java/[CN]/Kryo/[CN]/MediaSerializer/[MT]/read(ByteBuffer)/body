@@ -1,3 +1,0 @@
-{
-  return new Media(StringSerializer.get(buffer),_kryo.readObject(buffer,String.class),IntSerializer.get(buffer,true),IntSerializer.get(buffer,true),StringSerializer.get(buffer),LongSerializer.get(buffer,true),LongSerializer.get(buffer,true),IntSerializer.get(buffer,true),IntSerializer.get(buffer,true) == 1,(List<String>)_personsSerializer.readObjectData(buffer,ArrayList.class),EnumSerializer.get(buffer,Media.Player.class),_kryo.readObject(buffer,String.class));
-}

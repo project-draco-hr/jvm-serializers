@@ -1,3 +1,4 @@
 {
-  return new ByteArrayOutputStream(500 * items.length);
+  outputStream.reset();
+  return outputStream;
 }

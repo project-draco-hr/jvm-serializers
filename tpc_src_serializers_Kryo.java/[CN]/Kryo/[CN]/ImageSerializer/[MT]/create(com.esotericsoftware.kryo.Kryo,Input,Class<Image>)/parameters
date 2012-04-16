@@ -1,0 +1,3 @@
+com.esotericsoftware.kryo.Kryo kryo
+Input input
+Class<Image> type

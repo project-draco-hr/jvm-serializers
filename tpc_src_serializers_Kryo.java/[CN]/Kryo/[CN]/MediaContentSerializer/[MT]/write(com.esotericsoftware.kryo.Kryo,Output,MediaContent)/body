@@ -1,0 +1,4 @@
+{
+  kryo.writeObject(output,obj.media);
+  kryo.writeObject(output,obj.images,_imagesSerializer);
+}

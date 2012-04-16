@@ -1,0 +1,7 @@
+{
+  output.writeString8(obj.uri);
+  output.writeString8(obj.title);
+  output.writeInt(obj.width,true);
+  output.writeInt(obj.height,true);
+  kryo.writeObject(output,obj.size);
+}

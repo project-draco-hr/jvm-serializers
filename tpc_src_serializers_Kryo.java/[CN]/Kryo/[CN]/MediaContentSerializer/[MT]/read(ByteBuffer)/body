@@ -1,5 +1,0 @@
-{
-  final Media media=_kryo.readObjectData(buffer,Media.class);
-  @SuppressWarnings("unchecked") final List<Image> images=(List<Image>)_imagesSerializer.readObjectData(buffer,ArrayList.class);
-  return new MediaContent(media,images);
-}

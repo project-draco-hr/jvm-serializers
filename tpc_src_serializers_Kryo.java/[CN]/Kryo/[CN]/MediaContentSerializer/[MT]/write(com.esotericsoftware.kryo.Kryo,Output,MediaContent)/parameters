@@ -1,1 +1,3 @@
 com.esotericsoftware.kryo.Kryo kryo
+Output output
+MediaContent obj

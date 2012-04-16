@@ -1,1 +1,1 @@
-SimpleSerializer<MediaContent>
+com.esotericsoftware.kryo.Serializer<MediaContent>
