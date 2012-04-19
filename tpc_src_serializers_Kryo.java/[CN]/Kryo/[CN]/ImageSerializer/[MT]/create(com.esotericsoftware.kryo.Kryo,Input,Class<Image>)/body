@@ -1,3 +1,3 @@
 {
-  return new Image(input.readString8(),input.readString8(),input.readInt(true),input.readInt(true),kryo.readObject(input,Size.class));
+  return new Image(input.readString(),input.readString(),input.readInt(true),input.readInt(true),kryo.readObject(input,Size.class));
 }
