@@ -1,7 +1,5 @@
 {
-  ByteArrayOutputStream outStream=outputStream(content);
-  output.setOutputStream(outStream);
+  Output output=new Output(buffer,Integer.MAX_VALUE);
   kryo.writeObject(output,content);
-  output.flush();
-  return outStream.toByteArray();
+  return output.toBytes();
 }

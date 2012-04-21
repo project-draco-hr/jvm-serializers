@@ -1,4 +1,5 @@
 {
+  Input input=new Input(buffer);
   input.setInputStream(inStream);
   MediaContent[] result=new MediaContent[numberOfItems];
   for (int i=0; i < numberOfItems; ++i) {
