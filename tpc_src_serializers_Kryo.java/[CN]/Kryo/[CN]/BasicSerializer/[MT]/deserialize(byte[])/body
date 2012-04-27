@@ -1,3 +1,4 @@
 {
-  return kryo.readObject(new Input(array),type);
+  input.setBuffer(array);
+  return kryo.readObject(input,type);
 }

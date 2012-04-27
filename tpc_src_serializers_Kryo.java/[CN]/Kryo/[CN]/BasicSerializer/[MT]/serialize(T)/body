@@ -1,5 +1,5 @@
 {
-  Output output=new Output(buffer,Integer.MAX_VALUE);
+  output.clear();
   kryo.writeObject(output,content);
   return output.toBytes();
 }
