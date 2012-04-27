@@ -1,4 +1,3 @@
 {
-  outputStream.reset();
-  return outputStream;
+  return new ByteArrayOutputStream(BUFFER_SIZE);
 }
