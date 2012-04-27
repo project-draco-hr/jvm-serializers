@@ -1,5 +1,5 @@
 {
-  output.clear();
+  output.setBuffer(buffer,-1);
   kryo.writeObject(output,content);
   return output.toBytes();
 }
