@@ -112,12 +112,12 @@
         System.exit(1);
       }
     }
- else     if (option.equals("pre-warmup")) {
+ else     if (option.equals("skip-pre-warmup")) {
       if (value != null) {
-        System.err.println("The \"pre-warmup\" option does not take a value: \"" + arg + "\"");
+        System.err.println("The \"skip-pre-warmup\" option does not take a value: \"" + arg + "\"");
         System.exit(1);
       }
-      params.prewarm=true;
+      params.prewarm=false;
     }
  else     if (option.equals("chart")) {
       if (value != null) {
@@ -149,7 +149,7 @@
       System.out.println("  -iterations=n         [default=" + DEFAULT_ITERATIONS + "]");
       System.out.println("  -trials=n             [default=" + DEFAULT_TRIALS + "]");
       System.out.println("  -warmup-time=millis   [default=" + DEFAULT_WARMUP_MSECS + "]");
-      System.out.println("  -pre-warmup           (warm all serializers before the first measurement)");
+      System.out.println("  -skip-pre-warmup      (don't warm all serializers before the first measurement)");
       System.out.println("  -chart                (generate a Google Chart URL for the results)");
       System.out.println("  -include=impl1,impl2,impl3,...");
       System.out.println("  -exclude=impl1,impl2,impl3,...");
