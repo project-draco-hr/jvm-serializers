@@ -1,8 +1,7 @@
 EnumMap<measurements,Map<String,Double>> values
 String name
 double timeCreate
-double timeSerializeDifferentObjects
-double timeSerializeSameObject
+double timeSerialize
 double timeDeserializeNoFieldAccess
 double timeDeserializeAndCheckShallow
 double timeDeserializeAndCheck

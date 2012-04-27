@@ -1,6 +1,5 @@
 {
-  values.get(measurements.timeSerializeDifferentObjects).put(name,timeSerializeDifferentObjects);
-  values.get(measurements.timeSerializeSameObject).put(name,timeSerializeSameObject);
+  values.get(measurements.timeSerialize).put(name,timeSerialize);
   values.get(measurements.timeDeserializeNoFieldAccess).put(name,timeDeserializeNoFieldAccess);
   values.get(measurements.timeDeserializeAndCheckShallow).put(name,timeDeserializeAndCheckShallow);
   values.get(measurements.timeDeserializeAndCheck).put(name,timeDeserializeAndCheck);

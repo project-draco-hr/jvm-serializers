@@ -17,7 +17,7 @@
     System.out.println();
     System.out.println("[done]");
   }
-  System.out.printf("%-32s %6s %7s %7s %7s %7s %7s %7s %6s %5s\n","","create","ser","+same","deser","+shal","+deep","total","size","+dfl");
+  System.out.printf("%-32s %6s %7s %7s %7s %7s %7s %6s %5s\n","","create","ser","deser","+shal","+deep","total","size","+dfl");
   EnumMap<measurements,Map<String,Double>> values=new EnumMap<measurements,Map<String,Double>>(measurements.class);
   for (  measurements m : measurements.values())   values.put(m,new HashMap<String,Double>());
   for (  TestGroup.Entry<J,Object> entry : groups) {
@@ -29,9 +29,7 @@
       double timeCreate=runner.runTakeMin(params.trials,testCreate,params.iterations * 100);
       warmTest(runner,params.warmupTime,testSerialize);
       doGc();
-      double timeSerializeDifferentObjects=runner.runTakeMin(params.trials,testSerialize,params.iterations);
-      doGc();
-      double timeSerializeSameObject=runner.runTakeMin(params.trials,testSerializeSameObject,params.iterations);
+      double timeSerialize=runner.runTakeMin(params.trials,testSerialize,params.iterations);
       warmTest(runner,params.warmupTime,testDeserializeAndCheck);
       doGc();
       double timeDeserializeNoFieldAccess=runner.runTakeMin(params.trials,testDeserialize,params.iterations);
@@ -39,11 +37,11 @@
       double timeDeserializeAndCheckShallow=runner.runTakeMin(params.trials,testDeserializeAndCheckShallow,params.iterations);
       doGc();
       double timeDeserializeAndCheck=runner.runTakeMin(params.trials,testDeserializeAndCheck,params.iterations);
-      double totalTime=timeSerializeDifferentObjects + timeDeserializeAndCheck;
+      double totalTime=timeSerialize + timeDeserializeAndCheck;
       byte[] array=serializeForSize(entry.transformer,entry.serializer,value);
       byte[] compressDeflate=compressDeflate(array);
-      System.out.printf("%-32s %6.0f %7.0f %7.0f %7.0f %7.0f %7.0f %7.0f %6d %5d\n",name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
-      addValue(values,name,timeCreate,timeSerializeDifferentObjects,timeSerializeSameObject,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
+      System.out.printf("%-32s %6.0f %7.0f %7.0f %7.0f %7.0f %7.0f %6d %5d\n",name,timeCreate,timeSerialize,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
+      addValue(values,name,timeCreate,timeSerialize,timeDeserializeNoFieldAccess,timeDeserializeAndCheckShallow,timeDeserializeAndCheck,totalTime,array.length,compressDeflate.length);
     }
  catch (    Exception ex) {
       System.out.println("ERROR: \"" + name + "\" crashed during benchmarking.");

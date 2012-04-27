@@ -1,10 +1,7 @@
-PrintWriter errors
+TestGroups groups
 Params params
-Iterable<TestGroup.Entry<J,Object>> groups
-J value
 TestCase testCreate
 TestCase testSerialize
-TestCase testSerializeSameObject
 TestCase testDeserialize
 TestCase testDeserializeAndCheck
 TestCase testDeserializeAndCheckShallow
