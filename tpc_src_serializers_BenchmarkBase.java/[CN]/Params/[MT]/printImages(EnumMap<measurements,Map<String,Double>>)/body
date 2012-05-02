@@ -1,4 +1,5 @@
 {
+  System.out.println();
   for (  measurements m : values.keySet()) {
     Map<String,Double> map=values.get(m);
     ArrayList<Map.Entry<String,Double>> list=new ArrayList<Map.Entry<String,Double>>(map.entrySet());
@@ -17,4 +18,5 @@
     }
     if (!sortedMap.isEmpty())     printImage(sortedMap,m);
   }
+  System.out.println();
 }

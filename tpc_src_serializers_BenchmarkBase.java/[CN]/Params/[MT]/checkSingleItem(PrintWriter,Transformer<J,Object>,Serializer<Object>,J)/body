@@ -16,6 +16,7 @@
     array=serializer.serialize(specialInput);
   }
  catch (  Exception ex) {
+    ex.printStackTrace();
     System.out.println("ERROR: \"" + name + "\" crashed during serialization.");
     errors.println(ERROR_DIVIDER);
     errors.println("\"" + name + "\" crashed during serialization.");

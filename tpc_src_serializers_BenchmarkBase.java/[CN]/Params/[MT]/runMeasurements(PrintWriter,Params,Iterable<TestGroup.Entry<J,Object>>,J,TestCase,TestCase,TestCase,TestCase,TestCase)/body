@@ -17,7 +17,7 @@
     System.out.println();
     System.out.println("[done]");
   }
-  System.out.printf("%-32s %6s %7s %7s %7s %7s %7s %6s %5s\n","","create","ser","deser","+shal","+deep","total","size","+dfl");
+  System.out.printf("%-32s %6s %7s %7s %7s %7s %7s %6s %5s\n",params.printChart ? "\npre." : "","create","ser","deser","+shal","+deep","total","size","+dfl");
   EnumMap<measurements,Map<String,Double>> values=new EnumMap<measurements,Map<String,Double>>(measurements.class);
   for (  measurements m : measurements.values())   values.put(m,new HashMap<String,Double>());
   for (  TestGroup.Entry<J,Object> entry : groups) {
