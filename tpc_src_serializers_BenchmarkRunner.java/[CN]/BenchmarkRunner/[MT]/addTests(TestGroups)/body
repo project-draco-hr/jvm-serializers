@@ -15,10 +15,8 @@
   MsgPack.register(groups);
   JacksonJsonManual.register(groups);
   JacksonJsonDatabind.register(groups);
-  JacksonJsonDatabindWithStrings.register(groups);
   JacksonJsonAfterburner.register(groups);
   JacksonJsonTree.register(groups);
-  JacksonJsonTreeWithStrings.register(groups);
   JsonTwoLattes.register(groups);
   ProtostuffJson.register(groups);
   JsonGsonManual.register(groups);
