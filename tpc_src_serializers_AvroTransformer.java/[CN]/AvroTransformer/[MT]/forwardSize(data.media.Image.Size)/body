@@ -1,0 +1,10 @@
+{
+switch (s) {
+case SMALL:
+    return 1;
+case LARGE:
+  return 2;
+default :
+throw new AssertionError("invalid case: " + s);
+}
+}

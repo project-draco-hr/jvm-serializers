@@ -1,0 +1,3 @@
+{
+  return new data.media.Image(image.uri.toString(),image.title != null ? image.title.toString() : null,image.width,image.height,reverseSize(image.size));
+}

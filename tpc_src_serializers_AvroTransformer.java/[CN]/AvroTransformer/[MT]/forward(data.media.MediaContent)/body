@@ -1,0 +1,10 @@
+{
+  GenericArray<Image> images=new GenericData.Array<Image>(mc.images.size(),Avro.Media.sImages);
+  for (  data.media.Image image : mc.images) {
+    images.add(forwardImage(image));
+  }
+  MediaContent amc=new MediaContent();
+  amc.media=forwardMedia(mc.media);
+  amc.images=images;
+  return amc;
+}

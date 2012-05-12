@@ -1,0 +1,9 @@
+{
+  Image i=new Image();
+  i.uri=image.uri;
+  i.title=image.title;
+  i.width=image.width;
+  i.height=image.height;
+  i.size=forwardSize(image.size);
+  return i;
+}

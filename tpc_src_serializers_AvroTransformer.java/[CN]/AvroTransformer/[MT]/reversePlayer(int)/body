@@ -1,0 +1,10 @@
+{
+switch (p) {
+case 1:
+    return data.media.Media.Player.JAVA;
+case 2:
+  return data.media.Media.Player.FLASH;
+default :
+throw new AssertionError("invalid case: " + p);
+}
+}
