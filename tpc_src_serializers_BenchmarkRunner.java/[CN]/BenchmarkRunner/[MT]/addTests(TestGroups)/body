@@ -6,7 +6,6 @@
   Kryo.register(groups);
   Wobly.register(groups);
   Protobuf.register(groups);
-  ActiveMQProtobuf.register(groups);
   Protostuff.register(groups);
   Thrift.register(groups);
   AvroSpecific.register(groups);

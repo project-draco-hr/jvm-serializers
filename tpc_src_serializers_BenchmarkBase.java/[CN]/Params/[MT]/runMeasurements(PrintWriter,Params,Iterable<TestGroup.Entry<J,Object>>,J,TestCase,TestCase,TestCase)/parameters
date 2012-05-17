@@ -5,5 +5,3 @@ J value
 TestCase testCreate
 TestCase testSerialize
 TestCase testDeserialize
-TestCase testDeserializeAndCheck
-TestCase testDeserializeAndCheckShallow

@@ -3,5 +3,5 @@
   findParameters(args,params);
   TestGroups groups=new TestGroups();
   addTests(groups);
-  runTests(groups,params,testCreate,testSerialize,testDeserialize,testDeserializeAndCheck,testDeserializeAndCheckShallow);
+  runTests(groups,params,testCreate,testSerialize,testDeserialize);
 }

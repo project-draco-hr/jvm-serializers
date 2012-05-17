@@ -3,5 +3,3 @@ Params params
 TestCase testCreate
 TestCase testSerialize
 TestCase testDeserialize
-TestCase testDeserializeAndCheck
-TestCase testDeserializeAndCheckShallow
