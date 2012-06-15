@@ -1,5 +1,4 @@
 {
-  _imagesSerializer=new CollectionSerializer(kryo);
-  _imagesSerializer.setElementClass(Image.class);
+  _imagesSerializer=new CollectionSerializer();
   _imagesSerializer.setElementsCanBeNull(false);
 }
