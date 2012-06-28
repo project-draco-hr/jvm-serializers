@@ -2,4 +2,6 @@
   super(name);
   type=mapper.getTypeFactory().constructType(clazz);
   this.mapper=mapper;
+  reader=mapper.reader(type);
+  writer=mapper.writerWithType(type);
 }

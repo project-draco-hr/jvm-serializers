@@ -1,0 +1,4 @@
+{
+  ObjectMapper mapper=new ObjectMapper(new YAMLFactory());
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("yaml/jackson",MediaContent.class,mapper));
+}

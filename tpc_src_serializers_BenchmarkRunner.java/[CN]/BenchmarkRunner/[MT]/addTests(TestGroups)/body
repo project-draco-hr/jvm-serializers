@@ -40,6 +40,7 @@
   ProtostuffSmile.register(groups);
   JacksonBsonDatabind.register(groups);
   MongoDB.register(groups);
+  JacksonYAMLDatabind.register(groups);
   XmlStax.register(groups,true,true,true);
   XmlXStream.register(groups);
   JacksonXmlDatabind.register(groups);
