@@ -2,6 +2,7 @@
   JavaManual.register(groups);
   Hessian.register(groups);
   Kryo.register(groups);
+  JBossSerialization.register(groups);
   Protobuf.register(groups);
   Thrift.register(groups);
   AvroSpecific.register(groups);

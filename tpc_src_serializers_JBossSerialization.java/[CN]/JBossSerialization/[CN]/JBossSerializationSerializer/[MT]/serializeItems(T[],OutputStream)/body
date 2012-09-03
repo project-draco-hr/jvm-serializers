@@ -1,0 +1,8 @@
+{
+  JBossObjectOutputStream jous=new JBossObjectOutputStream(os);
+  for (  Object item : items) {
+    jous.writeObject(item);
+  }
+  jous.flush();
+  jous.close();
+}

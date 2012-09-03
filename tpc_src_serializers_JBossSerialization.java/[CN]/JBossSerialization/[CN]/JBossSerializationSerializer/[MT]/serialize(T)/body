@@ -1,0 +1,6 @@
+{
+  ByteArrayOutputStream baos=outputStream(data);
+  JBossObjectOutputStream joos=new JBossObjectOutputStream(baos,new StringUtilBuffer(BUFFER_SIZE,BUFFER_SIZE));
+  joos.writeObject(data);
+  return baos.toByteArray();
+}

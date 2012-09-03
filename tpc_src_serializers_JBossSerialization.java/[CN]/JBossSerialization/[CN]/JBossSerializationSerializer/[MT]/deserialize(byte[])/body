@@ -1,0 +1,5 @@
+{
+  ByteArrayInputStream bais=new ByteArrayInputStream(array);
+  JBossObjectInputStream jois=new JBossObjectInputStream(bais,new StringUtilBuffer(BUFFER_SIZE,BUFFER_SIZE));
+  return (T)jois.readObject();
+}

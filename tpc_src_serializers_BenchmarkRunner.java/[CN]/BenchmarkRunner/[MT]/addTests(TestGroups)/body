@@ -5,6 +5,7 @@
   Hessian.register(groups);
   Kryo.register(groups);
   Wobly.register(groups);
+  JBossSerialization.register(groups);
   Protobuf.register(groups);
   Protostuff.register(groups);
   Thrift.register(groups);
