@@ -1,0 +1,12 @@
+{
+  if (position >= buffer.length) {
+    return -1;
+  }
+  int n=len;
+  if (n > buffer.length - position) {
+    n=buffer.length - position;
+  }
+  System.arraycopy(buffer,position,b,off,n);
+  position+=n;
+  return n;
+}

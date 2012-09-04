@@ -1,0 +1,8 @@
+{
+  if (input.readBoolean()) {
+    return input.readUTF();
+  }
+ else {
+    return null;
+  }
+}

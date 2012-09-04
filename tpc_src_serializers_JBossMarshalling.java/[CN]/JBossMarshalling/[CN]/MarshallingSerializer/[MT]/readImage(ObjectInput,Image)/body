@@ -1,0 +1,7 @@
+{
+  img.setUri(input.readUTF());
+  img.setTitle(readMaybeString(input));
+  img.setWidth(input.readInt());
+  img.setHeight(input.readInt());
+  img.setSize(Image.Size.values()[input.readByte()]);
+}

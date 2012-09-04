@@ -1,0 +1,7 @@
+{
+  input.setBuffer(array);
+  unmarshaller.start(input);
+  T val=unmarshaller.readObject(clz);
+  unmarshaller.finish();
+  return val;
+}

@@ -1,0 +1,5 @@
+{
+  final Media m=new Media();
+  readMedia(input,m);
+  return m;
+}

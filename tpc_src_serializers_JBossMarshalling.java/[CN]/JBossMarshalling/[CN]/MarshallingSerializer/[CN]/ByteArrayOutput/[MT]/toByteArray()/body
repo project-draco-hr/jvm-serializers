@@ -1,0 +1,6 @@
+{
+  byte[] result=new byte[position];
+  System.arraycopy(buffer,0,result,0,position);
+  position=0;
+  return result;
+}

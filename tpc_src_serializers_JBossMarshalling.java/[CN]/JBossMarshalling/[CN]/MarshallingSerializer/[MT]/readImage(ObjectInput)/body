@@ -1,0 +1,5 @@
+{
+  final Image image=new Image();
+  readImage(input,image);
+  return image;
+}

@@ -3,6 +3,7 @@
   Hessian.register(groups);
   Kryo.register(groups);
   JBossSerialization.register(groups);
+  JBossMarshalling.register(groups);
   Protobuf.register(groups);
   Thrift.register(groups);
   AvroSpecific.register(groups);

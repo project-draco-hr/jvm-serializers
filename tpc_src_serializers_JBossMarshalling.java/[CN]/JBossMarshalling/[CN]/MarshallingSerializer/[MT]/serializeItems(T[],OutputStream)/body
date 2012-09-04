@@ -1,0 +1,7 @@
+{
+  marshaller.start(Marshalling.createByteOutput(os));
+  for (  Object item : items) {
+    marshaller.writeObject(item);
+  }
+  marshaller.finish();
+}

@@ -1,0 +1,6 @@
+{
+  marshaller.start(output);
+  marshaller.writeObject(data);
+  marshaller.finish();
+  return output.toByteArray();
+}

@@ -1,0 +1,5 @@
+Class<T> clz
+String name
+MarshallerFactory marshallerFactory
+boolean useCustomClassTable
+boolean useExternalizers

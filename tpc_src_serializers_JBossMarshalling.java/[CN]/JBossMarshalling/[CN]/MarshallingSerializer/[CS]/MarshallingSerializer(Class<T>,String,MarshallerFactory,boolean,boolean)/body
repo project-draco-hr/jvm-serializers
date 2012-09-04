@@ -1,0 +1,20 @@
+{
+  this.clz=clz;
+  this.name=name;
+  MarshallingConfiguration cfg=new MarshallingConfiguration();
+  cfg.setBufferSize(Serializer.BUFFER_SIZE);
+  cfg.setExternalizerCreator(new SunReflectiveCreator());
+  if (useCustomClassTable) {
+    cfg.setClassTable(new CustomClassTable());
+  }
+  if (useExternalizers) {
+    cfg.setClassExternalizerFactory(new CustomCEF());
+  }
+  try {
+    marshaller=marshallerFactory.createMarshaller(cfg);
+    unmarshaller=marshallerFactory.createUnmarshaller(cfg);
+  }
+ catch (  IOException e) {
+    throw new RuntimeException(e);
+  }
+}

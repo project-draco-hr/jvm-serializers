@@ -1,0 +1,3 @@
+{
+  readImage(input,(Image)subject);
+}

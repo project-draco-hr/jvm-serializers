@@ -1,0 +1,8 @@
+{
+  MarshallerFactory riverFactory=new RiverMarshallerFactory();
+  groups.media.add(JavaBuiltIn.mediaTransformer,new MarshallingSerializer<MediaContent>(MediaContent.class,"jboss-marshalling-river",riverFactory,false,false));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new MarshallingSerializer<MediaContent>(MediaContent.class,"jboss-marshalling-river-manual",riverFactory,false,true));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new MarshallingSerializer<MediaContent>(MediaContent.class,"jboss-marshalling-river-ct",riverFactory,true,false));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new MarshallingSerializer<MediaContent>(MediaContent.class,"jboss-marshalling-river-ct-manual",riverFactory,true,true));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new MarshallingSerializer<MediaContent>(MediaContent.class,"jboss-marshalling-serial",new SerialMarshallerFactory(),false,false));
+}
