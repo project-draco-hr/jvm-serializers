@@ -1,0 +1,11 @@
+{
+  for (int i=0; i < CLASSES.length; i++) {
+    if (CLASSES[i].equals(type)) {
+      return EXTERNALIZERS[i];
+    }
+  }
+  if (!ExternalizerExternalizer.class.equals(type)) {
+    System.err.println("No externalizer for type " + type);
+  }
+  return null;
+}

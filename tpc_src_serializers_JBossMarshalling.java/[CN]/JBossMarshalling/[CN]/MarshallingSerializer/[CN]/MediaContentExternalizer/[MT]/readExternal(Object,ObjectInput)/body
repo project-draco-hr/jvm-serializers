@@ -1,0 +1,3 @@
+{
+  readMediaContent(input,(MediaContent)subject);
+}

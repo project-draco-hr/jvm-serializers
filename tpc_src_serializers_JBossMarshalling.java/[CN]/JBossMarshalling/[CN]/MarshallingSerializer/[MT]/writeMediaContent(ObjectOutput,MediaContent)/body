@@ -1,0 +1,7 @@
+{
+  writeMedia(output,mc.media);
+  output.writeInt(mc.images.size());
+  for (  Image image : mc.images) {
+    writeImage(output,image);
+  }
+}

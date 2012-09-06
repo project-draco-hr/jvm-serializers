@@ -1,0 +1,8 @@
+{
+  for (  Externalizer ext : EXTERNALIZERS) {
+    if (ext.getClass().equals(subjectType)) {
+      return ext;
+    }
+  }
+  throw new ClassNotFoundException("Unknown type " + subjectType);
+}

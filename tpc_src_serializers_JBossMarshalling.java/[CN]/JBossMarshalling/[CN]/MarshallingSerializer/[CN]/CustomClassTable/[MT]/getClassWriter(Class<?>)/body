@@ -1,0 +1,8 @@
+{
+  for (int i=0; i < CLASSES.length; i++) {
+    if (CLASSES[i].equals(c)) {
+      return WRITERS[i];
+    }
+  }
+  throw new IOException("Unexpected class " + c);
+}

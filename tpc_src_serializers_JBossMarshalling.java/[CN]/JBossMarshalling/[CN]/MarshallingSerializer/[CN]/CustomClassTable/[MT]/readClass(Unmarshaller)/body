@@ -1,0 +1,7 @@
+{
+  byte b=unmarshaller.readByte();
+  if (b < 0 || b >= CLASSES.length) {
+    throw new ClassNotFoundException("Unexcepted class number " + b);
+  }
+  return CLASSES[b];
+}

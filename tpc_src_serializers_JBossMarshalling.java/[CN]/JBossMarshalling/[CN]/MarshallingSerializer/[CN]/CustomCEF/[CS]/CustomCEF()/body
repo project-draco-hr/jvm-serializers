@@ -1,0 +1,6 @@
+{
+  ExternalizerExternalizer ext=new ExternalizerExternalizer();
+  EXTERNALIZERS[3]=ext;
+  EXTERNALIZERS[4]=ext;
+  EXTERNALIZERS[5]=ext;
+}
