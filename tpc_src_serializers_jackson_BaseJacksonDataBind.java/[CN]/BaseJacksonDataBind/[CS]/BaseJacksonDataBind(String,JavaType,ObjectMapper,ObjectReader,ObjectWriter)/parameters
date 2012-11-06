@@ -1,0 +1,5 @@
+String name
+JavaType type
+ObjectMapper mapper
+ObjectReader reader
+ObjectWriter writer
