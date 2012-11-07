@@ -1,19 +1,21 @@
 {
   Media m=new Media();
-  m.uri=media.uri;
-  m.title=media.title;
-  m.width=media.width;
-  m.height=media.height;
-  m.format=media.format;
-  m.duration=media.duration;
-  m.size=media.size;
-  if (media.hasBitrate)   m.bitrate=media.bitrate;
+  m.setUri(media.uri);
+  m.setTitle(media.title);
+  m.setWidth(media.width);
+  m.setHeight(media.height);
+  m.setFormat(media.format);
+  m.setDuration(media.duration);
+  m.setSize(media.size);
+  if (media.hasBitrate) {
+    m.setBitrate(media.bitrate);
+  }
   GenericArray<CharSequence> persons=new GenericData.Array<CharSequence>(media.persons.size(),Avro.Media.sPersons);
   for (  String s : media.persons) {
     persons.add(s);
   }
-  m.persons=persons;
-  m.player=forwardPlayer(media.player);
-  m.copyright=media.copyright;
+  m.setPersons(persons);
+  m.setPlayer(forwardPlayer(media.player));
+  m.setCopyright(media.copyright);
   return m;
 }

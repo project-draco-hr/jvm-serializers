@@ -1,7 +1,7 @@
 {
   List<String> persons=new ArrayList<String>();
-  for (  CharSequence p : media.persons) {
+  for (  CharSequence p : media.getPersons()) {
     persons.add(p.toString());
   }
-  return new data.media.Media(media.uri.toString(),media.title != null ? media.title.toString() : null,media.width,media.height,media.format.toString(),media.duration,media.size,media.bitrate != null ? media.bitrate : 0,media.bitrate != null,persons,reversePlayer(media.player),media.copyright != null ? media.copyright.toString() : null);
+  return new data.media.Media(media.getUri().toString(),media.getTitle() != null ? media.getTitle().toString() : null,media.getWidth(),media.getHeight(),media.getFormat().toString(),media.getDuration(),media.getSize(),media.getBitrate() != null ? media.getBitrate() : 0,media.getBitrate() != null,persons,reversePlayer(media.getPlayer()),media.getCopyright() != null ? media.getCopyright().toString() : null);
 }

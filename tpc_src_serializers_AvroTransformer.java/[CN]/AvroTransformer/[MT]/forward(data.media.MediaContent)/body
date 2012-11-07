@@ -4,7 +4,7 @@
     images.add(forwardImage(image));
   }
   MediaContent amc=new MediaContent();
-  amc.media=forwardMedia(mc.media);
-  amc.images=images;
+  amc.setMedia(forwardMedia(mc.media));
+  amc.setImages(images);
   return amc;
 }
