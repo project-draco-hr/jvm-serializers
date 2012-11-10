@@ -1,0 +1,9 @@
+{
+  ObjectMapper mapper=new ObjectMapper(new AvroFactory());
+  mapper.enable(SerializationFeature.WRITE_ENUMS_USING_INDEX);
+  JavaType type=mapper.constructType(MediaContent.class);
+  AvroSchema schema=new AvroSchema(Avro.Media.sMediaContent);
+  ObjectReader reader=mapper.reader(type).with(schema);
+  ObjectWriter writer=mapper.writerWithType(type).withSchema(schema);
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("avro/jackson",type,mapper,reader,writer));
+}
