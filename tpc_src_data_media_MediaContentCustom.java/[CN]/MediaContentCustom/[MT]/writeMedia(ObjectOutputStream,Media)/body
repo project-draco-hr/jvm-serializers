@@ -1,0 +1,16 @@
+{
+  out.writeUTF(m.getUri());
+  writeMaybeString(out,m.getTitle());
+  out.writeInt(m.getWidth());
+  out.writeInt(m.getHeight());
+  out.writeUTF(m.getFormat());
+  out.writeLong(m.getDuration());
+  out.writeLong(m.getSize());
+  writeMaybeInt(out,m.hasBitrate,m.getBitrate());
+  out.writeInt(m.getPersons().size());
+  for (  String p : m.getPersons()) {
+    out.writeUTF(p);
+  }
+  out.writeByte(m.getPlayer().ordinal());
+  writeMaybeString(out,m.getCopyright());
+}

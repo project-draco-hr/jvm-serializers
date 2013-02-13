@@ -1,0 +1,6 @@
+{
+  group.add(transformer,new BasicSerializer<S>());
+  group.add(transformer,new CompactSerializer<S>());
+  group.add(transformer,new CustomSerializer());
+  group.add(transformer,new CustomCompactSerializer());
+}

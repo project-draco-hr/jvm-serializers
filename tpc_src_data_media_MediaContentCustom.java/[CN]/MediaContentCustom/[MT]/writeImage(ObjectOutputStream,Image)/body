@@ -1,0 +1,7 @@
+{
+  out.writeUTF(im.getUri());
+  writeMaybeString(out,im.getTitle());
+  out.writeInt(im.getWidth());
+  out.writeInt(im.getHeight());
+  out.writeByte(im.getSize().ordinal());
+}

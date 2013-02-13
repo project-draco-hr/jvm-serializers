@@ -1,0 +1,3 @@
+{
+  obser.setEncoding(ObserEncoding.nativeCompactEncoding());
+}

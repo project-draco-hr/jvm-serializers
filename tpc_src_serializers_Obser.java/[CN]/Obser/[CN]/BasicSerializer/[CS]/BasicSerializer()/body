@@ -1,0 +1,12 @@
+{
+  this.obser=ObserFactory.createObser(ObserEncoding.nativeEncoding());
+  obser.registerClass(data.media.MediaContentCustom.class);
+  obser.registerClass(MediaContent.class);
+  obser.registerClass(Media.class);
+  obser.registerClass(Media.Player.class);
+  obser.registerClass(Image.class);
+  obser.registerClass(Image.Size.class);
+  obser.registerClass(ArrayList.class);
+  obser.registerClass(MediaContent[].class);
+  obser.registerClass(MediaContentCustom[].class);
+}

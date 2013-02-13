@@ -1,0 +1,9 @@
+{
+  if (exists) {
+    out.writeBoolean(true);
+    out.writeInt(value);
+  }
+ else {
+    out.writeBoolean(false);
+  }
+}

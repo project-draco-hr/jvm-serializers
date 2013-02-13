@@ -1,0 +1,9 @@
+{
+  if (s != null) {
+    out.writeBoolean(true);
+    out.writeUTF(s);
+  }
+ else {
+    out.writeBoolean(false);
+  }
+}

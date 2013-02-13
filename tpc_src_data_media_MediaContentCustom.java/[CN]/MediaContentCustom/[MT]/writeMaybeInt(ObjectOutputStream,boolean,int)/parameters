@@ -1,0 +1,3 @@
+ObjectOutputStream out
+boolean exists
+int value

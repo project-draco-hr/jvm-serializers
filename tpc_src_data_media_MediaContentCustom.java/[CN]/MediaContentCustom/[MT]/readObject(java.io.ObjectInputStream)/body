@@ -1,0 +1,3 @@
+{
+  content=readMediaContent(s);
+}

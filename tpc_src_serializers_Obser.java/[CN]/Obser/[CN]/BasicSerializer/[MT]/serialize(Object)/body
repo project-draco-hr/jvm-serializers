@@ -1,0 +1,7 @@
+{
+  buffer.position(0);
+  int pos=obser.serialize(content,buffer,0);
+  byte[] ret=new byte[pos];
+  buffer.get(ret);
+  return ret;
+}

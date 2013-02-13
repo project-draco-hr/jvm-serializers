@@ -1,0 +1,6 @@
+{
+  MediaContentCustom[] data=(MediaContentCustom[])(Object)super.deserializeItems(inStream,numberOfItems);
+  MediaContent[] items=new MediaContent[data.length];
+  for (int i=0; i < data.length; i++)   items[i]=data[i].getContent();
+  return items;
+}

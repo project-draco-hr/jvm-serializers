@@ -7,6 +7,7 @@
   Wobly.register(groups);
   JBossSerialization.register(groups);
   JBossMarshalling.register(groups);
+  Obser.register(groups);
   Protobuf.register(groups);
   Protostuff.register(groups);
   Thrift.register(groups);

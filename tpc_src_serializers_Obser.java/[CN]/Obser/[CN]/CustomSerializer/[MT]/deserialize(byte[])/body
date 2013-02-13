@@ -1,0 +1,4 @@
+{
+  MediaContentCustom mcc=(MediaContentCustom)((Object)super.deserialize(array));
+  return mcc.getContent();
+}
