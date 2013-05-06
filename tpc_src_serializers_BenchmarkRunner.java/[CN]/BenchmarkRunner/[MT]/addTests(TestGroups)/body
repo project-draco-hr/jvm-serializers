@@ -29,7 +29,6 @@
   JsonDotOrgManualTree.register(groups);
   JsonijJpath.register(groups);
   JsonArgoTree.register(groups);
-  JsonPathDeserializerOnly.register(groups);
   CksText.register(groups);
   JacksonSmileManual.register(groups);
   JacksonSmileDatabind.register(groups);
