@@ -1,5 +1,5 @@
 {
   buffer.position(0);
   buffer.put(array);
-  return obser.deserialize(buffer,0);
+  return (T)obser.deserialize(buffer,0);
 }
