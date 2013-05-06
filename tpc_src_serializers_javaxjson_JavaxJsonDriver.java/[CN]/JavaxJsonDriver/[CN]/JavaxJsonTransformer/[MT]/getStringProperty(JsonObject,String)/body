@@ -1,0 +1,4 @@
+{
+  if (mediaJson.isNull(fullFieldNameUri))   return null;
+  return mediaJson.getString(fullFieldNameUri);
+}

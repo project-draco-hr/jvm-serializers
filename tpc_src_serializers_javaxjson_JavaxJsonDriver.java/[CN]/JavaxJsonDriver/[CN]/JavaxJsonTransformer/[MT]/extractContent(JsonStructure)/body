@@ -1,0 +1,38 @@
+{
+  JsonObject mediaContentJson=(JsonObject)content;
+  MediaContent mc=new MediaContent();
+  JsonObject mediaJson=mediaContentJson.getJsonObject(FULL_FIELD_NAME_MEDIA);
+  Media media=new Media();
+  media.player=Media.Player.find(mediaJson.getString(FULL_FIELD_NAME_PLAYER));
+  media.uri=getStringProperty(mediaJson,FULL_FIELD_NAME_URI);
+  media.title=getStringProperty(mediaJson,FULL_FIELD_NAME_TITLE);
+  media.width=getIntProperty(mediaJson,FULL_FIELD_NAME_WIDTH);
+  media.height=getIntProperty(mediaJson,FULL_FIELD_NAME_HEIGHT);
+  media.format=getStringProperty(mediaJson,FULL_FIELD_NAME_FORMAT);
+  media.duration=getIntProperty(mediaJson,FULL_FIELD_NAME_DURATION);
+  media.size=getIntProperty(mediaJson,FULL_FIELD_NAME_SIZE);
+  media.bitrate=getIntProperty(mediaJson,FULL_FIELD_NAME_BITRATE);
+  media.hasBitrate=true;
+  media.copyright=getStringProperty(mediaJson,FULL_FIELD_NAME_COPYRIGHT);
+  JsonArray personsJson=getCheckedArrayProperty(mediaJson,FULL_FIELD_NAME_PERSONS);
+  List<String> persons=new ArrayList<String>();
+  for (  JsonValue value : personsJson) {
+    persons.add(value.toString());
+  }
+  media.persons=persons;
+  mc.media=media;
+  JsonArray imagesJson=getCheckedArrayProperty(mediaContentJson,FULL_FIELD_NAME_IMAGES);
+  List<Image> images=new ArrayList<Image>();
+  for (  JsonValue value : imagesJson) {
+    Image image=new Image();
+    JsonObject imageJson=(JsonObject)value;
+    image.uri=getStringProperty(imageJson,FULL_FIELD_NAME_URI);
+    image.title=getStringProperty(imageJson,FULL_FIELD_NAME_TITLE);
+    image.width=getIntProperty(imageJson,FULL_FIELD_NAME_WIDTH);
+    image.height=getIntProperty(imageJson,FULL_FIELD_NAME_HEIGHT);
+    image.size=Image.Size.valueOf(getStringProperty(imageJson,FULL_FIELD_NAME_SIZE));
+    images.add(image);
+  }
+  mc.images=images;
+  return mc;
+}

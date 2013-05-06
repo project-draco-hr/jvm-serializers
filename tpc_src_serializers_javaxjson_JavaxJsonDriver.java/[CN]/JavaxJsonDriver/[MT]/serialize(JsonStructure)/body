@@ -1,0 +1,7 @@
+{
+  ByteArrayOutputStream outputStream=outputStream(content);
+  JsonWriter writer=json.createWriter(outputStream);
+  writer.write(content);
+  writer.close();
+  return outputStream.toByteArray();
+}

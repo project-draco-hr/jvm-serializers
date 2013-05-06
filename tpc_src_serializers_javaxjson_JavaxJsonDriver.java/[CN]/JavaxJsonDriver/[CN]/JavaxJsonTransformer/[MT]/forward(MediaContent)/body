@@ -1,0 +1,38 @@
+{
+  Media media=content.media;
+  JsonObjectBuilder mediaJson=json.createObjectBuilder();
+  mediaJson.add(FULL_FIELD_NAME_BITRATE,media.bitrate);
+  if (media.copyright == null) {
+    mediaJson.add(FULL_FIELD_NAME_COPYRIGHT,JsonValue.NULL);
+  }
+ else {
+    mediaJson.add(FULL_FIELD_NAME_COPYRIGHT,media.copyright);
+  }
+  mediaJson.add(FULL_FIELD_NAME_DURATION,media.duration);
+  mediaJson.add(FULL_FIELD_NAME_FORMAT,media.format);
+  mediaJson.add(FULL_FIELD_NAME_HEIGHT,media.height);
+  JsonArrayBuilder personsJson=json.createArrayBuilder();
+  for (  String person : media.persons) {
+    personsJson.add(person);
+  }
+  mediaJson.add(FULL_FIELD_NAME_PERSONS,personsJson);
+  mediaJson.add(FULL_FIELD_NAME_PLAYER,media.player.name());
+  mediaJson.add(FULL_FIELD_NAME_SIZE,media.size);
+  mediaJson.add(FULL_FIELD_NAME_TITLE,media.title);
+  mediaJson.add(FULL_FIELD_NAME_URI,media.uri);
+  mediaJson.add(FULL_FIELD_NAME_WIDTH,media.width);
+  JsonArrayBuilder imagesJson=json.createArrayBuilder();
+  for (  Image image : content.images) {
+    JsonObjectBuilder imageJson=json.createObjectBuilder();
+    imageJson.add(FULL_FIELD_NAME_TITLE,image.title);
+    imageJson.add(FULL_FIELD_NAME_URI,image.uri);
+    imageJson.add(FULL_FIELD_NAME_HEIGHT,image.height);
+    imageJson.add(FULL_FIELD_NAME_WIDTH,image.width);
+    imageJson.add(FULL_FIELD_NAME_SIZE,image.size.name());
+    imagesJson.add(imageJson);
+  }
+  JsonObjectBuilder contentJson=json.createObjectBuilder();
+  contentJson.add(FULL_FIELD_NAME_MEDIA,mediaJson);
+  contentJson.add(FULL_FIELD_NAME_IMAGES,imagesJson);
+  return contentJson.build();
+}
