@@ -16,7 +16,8 @@
   JacksonJsonManual.register(groups);
   JacksonJsonDatabind.register(groups);
   JacksonJsonAfterburner.register(groups);
-  JavaxJsonDriver.register(groups);
+  JavaxJsonTreeGlassfish.register(groups);
+  JavaxJsonStreamGlassfish.register(groups);
   JsonTwoLattes.register(groups);
   ProtostuffJson.register(groups);
   JsonGsonManual.register(groups);
