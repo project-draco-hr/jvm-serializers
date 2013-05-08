@@ -1,0 +1,5 @@
+{
+  if (current != expToken) {
+    reportIllegal(parser,current,expToken);
+  }
+}

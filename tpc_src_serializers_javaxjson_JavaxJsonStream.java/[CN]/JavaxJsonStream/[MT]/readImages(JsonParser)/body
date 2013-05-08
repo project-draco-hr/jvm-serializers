@@ -1,0 +1,12 @@
+{
+  Event current;
+  if ((current=parser.next()) != Event.START_ARRAY) {
+    reportIllegal(parser,current,Event.START_ARRAY);
+  }
+  List<Image> images=new ArrayList<Image>();
+  while ((current=parser.next()) == Event.START_OBJECT) {
+    images.add(readImage(parser));
+  }
+  verifyCurrent(parser,current,Event.END_ARRAY);
+  return images;
+}

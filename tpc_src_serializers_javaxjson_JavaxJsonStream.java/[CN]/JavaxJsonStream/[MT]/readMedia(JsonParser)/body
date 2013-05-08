@@ -1,0 +1,78 @@
+{
+  Event current;
+  if ((current=parser.next()) != Event.START_OBJECT) {
+    reportIllegal(parser,current,Event.START_OBJECT);
+  }
+  Media media=new Media();
+  boolean haveWidth=false;
+  boolean haveHeight=false;
+  boolean haveDuration=false;
+  boolean haveSize=false;
+  while ((current=parser.next()) == Event.KEY_NAME) {
+    String field=parser.getString();
+    Integer I=fullFieldToIndex.get(field);
+    if (I != null) {
+switch (I) {
+case FIELD_IX_PLAYER:
+        current=parser.next();
+      media.player=Media.Player.find(parser.getString());
+    continue;
+case FIELD_IX_URI:
+  current=parser.next();
+media.uri=parser.getString();
+continue;
+case FIELD_IX_TITLE:
+current=parser.next();
+media.title=parser.getString();
+continue;
+case FIELD_IX_WIDTH:
+current=parser.next();
+media.width=parser.getInt();
+haveWidth=true;
+continue;
+case FIELD_IX_HEIGHT:
+current=parser.next();
+media.height=parser.getInt();
+haveHeight=true;
+continue;
+case FIELD_IX_FORMAT:
+current=parser.next();
+media.format=parser.getString();
+continue;
+case FIELD_IX_DURATION:
+current=parser.next();
+media.duration=parser.getInt();
+haveDuration=true;
+continue;
+case FIELD_IX_SIZE:
+current=parser.next();
+media.size=parser.getInt();
+haveSize=true;
+continue;
+case FIELD_IX_BITRATE:
+current=parser.next();
+media.bitrate=parser.getInt();
+media.hasBitrate=true;
+continue;
+case FIELD_IX_PERSONS:
+media.persons=readPersons(parser);
+continue;
+case FIELD_IX_COPYRIGHT:
+current=parser.next();
+media.copyright=parser.getString();
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+verifyCurrent(parser,current,Event.END_OBJECT);
+if (media.uri == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_URI);
+if (!haveWidth) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_WIDTH);
+if (!haveHeight) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_HEIGHT);
+if (media.format == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_FORMAT);
+if (!haveDuration) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_DURATION);
+if (!haveSize) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_SIZE);
+if (media.persons == null) media.persons=new ArrayList<String>();
+if (media.player == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_PLAYER);
+return media;
+}

@@ -1,0 +1,8 @@
+{
+  String msg="Expected token " + expToken + "; got "+ current;
+  if (current == Event.KEY_NAME) {
+    msg+=" (current field name '" + parser.getString() + "')";
+  }
+  msg+=", location: " + parser.getLocation();
+  throw new IllegalStateException(msg);
+}

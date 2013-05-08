@@ -1,0 +1,26 @@
+{
+  MediaContent mc=new MediaContent();
+  Event current;
+  if ((current=parser.next()) != Event.START_OBJECT) {
+    reportIllegal(parser,current,Event.START_OBJECT);
+  }
+  while ((current=parser.next()) == Event.KEY_NAME) {
+    String field=parser.getString();
+    Integer I=fullFieldToIndex.get(field);
+    if (I != null) {
+switch (I) {
+case FIELD_IX_MEDIA:
+        mc.media=readMedia(parser);
+      continue;
+case FIELD_IX_IMAGES:
+    mc.images=readImages(parser);
+  continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+verifyCurrent(parser,current,Event.END_OBJECT);
+if (mc.media == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_MEDIA);
+if (mc.images == null) mc.images=new ArrayList<Image>();
+return mc;
+}

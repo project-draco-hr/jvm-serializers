@@ -1,0 +1,11 @@
+{
+  generator.writeStartObject();
+  generator.writeStartObject(FULL_FIELD_NAME_MEDIA);
+  writeMedia(generator,content.media);
+  generator.writeStartArray(FULL_FIELD_NAME_IMAGES);
+  for (  Image i : content.images) {
+    writeImage(generator,i);
+  }
+  generator.writeEnd();
+  generator.writeEnd();
+}
