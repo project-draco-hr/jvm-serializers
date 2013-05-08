@@ -1,3 +1,0 @@
-{
-  groups.media.add(new JavaxJsonTransformer(),new JavaxJsonDriver());
-}
