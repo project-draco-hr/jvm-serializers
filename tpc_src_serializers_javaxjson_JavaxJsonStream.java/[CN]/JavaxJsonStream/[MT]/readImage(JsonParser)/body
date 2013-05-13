@@ -1,0 +1,39 @@
+{
+  Event current;
+  boolean haveWidth=false;
+  boolean haveHeight=false;
+  Image image=new Image();
+  while ((current=parser.next()) == Event.KEY_NAME) {
+    String field=parser.getString();
+    current=parser.next();
+    Integer I=fullFieldToIndex.get(field);
+    if (I != null) {
+switch (I) {
+case FIELD_IX_URI:
+        image.uri=parser.getString();
+      continue;
+case FIELD_IX_TITLE:
+    image.title=parser.getString();
+  continue;
+case FIELD_IX_WIDTH:
+image.width=parser.getInt();
+haveWidth=true;
+continue;
+case FIELD_IX_HEIGHT:
+image.height=parser.getInt();
+haveHeight=true;
+continue;
+case FIELD_IX_SIZE:
+image.size=Image.Size.valueOf(parser.getString());
+continue;
+}
+}
+throw new IllegalStateException("Unexpected field '" + field + "'");
+}
+if (image.uri == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_URI);
+if (!haveWidth) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_WIDTH);
+if (!haveHeight) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_HEIGHT);
+if (image.size == null) throw new IllegalStateException("Missing field: " + FULL_FIELD_NAME_SIZE);
+verifyCurrent(parser,current,Event.END_OBJECT);
+return image;
+}

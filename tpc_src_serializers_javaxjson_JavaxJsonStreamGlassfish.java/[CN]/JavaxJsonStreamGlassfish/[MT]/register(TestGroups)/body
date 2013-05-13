@@ -1,0 +1,3 @@
+{
+  groups.media.add(JavaBuiltIn.mediaTransformer,new JavaxJsonStreamGlassfish());
+}

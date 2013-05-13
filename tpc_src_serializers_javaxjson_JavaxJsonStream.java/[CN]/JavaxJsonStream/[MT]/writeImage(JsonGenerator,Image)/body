@@ -1,0 +1,11 @@
+{
+  generator.writeStartObject();
+  generator.write(FULL_FIELD_NAME_URI,image.uri);
+  if (image.title != null) {
+    generator.write(FULL_FIELD_NAME_TITLE,image.title);
+  }
+  generator.write(FULL_FIELD_NAME_WIDTH,image.width);
+  generator.write(FULL_FIELD_NAME_HEIGHT,image.height);
+  generator.write(FULL_FIELD_NAME_SIZE,image.size.name());
+  generator.writeEnd();
+}

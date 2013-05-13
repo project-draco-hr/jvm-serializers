@@ -1,0 +1,24 @@
+{
+  generator.write(FULL_FIELD_NAME_PLAYER,media.player.name());
+  generator.write(FULL_FIELD_NAME_URI,media.uri);
+  if (media.title != null) {
+    generator.write(FULL_FIELD_NAME_TITLE,media.title);
+  }
+  generator.write(FULL_FIELD_NAME_WIDTH,media.width);
+  generator.write(FULL_FIELD_NAME_HEIGHT,media.height);
+  generator.write(FULL_FIELD_NAME_FORMAT,media.format);
+  generator.write(FULL_FIELD_NAME_DURATION,media.duration);
+  generator.write(FULL_FIELD_NAME_SIZE,media.size);
+  if (media.hasBitrate) {
+    generator.write(FULL_FIELD_NAME_BITRATE,media.bitrate);
+  }
+  if (media.copyright != null) {
+    generator.write(FULL_FIELD_NAME_COPYRIGHT,media.copyright);
+  }
+  generator.writeStartArray(FULL_FIELD_NAME_PERSONS);
+  for (  String person : media.persons) {
+    generator.write(person);
+  }
+  generator.writeEnd();
+  generator.writeEnd();
+}
