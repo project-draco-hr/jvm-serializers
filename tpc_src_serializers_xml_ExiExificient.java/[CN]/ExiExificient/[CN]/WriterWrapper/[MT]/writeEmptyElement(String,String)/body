@@ -1,4 +1,4 @@
 {
-  _encoder.writeStartElement(null,localName,nsURI);
+  _encoder.writeStartElement("",localName,nsURI);
   _encoder.writeEndElement();
 }

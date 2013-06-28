@@ -1,4 +1,4 @@
 {
-  _encoder.writeStartElement(null,null,localName);
+  _encoder.writeStartElement("","",localName);
   _encoder.writeEndElement();
 }

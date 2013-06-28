@@ -1,3 +1,3 @@
 {
-  _encoder.writeAttribute(null,nsURI,localName,value);
+  _encoder.writeAttribute("",nsURI,localName,value);
 }
