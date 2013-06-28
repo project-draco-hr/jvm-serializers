@@ -1,0 +1,3 @@
+{
+  _encoder.writeAttribute(prefix,nsURI,localName,value);
+}

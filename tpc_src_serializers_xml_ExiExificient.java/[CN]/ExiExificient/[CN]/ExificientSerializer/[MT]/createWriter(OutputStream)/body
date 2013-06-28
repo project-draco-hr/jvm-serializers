@@ -1,0 +1,10 @@
+{
+  try {
+    StAXEncoder enc=new StAXEncoder(_exiFactory);
+    enc.setOutputStream(out);
+    return new WriterWrapper(enc);
+  }
+ catch (  Exception e) {
+    throw new XMLStreamException(e);
+  }
+}

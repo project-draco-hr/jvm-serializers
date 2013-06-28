@@ -1,0 +1,10 @@
+{
+  try {
+    StAXDecoder dec=new StAXDecoder(_exiFactory);
+    dec.setInputStream(in);
+    return dec;
+  }
+ catch (  Exception e) {
+    throw new XMLStreamException(e);
+  }
+}
