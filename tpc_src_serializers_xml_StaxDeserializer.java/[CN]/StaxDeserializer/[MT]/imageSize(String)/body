@@ -1,0 +1,6 @@
+{
+  if (value == null) {
+    throw new IllegalStateException("Missing 'size' value for Image (null)");
+  }
+  return Image.Size.valueOf(value);
+}
