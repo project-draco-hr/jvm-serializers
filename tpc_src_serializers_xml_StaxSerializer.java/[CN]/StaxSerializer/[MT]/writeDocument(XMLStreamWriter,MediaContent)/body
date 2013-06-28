@@ -1,0 +1,5 @@
+{
+  writer.writeStartDocument("UTF-8","1.0");
+  writeMediaContent(writer,content);
+  writer.writeEndDocument();
+}

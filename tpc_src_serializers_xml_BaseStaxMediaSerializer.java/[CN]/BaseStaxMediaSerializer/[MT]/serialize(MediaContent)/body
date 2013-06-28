@@ -1,0 +1,8 @@
+{
+  ByteArrayOutputStream baos=outputStream(content);
+  XMLStreamWriter writer=createWriter(baos);
+  _serializer.writeDocument(writer,content);
+  writer.flush();
+  writer.close();
+  return baos.toByteArray();
+}

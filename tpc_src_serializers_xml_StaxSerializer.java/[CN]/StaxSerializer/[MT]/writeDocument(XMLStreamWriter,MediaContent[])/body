@@ -1,12 +1,9 @@
 {
-  XMLStreamWriter writer=handler.outFactory.createXMLStreamWriter(out,"UTF-8");
   writer.writeStartDocument("UTF-8","1.0");
-  writer.writeStartElement(STREAM_ROOT);
+  writer.writeStartElement(XmlStax.STREAM_ROOT);
   for (  MediaContent item : items) {
     writeMediaContent(writer,item);
   }
   writer.writeEndElement();
   writer.writeEndDocument();
-  writer.flush();
-  writer.close();
 }

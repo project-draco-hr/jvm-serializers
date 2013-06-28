@@ -1,0 +1,6 @@
+{
+  XMLStreamReader parser=createReader(array);
+  MediaContent content=_deserializer.readDocument(parser);
+  parser.close();
+  return content;
+}

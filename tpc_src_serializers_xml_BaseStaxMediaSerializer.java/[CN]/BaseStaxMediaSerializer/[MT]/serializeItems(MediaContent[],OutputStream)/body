@@ -1,0 +1,6 @@
+{
+  XMLStreamWriter writer=createWriter(out);
+  _serializer.writeDocument(writer,items);
+  writer.flush();
+  writer.close();
+}

@@ -1,6 +1,0 @@
-{
-  XMLStreamReader parser=handler.inFactory.createXMLStreamReader(new ByteArrayInputStream(array));
-  MediaContent content=readMediaContent(parser);
-  parser.close();
-  return content;
-}

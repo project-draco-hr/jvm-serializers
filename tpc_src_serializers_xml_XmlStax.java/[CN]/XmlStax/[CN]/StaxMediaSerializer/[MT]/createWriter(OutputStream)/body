@@ -1,0 +1,3 @@
+{
+  return handler.outFactory.createXMLStreamWriter(out,"UTF-8");
+}

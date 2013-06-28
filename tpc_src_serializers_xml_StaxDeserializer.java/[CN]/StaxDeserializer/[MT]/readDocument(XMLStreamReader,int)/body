@@ -1,0 +1,14 @@
+{
+  MediaContent[] result=new MediaContent[items];
+  searchTag(parser,XmlStax.STREAM_ROOT);
+  for (int i=0; i < items; ++i) {
+    result[i]=readMediaContent(parser);
+  }
+  if (parser.nextTag() != XMLStreamConstants.END_ELEMENT) {
+    throw new IllegalStateException("Expected closing tag, got: " + parser.getEventType());
+  }
+  if (!XmlStax.STREAM_ROOT.equals(parser.getLocalName())) {
+    throw new IllegalStateException("Expected closing </" + XmlStax.STREAM_ROOT + ">, got </"+ parser.getLocalName()+ ">");
+  }
+  return result;
+}
