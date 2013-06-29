@@ -1,0 +1,22 @@
+{
+  if (_workingGetElementText) {
+    return parser.getElementText();
+  }
+  String text=null;
+  int t;
+  while (parser.hasNext()) {
+    t=parser.next();
+    if (t == XMLStreamConstants.END_ELEMENT) {
+      break;
+    }
+    if (t == XMLStreamConstants.CHARACTERS || t == XMLStreamConstants.CDATA) {
+      if (text == null) {
+        text=parser.getText();
+      }
+ else {
+        text+=parser.getText();
+      }
+    }
+  }
+  return (text == null) ? "" : text;
+}

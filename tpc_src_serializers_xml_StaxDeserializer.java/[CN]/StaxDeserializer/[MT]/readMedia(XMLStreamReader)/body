@@ -17,7 +17,7 @@
   searchTag(parser,FULL_FIELD_NAME_PERSONS);
   List<String> persons=new ArrayList<String>();
   do {
-    persons.add(parser.getElementText());
+    persons.add(_getElementText(parser));
   }
  while (parser.nextTag() == XMLStreamConstants.START_ELEMENT && FULL_FIELD_NAME_PERSONS.equals(parser.getLocalName()));
   if (!FULL_FIELD_NAME_MEDIA.equals(parser.getLocalName())) {

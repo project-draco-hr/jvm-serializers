@@ -3,5 +3,5 @@
     while (parser.next() != XMLStreamConstants.START_ELEMENT) {
     }
   }
-  return (parser.getLocalName().equals(string)) ? parser.getElementText() : null;
+  return (parser.getLocalName().equals(string)) ? _getElementText(parser) : null;
 }
