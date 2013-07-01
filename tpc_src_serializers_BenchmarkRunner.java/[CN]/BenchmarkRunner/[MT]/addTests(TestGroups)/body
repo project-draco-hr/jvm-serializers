@@ -38,8 +38,10 @@
   JacksonBsonDatabind.register(groups);
   MongoDB.register(groups);
   JacksonYAMLDatabind.register(groups);
-  XmlStax.register(groups,true,true,true);
+  XmlStax.register(groups,true,true,false);
   XmlXStream.register(groups);
   JacksonXmlDatabind.register(groups);
   XmlJavolution.register(groups);
+  XmlStax.register(groups,false,false,true);
+  ExiExificient.register(groups);
 }
