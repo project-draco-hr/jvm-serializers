@@ -1,2 +1,2 @@
-TestGroup group
+TestGroup<?> group
 Transformer transformer

@@ -1,2 +1,2 @@
-MediaContent[] items
+Object[] items
 OutputStream outStream

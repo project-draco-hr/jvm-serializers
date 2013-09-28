@@ -1,4 +1,0 @@
-{
-  MediaContentCustom mcc=new MediaContentCustom(content);
-  return super.serialize(mcc);
-}
