@@ -1,5 +1,7 @@
 {
   this.name=name;
-  type=mapper.getTypeFactory().constructType(clazz);
+  type=mapper.constructType(clazz);
   this.mapper=mapper;
+  objectReader=mapper.reader(type);
+  objectWriter=mapper.writerWithType(type);
 }

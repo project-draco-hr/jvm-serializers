@@ -1,3 +1,3 @@
 {
-  return mapper.getJsonFactory().createJsonParser(data,0,data.length);
+  return mapper.getFactory().createParser(data,0,data.length);
 }
