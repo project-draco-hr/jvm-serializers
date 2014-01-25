@@ -1,4 +1,0 @@
-{
-  super("msgpack-manual",handler,msgpack);
-  handler.registerManually(msgpack);
-}

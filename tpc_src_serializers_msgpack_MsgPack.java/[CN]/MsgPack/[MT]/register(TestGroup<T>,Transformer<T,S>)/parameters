@@ -1,3 +1,2 @@
 TestGroup<T> group
 Transformer<T,S> transformer
-TypeHandler<S> handler

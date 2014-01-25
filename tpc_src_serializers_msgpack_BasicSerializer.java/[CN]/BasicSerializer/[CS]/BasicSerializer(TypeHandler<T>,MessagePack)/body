@@ -1,4 +1,0 @@
-{
-  super("msgpack-databind",handler,msgpack);
-  handler.register(msgpack);
-}
