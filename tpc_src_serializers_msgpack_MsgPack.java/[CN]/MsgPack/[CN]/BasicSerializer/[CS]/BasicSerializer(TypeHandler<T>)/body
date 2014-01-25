@@ -1,5 +1,0 @@
-{
-  super(handler,new MessagePack());
-  handler.register(msgpack);
-  name="msgpack";
-}

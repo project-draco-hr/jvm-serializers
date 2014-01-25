@@ -1,0 +1,6 @@
+{
+  this.name=name;
+  type=handler.type;
+  packer=msgpack.createBufferPacker(BUFFER_SIZE);
+  unpacker=msgpack.createBufferUnpacker();
+}
