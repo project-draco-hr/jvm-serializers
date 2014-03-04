@@ -1,0 +1,12 @@
+{
+  try {
+    objectInput.resetForReuse(inStream);
+    T[] res=(T[])objectInput.readObject();
+    objectInput.close();
+    return res;
+  }
+ catch (  Throwable e) {
+    e.printStackTrace();
+  }
+  return null;
+}
