@@ -1,0 +1,12 @@
+{
+  try {
+    MediaContent[] result=new MediaContent[numberOfItems];
+    objectInput.resetForReuse(inStream);
+    for (int i=0; i < numberOfItems; i++)     result[i]=(MediaContent)objectInput.readObject();
+    return (T[])result;
+  }
+ catch (  Throwable e) {
+    e.printStackTrace();
+  }
+  return null;
+}

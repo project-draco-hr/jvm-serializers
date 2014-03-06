@@ -1,0 +1,10 @@
+{
+  try {
+    objectInput.resetForReuseUseArray(array);
+    return objectInput.readObject();
+  }
+ catch (  Throwable e) {
+    e.printStackTrace();
+  }
+  return null;
+}

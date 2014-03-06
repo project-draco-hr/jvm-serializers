@@ -1,0 +1,7 @@
+{
+  objectOutput.resetForReUse();
+  for (int i=0; i < items.length; i++) {
+    objectOutput.writeObject(items[i]);
+  }
+  outStream.write(objectOutput.getBuffer(),0,objectOutput.getWritten());
+}

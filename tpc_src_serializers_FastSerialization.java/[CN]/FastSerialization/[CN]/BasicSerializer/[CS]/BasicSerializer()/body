@@ -1,0 +1,3 @@
+{
+  objectOutput.resetForReUse(buffer);
+}

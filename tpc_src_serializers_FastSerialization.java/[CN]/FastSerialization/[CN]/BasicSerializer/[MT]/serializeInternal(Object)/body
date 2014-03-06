@@ -1,0 +1,11 @@
+{
+  try {
+    objectOutput.resetForReUse();
+    objectOutput.writeObject(content);
+    return objectOutput.getCopyOfWrittenBuffer();
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+  return null;
+}
