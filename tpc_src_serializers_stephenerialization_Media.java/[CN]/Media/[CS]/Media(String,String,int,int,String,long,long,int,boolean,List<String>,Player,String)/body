@@ -1,0 +1,14 @@
+{
+  this.uri=uri;
+  this.title=title;
+  this.width=width;
+  this.height=height;
+  this.format=format;
+  this.duration=duration;
+  this.size=size;
+  this.bitrate=bitrate;
+  this.hasBitrate=hasBitrate;
+  this.persons=persons;
+  this.player=player;
+  this.copyright=copyright;
+}

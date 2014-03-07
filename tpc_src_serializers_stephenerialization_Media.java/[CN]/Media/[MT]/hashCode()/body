@@ -1,0 +1,15 @@
+{
+  int result=uri != null ? uri.hashCode() : 0;
+  result=31 * result + (title != null ? title.hashCode() : 0);
+  result=31 * result + width;
+  result=31 * result + height;
+  result=31 * result + (format != null ? format.hashCode() : 0);
+  result=31 * result + (int)(duration ^ (duration >>> 32));
+  result=31 * result + (int)(size ^ (size >>> 32));
+  result=31 * result + bitrate;
+  result=31 * result + (hasBitrate ? 1 : 0);
+  result=31 * result + (persons != null ? persons.hashCode() : 0);
+  result=31 * result + (player != null ? player.hashCode() : 0);
+  result=31 * result + (copyright != null ? copyright.hashCode() : 0);
+  return result;
+}
