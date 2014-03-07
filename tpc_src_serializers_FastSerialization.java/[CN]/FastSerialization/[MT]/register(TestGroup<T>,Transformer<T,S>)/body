@@ -1,3 +1,4 @@
 {
-  group.add(transformer,new BasicSerializer<S>());
+  group.add(transformer,new BasicSerializer<S>("fast-serialization",true));
+  group.add(transformer,new BasicSerializer<S>("fast-serialization-shared",false));
 }

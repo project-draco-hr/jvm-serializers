@@ -1,0 +1,12 @@
+{
+  conf.setShareReferences(!unshared);
+  this.name=name;
+  if (unshared) {
+    objectInput=new FSTObjectInputNoShared(conf);
+    objectOutput=new FSTObjectOutputNoShared(conf);
+  }
+ else {
+    objectInput=new FSTObjectInput(confShared);
+    objectOutput=new FSTObjectOutput(confShared);
+  }
+}
