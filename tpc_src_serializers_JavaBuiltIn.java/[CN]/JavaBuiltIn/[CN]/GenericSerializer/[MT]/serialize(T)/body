@@ -1,6 +1,11 @@
 {
   ByteArrayOutputStream baos=outputStream(data);
   ObjectOutputStream oos=new ObjectOutputStream(baos);
-  oos.writeObject(data);
+  if (unshared) {
+    oos.writeUnshared(data);
+  }
+ else {
+    oos.writeObject(data);
+  }
   return baos.toByteArray();
 }
