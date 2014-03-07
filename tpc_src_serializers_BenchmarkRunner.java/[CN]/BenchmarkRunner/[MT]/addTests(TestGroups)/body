@@ -1,6 +1,7 @@
 {
   JavaBuiltIn.register(groups);
   JavaManual.register(groups);
+  Stephenerialization.register(groups);
   Hessian.register(groups);
   Kryo.register(groups);
   FastSerialization.register(groups);
