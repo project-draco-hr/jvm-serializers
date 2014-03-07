@@ -1,0 +1,3 @@
+{
+  groups.media.add(mediaTransformer,new StephenerializationSerializer<MediaContent>("stephenerialization"));
+}

@@ -1,0 +1,5 @@
+{
+  ObjectInputStream ois=new ObjectInputStream(new ByteArrayInputStream(array));
+  @SuppressWarnings("unchecked") T v=(T)ois.readObject();
+  return v;
+}
