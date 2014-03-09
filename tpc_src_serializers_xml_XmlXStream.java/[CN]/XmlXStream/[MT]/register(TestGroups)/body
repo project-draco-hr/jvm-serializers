@@ -4,8 +4,8 @@
       return new CompactWriter(out,xmlFriendlyReplacer());
     }
   }
-),MediaConfiguration));
+),MediaConfiguration),new SerFeatures(SerFormat.XML,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,""));
   for (  XmlStax.Handler h : XmlStax.HANDLERS) {
-    groups.media.add(JavaBuiltIn.mediaTransformer,XmlXStream.<MediaContent>mkStaxSerializer(h,"+c",MediaConfiguration));
+    groups.media.add(JavaBuiltIn.mediaTransformer,XmlXStream.<MediaContent>mkStaxSerializer(h,"+c",MediaConfiguration),new SerFeatures(SerFormat.XML,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
   }
 }

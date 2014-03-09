@@ -1,0 +1,18 @@
+{
+  this.name=name;
+  this.unshared=flat;
+  if (flat) {
+    if (register) {
+      objectInput=new FSTObjectInputNoShared(confUnsharedRegister);
+      objectOutput=new FSTObjectOutputNoShared(confUnsharedRegister);
+    }
+ else {
+      objectInput=new FSTObjectInputNoShared(confUnsharedUnregistered);
+      objectOutput=new FSTObjectOutputNoShared(confUnsharedUnregistered);
+    }
+  }
+ else {
+    objectInput=new FSTObjectInput(confShared);
+    objectOutput=new FSTObjectOutput(confShared);
+  }
+}

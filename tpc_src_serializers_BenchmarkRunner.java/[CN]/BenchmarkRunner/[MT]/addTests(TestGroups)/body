@@ -2,6 +2,7 @@
   JavaBuiltIn.register(groups);
   JavaManual.register(groups);
   Stephenerialization.register(groups);
+  Scala.register(groups);
   Hessian.register(groups);
   Kryo.register(groups);
   FastSerialization.register(groups);
@@ -22,7 +23,9 @@
   JavaxJsonStreamGlassfish.register(groups);
   JsonTwoLattes.register(groups);
   ProtostuffJson.register(groups);
+  ProtobufJson.register(groups);
   JsonGsonManual.register(groups);
+  JsonGsonTree.register(groups);
   JsonGsonDatabind.register(groups);
   JsonSvensonDatabind.register(groups);
   FlexjsonDatabind.register(groups);

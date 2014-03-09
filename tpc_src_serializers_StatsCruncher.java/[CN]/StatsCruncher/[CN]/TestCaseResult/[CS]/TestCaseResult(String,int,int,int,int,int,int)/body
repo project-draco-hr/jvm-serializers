@@ -1,0 +1,9 @@
+{
+  this.name=name;
+  this.create=create;
+  this.ser=ser;
+  this.deser=deser;
+  this.total=total;
+  this.size=size;
+  this.compressedSize=compressedSize;
+}

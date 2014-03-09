@@ -1,0 +1,2 @@
+TypeHandler<T> handler
+boolean shared

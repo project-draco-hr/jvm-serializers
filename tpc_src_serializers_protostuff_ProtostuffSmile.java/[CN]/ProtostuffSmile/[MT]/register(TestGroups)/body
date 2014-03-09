@@ -1,4 +1,4 @@
 {
-  groups.media.add(JavaBuiltIn.mediaTransformer,SmileManualMediaSerializer);
-  groups.media.add(JavaBuiltIn.mediaTransformer,SmileRuntimeMediaSerializer);
+  groups.media.add(JavaBuiltIn.mediaTransformer,SmileManualMediaSerializer,new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
+  groups.media.add(JavaBuiltIn.mediaTransformer,SmileRuntimeMediaSerializer,new SerFeatures(SerFormat.JSON,SerGraph.FULL_GRAPH,SerClass.ZERO_KNOWLEDGE,""));
 }

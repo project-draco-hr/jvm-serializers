@@ -1,0 +1,7 @@
+{
+  this.type=handler.type;
+  this.shared=shared;
+  this.kryo=new com.esotericsoftware.kryo.Kryo();
+  kryo.setReferences(shared);
+  kryo.setRegistrationRequired(false);
+}

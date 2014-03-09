@@ -1,11 +1,11 @@
 {
   if (woodstox) {
-    groups.media.add(JavaBuiltIn.mediaTransformer,new StaxMediaSerializer(HANDLERS[0]));
+    groups.media.add(JavaBuiltIn.mediaTransformer,new StaxMediaSerializer(HANDLERS[0]),new SerFeatures(SerFormat.XML,SerGraph.UNKNOWN,SerClass.MANUAL_OPT,""));
   }
   if (aalto) {
-    groups.media.add(JavaBuiltIn.mediaTransformer,new StaxMediaSerializer(HANDLERS[1]));
+    groups.media.add(JavaBuiltIn.mediaTransformer,new StaxMediaSerializer(HANDLERS[1]),new SerFeatures(SerFormat.XML,SerGraph.UNKNOWN,SerClass.MANUAL_OPT,""));
   }
   if (fastinfoset) {
-    groups.media.add(JavaBuiltIn.mediaTransformer,new StaxMediaSerializer(HANDLERS[2]));
+    groups.media.add(JavaBuiltIn.mediaTransformer,new StaxMediaSerializer(HANDLERS[2]),new SerFeatures(SerFormat.XML,SerGraph.UNKNOWN,SerClass.MANUAL_OPT,""));
   }
 }

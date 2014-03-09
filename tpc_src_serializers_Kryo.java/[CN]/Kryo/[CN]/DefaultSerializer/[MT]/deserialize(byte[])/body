@@ -1,4 +1,4 @@
 {
   input.setBuffer(array);
-  return (T)kryo.readClassAndObject(input);
+  return (T)kryo.readObject(input,type);
 }

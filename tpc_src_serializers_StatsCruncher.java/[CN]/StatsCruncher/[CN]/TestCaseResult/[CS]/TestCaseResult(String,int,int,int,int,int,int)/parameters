@@ -1,0 +1,7 @@
+String name
+int create
+int ser
+int deser
+int total
+int size
+int compressedSize

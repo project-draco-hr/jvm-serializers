@@ -4,5 +4,5 @@
   factory.configure(SmileGenerator.Feature.CHECK_SHARED_STRING_VALUES,sharedValues);
   ObjectMapper mapper=new ObjectMapper(factory);
   mapper.enable(SerializationFeature.WRITE_ENUMS_USING_INDEX);
-  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("smile/jackson/databind",MediaContent.class,mapper));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("smile/jackson/databind",MediaContent.class,mapper),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,""));
 }

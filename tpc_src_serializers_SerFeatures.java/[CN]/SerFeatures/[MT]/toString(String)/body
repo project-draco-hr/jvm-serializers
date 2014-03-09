@@ -1,0 +1,4 @@
+{
+  Formatter format=new Formatter().format("%-34s %-15s %-14s %-10s %-60s",name,getClz(),getFormat(),getGraph(),getMiscFeatures() + " " + getDescription());
+  return format.toString();
+}

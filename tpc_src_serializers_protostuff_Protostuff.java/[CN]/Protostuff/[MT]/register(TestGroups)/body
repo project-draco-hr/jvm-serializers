@@ -1,6 +1,7 @@
 {
-  groups.media.add(mediaTransformer,ProtostuffMediaSerializer);
-  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffManualMediaSerializer);
-  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffRuntimeMediaSerializer);
-  groups.media.add(mediaTransformer,ProtobufMediaSerializer);
+  groups.media.add(mediaTransformer,ProtostuffMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"generated code"));
+  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffManualMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
+  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffRuntimeMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,""));
+  groups.media.add(mediaTransformer,ProtobufMediaSerializer,new SerFeatures(SerFormat.BIN_CROSSLANG,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"protobuf serialization + generated code"));
+  groups.media.add(JavaBuiltIn.mediaTransformer,ProtobufRuntimeMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,""));
 }

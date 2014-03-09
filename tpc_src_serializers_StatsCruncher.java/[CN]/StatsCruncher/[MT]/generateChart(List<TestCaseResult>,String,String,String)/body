@@ -1,0 +1,29 @@
+{
+  int chartSize=Math.min(MAX_CHART_BARS,resultList.size());
+  int max=max(resultList,higherValueName,MAX_CHART_BARS);
+  String res="https://chart.googleapis.com/chart?cht=bhs&chs=600x" + (chartSize * 20 + 14);
+  res+="&chd=t:";
+  for (int i=0; i < chartSize; i++) {
+    TestCaseResult testCaseResult=resultList.get(i);
+    int val=testCaseResult.getInt(lowerValueName);
+    res+=val + ((i < chartSize - 1) ? "," : "|");
+  }
+  for (int i=0; i < chartSize; i++) {
+    TestCaseResult testCaseResult=resultList.get(i);
+    int valLower=(testCaseResult.getInt(lowerValueName));
+    int val=testCaseResult.getInt(higherValueName);
+    val-=valLower;
+    res+=val + ((i < chartSize - 1) ? "," : "");
+  }
+  res+="&chco=5d99f9,4d89f9";
+  res+="&chdlp=t";
+  res+="&chbh=15";
+  res+="&chds=0," + max;
+  res+="&chxr=1,0," + max;
+  res+="&chxt=y,x&chxl=0:|";
+  for (int i=0; i < chartSize; i++) {
+    TestCaseResult testCaseResult=resultList.get(chartSize - i - 1);
+    res+=urlEncode(testCaseResult.getName()) + ((i < chartSize - 1) ? "|" : "");
+  }
+  return "<b>" + title + "</b><br><img src='"+ res+ "'/>";
+}

@@ -1,5 +1,0 @@
-{
-  this.kryo=new com.esotericsoftware.kryo.Kryo();
-  kryo.setReferences(true);
-  kryo.setRegistrationRequired(false);
-}

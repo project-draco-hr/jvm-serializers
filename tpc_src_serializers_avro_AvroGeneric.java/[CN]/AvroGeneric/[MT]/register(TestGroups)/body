@@ -1,3 +1,3 @@
 {
-  groups.media.add(MediaTransformer,new GenericSerializer(Avro.Media.sMediaContent));
+  groups.media.add(MediaTransformer,new GenericSerializer(Avro.Media.sMediaContent),new SerFeatures(SerFormat.BIN_CROSSLANG,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
 }

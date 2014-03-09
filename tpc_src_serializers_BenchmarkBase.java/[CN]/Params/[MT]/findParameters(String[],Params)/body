@@ -78,20 +78,20 @@
         System.exit(1);
       }
     }
- else     if (option.equals("trials")) {
+ else     if (option.equals("testRunMillis")) {
       if (value == null) {
-        System.err.println("The \"trials\" option requires a value.");
+        System.err.println("The \"testRunMillis\" option requires a value.");
         System.exit(1);
       }
       try {
-        params.trials=Integer.parseInt(value);
+        params.testRunMillis=Integer.parseInt(value);
       }
  catch (      NumberFormatException ex) {
-        System.err.println("Invalid value for \"trials\" option: \"" + value + "\"");
+        System.err.println("Invalid value for \"testRunMillis\" option: \"" + value + "\"");
         System.exit(1);
       }
-      if (params.trials < 1) {
-        System.err.println("Invalid value for \"trials\" option: \"" + value + "\"");
+      if (params.testRunMillis < 1) {
+        System.err.println("Invalid value for \"testRunMillis\" option: \"" + value + "\"");
         System.exit(1);
       }
     }
@@ -147,7 +147,7 @@
       System.out.println();
       System.out.println("Options:");
       System.out.println("  -iterations=n         [default=" + DEFAULT_ITERATIONS + "]");
-      System.out.println("  -trials=n             [default=" + DEFAULT_TRIALS + "]");
+      System.out.println("  -testRunMillis=n      [default=" + DEFAULT_TEST_RUN_MILLIS + "ms]");
       System.out.println("  -warmup-time=millis   [default=" + DEFAULT_WARMUP_MSECS + "]");
       System.out.println("  -skip-pre-warmup      (don't warm all serializers before the first measurement)");
       System.out.println("  -chart                (generate a Google Chart URL for the results)");

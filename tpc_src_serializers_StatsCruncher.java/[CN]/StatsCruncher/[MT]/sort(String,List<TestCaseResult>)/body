@@ -1,0 +1,10 @@
+{
+  List<TestCaseResult> res=new ArrayList<>(chartList);
+  Collections.sort(res,new Comparator<TestCaseResult>(){
+    @Override public int compare(    TestCaseResult o1,    TestCaseResult o2){
+      return o1.getInt(intFieldToSort) - o2.getInt(intFieldToSort);
+    }
+  }
+);
+  return res;
+}

@@ -1,3 +1,3 @@
 {
-  groups.media.add(JavaBuiltIn.mediaTransformer,new SemiManualSerializer("json/google-gson/manual/tree"));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new SemiManualSerializer("json/google-gson/manual/tree"),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
 }

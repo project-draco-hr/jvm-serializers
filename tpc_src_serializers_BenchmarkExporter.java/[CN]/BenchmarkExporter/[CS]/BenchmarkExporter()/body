@@ -1,0 +1,3 @@
+{
+  runBenchmark(new String[0]);
+}

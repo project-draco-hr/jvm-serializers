@@ -1,0 +1,11 @@
+{
+  TestGroups groups=new TestGroups();
+  addTests(groups);
+  Set<String> media=groups.groupMap.get("media").entryNames;
+  for (Iterator<String> iterator=media.iterator(); iterator.hasNext(); ) {
+    String next=iterator.next().trim();
+    if (!next.equals("cks") && !next.equals("cks-text"))     alltests+=next + (iterator.hasNext() ? "," : "");
+    SerFeatures features=groups.groupMap.get("media").getSerMap().get(next).getFeatures();
+    featureMap.put(next,features);
+  }
+}

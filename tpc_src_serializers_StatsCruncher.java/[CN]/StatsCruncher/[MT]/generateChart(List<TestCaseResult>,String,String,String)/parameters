@@ -1,0 +1,4 @@
+List<TestCaseResult> resultList
+String title
+String lowerValueName
+String higherValueName

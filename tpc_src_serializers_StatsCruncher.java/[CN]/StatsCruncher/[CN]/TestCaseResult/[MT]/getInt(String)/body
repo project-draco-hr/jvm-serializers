@@ -1,0 +1,14 @@
+{
+  try {
+    final Field f=TestCaseResult.class.getDeclaredField(name);
+    f.setAccessible(true);
+    return f.getInt(this);
+  }
+ catch (  IllegalAccessException e) {
+    e.printStackTrace();
+  }
+catch (  NoSuchFieldException e) {
+    e.printStackTrace();
+  }
+  return 0;
+}

@@ -1,4 +1,5 @@
 {
-  group.add(transformer,new BasicSerializer<S>("fast-serialization",true));
-  group.add(transformer,new BasicSerializer<S>("fast-serialization-shared",false));
+  group.add(transformer,new BasicSerializer<S>("fst-flat-pre",true,true),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"fst in unshared mode with preregistered classes"));
+  group.add(transformer,new BasicSerializer<S>("fst-flat",true,false),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,"fst default, but unshared mode"));
+  group.add(transformer,new BasicSerializer<S>("fst",false,false),new SerFeatures(SerFormat.BINARY,SerGraph.FULL_GRAPH,SerClass.ZERO_KNOWLEDGE,"default: JDK serialization drop-in-replacement mode"));
 }

@@ -1,0 +1,39 @@
+{
+  String toChart[]=commaSeparatedNames.split(",");
+  List<TestCaseResult> chartList=new ArrayList<>();
+  if (commaSeparatedNames.equals("*")) {
+    chartList.addAll(resultList);
+  }
+ else {
+    for (int i=0; i < toChart.length; i++) {
+      toChart[i]=toChart[i].trim();
+      TestCaseResult res=mappedResults.get(toChart[i]);
+      if (res == null) {
+        System.out.println("Cannot chart " + toChart[i] + " (not found in stats)");
+      }
+ else {
+        chartList.add(res);
+      }
+    }
+  }
+  chartList=sort(intFieldToSort,chartList);
+  for (int i=0; i < chartList.size(); i++) {
+    TestCaseResult testCaseResult=chartList.get(i);
+    SerFeatures feature=testCaseResult.getFeatures();
+    if (feature != null) {
+      if ((featureFilter.getClz() != null && !featureFilter.getClz().equals(feature.getClz())) || (featureFilter.getFormat() != null && !featureFilter.getFormat().equals(feature.getFormat())) || (featureFilter.getGraph() != null && !featureFilter.getGraph().equals(feature.getGraph()))) {
+        chartList.remove(i--);
+      }
+    }
+ else {
+      System.out.println("feature is unexpectedly null for " + testCaseResult.getName());
+      chartList.remove(i--);
+    }
+  }
+  int min=min(chartList,intFieldToSort);
+  for (int i=0; i < chartList.size(); i++) {
+    TestCaseResult testCaseResult=chartList.get(i);
+    if (min * maxRangeDiff < testCaseResult.getInt(intFieldToSort) || i >= maxListLen)     chartList.remove(i--);
+  }
+  return chartList;
+}

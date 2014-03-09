@@ -1,0 +1,8 @@
+{
+  int min=Integer.MAX_VALUE;
+  for (int i=0; i < resultList.size(); i++) {
+    TestCaseResult testCaseResult=resultList.get(i);
+    min=Math.min(testCaseResult.getInt(arg),min);
+  }
+  return min;
+}

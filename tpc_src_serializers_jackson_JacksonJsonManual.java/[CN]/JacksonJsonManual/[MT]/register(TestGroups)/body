@@ -1,4 +1,4 @@
 {
   JsonFactory factory=new JsonFactory();
-  groups.media.add(JavaBuiltIn.mediaTransformer,new JacksonJsonManual("json/jackson/manual",factory));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new JacksonJsonManual("json/jackson/manual",factory),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
 }

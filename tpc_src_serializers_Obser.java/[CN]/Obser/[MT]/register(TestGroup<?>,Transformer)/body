@@ -1,6 +1,6 @@
 {
-  group.add(transformer,new BasicSerializer<S>());
-  group.add(transformer,new CompactSerializer<S>());
-  group.add(transformer,new CustomSerializer());
-  group.add(transformer,new CustomCompactSerializer());
+  group.add(transformer,new BasicSerializer<S>(),new SerFeatures(SerFormat.BINARY,SerGraph.FULL_GRAPH,SerClass.CLASSES_KNOWN,""));
+  group.add(transformer,new CompactSerializer<S>(),new SerFeatures(SerFormat.BINARY,SerGraph.FULL_GRAPH,SerClass.CLASSES_KNOWN,""));
+  group.add(transformer,new CustomSerializer(),new SerFeatures(SerFormat.BINARY,SerGraph.FULL_GRAPH,SerClass.MANUAL_OPT,""));
+  group.add(transformer,new CustomCompactSerializer(),new SerFeatures(SerFormat.BINARY,SerGraph.FULL_GRAPH,SerClass.MANUAL_OPT,""));
 }

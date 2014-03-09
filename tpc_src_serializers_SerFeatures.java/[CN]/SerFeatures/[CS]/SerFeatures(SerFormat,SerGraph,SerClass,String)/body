@@ -1,0 +1,6 @@
+{
+  this.format=format;
+  this.graph=graph;
+  this.clz=clz;
+  this.description=description;
+}

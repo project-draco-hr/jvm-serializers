@@ -2,5 +2,5 @@
   JsonFactory f=new BsonFactory();
   ObjectMapper mapper=new ObjectMapper(f);
   mapper.registerModule(new BsonModule());
-  groups.media.add(JavaBuiltIn.mediaTransformer,new DataBindBase<MediaContent>("bson/jackson/databind",MediaContent.class,mapper));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new DataBindBase<MediaContent>("bson/jackson/databind",MediaContent.class,mapper),new SerFeatures(SerFormat.BIN_CROSSLANG,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,""));
 }

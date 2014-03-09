@@ -1,0 +1,8 @@
+{
+  String res="\npre.                               create     ser   deser   total   size  +dfl\n";
+  for (int i=0; i < total.size(); i++) {
+    TestCaseResult testCaseResult=total.get(i);
+    res+=testCaseResult.toString() + "\n";
+  }
+  return res + "\n";
+}

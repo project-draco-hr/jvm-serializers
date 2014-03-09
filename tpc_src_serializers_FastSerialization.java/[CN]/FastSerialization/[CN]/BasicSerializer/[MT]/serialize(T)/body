@@ -1,3 +1,11 @@
 {
-  return serializeInternal(content);
+  try {
+    objectOutput.resetForReUse();
+    objectOutput.writeObject(content,type);
+    return objectOutput.getCopyOfWrittenBuffer();
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+  return null;
 }

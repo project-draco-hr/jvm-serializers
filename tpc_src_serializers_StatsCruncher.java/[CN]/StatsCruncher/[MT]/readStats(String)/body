@@ -1,0 +1,26 @@
+{
+  FileInputStream in=new FileInputStream(inputFile);
+  BufferedReader din=new BufferedReader(new InputStreamReader(in));
+  mappedResults=new HashMap<>();
+  resultList=new ArrayList<>();
+  String line;
+  while ((line=din.readLine()) != null) {
+    String split[]=line.split("\\s+");
+    if (split == null || split.length < 2)     continue;
+    String testCase=split[0].trim();
+    if (split[1].trim().length() == 0 || !Character.isDigit(split[1].trim().charAt(0))) {
+      continue;
+    }
+    TestCaseResult res=new TestCaseResult();
+    res.setName(split[0].trim());
+    res.setCreate(Integer.parseInt(split[1].trim()));
+    res.setSer(Integer.parseInt(split[2].trim()));
+    res.setDeser(Integer.parseInt(split[3].trim()));
+    res.setTotal(Integer.parseInt(split[4].trim()));
+    res.setSize(Integer.parseInt(split[5].trim()));
+    res.setCompressedSize(Integer.parseInt(split[6].trim()));
+    mappedResults.put(res.getName(),res);
+    res.setFeatures(mappedFeatures.get(res.getName()));
+    resultList.add(res);
+  }
+}

@@ -1,0 +1,5 @@
+String commaSeparatedNames
+String intFieldToSort
+int maxRangeDiff
+int maxListLen
+SerFeatures featureFilter

@@ -1,7 +1,7 @@
 {
   try {
     objectInput.resetForReuseUseArray(array);
-    return objectInput.readObject();
+    return objectInput.readObject(type);
   }
  catch (  Throwable e) {
     e.printStackTrace();

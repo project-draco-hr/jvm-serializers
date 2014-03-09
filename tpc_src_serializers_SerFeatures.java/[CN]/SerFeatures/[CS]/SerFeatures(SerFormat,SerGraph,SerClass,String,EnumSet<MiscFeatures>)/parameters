@@ -1,0 +1,5 @@
+SerFormat format
+SerGraph graph
+SerClass clz
+String description
+EnumSet<MiscFeatures> features

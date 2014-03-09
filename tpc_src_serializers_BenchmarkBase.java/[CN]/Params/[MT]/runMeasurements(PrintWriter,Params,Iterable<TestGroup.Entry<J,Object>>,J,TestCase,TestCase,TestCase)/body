@@ -23,14 +23,14 @@
     TestCaseRunner<J> runner=new TestCaseRunner<J>(entry.transformer,entry.serializer,value);
     String name=entry.serializer.getName();
     try {
-      warmTest(runner,params.warmupTime,testCreate);
+      warmTest(runner,params.warmupTime / 3,testCreate);
       doGc();
-      double timeCreate=runner.runTakeMin(params.trials,testCreate,params.iterations * 100);
+      double timeCreate=runner.runWithTimeMeasurement(params.testRunMillis / 3,testCreate,params.iterations);
       warmTest(runner,params.warmupTime,testSerialize);
       doGc();
-      double timeSerialize=runner.runTakeMin(params.trials,testSerialize,params.iterations);
+      double timeSerialize=runner.runWithTimeMeasurement(params.testRunMillis,testSerialize,params.iterations);
       doGc();
-      double timeDeserialize=runner.runTakeMin(params.trials,testDeserialize,params.iterations);
+      double timeDeserialize=runner.runWithTimeMeasurement(params.testRunMillis,testDeserialize,params.iterations);
       double totalTime=timeSerialize + timeDeserialize;
       byte[] array=serializeForSize(entry.transformer,entry.serializer,value);
       byte[] compressDeflate=compressDeflate(array);
