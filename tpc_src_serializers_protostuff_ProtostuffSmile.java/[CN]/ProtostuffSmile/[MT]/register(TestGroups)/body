@@ -1,5 +1,4 @@
 {
-  groups.media.add(Protostuff.mediaTransformer,SmileMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"smile + generated code"));
   groups.media.add(JavaBuiltIn.mediaTransformer,SmileManualMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,"smile + manual"));
   groups.media.add(JavaBuiltIn.mediaTransformer,SmileRuntimeMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,"smile + reflection"));
 }
