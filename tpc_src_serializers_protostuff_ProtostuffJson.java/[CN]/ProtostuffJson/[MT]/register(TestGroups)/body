@@ -1,4 +1,4 @@
 {
-  groups.media.add(JavaBuiltIn.mediaTransformer,JsonManualMediaSerializer,new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
-  groups.media.add(JavaBuiltIn.mediaTransformer,JsonRuntimeMediaSerializer,new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,""));
+  groups.media.add(JavaBuiltIn.mediaTransformer,JsonManualMediaSerializer,new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,"json + manual"));
+  groups.media.add(JavaBuiltIn.mediaTransformer,JsonRuntimeMediaSerializer,new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,"json + reflection"));
 }
