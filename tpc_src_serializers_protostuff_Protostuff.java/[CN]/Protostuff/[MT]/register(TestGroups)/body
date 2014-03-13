@@ -1,7 +1,9 @@
 {
   groups.media.add(mediaTransformer,ProtostuffMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"generated code"));
-  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffManualMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
-  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffRuntimeMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,""));
-  groups.media.add(mediaTransformer,ProtobufMediaSerializer,new SerFeatures(SerFormat.BIN_CROSSLANG,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"protobuf serialization + generated code"));
-  groups.media.add(JavaBuiltIn.mediaTransformer,ProtobufRuntimeMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,""));
+  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffManualMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,"manual"));
+  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffRuntimeMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,"reflection"));
+  groups.media.add(mediaTransformer,ProtobufMediaSerializer,new SerFeatures(SerFormat.BIN_CROSSLANG,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"protobuf + generated code"));
+  groups.media.add(JavaBuiltIn.mediaTransformer,ProtobufRuntimeMediaSerializer,new SerFeatures(SerFormat.BIN_CROSSLANG,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,"protobuf + reflection"));
+  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffGraphMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FULL_GRAPH,SerClass.CLASSES_KNOWN,"graph + generated code"));
+  groups.media.add(JavaBuiltIn.mediaTransformer,ProtostuffGraphRuntimeMediaSerializer,new SerFeatures(SerFormat.BINARY,SerGraph.FULL_GRAPH,SerClass.ZERO_KNOWLEDGE,"graph + reflection"));
 }
