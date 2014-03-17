@@ -1,6 +1,6 @@
 {
   String toChart[]=commaSeparatedNames.split(",");
-  List<TestCaseResult> chartList=new ArrayList<>();
+  List<TestCaseResult> chartList=new ArrayList<TestCaseResult>();
   if (commaSeparatedNames.equals("*")) {
     chartList.addAll(resultList);
   }

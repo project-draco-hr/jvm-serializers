@@ -1,8 +1,8 @@
 {
   FileInputStream in=new FileInputStream(inputFile);
   BufferedReader din=new BufferedReader(new InputStreamReader(in));
-  mappedResults=new HashMap<>();
-  resultList=new ArrayList<>();
+  mappedResults=new HashMap<String,TestCaseResult>();
+  resultList=new ArrayList<TestCaseResult>();
   String line;
   while ((line=din.readLine()) != null) {
     String split[]=line.split("\\s+");
