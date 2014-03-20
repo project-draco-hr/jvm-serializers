@@ -1,5 +1,4 @@
 {
-  this.append=append;
   this.binding=binding;
   this.clazz=clazz;
 }

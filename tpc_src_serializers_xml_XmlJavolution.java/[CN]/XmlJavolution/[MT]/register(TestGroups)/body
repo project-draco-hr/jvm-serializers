@@ -1,3 +1,3 @@
 {
-  groups.media.add(JavaBuiltIn.mediaTransformer,new JavolutionSerializer<MediaContent>("",MediaBinding,MediaContent.class),new SerFeatures(SerFormat.XML,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new JavolutionSerializer<MediaContent>(MediaBinding,MediaContent.class),new SerFeatures(SerFormat.XML,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
 }

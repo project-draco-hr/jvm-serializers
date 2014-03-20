@@ -3,5 +3,6 @@
   XMLObjectWriter writer=XMLObjectWriter.newInstance(baos).setBinding(binding);
   writer.write(content,ROOT_ELEMENT,clazz);
   writer.close();
+  baos.close();
   return baos.toByteArray();
 }
