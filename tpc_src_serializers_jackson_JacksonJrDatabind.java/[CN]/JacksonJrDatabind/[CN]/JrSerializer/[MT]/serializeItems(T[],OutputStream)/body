@@ -1,0 +1,7 @@
+{
+  JsonGenerator g=json.getStreamingFactory().createGenerator(out);
+  for (int i=0, len=items.length; i < len; ++i) {
+    json.write(items[i],g);
+  }
+  g.close();
+}

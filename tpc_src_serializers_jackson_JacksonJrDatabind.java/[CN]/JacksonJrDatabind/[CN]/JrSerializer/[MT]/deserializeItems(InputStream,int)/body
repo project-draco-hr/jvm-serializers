@@ -1,0 +1,9 @@
+{
+  @SuppressWarnings("unchecked") T[] result=(T[])Array.newInstance(type,numberOfItems);
+  JsonParser p=json.getStreamingFactory().createParser(in);
+  for (int i=0; i < numberOfItems; ++i) {
+    result[i]=json.beanFrom(type,p);
+  }
+  p.close();
+  return result;
+}
