@@ -1,0 +1,6 @@
+{
+  CBORFactory factory=new CBORFactory();
+  ObjectMapper mapper=new ObjectMapper(factory);
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("CBOR/jackson/databind",MediaContent.class,mapper));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new JacksonJsonManual("CBOR/jackson/manual",factory));
+}
