@@ -1,3 +1,3 @@
 {
-  groups.media.add(JavaBuiltIn.mediaTransformer,new JrSerializer<MediaContent>(MediaContent.class),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,""));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new JrSerializer<MediaContent>(MediaContent.class),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,""));
 }
