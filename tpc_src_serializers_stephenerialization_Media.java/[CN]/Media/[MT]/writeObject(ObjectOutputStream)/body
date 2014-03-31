@@ -1,4 +1,3 @@
 {
-  final StephenerializationService service=StephenerializationLookupService.lookup();
-  service.stephenerialize(this,streamer,Media.class);
+  MediaStephenerializer.stephenerialize(this,streamer);
 }
