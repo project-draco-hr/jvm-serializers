@@ -1,0 +1,13 @@
+{
+  int exitCode=0;
+  try {
+    _main(args);
+  }
+ catch (  Exit exit) {
+    for (    String line : exit.errorLines) {
+      System.err.println(line);
+    }
+    exitCode=exit.code;
+  }
+  System.exit(exitCode);
+}

@@ -1,0 +1,27 @@
+{
+  if (!inputFile.exists()) {
+    throw new Exit(1,"Input file \"" + inputFile.getPath() + "\" doesn't exist.");
+  }
+  if (!inputFile.isFile()) {
+    throw new Exit(1,"Input file \"" + inputFile.getPath() + "\" doesn't refer to a normal file.");
+  }
+  try {
+    FileInputStream fin=new FileInputStream(inputFile);
+    try {
+      return readStats(new InputStreamReader(fin,"UTF-8"));
+    }
+  finally {
+      try {
+        fin.close();
+      }
+ catch (      IOException ex) {
+      }
+    }
+  }
+ catch (  InputError ex) {
+    throw new Exit(1,"Error in input file \"" + inputFile.getPath() + "\": "+ ex.getMessage());
+  }
+catch (  IOException ex) {
+    throw new Exit(1,"Error reading from input file \"" + inputFile.getPath() + "\": "+ ex.getMessage());
+  }
+}

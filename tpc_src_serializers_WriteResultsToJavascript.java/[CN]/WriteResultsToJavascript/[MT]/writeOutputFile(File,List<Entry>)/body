@@ -1,0 +1,19 @@
+{
+  try {
+    FileOutputStream fout=new FileOutputStream(outputFile);
+    try {
+      JsonFactory factory=new JsonFactory();
+      factory.disable(JsonGenerator.Feature.QUOTE_FIELD_NAMES);
+      JsonGenerator gen=factory.createGenerator(fout,JsonEncoding.UTF8);
+      gen.useDefaultPrettyPrinter();
+      fout.write("var benchmarkResults = ".getBytes("UTF-8"));
+      writeJavascriptStats(gen,columns,entries);
+    }
+  finally {
+      fout.close();
+    }
+  }
+ catch (  IOException ex) {
+    throw new Exit(1,"Error writing to output file \"" + outputFile.getPath() + "\": "+ ex.getMessage());
+  }
+}

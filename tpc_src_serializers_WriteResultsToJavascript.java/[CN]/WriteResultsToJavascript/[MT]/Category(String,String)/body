@@ -1,0 +1,5 @@
+{
+  this.ident=ident;
+  this.description=description;
+  this.properties=new ArrayList<Property>();
+}

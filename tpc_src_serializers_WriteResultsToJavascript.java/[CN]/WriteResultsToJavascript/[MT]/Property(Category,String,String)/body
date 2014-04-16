@@ -1,0 +1,6 @@
+{
+  this.ident=ident;
+  this.category=category;
+  this.description=description;
+  category.properties.add(this);
+}

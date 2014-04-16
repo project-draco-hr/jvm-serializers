@@ -1,0 +1,45 @@
+{
+  g.writeStartObject();
+  g.writeArrayFieldStart("categories");
+  for (  Category category : Category.values()) {
+    g.writeStartObject();
+    g.writeStringField("name",category.ident);
+    g.writeStringField("description",category.description);
+    g.writeArrayFieldStart("properties");
+    for (    Property property : category.properties) {
+      g.writeStartObject();
+      g.writeStringField("name",property.ident);
+      g.writeStringField("description",property.description);
+      g.writeEndObject();
+    }
+    g.writeEndArray();
+    g.writeEndObject();
+  }
+  g.writeEndArray();
+  g.writeArrayFieldStart("columns");
+  for (  String column : columns) {
+    g.writeString(column);
+  }
+  g.writeEndArray();
+  g.writeArrayFieldStart("entries");
+  for (  Entry entry : entries) {
+    g.writeStartObject();
+{
+      g.writeStringField("name",entry.name);
+      g.writeArrayFieldStart("properties");
+      for (      Property property : entry.properties) {
+        g.writeString(property.ident);
+      }
+      g.writeEndArray();
+      g.writeArrayFieldStart("results");
+      for (      int i : entry.results) {
+        g.writeNumber(i);
+      }
+      g.writeEndArray();
+    }
+    g.writeEndObject();
+  }
+  g.writeEndArray();
+  g.writeEndObject();
+  g.flush();
+}

@@ -1,0 +1,3 @@
+JsonGenerator g
+String[] columns
+List<Entry> entries

@@ -1,0 +1,11 @@
+{
+  if (args.length != 2) {
+    throw new Exit(1,"Usage: COMMAND <input-stats.txt> <output-stats.js>");
+  }
+  File inputFile=new File(args[0]);
+  File outputFile=new File(args[1]);
+  List<Entry> entries=readInputFile(inputFile);
+  loadEntryProperties(entries);
+  calculateSpeedProperties(entries);
+  writeOutputFile(outputFile,entries);
+}

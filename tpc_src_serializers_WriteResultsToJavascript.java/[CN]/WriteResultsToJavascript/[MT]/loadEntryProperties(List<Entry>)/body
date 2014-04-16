@@ -1,0 +1,28 @@
+{
+  Map<String,SerFeatures> featureMap=new BenchmarkExporter().getFeatureMap();
+  for (  Entry e : entries) {
+    SerFeatures f=featureMap.get(e.name);
+    if (f == null) {
+      throw new Exit(1,"Unable to load serializer features for \"" + e.name + "\".","Are you sure this serializer name is still valid in the benchmark code?");
+    }
+switch (f.format) {
+case BINARY:
+      e.properties.add(Property.Binary);
+    break;
+case BIN_CROSSLANG:
+  e.properties.add(Property.Binary);
+e.properties.add(Property.Neutral);
+break;
+case XML:
+e.properties.add(Property.Xml);
+e.properties.add(Property.Text);
+e.properties.add(Property.Neutral);
+break;
+case JSON:
+e.properties.add(Property.Json);
+e.properties.add(Property.Text);
+e.properties.add(Property.Neutral);
+break;
+}
+}
+}

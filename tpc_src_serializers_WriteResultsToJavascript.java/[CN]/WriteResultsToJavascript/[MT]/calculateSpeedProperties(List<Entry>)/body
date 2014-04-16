@@ -1,0 +1,19 @@
+{
+  int[] times=new int[entries.size()];
+  int i=0;
+  for (  Entry e : entries) {
+    times[i++]=e.results.get(roundTripColumnIndex);
+  }
+  Arrays.sort(times);
+  int p50=times[(times.length + 1) / 2];
+  int p75=times[(times.length * 3) / 4];
+  for (  Entry e : entries) {
+    int time=e.results.get(roundTripColumnIndex);
+    if (time <= p50) {
+      e.properties.add(Property.Fast);
+    }
+    if (time > p75) {
+      e.properties.add(Property.Slow);
+    }
+  }
+}
