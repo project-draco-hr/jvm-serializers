@@ -1,0 +1,4 @@
+{
+  super(handler,"kryo-opt");
+  handler.optimize(this.kryo);
+}

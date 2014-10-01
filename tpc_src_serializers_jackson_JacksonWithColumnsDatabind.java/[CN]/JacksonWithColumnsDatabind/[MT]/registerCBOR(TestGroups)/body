@@ -1,0 +1,5 @@
+{
+  ObjectMapper cborMapper=new ObjectMapper(new com.fasterxml.jackson.dataformat.cbor.CBORFactory());
+  cborMapper.setAnnotationIntrospector(new AsArrayIntrospector());
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("cbor-col/jackson/databind",MediaContent.class,cborMapper),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,STD_DESC));
+}

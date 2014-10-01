@@ -1,5 +1,0 @@
-{
-  ObjectMapper mapper=new ObjectMapper(new CBORFactory());
-  mapper.registerModule(new AfterburnerModule());
-  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("cbor/jackson+afterburner/databind",MediaContent.class,mapper),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,"uses bytecode generation to reduce overhead"));
-}

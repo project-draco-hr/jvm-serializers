@@ -17,10 +17,8 @@
   CksBinary.register(groups);
   MsgPack.register(groups);
   JacksonCBORDatabind.register(groups);
-  JacksonCBORAfterburner.register(groups);
   JacksonJsonManual.register(groups);
   JacksonJsonDatabind.register(groups);
-  JacksonJsonAfterburner.register(groups);
   JacksonJrDatabind.register(groups);
   JavaxJsonTreeGlassfish.register(groups);
   JavaxJsonStreamGlassfish.register(groups);
@@ -42,7 +40,6 @@
   CksText.register(groups);
   JacksonSmileManual.register(groups);
   JacksonSmileDatabind.register(groups);
-  JacksonSmileAfterburner.register(groups);
   JacksonBsonDatabind.register(groups);
   MongoDB.register(groups);
   JacksonYAMLDatabind.register(groups);
@@ -52,4 +49,6 @@
   XmlJavolution.register(groups);
   XmlStax.register(groups,false,false,true);
   ExiExificient.register(groups);
+  JacksonWithAfterburner.registerAll(groups);
+  JacksonWithColumnsDatabind.registerAll(groups);
 }

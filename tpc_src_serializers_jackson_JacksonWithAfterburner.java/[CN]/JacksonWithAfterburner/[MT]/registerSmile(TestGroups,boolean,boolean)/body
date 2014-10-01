@@ -1,0 +1,8 @@
+{
+  SmileFactory f=new SmileFactory();
+  f.configure(SmileGenerator.Feature.CHECK_SHARED_NAMES,shareNames);
+  f.configure(SmileGenerator.Feature.CHECK_SHARED_STRING_VALUES,shareValues);
+  ObjectMapper smileMapper=new ObjectMapper(f);
+  smileMapper.registerModule(new AfterburnerModule());
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("smile/jackson+afterburner/databind",MediaContent.class,smileMapper),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,STD_DESC));
+}

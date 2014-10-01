@@ -10,10 +10,10 @@
   AvroSpecific.register(groups);
   JacksonJsonManual.register(groups);
   JacksonJsonDatabind.register(groups);
-  JacksonJsonAfterburner.register(groups);
+  JacksonWithAfterburner.registerJSON(groups);
   JacksonSmileManual.register(groups,true,true);
   JacksonSmileDatabind.register(groups,true,true);
-  JacksonSmileAfterburner.register(groups,true,true);
+  JacksonWithAfterburner.registerSmile(groups,true,true);
   CksText.register(groups);
   XmlStax.register(groups,false,true,true);
 }

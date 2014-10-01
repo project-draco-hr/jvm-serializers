@@ -1,4 +1,0 @@
-{
-  super(handler);
-  handler.optimize(this.kryo);
-}

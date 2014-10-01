@@ -1,0 +1,3 @@
+TypeHandler<T> handler
+boolean shared
+String name

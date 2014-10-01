@@ -1,0 +1,7 @@
+{
+  group.add(transformer,new DefaultSerializer<S>(handler,true,"kryo-serializer"),new SerFeatures(SerFormat.BINARY,SerGraph.FULL_GRAPH,SerClass.ZERO_KNOWLEDGE,"default"));
+  group.add(transformer,new DefaultSerializer<S>(handler,false,"kryo-flat"),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,"default, no shared refs"));
+  group.add(transformer,new BasicSerializer<S>(handler,"kryo-flat-pre"),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"no shared refs, preregistered classes"));
+  group.add(transformer,new OptimizedSerializer<S>(handler),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,"manually optimized"));
+  group.add(transformer,new CustomSerializer<S>(handler),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.MANUAL_OPT,"manually optimized"));
+}

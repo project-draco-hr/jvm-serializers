@@ -1,0 +1,8 @@
+{
+  this.type=handler.type;
+  this.kryo=new com.esotericsoftware.kryo.Kryo();
+  kryo.setReferences(false);
+  kryo.setRegistrationRequired(true);
+  this.name=name;
+  handler.register(this.kryo);
+}

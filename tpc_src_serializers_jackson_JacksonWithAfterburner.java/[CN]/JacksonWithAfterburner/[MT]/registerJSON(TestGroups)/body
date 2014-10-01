@@ -1,0 +1,5 @@
+{
+  ObjectMapper mapper=new ObjectMapper(new JsonFactory());
+  mapper.registerModule(new AfterburnerModule());
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("json/jackson+afterburner/databind",MediaContent.class,mapper),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,STD_DESC));
+}

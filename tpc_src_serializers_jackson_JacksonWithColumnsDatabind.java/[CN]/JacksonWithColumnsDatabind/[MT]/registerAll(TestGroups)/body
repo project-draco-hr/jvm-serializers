@@ -1,0 +1,5 @@
+{
+  registerJSON(groups);
+  registerSmile(groups);
+  registerCBOR(groups);
+}
