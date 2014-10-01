@@ -17,6 +17,7 @@
   CksBinary.register(groups);
   MsgPack.register(groups);
   JacksonCBORDatabind.register(groups);
+  JacksonCBORAfterburner.register(groups);
   JacksonJsonManual.register(groups);
   JacksonJsonDatabind.register(groups);
   JacksonJsonAfterburner.register(groups);

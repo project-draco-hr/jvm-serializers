@@ -1,4 +1,0 @@
-{
-  String input=new String(array,"UTF-8");
-  return (T)mapper.readValue(input,type);
-}

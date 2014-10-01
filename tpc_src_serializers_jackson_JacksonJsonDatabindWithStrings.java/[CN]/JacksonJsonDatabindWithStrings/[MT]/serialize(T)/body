@@ -1,3 +1,0 @@
-{
-  return mapper.writeValueAsString(data).getBytes(("UTF-8"));
-}

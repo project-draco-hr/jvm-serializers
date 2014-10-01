@@ -1,8 +1,8 @@
 {
-  String res="\npre.                               Effort          Format         Structure  Misc\n";
+  String res="\n<pre>                                   Effort          Format         Structure  Misc\n";
   for (int i=0; i < total.size(); i++) {
     TestCaseResult testCaseResult=total.get(i);
     res+=testCaseResult.getFeatures().toString(testCaseResult.getName()) + "\n";
   }
-  return res + "\n";
+  return res + "</pre>\n";
 }

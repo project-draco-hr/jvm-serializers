@@ -4,5 +4,5 @@
   f.configure(SmileGenerator.Feature.CHECK_SHARED_STRING_VALUES,sharedValues);
   ObjectMapper smileMapper=new ObjectMapper(f);
   smileMapper.registerModule(new AfterburnerModule());
-  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("smile/jackson+afterburner/databind",MediaContent.class,smileMapper),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,""));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new StdJacksonDataBind<MediaContent>("smile/jackson+afterburner/databind",MediaContent.class,smileMapper),new SerFeatures(SerFormat.BINARY,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,"uses bytecode generation to reduce overhead"));
 }
