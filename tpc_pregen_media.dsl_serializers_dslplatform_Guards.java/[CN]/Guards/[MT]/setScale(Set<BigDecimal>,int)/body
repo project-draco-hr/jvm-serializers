@@ -1,0 +1,6 @@
+{
+  if (values == null)   return null;
+  final HashSet<BigDecimal> result=new HashSet<BigDecimal>(values.size());
+  for (  final BigDecimal value : values)   result.add(value != null ? setScale(value,scale) : null);
+  return result;
+}

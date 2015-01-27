@@ -1,0 +1,58 @@
+{
+  if (this.uri != null && !(this.uri.length() == 0)) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"uri\":");
+    com.dslplatform.client.json.StringConverter.serialize(this.uri,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"uri\":\"\"");
+  }
+  if (this.title != null) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"title\":");
+    com.dslplatform.client.json.StringConverter.serializeNullable(this.title,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"title\":null");
+  }
+  if (this.width != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"width\":");
+    com.dslplatform.client.json.NumberConverter.serialize(this.width,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"width\":0");
+  }
+  if (this.height != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"height\":");
+    com.dslplatform.client.json.NumberConverter.serialize(this.height,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"height\":0");
+  }
+  if (this.size != serializers.dslplatform.media.Size.SMALL) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"size\":\"");
+    sw.writeAscii(this.size.name());
+    sw.writeByte(com.dslplatform.client.json.JsonWriter.QUOTE);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"size\":\"SMALL\"");
+  }
+}

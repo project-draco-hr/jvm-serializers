@@ -1,0 +1,5 @@
+{
+  if (value == null)   throw new IllegalArgumentException("Property \"format\" cannot be null!");
+  this.format=value;
+  return this;
+}

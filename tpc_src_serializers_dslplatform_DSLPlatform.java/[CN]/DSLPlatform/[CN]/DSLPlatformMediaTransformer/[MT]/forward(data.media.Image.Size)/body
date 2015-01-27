@@ -1,0 +1,10 @@
+{
+switch (size) {
+case SMALL:
+    return Size.SMALL;
+case LARGE:
+  return Size.LARGE;
+default :
+throw new AssertionError("invalid case: " + size);
+}
+}

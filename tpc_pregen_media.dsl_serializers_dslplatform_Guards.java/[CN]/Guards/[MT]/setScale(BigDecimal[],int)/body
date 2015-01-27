@@ -1,0 +1,7 @@
+{
+  if (values == null)   return null;
+  final BigDecimal[] result=new BigDecimal[values.length];
+  int i=0;
+  for (  final BigDecimal value : values)   result[i++]=value != null ? setScale(value,scale) : null;
+  return result;
+}

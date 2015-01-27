@@ -1,0 +1,10 @@
+{
+switch (size) {
+case SMALL:
+    return data.media.Image.Size.SMALL;
+case LARGE:
+  return data.media.Image.Size.LARGE;
+default :
+throw new AssertionError("invalid case: " + size);
+}
+}

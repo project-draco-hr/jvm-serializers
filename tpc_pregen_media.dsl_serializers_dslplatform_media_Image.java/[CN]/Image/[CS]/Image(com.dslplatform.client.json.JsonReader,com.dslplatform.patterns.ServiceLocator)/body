@@ -1,0 +1,118 @@
+{
+  String _uri_="";
+  String _title_=null;
+  int _width_=0;
+  int _height_=0;
+  serializers.dslplatform.media.Size _size_=serializers.dslplatform.media.Size.SMALL;
+  byte nextToken=reader.last();
+  if (nextToken != '}') {
+    int nameHash=reader.fillName();
+    nextToken=reader.getNextToken();
+    if (nextToken == 'n') {
+      if (reader.wasNull()) {
+        nextToken=reader.getNextToken();
+      }
+ else {
+        throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+      }
+    }
+ else {
+switch (nameHash) {
+case 932140029:
+        _uri_=com.dslplatform.client.json.StringConverter.deserialize(reader);
+      nextToken=reader.getNextToken();
+    break;
+case -1738164983:
+  _title_=com.dslplatform.client.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+case -1786286561:
+_width_=com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.moveToNextToken();
+break;
+case -708986046:
+_height_=com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.moveToNextToken();
+break;
+case 597743964:
+if (nextToken == '"') {
+switch (reader.calcHash()) {
+case -2045258836:
+_size_=serializers.dslplatform.media.Size.SMALL;
+break;
+case -1271305644:
+_size_=serializers.dslplatform.media.Size.LARGE;
+break;
+default :
+throw new java.io.IOException("Unknown enum value: '" + reader.getLastName() + "' at position "+ reader.positionInStream());
+}
+nextToken=reader.getNextToken();
+}
+ else throw new java.io.IOException("Expecting '\"' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+break;
+default :
+nextToken=reader.skip();
+break;
+}
+}
+while (nextToken == ',') {
+nextToken=reader.getNextToken();
+nameHash=reader.fillName();
+nextToken=reader.getNextToken();
+if (nextToken == 'n') {
+if (reader.wasNull()) {
+nextToken=reader.getNextToken();
+continue;
+}
+ else {
+throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+}
+}
+switch (nameHash) {
+case 932140029:
+_uri_=com.dslplatform.client.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+case -1738164983:
+_title_=com.dslplatform.client.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+case -1786286561:
+_width_=com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.moveToNextToken();
+break;
+case -708986046:
+_height_=com.dslplatform.client.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.moveToNextToken();
+break;
+case 597743964:
+if (nextToken == '"') {
+switch (reader.calcHash()) {
+case -2045258836:
+_size_=serializers.dslplatform.media.Size.SMALL;
+break;
+case -1271305644:
+_size_=serializers.dslplatform.media.Size.LARGE;
+break;
+default :
+throw new java.io.IOException("Unknown enum value: '" + reader.getLastName() + "' at position "+ reader.positionInStream());
+}
+nextToken=reader.getNextToken();
+}
+ else throw new java.io.IOException("Expecting '\"' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+break;
+default :
+nextToken=reader.skip();
+break;
+}
+}
+if (nextToken != '}') {
+throw new java.io.IOException("Expecting '}' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+}
+}
+this.uri=_uri_;
+this.title=_title_;
+this.width=_width_;
+this.height=_height_;
+this.size=_size_;
+}

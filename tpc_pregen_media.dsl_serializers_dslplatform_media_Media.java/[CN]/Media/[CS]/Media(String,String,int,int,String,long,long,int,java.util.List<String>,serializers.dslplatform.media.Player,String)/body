@@ -1,0 +1,13 @@
+{
+  setUri(uri);
+  setTitle(title);
+  setWidth(width);
+  setHeight(height);
+  setFormat(format);
+  setDuration(duration);
+  setSize(size);
+  setBitrate(bitrate);
+  setPersons(persons);
+  setPlayer(player);
+  setCopyright(copyright);
+}

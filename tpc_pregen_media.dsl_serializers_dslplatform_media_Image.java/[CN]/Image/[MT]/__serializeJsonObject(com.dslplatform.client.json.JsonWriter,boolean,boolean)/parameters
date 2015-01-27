@@ -1,0 +1,3 @@
+com.dslplatform.client.json.JsonWriter sw
+boolean minimal
+boolean hasWrittenProperty

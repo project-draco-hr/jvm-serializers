@@ -1,0 +1,8 @@
+{
+  try {
+    if (value != null)     value.setScale(scale);
+  }
+ catch (  final ArithmeticException e) {
+    throw new IllegalArgumentException("Decimal places allowed: " + scale + ". Value: "+ value,e);
+  }
+}

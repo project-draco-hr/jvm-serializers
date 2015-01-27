@@ -1,0 +1,11 @@
+{
+  this.uri="";
+  this.width=0;
+  this.height=0;
+  this.format="";
+  this.duration=0L;
+  this.size=0L;
+  this.bitrate=0;
+  this.persons=new java.util.ArrayList<String>();
+  this.player=serializers.dslplatform.media.Player.JAVA;
+}

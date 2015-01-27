@@ -1,0 +1,129 @@
+{
+  if (this.uri != null && !(this.uri.length() == 0)) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"uri\":");
+    com.dslplatform.client.json.StringConverter.serialize(this.uri,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"uri\":\"\"");
+  }
+  if (this.title != null) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"title\":");
+    com.dslplatform.client.json.StringConverter.serializeNullable(this.title,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"title\":null");
+  }
+  if (this.width != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"width\":");
+    com.dslplatform.client.json.NumberConverter.serialize(this.width,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"width\":0");
+  }
+  if (this.height != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"height\":");
+    com.dslplatform.client.json.NumberConverter.serialize(this.height,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"height\":0");
+  }
+  if (this.format != null && !(this.format.length() == 0)) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"format\":");
+    com.dslplatform.client.json.StringConverter.serialize(this.format,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"format\":\"\"");
+  }
+  if (this.duration != 0L) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"duration\":");
+    com.dslplatform.client.json.NumberConverter.serialize(this.duration,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"duration\":0");
+  }
+  if (this.size != 0L) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"size\":");
+    com.dslplatform.client.json.NumberConverter.serialize(this.size,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"size\":0");
+  }
+  if (this.bitrate != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"bitrate\":");
+    com.dslplatform.client.json.NumberConverter.serialize(this.bitrate,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"bitrate\":0");
+  }
+  if (this.persons.size() != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"persons\":[");
+    com.dslplatform.client.json.StringConverter.serialize(this.persons.get(0),sw);
+    for (int i=1; i < this.persons.size(); i++) {
+      sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+      com.dslplatform.client.json.StringConverter.serialize(this.persons.get(i),sw);
+    }
+    sw.writeByte(com.dslplatform.client.json.JsonWriter.ARRAY_END);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"persons\":[]");
+  }
+  if (this.player != serializers.dslplatform.media.Player.JAVA) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"player\":\"");
+    sw.writeAscii(this.player.name());
+    sw.writeByte(com.dslplatform.client.json.JsonWriter.QUOTE);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"player\":\"JAVA\"");
+  }
+  if (this.copyright != null) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"copyright\":");
+    com.dslplatform.client.json.StringConverter.serializeNullable(this.copyright,sw);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"copyright\":null");
+  }
+}

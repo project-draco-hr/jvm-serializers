@@ -1,0 +1,16 @@
+{
+  final int prime=31;
+  int result=1;
+  result=prime * result + 74219460;
+  result=prime * result + (this.uri.hashCode());
+  result=prime * result + (this.title != null ? this.title.hashCode() : 0);
+  result=prime * result + (this.width);
+  result=prime * result + (this.height);
+  result=prime * result + (this.format.hashCode());
+  result=prime * result + ((int)(this.duration ^ (this.duration >>> 32)));
+  result=prime * result + ((int)(this.size ^ (this.size >>> 32)));
+  result=prime * result + (this.bitrate);
+  result=prime * result + (this.player.hashCode());
+  result=prime * result + (this.copyright != null ? this.copyright.hashCode() : 0);
+  return result;
+}

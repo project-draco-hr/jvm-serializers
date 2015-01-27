@@ -1,0 +1,3 @@
+{
+  return value.setScale(scale,BigDecimal.ROUND_HALF_UP);
+}

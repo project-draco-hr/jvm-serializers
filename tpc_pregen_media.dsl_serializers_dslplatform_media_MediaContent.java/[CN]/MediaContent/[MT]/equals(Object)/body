@@ -1,0 +1,9 @@
+{
+  if (this == obj)   return true;
+  if (obj == null)   return false;
+  if (!(obj instanceof MediaContent))   return false;
+  final MediaContent other=(MediaContent)obj;
+  if (!(this.media.equals(other.media)))   return false;
+  if (!((this.images == other.images || this.images != null && this.images.equals(other.images))))   return false;
+  return true;
+}

@@ -1,0 +1,31 @@
+{
+  if (this.media != null) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"media\":");
+    this.media.serialize(sw,minimal);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"media\":null");
+  }
+  if (this.images.size() != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"images\":[");
+    serializers.dslplatform.media.Image item=this.images.get(0);
+    item.serialize(sw,minimal);
+    for (int i=1; i < this.images.size(); i++) {
+      sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+      item=this.images.get(i);
+      item.serialize(sw,minimal);
+    }
+    sw.writeByte(com.dslplatform.client.json.JsonWriter.ARRAY_END);
+  }
+ else   if (!minimal) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.client.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"images\":[]");
+  }
+}

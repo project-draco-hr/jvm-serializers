@@ -1,0 +1,5 @@
+{
+  if (value == null)   throw new IllegalArgumentException("Property \"uri\" cannot be null!");
+  this.uri=value;
+  return this;
+}

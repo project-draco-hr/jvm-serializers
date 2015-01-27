@@ -1,0 +1,6 @@
+{
+  this.uri="";
+  this.width=0;
+  this.height=0;
+  this.size=serializers.dslplatform.media.Size.SMALL;
+}

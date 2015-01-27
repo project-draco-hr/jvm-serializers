@@ -1,0 +1,11 @@
+String uri
+String title
+int width
+int height
+String format
+long duration
+long size
+int bitrate
+java.util.List<String> persons
+serializers.dslplatform.media.Player player
+String copyright

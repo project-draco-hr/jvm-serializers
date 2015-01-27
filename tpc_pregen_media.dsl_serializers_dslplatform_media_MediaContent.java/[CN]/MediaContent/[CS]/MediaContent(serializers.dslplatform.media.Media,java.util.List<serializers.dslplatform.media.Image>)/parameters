@@ -1,0 +1,2 @@
+serializers.dslplatform.media.Media media
+java.util.List<serializers.dslplatform.media.Image> images

@@ -1,0 +1,12 @@
+{
+  if (left == null && right == null)   return true;
+  if (left == null || right == null)   return false;
+  final Iterator<byte[]> leftIterator=left.iterator();
+  final Iterator<byte[]> rightIterator=right.iterator();
+  while (leftIterator.hasNext() && rightIterator.hasNext()) {
+    final byte[] l=leftIterator.next();
+    final byte[] r=rightIterator.next();
+    if (!Arrays.equals(l,r))     return false;
+  }
+  return leftIterator.hasNext() == rightIterator.hasNext();
+}

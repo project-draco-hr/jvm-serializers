@@ -1,0 +1,8 @@
+{
+  if (values == null)   return;
+  int i=0;
+  for (  final String value : values) {
+    if (value != null && value.length() > length)     throw new IllegalArgumentException("Invalid value for element at index " + i + ". Maximum length allowed: "+ length+ ". Value: "+ value);
+    i++;
+  }
+}
