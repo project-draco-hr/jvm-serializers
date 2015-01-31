@@ -3,5 +3,5 @@
   type=mapper.constructType(clazz);
   this.mapper=mapper;
   objectReader=mapper.reader(type);
-  objectWriter=mapper.writerWithType(type);
+  objectWriter=mapper.writerFor(type);
 }
