@@ -1,3 +1,0 @@
-{
-  groups.media.add(JavaBuiltIn.mediaTransformer,new BoonDatabind<MediaContent>("json/boon/databind",MediaContent.class),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.ZERO_KNOWLEDGE,""));
-}
