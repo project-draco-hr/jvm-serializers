@@ -1,3 +1,4 @@
 {
-  groups.media.add(new DSLPlatformMediaTransformer(),new DSLPlatformSerializer(),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,""));
+  groups.media.add(new DSLPlatformMediaTransformer(),new DSLPlatformSerializer(false),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"Serializes all properties."));
+  groups.media.add(new DSLPlatformMediaTransformer(),new DSLPlatformSerializer(true),new SerFeatures(SerFormat.JSON,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,"Omits default values from the JSON output."));
 }
