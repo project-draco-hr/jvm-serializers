@@ -51,5 +51,6 @@
   ExiExificient.register(groups);
   JacksonWithAfterburner.registerAll(groups);
   JacksonWithColumnsDatabind.registerAll(groups);
+  DataKernelSerializer.register(groups);
   DSLPlatform.register(groups);
 }
