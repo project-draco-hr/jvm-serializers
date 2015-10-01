@@ -1,3 +1,3 @@
 {
-  serializer=SerializerBuilder.newDefaultInstance(ClassLoader.getSystemClassLoader()).registry(Integer.TYPE,new SerializerGenInt(true)).registry(Integer.class,new SerializerGenInt(true)).registry(Long.TYPE,new SerializerGenLong(true)).registry(Long.class,new SerializerGenLong(true)).create(DMediaContent.class);
+  serializer=SerializerBuilder.newDefaultInstance(ClassLoader.getSystemClassLoader()).create(DMediaContent.class);
 }
