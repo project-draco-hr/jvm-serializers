@@ -1,0 +1,4 @@
+{
+  this.bitrate=bitrate;
+  this.hasBitrate=true;
+}

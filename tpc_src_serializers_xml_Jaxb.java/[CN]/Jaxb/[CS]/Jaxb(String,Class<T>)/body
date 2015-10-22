@@ -1,0 +1,9 @@
+{
+  this.name=name;
+  try {
+    jaxbContext=JAXBContext.newInstance(JaxbMediaContent.class);
+  }
+ catch (  JAXBException e) {
+    throw new IllegalStateException(e);
+  }
+}

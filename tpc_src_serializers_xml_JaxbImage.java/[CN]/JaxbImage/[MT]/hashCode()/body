@@ -1,0 +1,8 @@
+{
+  int result=uri != null ? uri.hashCode() : 0;
+  result=31 * result + (title != null ? title.hashCode() : 0);
+  result=31 * result + width;
+  result=31 * result + height;
+  result=31 * result + (size != null ? size.hashCode() : 0);
+  return result;
+}

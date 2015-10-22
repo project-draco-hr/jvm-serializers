@@ -1,4 +1,6 @@
 {
+  JaxbAalto.register(groups);
+  Jaxb.register(groups);
   JavaBuiltIn.register(groups);
   JavaManual.register(groups);
   Stephenerialization.register(groups);

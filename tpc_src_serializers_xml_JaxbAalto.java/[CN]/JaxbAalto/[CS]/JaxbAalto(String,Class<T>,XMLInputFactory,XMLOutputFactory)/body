@@ -3,7 +3,7 @@
   inputFactory=inputF;
   outputFactory=outputF;
   try {
-    jaxbContext=JAXBContext.newInstance(clazz);
+    jaxbContext=JAXBContext.newInstance(JaxbMediaContent.class);
   }
  catch (  JAXBException e) {
     throw new IllegalStateException(e);

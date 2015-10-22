@@ -1,0 +1,3 @@
+{
+  return new MediaContent(convert2Media(mc.media),Collections.<Image>emptyList());
+}

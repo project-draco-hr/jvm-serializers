@@ -1,0 +1,12 @@
+{
+  ByteArrayOutputStream baos=outputStream(data);
+  try {
+    XMLStreamWriter sw=outputFactory.createXMLStreamWriter(baos,"UTF-8");
+    jaxbContext.createMarshaller().marshal(data,sw);
+    sw.close();
+  }
+ catch (  Exception e) {
+    throw new IOException(e);
+  }
+  return baos.toByteArray();
+}

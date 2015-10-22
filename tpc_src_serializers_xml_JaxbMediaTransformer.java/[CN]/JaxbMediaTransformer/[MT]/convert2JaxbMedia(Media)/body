@@ -1,0 +1,3 @@
+{
+  return new JaxbMedia(m.uri,m.title,m.width,m.height,m.format,m.duration,m.size,m.bitrate,m.hasBitrate,new ArrayList<String>(m.persons),JaxbMedia.Player.JAVA,m.copyright);
+}

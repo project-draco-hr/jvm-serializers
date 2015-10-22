@@ -1,0 +1,7 @@
+{
+  List<JaxbImage> images=new ArrayList<JaxbImage>(mc.images.size());
+  for (  Image i : mc.images) {
+    images.add(new JaxbImage(i.uri,i.title,i.width,i.height,i.size == null ? null : i.size.equals(Image.Size.LARGE) ? JaxbImage.Size.LARGE : JaxbImage.Size.SMALL));
+  }
+  return new JaxbMediaContent(convert2JaxbMedia(mc.media),images);
+}
