@@ -1,3 +1,3 @@
 {
-  groups.media.add(new JaxbMediaTransformer(),new JaxbAalto<>("xml/JAXB/aalto",JaxbMediaContent.class,new InputFactoryImpl(),new OutputFactoryImpl()),new SerFeatures(SerFormat.XML,SerGraph.FULL_GRAPH,SerClass.CLASSES_KNOWN,""));
+  groups.media.add(JavaBuiltIn.mediaTransformer,new JaxbAalto<>("xml/JAXB/aalto",MediaContent.class,new InputFactoryImpl(),new OutputFactoryImpl()),new SerFeatures(SerFormat.XML,SerGraph.FULL_GRAPH,SerClass.CLASSES_KNOWN,""));
 }

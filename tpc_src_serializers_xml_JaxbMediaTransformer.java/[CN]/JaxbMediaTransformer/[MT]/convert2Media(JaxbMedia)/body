@@ -1,3 +1,0 @@
-{
-  return new Media(m.uri,m.title,m.width,m.height,m.format,m.duration,m.size,m.bitrate,m.hasBitrate,new ArrayList<String>(m.persons),Media.Player.JAVA,m.copyright);
-}

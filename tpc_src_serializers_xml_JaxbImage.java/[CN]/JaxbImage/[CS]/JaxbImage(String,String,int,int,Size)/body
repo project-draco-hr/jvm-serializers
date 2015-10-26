@@ -1,7 +1,0 @@
-{
-  this.height=height;
-  this.title=title;
-  this.uri=uri;
-  this.width=width;
-  this.size=size;
-}
