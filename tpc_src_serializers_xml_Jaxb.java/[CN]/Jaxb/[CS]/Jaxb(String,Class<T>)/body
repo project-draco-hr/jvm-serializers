@@ -1,9 +1,7 @@
 {
   this.name=name;
-  inputFactory=inputF;
-  outputFactory=outputF;
   try {
-    jaxbContext=JAXBContext.newInstance(clazz);
+    jaxbContext=JAXBContext.newInstance(MediaContent.class);
   }
  catch (  JAXBException e) {
     throw new IllegalStateException(e);
