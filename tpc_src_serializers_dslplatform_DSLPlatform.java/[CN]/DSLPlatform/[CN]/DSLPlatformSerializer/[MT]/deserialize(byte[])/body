@@ -1,3 +1,0 @@
-{
-  return (MediaContent)MediaContent.deserialize(new JsonReader(array,null),null);
-}

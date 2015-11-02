@@ -1,0 +1,3 @@
+{
+  return player == data.media.Media.Player.JAVA ? Player.JAVA : Player.FLASH;
+}

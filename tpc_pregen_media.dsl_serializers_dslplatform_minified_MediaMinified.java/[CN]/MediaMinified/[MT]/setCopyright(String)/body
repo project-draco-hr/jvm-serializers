@@ -1,0 +1,4 @@
+{
+  this.copyright=value;
+  return this;
+}

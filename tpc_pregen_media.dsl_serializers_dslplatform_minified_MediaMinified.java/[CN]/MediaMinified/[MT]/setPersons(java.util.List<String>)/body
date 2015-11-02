@@ -1,0 +1,6 @@
+{
+  if (value == null)   throw new IllegalArgumentException("Property \"persons\" cannot be null!");
+  serializers.dslplatform.Guards.checkNulls(value);
+  this.persons=value;
+  return this;
+}

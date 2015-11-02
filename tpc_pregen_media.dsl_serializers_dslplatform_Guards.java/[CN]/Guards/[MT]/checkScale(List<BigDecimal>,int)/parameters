@@ -1,0 +1,2 @@
+List<BigDecimal> values
+int scale

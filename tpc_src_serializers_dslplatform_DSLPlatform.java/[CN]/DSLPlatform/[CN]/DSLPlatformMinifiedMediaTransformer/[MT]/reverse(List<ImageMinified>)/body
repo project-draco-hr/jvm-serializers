@@ -1,0 +1,7 @@
+{
+  final ArrayList<data.media.Image> reversed=new ArrayList<data.media.Image>(images.size());
+  for (  final ImageMinified image : images) {
+    reversed.add(reverse(image));
+  }
+  return reversed;
+}

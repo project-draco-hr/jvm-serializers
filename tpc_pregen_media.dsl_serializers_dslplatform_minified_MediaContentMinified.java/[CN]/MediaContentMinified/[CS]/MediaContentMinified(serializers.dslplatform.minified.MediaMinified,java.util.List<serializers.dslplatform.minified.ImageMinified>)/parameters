@@ -1,0 +1,2 @@
+serializers.dslplatform.minified.MediaMinified media
+java.util.List<serializers.dslplatform.minified.ImageMinified> images

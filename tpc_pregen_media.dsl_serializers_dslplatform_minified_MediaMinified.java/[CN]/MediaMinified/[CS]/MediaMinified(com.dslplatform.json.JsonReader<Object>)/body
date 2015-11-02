@@ -1,0 +1,190 @@
+{
+  String _uri_="";
+  String _title_=null;
+  int _width_=0;
+  int _height_=0;
+  String _format_="";
+  long _duration_=0L;
+  long _size_=0L;
+  int _bitrate_=0;
+  java.util.List<String> _persons_=new java.util.ArrayList<String>(4);
+  serializers.dslplatform.shared.Player _player_=serializers.dslplatform.shared.Player.JAVA;
+  String _copyright_=null;
+  byte nextToken=reader.last();
+  if (nextToken != '}') {
+    int nameHash=reader.fillName();
+    nextToken=reader.getNextToken();
+    if (nextToken == 'n') {
+      if (reader.wasNull()) {
+        nextToken=reader.getNextToken();
+      }
+ else {
+        throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+      }
+    }
+ else {
+switch (nameHash) {
+case -267633648:
+        _uri_=com.dslplatform.json.StringConverter.deserialize(reader);
+      nextToken=reader.getNextToken();
+    break;
+case -250856029:
+  _title_=com.dslplatform.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+case -234078410:
+_width_=com.dslplatform.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.getNextToken();
+break;
+case -317966505:
+_height_=com.dslplatform.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.getNextToken();
+break;
+case -485742695:
+_format_=com.dslplatform.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+case -519297933:
+_duration_=com.dslplatform.json.NumberConverter.deserializeLong(reader);
+nextToken=reader.getNextToken();
+break;
+case -166967934:
+_size_=com.dslplatform.json.NumberConverter.deserializeLong(reader);
+nextToken=reader.getNextToken();
+break;
+case -418632219:
+_bitrate_=com.dslplatform.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.getNextToken();
+break;
+case -183745553:
+if (nextToken == '[') {
+nextToken=reader.getNextToken();
+if (nextToken != ']') {
+com.dslplatform.json.StringConverter.deserializeCollection(reader,_persons_);
+}
+nextToken=reader.getNextToken();
+}
+ else throw new java.io.IOException("Expecting '[' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+break;
+case -385076981:
+if (nextToken == '"') {
+switch (reader.calcHash()) {
+case -247728219:
+_player_=serializers.dslplatform.shared.Player.JAVA;
+break;
+case -1831302071:
+_player_=serializers.dslplatform.shared.Player.FLASH;
+break;
+default :
+throw new java.io.IOException("Unknown enum value: '" + reader.getLastName() + "' at position "+ reader.positionInStream());
+}
+nextToken=reader.getNextToken();
+}
+ else throw new java.io.IOException("Expecting '\"' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+break;
+case -435409838:
+_copyright_=com.dslplatform.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+default :
+nextToken=reader.skip();
+break;
+}
+}
+while (nextToken == ',') {
+nextToken=reader.getNextToken();
+nameHash=reader.fillName();
+nextToken=reader.getNextToken();
+if (nextToken == 'n') {
+if (reader.wasNull()) {
+nextToken=reader.getNextToken();
+continue;
+}
+ else {
+throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+}
+}
+switch (nameHash) {
+case -267633648:
+_uri_=com.dslplatform.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+case -250856029:
+_title_=com.dslplatform.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+case -234078410:
+_width_=com.dslplatform.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.getNextToken();
+break;
+case -317966505:
+_height_=com.dslplatform.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.getNextToken();
+break;
+case -485742695:
+_format_=com.dslplatform.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+case -519297933:
+_duration_=com.dslplatform.json.NumberConverter.deserializeLong(reader);
+nextToken=reader.getNextToken();
+break;
+case -166967934:
+_size_=com.dslplatform.json.NumberConverter.deserializeLong(reader);
+nextToken=reader.getNextToken();
+break;
+case -418632219:
+_bitrate_=com.dslplatform.json.NumberConverter.deserializeInt(reader);
+nextToken=reader.getNextToken();
+break;
+case -183745553:
+if (nextToken == '[') {
+nextToken=reader.getNextToken();
+if (nextToken != ']') {
+com.dslplatform.json.StringConverter.deserializeCollection(reader,_persons_);
+}
+nextToken=reader.getNextToken();
+}
+ else throw new java.io.IOException("Expecting '[' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+break;
+case -385076981:
+if (nextToken == '"') {
+switch (reader.calcHash()) {
+case -247728219:
+_player_=serializers.dslplatform.shared.Player.JAVA;
+break;
+case -1831302071:
+_player_=serializers.dslplatform.shared.Player.FLASH;
+break;
+default :
+throw new java.io.IOException("Unknown enum value: '" + reader.getLastName() + "' at position "+ reader.positionInStream());
+}
+nextToken=reader.getNextToken();
+}
+ else throw new java.io.IOException("Expecting '\"' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+break;
+case -435409838:
+_copyright_=com.dslplatform.json.StringConverter.deserialize(reader);
+nextToken=reader.getNextToken();
+break;
+default :
+nextToken=reader.skip();
+break;
+}
+}
+if (nextToken != '}') {
+throw new java.io.IOException("Expecting '}' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+}
+}
+this.uri=_uri_;
+this.title=_title_;
+this.width=_width_;
+this.height=_height_;
+this.format=_format_;
+this.duration=_duration_;
+this.size=_size_;
+this.bitrate=_bitrate_;
+this.persons=_persons_;
+this.player=_player_;
+this.copyright=_copyright_;
+}

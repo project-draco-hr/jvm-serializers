@@ -1,4 +1,0 @@
-{
-  this.media=new serializers.dslplatform.media.Media();
-  this.images=new java.util.ArrayList<serializers.dslplatform.media.Image>();
-}

@@ -1,0 +1,9 @@
+{
+  if (other == null)   return false;
+  if (!(this.uri.equals(other.uri)))   return false;
+  if (!(this.title == other.title || this.title != null && this.title.equals(other.title)))   return false;
+  if (!(this.width == other.width))   return false;
+  if (!(this.height == other.height))   return false;
+  if (!(this.size.equals(other.size)))   return false;
+  return true;
+}

@@ -1,0 +1,4 @@
+{
+  this.bitrate=value;
+  return this;
+}

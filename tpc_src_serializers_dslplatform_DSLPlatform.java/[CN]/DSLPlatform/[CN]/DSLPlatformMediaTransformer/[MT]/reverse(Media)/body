@@ -1,3 +1,0 @@
-{
-  return new data.media.Media(media.getUri(),media.getTitle(),media.getWidth(),media.getHeight(),media.getFormat(),media.getDuration(),media.getSize(),media.getBitrate(),media.getBitrate() != 0,media.getPersons(),reverse(media.getPlayer()),media.getCopyright());
-}

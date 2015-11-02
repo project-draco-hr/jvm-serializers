@@ -1,5 +1,0 @@
-{
-  sw.writeByte(com.dslplatform.client.json.JsonWriter.OBJECT_START);
-  __serializeJsonObject(sw,minimal,false);
-  sw.writeByte(com.dslplatform.client.json.JsonWriter.OBJECT_END);
-}

@@ -1,0 +1,10 @@
+{
+  this.media=(serializers.dslplatform.minified.MediaMinified)(other.media.clone());
+  this.images=new java.util.ArrayList<serializers.dslplatform.minified.ImageMinified>(other.images.size());
+  if (other.images != null) {
+    for (    serializers.dslplatform.minified.ImageMinified it : other.images) {
+      this.images.add((serializers.dslplatform.minified.ImageMinified)it.clone());
+    }
+  }
+  ;
+}

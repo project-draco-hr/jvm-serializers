@@ -1,0 +1,6 @@
+{
+  if (value == null)   throw new IllegalArgumentException("Property \"images\" cannot be null!");
+  serializers.dslplatform.Guards.checkNulls(value);
+  this.images=value;
+  return this;
+}

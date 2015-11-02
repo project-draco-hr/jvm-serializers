@@ -1,0 +1,4 @@
+{
+  setMedia(media);
+  setImages(images);
+}

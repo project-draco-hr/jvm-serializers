@@ -1,0 +1,10 @@
+{
+  sw.writeByte(com.dslplatform.json.JsonWriter.OBJECT_START);
+  if (minimal) {
+    __serializeJsonObjectMinimal(this,sw,false);
+  }
+ else {
+    __serializeJsonObjectFull(this,sw,false);
+  }
+  sw.writeByte(com.dslplatform.json.JsonWriter.OBJECT_END);
+}

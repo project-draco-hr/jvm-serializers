@@ -1,3 +1,0 @@
-{
-  return new Image(image.uri,image.title,image.width,image.height,this.forward(image.size));
-}

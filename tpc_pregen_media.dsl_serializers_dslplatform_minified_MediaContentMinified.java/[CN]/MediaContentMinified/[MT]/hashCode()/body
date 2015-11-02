@@ -1,0 +1,7 @@
+{
+  final int prime=31;
+  int result=1;
+  result=prime * result + 1284860741;
+  result=prime * result + (this.media.hashCode());
+  return result;
+}

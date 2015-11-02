@@ -1,0 +1,18 @@
+{
+  sw.writeAscii("\"uri\":",6);
+  sw.writeString(self.uri);
+  if (self.title != null) {
+    sw.writeAscii(",\"title\":",9);
+    sw.writeString(self.title);
+  }
+ else {
+    sw.writeAscii(",\"title\":null",13);
+  }
+  sw.writeAscii(",\"width\":",9);
+  com.dslplatform.json.NumberConverter.serialize(self.width,sw);
+  sw.writeAscii(",\"height\":",10);
+  com.dslplatform.json.NumberConverter.serialize(self.height,sw);
+  sw.writeAscii(",\"size\":\"",9);
+  sw.writeAscii(self.size.name());
+  sw.writeByte(com.dslplatform.json.JsonWriter.QUOTE);
+}
