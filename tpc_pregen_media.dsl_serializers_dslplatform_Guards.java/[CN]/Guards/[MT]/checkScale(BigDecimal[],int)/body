@@ -1,13 +1,13 @@
 {
   if (values == null)   return;
-  int i=0;
-  for (  final BigDecimal value : values) {
+  for (int i=0; i < values.length; i++) {
+    final BigDecimal value=values[i];
+    if (value == null)     continue;
     try {
-      if (value != null)       value.setScale(scale);
+      value.setScale(scale);
     }
  catch (    final ArithmeticException e) {
       throw new IllegalArgumentException("Invalid value for element at index " + i + ". Decimal places allowed: "+ scale+ ". Value: "+ value,e);
     }
-    i++;
   }
 }

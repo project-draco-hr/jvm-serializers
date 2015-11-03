@@ -1,0 +1,30 @@
+{
+  if (!(self.uri.length() == 0)) {
+    hasWrittenProperty=true;
+    sw.writeAscii("\"uri\":",6);
+    sw.writeString(self.uri);
+  }
+  if (self.title != null) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"title\":",8);
+    sw.writeString(self.title);
+  }
+  if (self.width != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"width\":",8);
+    com.dslplatform.json.NumberConverter.serialize(self.width,sw);
+  }
+  if (self.height != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"height\":",9);
+    com.dslplatform.json.NumberConverter.serialize(self.height,sw);
+  }
+  if (self.size != serializers.dslplatform.shared.Size.SMALL) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"size\":\"LARGE\"",14);
+  }
+}

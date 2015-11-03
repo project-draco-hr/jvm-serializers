@@ -1,0 +1,3 @@
+{
+  return (MediaContentFull)MediaContentFull.deserialize(new JsonReader<Object>(array,null,tmp));
+}

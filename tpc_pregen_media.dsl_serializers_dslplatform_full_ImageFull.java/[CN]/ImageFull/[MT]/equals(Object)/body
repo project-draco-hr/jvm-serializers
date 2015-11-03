@@ -1,0 +1,5 @@
+{
+  if (this == obj)   return true;
+  if (!(obj instanceof ImageFull))   return false;
+  return deepEquals((ImageFull)obj);
+}

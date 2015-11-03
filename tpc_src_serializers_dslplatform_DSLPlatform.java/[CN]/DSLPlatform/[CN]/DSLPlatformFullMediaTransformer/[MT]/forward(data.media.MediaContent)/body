@@ -1,0 +1,3 @@
+{
+  return new MediaContentFull(forward(commonMediaContent.media),forward(commonMediaContent.images));
+}

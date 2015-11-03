@@ -1,0 +1,7 @@
+{
+  if (values == null)   return;
+  for (int i=0; i < values.size(); i++) {
+    final String value=values.get(i);
+    if (value != null && value.length() > length)     throw new IllegalArgumentException("Invalid value for element at index " + i + ". Maximum length allowed: "+ length+ ". Value: "+ value);
+  }
+}

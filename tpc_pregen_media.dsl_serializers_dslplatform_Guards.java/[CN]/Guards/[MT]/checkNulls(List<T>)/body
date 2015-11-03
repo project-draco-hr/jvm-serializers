@@ -1,0 +1,6 @@
+{
+  if (values == null)   return;
+  for (int i=0; i < values.size(); i++) {
+    if (values.get(i) == null)     throw new IllegalArgumentException("Element at index " + i + " was a null value, which is not permitted.");
+  }
+}

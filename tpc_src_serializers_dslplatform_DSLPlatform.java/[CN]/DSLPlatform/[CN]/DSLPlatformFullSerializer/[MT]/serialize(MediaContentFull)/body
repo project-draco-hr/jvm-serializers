@@ -1,0 +1,5 @@
+{
+  writer.reset();
+  content.serialize(writer,false);
+  return writer.toByteArray();
+}

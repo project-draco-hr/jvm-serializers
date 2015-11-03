@@ -1,7 +1,0 @@
-{
-  final ArrayList<Image> forwardedImgs=new ArrayList<Image>(images.size());
-  for (  final data.media.Image image : images) {
-    forwardedImgs.add(forward(image));
-  }
-  return forwardedImgs;
-}

@@ -1,0 +1,10 @@
+{
+  this.media=(serializers.dslplatform.full.MediaFull)(other.media.clone());
+  this.images=new java.util.ArrayList<serializers.dslplatform.full.ImageFull>(other.images.size());
+  if (other.images != null) {
+    for (    serializers.dslplatform.full.ImageFull it : other.images) {
+      this.images.add((serializers.dslplatform.full.ImageFull)it.clone());
+    }
+  }
+  ;
+}

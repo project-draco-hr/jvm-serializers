@@ -1,0 +1,9 @@
+{
+  if (values == null)   return null;
+  final Vector<BigDecimal> result=new Vector<BigDecimal>();
+  for (int i=0; i < values.size(); i++) {
+    final BigDecimal value=values.get(i);
+    result.add(value != null ? setScale(value,scale) : null);
+  }
+  return result;
+}

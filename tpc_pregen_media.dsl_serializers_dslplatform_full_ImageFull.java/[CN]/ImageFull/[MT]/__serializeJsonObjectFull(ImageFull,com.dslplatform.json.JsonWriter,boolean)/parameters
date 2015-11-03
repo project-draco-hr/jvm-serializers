@@ -1,0 +1,3 @@
+ImageFull self
+com.dslplatform.json.JsonWriter sw
+boolean hasWrittenProperty

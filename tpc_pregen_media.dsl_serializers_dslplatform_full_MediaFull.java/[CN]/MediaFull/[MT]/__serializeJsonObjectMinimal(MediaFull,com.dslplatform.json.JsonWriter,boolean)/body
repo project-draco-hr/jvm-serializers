@@ -1,0 +1,71 @@
+{
+  if (!(self.uri.length() == 0)) {
+    hasWrittenProperty=true;
+    sw.writeAscii("\"uri\":",6);
+    sw.writeString(self.uri);
+  }
+  if (self.title != null) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"title\":",8);
+    sw.writeString(self.title);
+  }
+  if (self.width != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"width\":",8);
+    com.dslplatform.json.NumberConverter.serialize(self.width,sw);
+  }
+  if (self.height != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"height\":",9);
+    com.dslplatform.json.NumberConverter.serialize(self.height,sw);
+  }
+  if (!(self.format.length() == 0)) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"format\":",9);
+    sw.writeString(self.format);
+  }
+  if (self.duration != 0L) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"duration\":",11);
+    com.dslplatform.json.NumberConverter.serialize(self.duration,sw);
+  }
+  if (self.size != 0L) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"size\":",7);
+    com.dslplatform.json.NumberConverter.serialize(self.size,sw);
+  }
+  if (self.bitrate != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"bitrate\":",10);
+    com.dslplatform.json.NumberConverter.serialize(self.bitrate,sw);
+  }
+  if (self.persons.size() != 0) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"persons\":[",11);
+    sw.writeString(self.persons.get(0));
+    for (int i=1; i < self.persons.size(); i++) {
+      sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+      sw.writeString(self.persons.get(i));
+    }
+    sw.writeByte(com.dslplatform.json.JsonWriter.ARRAY_END);
+  }
+  if (self.player != serializers.dslplatform.shared.Player.JAVA) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"player\":\"FLASH\"",16);
+  }
+  if (self.copyright != null) {
+    if (hasWrittenProperty)     sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+    hasWrittenProperty=true;
+    sw.writeAscii("\"copyright\":",12);
+    sw.writeString(self.copyright);
+  }
+}

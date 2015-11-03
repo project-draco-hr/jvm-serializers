@@ -1,0 +1,2 @@
+Stack<BigDecimal> values
+int scale

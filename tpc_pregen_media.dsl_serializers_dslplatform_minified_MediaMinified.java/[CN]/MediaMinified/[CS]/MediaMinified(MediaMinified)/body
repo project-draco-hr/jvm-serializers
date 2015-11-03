@@ -1,0 +1,13 @@
+{
+  this.uri=other.uri;
+  this.title=other.title;
+  this.width=other.width;
+  this.height=other.height;
+  this.format=other.format;
+  this.duration=other.duration;
+  this.size=other.size;
+  this.bitrate=other.bitrate;
+  this.persons=new java.util.ArrayList<String>(other.persons);
+  this.player=other.player;
+  this.copyright=other.copyright;
+}

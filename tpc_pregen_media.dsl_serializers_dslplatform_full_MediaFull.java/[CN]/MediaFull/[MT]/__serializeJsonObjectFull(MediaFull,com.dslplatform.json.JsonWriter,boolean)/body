@@ -1,0 +1,43 @@
+{
+  sw.writeAscii("\"uri\":",6);
+  sw.writeString(self.uri);
+  if (self.title != null) {
+    sw.writeAscii(",\"title\":",9);
+    sw.writeString(self.title);
+  }
+ else {
+    sw.writeAscii(",\"title\":null",13);
+  }
+  sw.writeAscii(",\"width\":",9);
+  com.dslplatform.json.NumberConverter.serialize(self.width,sw);
+  sw.writeAscii(",\"height\":",10);
+  com.dslplatform.json.NumberConverter.serialize(self.height,sw);
+  sw.writeAscii(",\"format\":",10);
+  sw.writeString(self.format);
+  sw.writeAscii(",\"duration\":",12);
+  com.dslplatform.json.NumberConverter.serialize(self.duration,sw);
+  sw.writeAscii(",\"size\":",8);
+  com.dslplatform.json.NumberConverter.serialize(self.size,sw);
+  sw.writeAscii(",\"bitrate\":",11);
+  com.dslplatform.json.NumberConverter.serialize(self.bitrate,sw);
+  if (self.persons.size() != 0) {
+    sw.writeAscii(",\"persons\":[",12);
+    sw.writeString(self.persons.get(0));
+    for (int i=1; i < self.persons.size(); i++) {
+      sw.writeByte(com.dslplatform.json.JsonWriter.COMMA);
+      sw.writeString(self.persons.get(i));
+    }
+    sw.writeByte(com.dslplatform.json.JsonWriter.ARRAY_END);
+  }
+ else   sw.writeAscii(",\"persons\":[]",13);
+  sw.writeAscii(",\"player\":\"",11);
+  sw.writeAscii(self.player.name());
+  sw.writeByte(com.dslplatform.json.JsonWriter.QUOTE);
+  if (self.copyright != null) {
+    sw.writeAscii(",\"copyright\":",13);
+    sw.writeString(self.copyright);
+  }
+ else {
+    sw.writeAscii(",\"copyright\":null",17);
+  }
+}

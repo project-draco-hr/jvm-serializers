@@ -1,0 +1,3 @@
+{
+  return new MediaFull(media.uri,media.title,media.width,media.height,media.format,media.duration,media.size,media.bitrate,media.persons,DSLPlatform.forward(media.player),media.copyright);
+}

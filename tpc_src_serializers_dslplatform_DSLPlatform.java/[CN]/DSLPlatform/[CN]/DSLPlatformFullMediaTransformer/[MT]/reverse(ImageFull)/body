@@ -1,0 +1,3 @@
+{
+  return new data.media.Image(image.getUri(),image.getTitle(),image.getWidth(),image.getHeight(),DSLPlatform.reverse(image.getSize()));
+}

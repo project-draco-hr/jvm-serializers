@@ -1,0 +1,3 @@
+{
+  return "ImageMinified(" + uri + ','+ title+ ','+ width+ ','+ height+ ','+ size+ ')';
+}

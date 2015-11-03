@@ -1,3 +1,0 @@
-{
-  return "Media(" + uri + ','+ title+ ','+ width+ ','+ height+ ','+ format+ ','+ duration+ ','+ size+ ','+ bitrate+ ','+ persons+ ','+ player+ ','+ copyright+ ')';
-}

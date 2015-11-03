@@ -1,0 +1,5 @@
+String uri
+String title
+int width
+int height
+serializers.dslplatform.shared.Size size

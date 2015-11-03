@@ -1,3 +1,0 @@
-{
-  return "json/dsl-platform" + (this.minimal ? "/omit-defaults" : "");
-}

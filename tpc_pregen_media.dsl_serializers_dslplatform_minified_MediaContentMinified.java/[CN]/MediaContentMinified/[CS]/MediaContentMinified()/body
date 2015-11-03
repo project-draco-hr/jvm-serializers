@@ -1,0 +1,4 @@
+{
+  this.media=new serializers.dslplatform.minified.MediaMinified();
+  this.images=new java.util.ArrayList<serializers.dslplatform.minified.ImageMinified>(4);
+}

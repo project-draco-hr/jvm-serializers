@@ -1,3 +1,0 @@
-{
-  return new MediaContent(forward(commonMediaContent.media),forward(commonMediaContent.images));
-}

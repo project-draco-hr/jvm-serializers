@@ -1,0 +1,5 @@
+{
+  if (this == obj)   return true;
+  if (!(obj instanceof MediaMinified))   return false;
+  return deepEquals((MediaMinified)obj);
+}

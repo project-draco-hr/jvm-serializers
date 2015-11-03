@@ -1,0 +1,3 @@
+{
+  return (MediaContentMinified)MediaContentMinified.deserialize(new JsonReader<Object>(array,null,tmp));
+}

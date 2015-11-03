@@ -1,0 +1,9 @@
+{
+  if (values == null)   return null;
+  final Stack<BigDecimal> result=new Stack<BigDecimal>();
+  for (int i=0; i < values.size(); i++) {
+    final BigDecimal value=values.get(i);
+    result.add(value != null ? setScale(value,scale) : null);
+  }
+  return result;
+}

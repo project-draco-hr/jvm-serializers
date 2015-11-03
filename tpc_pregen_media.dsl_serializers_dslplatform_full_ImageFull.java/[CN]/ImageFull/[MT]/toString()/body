@@ -1,0 +1,3 @@
+{
+  return "ImageFull(" + uri + ','+ title+ ','+ width+ ','+ height+ ','+ size+ ')';
+}

@@ -1,5 +1,0 @@
-String uri
-String title
-int width
-int height
-serializers.dslplatform.media.Size size

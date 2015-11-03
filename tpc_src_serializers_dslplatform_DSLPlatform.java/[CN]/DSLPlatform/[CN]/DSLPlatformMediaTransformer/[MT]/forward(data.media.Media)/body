@@ -1,3 +1,0 @@
-{
-  return new Media(media.uri,media.title,media.width,media.height,media.format,media.duration,media.size,media.bitrate,media.persons,this.forward(media.player),media.copyright);
-}

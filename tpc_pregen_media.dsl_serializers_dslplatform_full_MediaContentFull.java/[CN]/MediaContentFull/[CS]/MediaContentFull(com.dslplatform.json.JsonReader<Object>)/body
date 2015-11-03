@@ -1,0 +1,84 @@
+{
+  serializers.dslplatform.full.MediaFull _media_=null;
+  java.util.List<serializers.dslplatform.full.ImageFull> _images_=new java.util.ArrayList<serializers.dslplatform.full.ImageFull>(4);
+  byte nextToken=reader.last();
+  if (nextToken != '}') {
+    int nameHash=reader.fillName();
+    nextToken=reader.getNextToken();
+    if (nextToken == 'n') {
+      if (reader.wasNull()) {
+        nextToken=reader.getNextToken();
+      }
+ else {
+        throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+      }
+    }
+ else {
+switch (nameHash) {
+case -56959229:
+        if (nextToken == '{') {
+          reader.getNextToken();
+          _media_=serializers.dslplatform.full.MediaFull.JSON_READER.deserialize(reader);
+          nextToken=reader.getNextToken();
+        }
+ else         throw new java.io.IOException("Expecting '{' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+      break;
+case -774420821:
+    if (nextToken == '[') {
+      nextToken=reader.getNextToken();
+      if (nextToken != ']') {
+        reader.deserializeCollection(serializers.dslplatform.full.ImageFull.JSON_READER,_images_);
+      }
+      nextToken=reader.getNextToken();
+    }
+ else     throw new java.io.IOException("Expecting '[' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+  break;
+default :
+nextToken=reader.skip();
+break;
+}
+}
+while (nextToken == ',') {
+nextToken=reader.getNextToken();
+nameHash=reader.fillName();
+nextToken=reader.getNextToken();
+if (nextToken == 'n') {
+if (reader.wasNull()) {
+nextToken=reader.getNextToken();
+continue;
+}
+ else {
+throw new java.io.IOException("Expecting 'u' (as null) at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+}
+}
+switch (nameHash) {
+case -56959229:
+if (nextToken == '{') {
+reader.getNextToken();
+_media_=serializers.dslplatform.full.MediaFull.JSON_READER.deserialize(reader);
+nextToken=reader.getNextToken();
+}
+ else throw new java.io.IOException("Expecting '{' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+break;
+case -774420821:
+if (nextToken == '[') {
+nextToken=reader.getNextToken();
+if (nextToken != ']') {
+reader.deserializeCollection(serializers.dslplatform.full.ImageFull.JSON_READER,_images_);
+}
+nextToken=reader.getNextToken();
+}
+ else throw new java.io.IOException("Expecting '[' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+break;
+default :
+nextToken=reader.skip();
+break;
+}
+}
+if (nextToken != '}') {
+throw new java.io.IOException("Expecting '}' at position " + reader.positionInStream() + ". Found "+ (char)nextToken);
+}
+}
+this.media=_media_;
+this.images=_images_;
+}

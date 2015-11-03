@@ -1,0 +1,3 @@
+{
+  return size == Size.SMALL ? data.media.Image.Size.SMALL : data.media.Image.Size.LARGE;
+}
