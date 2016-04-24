@@ -1,0 +1,13 @@
+{
+  int uri=fbb.createString(media.uri);
+  int title=media.title != null ? fbb.createString(media.title) : 0;
+  int format=fbb.createString(media.format);
+  int[] persons=new int[media.persons.size()];
+  for (int i=0; i < media.persons.size(); i++) {
+    persons[i]=fbb.createString(media.persons.get(i));
+  }
+  int person=Media.createPersonsVector(fbb,persons);
+  byte player=forwardPlayer(media.player);
+  int copyright=media.copyright != null ? fbb.createString(media.copyright) : 0;
+  return Media.createMedia(fbb,uri,title,media.width,media.height,format,media.duration,media.size,media.bitrate,person,player,copyright);
+}

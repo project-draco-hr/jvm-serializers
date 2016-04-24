@@ -1,0 +1,10 @@
+{
+switch (p) {
+case JAVA:
+    return Player.JAVA;
+case FLASH:
+  return Player.FLASH;
+default :
+throw new AssertionError("invalid case: " + p);
+}
+}

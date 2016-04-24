@@ -1,0 +1,4 @@
+{
+  int o=__offset(22);
+  return o != 0 ? bb.get(o + bb_pos) : 0;
+}

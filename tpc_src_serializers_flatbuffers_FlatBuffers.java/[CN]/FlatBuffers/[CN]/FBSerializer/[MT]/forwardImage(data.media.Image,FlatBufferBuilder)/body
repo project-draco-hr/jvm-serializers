@@ -1,0 +1,6 @@
+{
+  int uri=fbb.createString(image.uri);
+  int title=image.title != null ? fbb.createString(image.title) : 0;
+  byte size=forwardSize(image.size);
+  return Image.createImage(fbb,uri,title,image.width,image.height,size);
+}

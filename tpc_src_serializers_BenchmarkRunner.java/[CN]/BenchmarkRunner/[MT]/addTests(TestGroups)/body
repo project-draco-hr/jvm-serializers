@@ -54,4 +54,5 @@
   JacksonWithAfterburner.registerAll(groups);
   JacksonWithColumnsDatabind.registerAll(groups);
   DSLPlatform.register(groups);
+  FlatBuffers.register(groups);
 }

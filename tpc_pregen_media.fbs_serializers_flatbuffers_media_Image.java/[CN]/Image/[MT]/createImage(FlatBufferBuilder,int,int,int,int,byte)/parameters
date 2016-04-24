@@ -1,0 +1,6 @@
+FlatBufferBuilder builder
+int uriOffset
+int titleOffset
+int width
+int height
+byte size

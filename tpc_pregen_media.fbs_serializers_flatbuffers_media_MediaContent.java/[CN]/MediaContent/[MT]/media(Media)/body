@@ -1,0 +1,4 @@
+{
+  int o=__offset(6);
+  return o != 0 ? obj.__init(__indirect(o + bb_pos),bb) : null;
+}

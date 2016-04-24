@@ -1,0 +1,5 @@
+{
+  ByteBuffer bb=ByteBuffer.wrap(array);
+  MediaContent mc=MediaContent.getRootAsMediaContent(bb);
+  return reverse(mc);
+}

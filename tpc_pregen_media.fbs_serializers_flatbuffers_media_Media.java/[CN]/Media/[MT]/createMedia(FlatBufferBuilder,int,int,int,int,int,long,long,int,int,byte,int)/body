@@ -1,0 +1,15 @@
+{
+  builder.startObject(11);
+  Media.addSize(builder,size);
+  Media.addDuration(builder,duration);
+  Media.addCopyright(builder,copyrightOffset);
+  Media.addPersons(builder,personsOffset);
+  Media.addBitrate(builder,bitrate);
+  Media.addFormat(builder,formatOffset);
+  Media.addHeight(builder,height);
+  Media.addWidth(builder,width);
+  Media.addTitle(builder,titleOffset);
+  Media.addUri(builder,uriOffset);
+  Media.addPlayer(builder,player);
+  return Media.endMedia(builder);
+}
