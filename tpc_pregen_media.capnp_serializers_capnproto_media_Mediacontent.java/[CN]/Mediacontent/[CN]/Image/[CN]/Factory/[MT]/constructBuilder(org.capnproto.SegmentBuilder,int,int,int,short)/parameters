@@ -1,0 +1,5 @@
+org.capnproto.SegmentBuilder segment
+int data
+int pointers
+int dataSize
+short pointerCount

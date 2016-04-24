@@ -1,0 +1,3 @@
+{
+  return _getPointerField(serializers.capnproto.media.Mediacontent.Image.listFactory,0,null,0);
+}

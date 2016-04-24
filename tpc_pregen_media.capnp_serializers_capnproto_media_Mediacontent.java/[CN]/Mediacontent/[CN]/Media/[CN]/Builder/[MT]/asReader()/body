@@ -1,0 +1,3 @@
+{
+  return new Reader(segment,data,pointers,dataSize,pointerCount,0x7fffffff);
+}

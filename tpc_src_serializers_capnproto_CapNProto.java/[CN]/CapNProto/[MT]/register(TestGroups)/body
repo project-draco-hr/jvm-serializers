@@ -1,0 +1,3 @@
+{
+  groups.media.add(JavaBuiltIn.mediaTransformer,new CPSerializer(),new SerFeatures(SerFormat.BIN_CROSSLANG,SerGraph.FLAT_TREE,SerClass.CLASSES_KNOWN,""));
+}

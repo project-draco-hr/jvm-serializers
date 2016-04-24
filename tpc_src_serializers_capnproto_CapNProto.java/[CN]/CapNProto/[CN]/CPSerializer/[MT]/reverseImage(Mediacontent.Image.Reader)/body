@@ -1,0 +1,3 @@
+{
+  return new data.media.Image(reader.getUri().toString(),reader.hasTitle() ? reader.getTitle().toString() : null,reader.getWidth(),reader.getHeight(),reverseSize(reader.getSize()));
+}

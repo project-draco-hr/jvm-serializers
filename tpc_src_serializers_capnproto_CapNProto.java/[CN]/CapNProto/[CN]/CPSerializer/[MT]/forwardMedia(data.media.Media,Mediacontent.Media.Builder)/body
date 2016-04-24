@@ -1,0 +1,16 @@
+{
+  builder.setUri(media.uri);
+  if (media.title != null)   builder.setTitle(media.title);
+  builder.setWidth(media.width);
+  builder.setHeight(media.height);
+  builder.setFormat(media.format);
+  builder.setDuration(media.duration);
+  builder.setSize(media.size);
+  builder.setBitrate(media.bitrate);
+  TextList.Builder persons=builder.initPersons(media.persons.size());
+  for (int i=0; i < media.persons.size(); i++) {
+    persons.set(i,new Text.Reader(media.persons.get(i)));
+  }
+  builder.setPlayer(forwardPlayer(media.player));
+  if (media.copyright != null)   builder.setCopyright(media.copyright);
+}

@@ -1,0 +1,8 @@
+{
+  MessageBuilder message=new MessageBuilder();
+  Mediacontent.MediaContent.Builder builder=message.initRoot(Mediacontent.MediaContent.factory);
+  forward(content,builder);
+  os.buf.rewind();
+  Serialize.write(os,message);
+  return Arrays.copyOf(os.buf.array(),os.buf.position());
+}

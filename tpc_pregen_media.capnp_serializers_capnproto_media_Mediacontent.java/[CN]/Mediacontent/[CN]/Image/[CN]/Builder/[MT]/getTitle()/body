@@ -1,0 +1,3 @@
+{
+  return _getPointerField(org.capnproto.Text.factory,1,null,0,0);
+}

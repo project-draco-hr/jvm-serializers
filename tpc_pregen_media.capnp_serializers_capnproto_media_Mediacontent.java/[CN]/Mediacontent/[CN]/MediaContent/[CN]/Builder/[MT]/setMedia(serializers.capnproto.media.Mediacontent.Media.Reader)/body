@@ -1,0 +1,3 @@
+{
+  _setPointerField(serializers.capnproto.media.Mediacontent.Media.factory,1,value);
+}
