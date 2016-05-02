@@ -1,0 +1,3 @@
+{
+  return (T)JSON.parseObject(array,type,Feature.SupportArrayToBean,Feature.DisableCircularReferenceDetect);
+}
