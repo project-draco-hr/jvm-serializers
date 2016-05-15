@@ -1,0 +1,11 @@
+{
+  while (true) {
+    try {
+      int n=content.marshal(buffer,0);
+      return Arrays.copyOf(buffer,n);
+    }
+ catch (    BufferOverflowException e) {
+      buffer=new byte[buffer.length * 2];
+    }
+  }
+}

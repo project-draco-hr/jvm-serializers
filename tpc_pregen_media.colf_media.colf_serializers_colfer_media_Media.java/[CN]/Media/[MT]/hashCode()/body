@@ -1,0 +1,3 @@
+{
+  return java.util.Objects.hash(0x7f,uri,title,width,height,format,duration,size,persons,copyright,bitrate,hasBitrate,flashPlay,javaPlay);
+}

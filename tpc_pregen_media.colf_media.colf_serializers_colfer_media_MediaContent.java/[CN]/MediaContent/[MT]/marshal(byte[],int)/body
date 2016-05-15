@@ -1,0 +1,35 @@
+{
+  int i=offset;
+  try {
+    if (this.images.length != 0) {
+      buf[i++]=(byte)0;
+      Image[] a=this.images;
+      int x=a.length;
+      if (x > colferListMax)       throw new IllegalStateException(format("colfer: field serializers/colfer/media.mediaContent.images length %d exceeds %d elements",x,colferListMax));
+      while ((x & ~((1 << 7) - 1)) != 0) {
+        buf[i++]=(byte)(x | 0x80);
+        x>>>=7;
+      }
+      buf[i++]=(byte)x;
+      for (int ai=0; ai < a.length; ai++) {
+        Image o=a[ai];
+        if (o == null) {
+          o=new Image();
+          a[ai]=o;
+        }
+        i=o.marshal(buf,i);
+      }
+    }
+    if (this.media != null) {
+      buf[i++]=(byte)1;
+      i=this.media.marshal(buf,i);
+    }
+    buf[i++]=(byte)0x7f;
+    return i;
+  }
+ catch (  IndexOutOfBoundsException e) {
+    if (i - offset > colferSizeMax)     throw new IllegalStateException(format("colfer: serial exceeds %d bytes",colferSizeMax));
+    if (i >= buf.length)     throw new BufferOverflowException();
+    throw new RuntimeException("colfer: bug",e);
+  }
+}

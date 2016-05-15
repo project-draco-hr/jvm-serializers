@@ -54,4 +54,5 @@
   JacksonWithAfterburner.registerAll(groups);
   JacksonWithColumnsDatabind.registerAll(groups);
   DSLPlatform.register(groups);
+  Colfer.register(groups);
 }

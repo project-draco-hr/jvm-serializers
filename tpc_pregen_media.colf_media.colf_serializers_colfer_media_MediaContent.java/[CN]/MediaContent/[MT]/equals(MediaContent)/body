@@ -1,0 +1,3 @@
+{
+  return o != null && java.util.Arrays.equals(this.images,o.images) && java.util.Objects.equals(this.media,o.media);
+}

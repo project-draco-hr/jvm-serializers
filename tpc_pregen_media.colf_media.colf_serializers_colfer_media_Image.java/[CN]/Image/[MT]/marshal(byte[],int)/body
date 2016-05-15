@@ -1,0 +1,124 @@
+{
+  int i=offset;
+  try {
+    if (!this.uri.isEmpty()) {
+      buf[i++]=(byte)0;
+      String s=this.uri;
+      int sLength=s.length();
+      int start=++i;
+      for (int sIndex=0; sIndex < sLength; sIndex++) {
+        char c=s.charAt(sIndex);
+        if (c < 128) {
+          buf[i++]=(byte)c;
+        }
+ else         if (c < 2048) {
+          buf[i++]=(byte)(192 | c >>> 6);
+          buf[i++]=(byte)(128 | c & 63);
+        }
+ else         if (!Character.isSurrogate(c)) {
+          buf[i++]=(byte)(224 | c >>> 12);
+          buf[i++]=(byte)(128 | c >>> 6 & 63);
+          buf[i++]=(byte)(128 | c & 63);
+        }
+ else         if (++sIndex != sLength) {
+          int cp=Character.toCodePoint(c,s.charAt(sIndex));
+          buf[i++]=(byte)(240 | cp >>> 18);
+          buf[i++]=(byte)(128 | cp >>> 12 & 63);
+          buf[i++]=(byte)(128 | cp >>> 6 & 63);
+          buf[i++]=(byte)(128 | cp & 63);
+        }
+      }
+      int size=i - start;
+      if (size > colferSizeMax)       throw new IllegalStateException(format("colfer: field serializers/colfer/media.image.uri size %d exceeds %d UTF-8 bytes",size,colferSizeMax));
+      int shift=0;
+      for (int x=size; (x & ~((1 << 7) - 1)) != 0; x>>>=7)       shift++;
+      if (shift != 0)       System.arraycopy(buf,start,buf,start + shift,size);
+      i=start + shift + size;
+      start--;
+      while ((size & ~((1 << 7) - 1)) != 0) {
+        buf[start++]=(byte)(size | 0x80);
+        size>>>=7;
+      }
+      buf[start++]=(byte)size;
+    }
+    if (!this.title.isEmpty()) {
+      buf[i++]=(byte)1;
+      String s=this.title;
+      int sLength=s.length();
+      int start=++i;
+      for (int sIndex=0; sIndex < sLength; sIndex++) {
+        char c=s.charAt(sIndex);
+        if (c < 128) {
+          buf[i++]=(byte)c;
+        }
+ else         if (c < 2048) {
+          buf[i++]=(byte)(192 | c >>> 6);
+          buf[i++]=(byte)(128 | c & 63);
+        }
+ else         if (!Character.isSurrogate(c)) {
+          buf[i++]=(byte)(224 | c >>> 12);
+          buf[i++]=(byte)(128 | c >>> 6 & 63);
+          buf[i++]=(byte)(128 | c & 63);
+        }
+ else         if (++sIndex != sLength) {
+          int cp=Character.toCodePoint(c,s.charAt(sIndex));
+          buf[i++]=(byte)(240 | cp >>> 18);
+          buf[i++]=(byte)(128 | cp >>> 12 & 63);
+          buf[i++]=(byte)(128 | cp >>> 6 & 63);
+          buf[i++]=(byte)(128 | cp & 63);
+        }
+      }
+      int size=i - start;
+      if (size > colferSizeMax)       throw new IllegalStateException(format("colfer: field serializers/colfer/media.image.title size %d exceeds %d UTF-8 bytes",size,colferSizeMax));
+      int shift=0;
+      for (int x=size; (x & ~((1 << 7) - 1)) != 0; x>>>=7)       shift++;
+      if (shift != 0)       System.arraycopy(buf,start,buf,start + shift,size);
+      i=start + shift + size;
+      start--;
+      while ((size & ~((1 << 7) - 1)) != 0) {
+        buf[start++]=(byte)(size | 0x80);
+        size>>>=7;
+      }
+      buf[start++]=(byte)size;
+    }
+    if (this.width != 0) {
+      int x=this.width;
+      if (x < 0) {
+        x=-x;
+        buf[i++]=(byte)(2 | 0x80);
+      }
+ else       buf[i++]=(byte)2;
+      while ((x & ~((1 << 7) - 1)) != 0) {
+        buf[i++]=(byte)(x | 0x80);
+        x>>>=7;
+      }
+      buf[i++]=(byte)x;
+    }
+    if (this.height != 0) {
+      int x=this.height;
+      if (x < 0) {
+        x=-x;
+        buf[i++]=(byte)(3 | 0x80);
+      }
+ else       buf[i++]=(byte)3;
+      while ((x & ~((1 << 7) - 1)) != 0) {
+        buf[i++]=(byte)(x | 0x80);
+        x>>>=7;
+      }
+      buf[i++]=(byte)x;
+    }
+    if (this.small) {
+      buf[i++]=(byte)4;
+    }
+    if (this.large) {
+      buf[i++]=(byte)5;
+    }
+    buf[i++]=(byte)0x7f;
+    return i;
+  }
+ catch (  IndexOutOfBoundsException e) {
+    if (i - offset > colferSizeMax)     throw new IllegalStateException(format("colfer: serial exceeds %d bytes",colferSizeMax));
+    if (i >= buf.length)     throw new BufferOverflowException();
+    throw new RuntimeException("colfer: bug",e);
+  }
+}

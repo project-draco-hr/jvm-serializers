@@ -1,0 +1,23 @@
+{
+  Media dst=new Media();
+  dst.uri=src.uri;
+  dst.title=src.title;
+  dst.width=src.width;
+  dst.height=src.height;
+  dst.format=src.format;
+  dst.duration=src.duration;
+  dst.size=src.size;
+  dst.bitrate=src.bitrate;
+  dst.hasBitrate=src.hasBitrate;
+  dst.persons=StringUtils.join(src.persons,'\n');
+switch (src.player) {
+case FLASH:
+    dst.flashPlay=true;
+  break;
+case JAVA:
+dst.javaPlay=true;
+break;
+}
+if (src.copyright != null) dst.copyright=src.copyright;
+return dst;
+}
