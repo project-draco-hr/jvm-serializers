@@ -1,4 +1,3 @@
 {
-  input.position(0);
-  return serializer.deserialize(input);
+  return serializer.deserialize(new SerializationInputBuffer(array,0));
 }
