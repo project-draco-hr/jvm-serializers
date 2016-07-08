@@ -1,3 +1,17 @@
 {
-  return java.util.Objects.hash(0x7f,uri,title,width,height,format,duration,size,persons,copyright,bitrate,hasBitrate,flashPlay,javaPlay);
+  int h=1;
+  if (this.uri != null)   h=31 * h + this.uri.hashCode();
+  if (this.title != null)   h=31 * h + this.title.hashCode();
+  h=31 * h + this.width;
+  h=31 * h + this.height;
+  if (this.format != null)   h=31 * h + this.format.hashCode();
+  h=31 * h + (int)(this.duration ^ this.duration >>> 32);
+  h=31 * h + (int)(this.size ^ this.size >>> 32);
+  if (this.persons != null)   h=31 * h + this.persons.hashCode();
+  if (this.copyright != null)   h=31 * h + this.copyright.hashCode();
+  h=31 * h + this.bitrate;
+  h=31 * h + (this.hasBitrate ? 1231 : 1237);
+  h=31 * h + (this.flashPlay ? 1231 : 1237);
+  h=31 * h + (this.javaPlay ? 1231 : 1237);
+  return h;
 }

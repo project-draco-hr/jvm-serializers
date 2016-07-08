@@ -1,3 +1,6 @@
 {
-  return java.util.Objects.hash(0x7f,images,media);
+  int h=1;
+  for (  Image o : this.images)   h=31 * h + (o == null ? 0 : o.hashCode());
+  if (this.media != null)   h=31 * h + this.media.hashCode();
+  return h;
 }

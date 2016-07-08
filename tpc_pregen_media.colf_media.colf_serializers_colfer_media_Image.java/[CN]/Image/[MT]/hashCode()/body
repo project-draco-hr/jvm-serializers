@@ -1,3 +1,10 @@
 {
-  return java.util.Objects.hash(0x7f,uri,title,width,height,small,large);
+  int h=1;
+  if (this.uri != null)   h=31 * h + this.uri.hashCode();
+  if (this.title != null)   h=31 * h + this.title.hashCode();
+  h=31 * h + this.width;
+  h=31 * h + this.height;
+  h=31 * h + (this.small ? 1231 : 1237);
+  h=31 * h + (this.large ? 1231 : 1237);
+  return h;
 }

@@ -3,15 +3,15 @@
   try {
     byte header=buf[i++];
     if (header == (byte)0) {
-      int n=0;
+      int length=0;
       for (int shift=0; true; shift+=7) {
         byte b=buf[i++];
-        n|=(b & 0x7f) << shift;
+        length|=(b & 0x7f) << shift;
         if (shift == 28 || b >= 0)         break;
       }
-      if (n > colferListMax)       throw new TypeConstraintException(format("colfer: field serializers/colfer/media.mediaContent.images length %d exceeds %d elements",n,colferListMax));
-      Image[] a=new Image[n];
-      for (int ai=0; ai < n; ai++) {
+      if (length > colferListMax)       throw new SecurityException(format("colfer: field serializers/colfer/media.mediaContent.images length %d exceeds %d elements",length,colferListMax));
+      Image[] a=new Image[length];
+      for (int ai=0; ai < length; ai++) {
         Image o=new Image();
         i=o.unmarshal(buf,i);
         a[ai]=o;
@@ -24,12 +24,13 @@
       i=this.media.unmarshal(buf,i);
       header=buf[i++];
     }
-    if (header != (byte)0x7f)     throw new DataBindingException(format("colfer: unknown header at byte %d",i - 1),null);
+    if (header != (byte)0x7f)     throw new InputMismatchException(format("colfer: unknown header at byte %d",i - 1));
   }
  catch (  IndexOutOfBoundsException e) {
-    if (i - offset > colferSizeMax)     throw new TypeConstraintException(format("colfer: serial exceeds %d bytes",colferSizeMax));
+    if (i - offset > colferSizeMax)     throw new SecurityException(format("colfer: serial exceeds %d bytes",colferSizeMax));
     if (i >= buf.length)     throw new BufferUnderflowException();
     throw new RuntimeException("colfer: bug",e);
   }
+  if (i - offset > colferSizeMax)   throw new SecurityException(format("colfer: serial exceeds %d bytes",colferSizeMax));
   return i;
 }

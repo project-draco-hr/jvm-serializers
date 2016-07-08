@@ -6,7 +6,7 @@
       Image[] a=this.images;
       int x=a.length;
       if (x > colferListMax)       throw new IllegalStateException(format("colfer: field serializers/colfer/media.mediaContent.images length %d exceeds %d elements",x,colferListMax));
-      while ((x & ~((1 << 7) - 1)) != 0) {
+      while (x > 0x7f) {
         buf[i++]=(byte)(x | 0x80);
         x>>>=7;
       }
@@ -30,6 +30,6 @@
  catch (  IndexOutOfBoundsException e) {
     if (i - offset > colferSizeMax)     throw new IllegalStateException(format("colfer: serial exceeds %d bytes",colferSizeMax));
     if (i >= buf.length)     throw new BufferOverflowException();
-    throw new RuntimeException("colfer: bug",e);
+    throw e;
   }
 }
