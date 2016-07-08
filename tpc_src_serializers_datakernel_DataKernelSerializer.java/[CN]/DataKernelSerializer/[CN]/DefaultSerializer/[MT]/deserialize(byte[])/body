@@ -1,0 +1,4 @@
+{
+  input.position(0);
+  return serializer.deserialize(input);
+}

@@ -1,0 +1,7 @@
+{
+  List<DImage> list=new ArrayList<>(images.size());
+  for (  Image image : images) {
+    list.add(forwardImage(image));
+  }
+  return list;
+}

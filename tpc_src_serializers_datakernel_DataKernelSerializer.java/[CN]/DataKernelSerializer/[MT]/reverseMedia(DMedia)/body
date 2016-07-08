@@ -1,0 +1,3 @@
+{
+  return new Media(m.uri,m.title,m.width,m.height,m.format,m.duration,m.size,m.bitrate,m.hasBitrate,m.persons,reversePlayer(m.player),m.copyright);
+}
