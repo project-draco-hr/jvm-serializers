@@ -1,0 +1,14 @@
+{
+  data.media.Image dst=new data.media.Image();
+  dst.uri=src.uri;
+  dst.title=src.title;
+  dst.width=src.width;
+  dst.height=src.height;
+  if (src.small) {
+    dst.size=data.media.Image.Size.SMALL;
+  }
+  if (src.large) {
+    dst.size=data.media.Image.Size.LARGE;
+  }
+  return dst;
+}

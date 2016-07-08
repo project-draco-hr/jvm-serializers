@@ -1,0 +1,3 @@
+{
+  return new data.media.MediaContent(reverseMedia(mc.getMedia()),Collections.<data.media.Image>emptyList());
+}

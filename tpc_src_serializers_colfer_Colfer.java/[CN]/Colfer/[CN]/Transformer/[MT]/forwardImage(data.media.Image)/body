@@ -1,0 +1,16 @@
+{
+  Image dst=new Image();
+  dst.uri=src.uri;
+  dst.title=src.title;
+  dst.width=src.width;
+  dst.height=src.height;
+switch (src.size) {
+case SMALL:
+    dst.small=true;
+  break;
+case LARGE:
+dst.large=true;
+break;
+}
+return dst;
+}

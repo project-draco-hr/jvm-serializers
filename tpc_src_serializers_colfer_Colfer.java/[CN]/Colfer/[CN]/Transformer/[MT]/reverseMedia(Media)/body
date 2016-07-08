@@ -1,0 +1,23 @@
+{
+  data.media.Media dst=new data.media.Media();
+  dst.uri=src.uri;
+  dst.title=src.title;
+  dst.width=src.width;
+  dst.height=src.height;
+  dst.format=src.format;
+  dst.duration=src.duration;
+  dst.size=src.size;
+  dst.bitrate=src.bitrate;
+  dst.hasBitrate=src.hasBitrate;
+  dst.persons=Arrays.asList(StringUtils.split(src.persons,'\n'));
+  if (src.flashPlay) {
+    dst.player=data.media.Media.Player.FLASH;
+  }
+  if (src.javaPlay) {
+    dst.player=data.media.Media.Player.JAVA;
+  }
+  if (src.copyright.length() != 0) {
+    dst.copyright=src.copyright;
+  }
+  return dst;
+}

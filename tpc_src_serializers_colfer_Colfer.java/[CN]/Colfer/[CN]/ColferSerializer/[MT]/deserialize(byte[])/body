@@ -1,0 +1,5 @@
+{
+  MediaContent mc=new MediaContent();
+  mc.unmarshal(array,0);
+  return mc;
+}
