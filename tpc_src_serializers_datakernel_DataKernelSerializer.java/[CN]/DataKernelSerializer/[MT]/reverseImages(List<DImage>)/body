@@ -1,0 +1,7 @@
+{
+  List<Image> list=new ArrayList<>(DImages.size());
+  for (  DImage DImage : DImages) {
+    list.add(reverseImage(DImage));
+  }
+  return list;
+}

@@ -1,0 +1,3 @@
+{
+  register(groups.media,DataKernelSerializer.mediaTransformer);
+}
