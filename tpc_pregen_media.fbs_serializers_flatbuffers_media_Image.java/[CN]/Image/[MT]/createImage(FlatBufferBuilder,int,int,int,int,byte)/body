@@ -1,0 +1,9 @@
+{
+  builder.startObject(5);
+  Image.addHeight(builder,height);
+  Image.addWidth(builder,width);
+  Image.addTitle(builder,titleOffset);
+  Image.addUri(builder,uriOffset);
+  Image.addSize(builder,size);
+  return Image.endImage(builder);
+}

@@ -1,0 +1,4 @@
+{
+  int o=__offset(20);
+  return o != 0 ? __string(__vector(o) + j * 4) : null;
+}

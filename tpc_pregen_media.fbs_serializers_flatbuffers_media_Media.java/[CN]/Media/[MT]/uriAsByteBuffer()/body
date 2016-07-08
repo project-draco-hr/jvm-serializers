@@ -1,0 +1,3 @@
+{
+  return __vector_as_bytebuffer(4,1);
+}

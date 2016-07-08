@@ -1,0 +1,3 @@
+{
+  return MediaContent.STRUCT_SIZE;
+}

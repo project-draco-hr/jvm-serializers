@@ -1,0 +1,7 @@
+{
+  List<String> result=new ArrayList<>(reader.size());
+  for (int i=0; i < reader.size(); i++) {
+    result.add(reader.get(i).toString());
+  }
+  return result;
+}

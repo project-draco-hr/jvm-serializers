@@ -1,0 +1,4 @@
+{
+  int o=__offset(8);
+  return o != 0 ? bb.getInt(o + bb_pos) : 0;
+}

@@ -1,0 +1,3 @@
+{
+  _setShortField(4,(short)value.ordinal());
+}

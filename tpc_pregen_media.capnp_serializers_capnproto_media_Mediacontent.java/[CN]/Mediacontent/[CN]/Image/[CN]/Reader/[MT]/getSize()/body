@@ -1,0 +1,10 @@
+{
+switch (_getShortField(4)) {
+case 0:
+    return serializers.capnproto.media.Mediacontent.Image.Size.SMALL;
+case 1:
+  return serializers.capnproto.media.Mediacontent.Image.Size.LARGE;
+default :
+return serializers.capnproto.media.Mediacontent.Image.Size._NOT_IN_SCHEMA;
+}
+}

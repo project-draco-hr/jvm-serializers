@@ -1,0 +1,4 @@
+{
+  int o=__offset(4);
+  return o != 0 ? __vector_len(o) : 0;
+}

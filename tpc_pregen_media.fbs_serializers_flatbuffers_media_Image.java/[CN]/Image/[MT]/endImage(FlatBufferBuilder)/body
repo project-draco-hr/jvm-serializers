@@ -1,0 +1,5 @@
+{
+  int o=builder.endObject();
+  builder.required(o,4);
+  return o;
+}

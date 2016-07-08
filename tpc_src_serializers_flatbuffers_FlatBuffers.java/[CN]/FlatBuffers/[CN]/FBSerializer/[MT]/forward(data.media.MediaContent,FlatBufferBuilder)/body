@@ -1,0 +1,10 @@
+{
+  int media=forwardMedia(mc.media,fbb);
+  int images[]=new int[mc.images.size()];
+  for (int i=0; i < mc.images.size(); i++) {
+    images[i]=forwardImage(mc.images.get(i),fbb);
+  }
+  int image=MediaContent.createImagesVector(fbb,images);
+  int offset=MediaContent.createMediaContent(fbb,image,media);
+  MediaContent.finishMediaContentBuffer(fbb,offset);
+}
