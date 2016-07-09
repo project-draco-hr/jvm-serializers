@@ -1,0 +1,9 @@
+{
+  this.name=name;
+  type=clazz;
+  serializerFeatures|=SerializerFeature.QuoteFieldNames.getMask();
+  serializerFeatures|=SerializerFeature.SkipTransientField.getMask();
+  serializerFeatures|=SerializerFeature.SortField.getMask();
+  serializerFeatures|=SerializerFeature.DisableCircularReferenceDetect.getMask();
+  serializerFeatures|=SerializerFeature.BeanToArray.getMask();
+}
