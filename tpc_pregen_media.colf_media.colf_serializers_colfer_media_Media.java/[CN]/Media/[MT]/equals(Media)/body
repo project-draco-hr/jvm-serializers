@@ -1,3 +1,0 @@
-{
-  return o != null && java.util.Objects.equals(this.uri,o.uri) && java.util.Objects.equals(this.title,o.title) && this.width == o.width && this.height == o.height && java.util.Objects.equals(this.format,o.format) && this.duration == o.duration && this.size == o.size && java.util.Objects.equals(this.persons,o.persons) && java.util.Objects.equals(this.copyright,o.copyright) && this.bitrate == o.bitrate && this.hasBitrate == o.hasBitrate && this.flashPlay == o.flashPlay && this.javaPlay == o.javaPlay;
-}

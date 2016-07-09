@@ -134,16 +134,27 @@
       header=buf[i++];
     }
     if (header == (byte)7) {
-      int size=0;
+      int length=0;
       for (int shift=0; true; shift+=7) {
         byte b=buf[i++];
-        size|=(b & 0x7f) << shift;
+        length|=(b & 0x7f) << shift;
         if (shift == 28 || b >= 0)         break;
       }
-      if (size > colferSizeMax)       throw new SecurityException(format("colfer: field serializers/colfer/media.media.persons size %d exceeds %d UTF-8 bytes",size,colferSizeMax));
-      int start=i;
-      i+=size;
-      this.persons=new String(buf,start,size,this._utf8);
+      if (length > colferListMax)       throw new SecurityException(format("colfer: field serializers/colfer/media.media.persons length %d exceeds %d elements",length,colferListMax));
+      String[] a=new String[length];
+      for (int ai=0; ai < length; ai++) {
+        int size=0;
+        for (int shift=0; true; shift+=7) {
+          byte b=buf[i++];
+          size|=(b & 0x7f) << shift;
+          if (shift == 28 || b >= 0)           break;
+        }
+        if (size > colferSizeMax)         throw new SecurityException(format("colfer: field serializers/colfer/media.media.persons size %d exceeds %d UTF-8 bytes",size,colferSizeMax));
+        int start=i;
+        i+=size;
+        a[ai]=new String(buf,start,size,this._utf8);
+      }
+      this.persons=a;
       header=buf[i++];
     }
     if (header == (byte)8) {

@@ -9,7 +9,7 @@
   dst.size=src.size;
   dst.bitrate=src.bitrate;
   dst.hasBitrate=src.hasBitrate;
-  dst.persons=StringUtils.join(src.persons,'\n');
+  dst.persons=src.persons.toArray(dst.persons);
 switch (src.player) {
 case FLASH:
     dst.flashPlay=true;

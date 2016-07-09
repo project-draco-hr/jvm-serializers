@@ -188,50 +188,64 @@
       }
       buf[i++]=(byte)x;
     }
-    if (!this.persons.isEmpty()) {
+    if (this.persons.length != 0) {
       buf[i++]=(byte)7;
-      int start=++i;
-      String s=this.persons;
-      for (int sIndex=0, sLength=s.length(); sIndex < sLength; sIndex++) {
-        char c=s.charAt(sIndex);
-        if (c < '\u0080') {
-          buf[i++]=(byte)c;
+      String[] a=this.persons;
+      int x=a.length;
+      if (x > colferListMax)       throw new IllegalStateException(format("colfer: field serializers/colfer/media.media.persons length %d exceeds %d elements",x,colferListMax));
+      while (x > 0x7f) {
+        buf[i++]=(byte)(x | 0x80);
+        x>>>=7;
+      }
+      buf[i++]=(byte)x;
+      for (int ai=0; ai < a.length; ai++) {
+        String s=a[ai];
+        if (s == null) {
+          s="";
+          a[ai]=s;
         }
- else         if (c < '\u0800') {
-          buf[i++]=(byte)(192 | c >>> 6);
-          buf[i++]=(byte)(128 | c & 63);
-        }
- else         if (c < '\ud800' || c > '\udfff') {
-          buf[i++]=(byte)(224 | c >>> 12);
-          buf[i++]=(byte)(128 | c >>> 6 & 63);
-          buf[i++]=(byte)(128 | c & 63);
-        }
- else {
-          int cp=0;
-          if (++sIndex < sLength)           cp=Character.toCodePoint(c,s.charAt(sIndex));
-          if ((cp >= 1 << 16) && (cp < 1 << 21)) {
-            buf[i++]=(byte)(240 | cp >>> 18);
-            buf[i++]=(byte)(128 | cp >>> 12 & 63);
-            buf[i++]=(byte)(128 | cp >>> 6 & 63);
-            buf[i++]=(byte)(128 | cp & 63);
+        int start=++i;
+        for (int sIndex=0, sLength=s.length(); sIndex < sLength; sIndex++) {
+          char c=s.charAt(sIndex);
+          if (c < '\u0080') {
+            buf[i++]=(byte)c;
           }
- else           buf[i++]=(byte)'?';
+ else           if (c < '\u0800') {
+            buf[i++]=(byte)(192 | c >>> 6);
+            buf[i++]=(byte)(128 | c & 63);
+          }
+ else           if (c < '\ud800' || c > '\udfff') {
+            buf[i++]=(byte)(224 | c >>> 12);
+            buf[i++]=(byte)(128 | c >>> 6 & 63);
+            buf[i++]=(byte)(128 | c & 63);
+          }
+ else {
+            int cp=0;
+            if (++sIndex < sLength)             cp=Character.toCodePoint(c,s.charAt(sIndex));
+            if ((cp >= 1 << 16) && (cp < 1 << 21)) {
+              buf[i++]=(byte)(240 | cp >>> 18);
+              buf[i++]=(byte)(128 | cp >>> 12 & 63);
+              buf[i++]=(byte)(128 | cp >>> 6 & 63);
+              buf[i++]=(byte)(128 | cp & 63);
+            }
+ else             buf[i++]=(byte)'?';
+          }
         }
-      }
-      int size=i - start;
-      if (size > colferSizeMax)       throw new IllegalStateException(format("colfer: field serializers/colfer/media.media.persons size %d exceeds %d UTF-8 bytes",size,colferSizeMax));
-      int ii=start - 1;
-      if (size > 0x7f) {
-        i++;
-        for (int x=size; x >= 1 << 14; x>>>=7)         i++;
-        System.arraycopy(buf,start,buf,i - size,size);
-        do {
-          buf[ii++]=(byte)(size | 0x80);
-          size>>>=7;
-        }
+        int size=i - start;
+        if (size > colferSizeMax)         throw new IllegalStateException(format("colfer: field serializers/colfer/media.media.persons size %d exceeds %d UTF-8 bytes",size,colferSizeMax));
+        int ii=start - 1;
+        if (size > 0x7f) {
+          i++;
+          for (int y=size; y >= 1 << 14; y>>>=7)           i++;
+          System.arraycopy(buf,start,buf,i - size,size);
+          do {
+            buf[ii++]=(byte)(size | 0x80);
+            size>>>=7;
+          }
  while (size > 0x7f);
+        }
+        buf[ii]=(byte)size;
       }
-      buf[ii]=(byte)size;
     }
     if (!this.copyright.isEmpty()) {
       buf[i++]=(byte)8;

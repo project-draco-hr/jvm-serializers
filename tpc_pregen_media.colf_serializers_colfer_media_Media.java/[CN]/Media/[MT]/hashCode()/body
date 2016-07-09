@@ -7,7 +7,7 @@
   if (this.format != null)   h=31 * h + this.format.hashCode();
   h=31 * h + (int)(this.duration ^ this.duration >>> 32);
   h=31 * h + (int)(this.size ^ this.size >>> 32);
-  if (this.persons != null)   h=31 * h + this.persons.hashCode();
+  for (  String o : this.persons)   h=31 * h + (o == null ? 0 : o.hashCode());
   if (this.copyright != null)   h=31 * h + this.copyright.hashCode();
   h=31 * h + this.bitrate;
   h=31 * h + (this.hasBitrate ? 1231 : 1237);
