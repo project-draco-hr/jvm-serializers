@@ -1,0 +1,3 @@
+{
+  builder.addOffset(10,copyrightOffset,0);
+}

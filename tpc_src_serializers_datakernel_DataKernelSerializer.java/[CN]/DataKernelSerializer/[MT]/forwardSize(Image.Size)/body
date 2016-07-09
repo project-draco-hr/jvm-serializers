@@ -1,0 +1,3 @@
+{
+  return DImage.Size.valueOf(oldSize.name());
+}

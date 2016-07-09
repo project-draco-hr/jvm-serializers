@@ -1,0 +1,7 @@
+{
+  builder.setUri(image.uri);
+  if (image.title != null)   builder.setTitle(image.title);
+  builder.setWidth(image.width);
+  builder.setHeight(image.height);
+  builder.setSize(forwardSize(image.size));
+}

@@ -1,0 +1,4 @@
+{
+  os=new ArrayOutputStream(ByteBuffer.allocate(1024));
+  os.buf.order(ByteOrder.LITTLE_ENDIAN);
+}

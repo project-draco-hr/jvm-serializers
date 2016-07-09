@@ -1,0 +1,3 @@
+{
+  builder.addInt(7,bitrate,0);
+}

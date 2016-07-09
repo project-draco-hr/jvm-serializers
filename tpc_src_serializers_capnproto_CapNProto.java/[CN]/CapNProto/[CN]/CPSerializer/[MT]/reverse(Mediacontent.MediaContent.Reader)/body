@@ -1,0 +1,9 @@
+{
+  data.media.Media media=reverseMedia(reader.getMedia());
+  StructList.Reader<Mediacontent.Image.Reader> images=reader.getImages();
+  List<data.media.Image> list=new ArrayList<>(images.size());
+  for (int i=0; i < images.size(); i++) {
+    list.add(reverseImage(images.get(i)));
+  }
+  return new data.media.MediaContent(media,list);
+}

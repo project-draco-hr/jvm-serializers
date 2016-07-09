@@ -1,0 +1,7 @@
+{
+  forwardMedia(mc.media,builder.initMedia());
+  StructList.Builder<Mediacontent.Image.Builder> images=builder.initImages(mc.images.size());
+  for (int i=0; i < mc.images.size(); i++) {
+    forwardImage(mc.images.get(i),images.get(i));
+  }
+}

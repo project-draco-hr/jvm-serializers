@@ -1,0 +1,6 @@
+{
+  builder.startObject(2);
+  MediaContent.addMedia(builder,mediaOffset);
+  MediaContent.addImages(builder,imagesOffset);
+  return MediaContent.endMediaContent(builder);
+}

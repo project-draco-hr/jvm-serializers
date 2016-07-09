@@ -1,0 +1,12 @@
+FlatBufferBuilder builder
+int uriOffset
+int titleOffset
+int width
+int height
+int formatOffset
+long duration
+long size
+int bitrate
+int personsOffset
+byte player
+int copyrightOffset

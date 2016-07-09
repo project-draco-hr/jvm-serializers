@@ -1,0 +1,4 @@
+{
+  int o=__offset(6);
+  return o != 0 ? __string(o + bb_pos) : null;
+}

@@ -1,0 +1,10 @@
+{
+switch (_getShortField(14)) {
+case 0:
+    return serializers.capnproto.media.Mediacontent.Media.Player.JAVA;
+case 1:
+  return serializers.capnproto.media.Mediacontent.Media.Player.FLASH;
+default :
+return serializers.capnproto.media.Mediacontent.Media.Player._NOT_IN_SCHEMA;
+}
+}

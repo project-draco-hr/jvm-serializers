@@ -1,0 +1,11 @@
+{
+  int i=src.images.size();
+  Image[] images=new Image[i];
+  while (--i >= 0) {
+    images[i]=forwardImage(src.images.get(i));
+  }
+  MediaContent dst=new MediaContent();
+  dst.images=images;
+  dst.media=forwardMedia(src.media);
+  return dst;
+}

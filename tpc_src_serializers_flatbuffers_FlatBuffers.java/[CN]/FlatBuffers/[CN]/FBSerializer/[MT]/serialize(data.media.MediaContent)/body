@@ -1,0 +1,5 @@
+{
+  FlatBufferBuilder fbb=new FlatBufferBuilder(bb);
+  forward(content,fbb);
+  return fbb.sizedByteArray();
+}

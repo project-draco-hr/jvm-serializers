@@ -1,0 +1,3 @@
+{
+  return _initPointerField(org.capnproto.TextList.factory,3,size);
+}

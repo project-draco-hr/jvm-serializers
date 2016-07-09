@@ -1,0 +1,7 @@
+{
+  output.position(0);
+  serializer.serialize(output,content);
+  byte[] bytes=new byte[output.position()];
+  System.arraycopy(array,0,bytes,0,output.position());
+  return bytes;
+}

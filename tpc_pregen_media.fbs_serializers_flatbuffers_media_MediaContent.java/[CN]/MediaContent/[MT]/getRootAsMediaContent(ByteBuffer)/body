@@ -1,0 +1,3 @@
+{
+  return getRootAsMediaContent(_bb,new MediaContent());
+}

@@ -1,0 +1,3 @@
+{
+  return new data.media.Media(media.uri(),media.title(),media.width(),media.height(),media.format(),media.duration(),media.size(),media.bitrate(),media.bitrate() != 0,reversePersons(media),reversePlayer(media.player()),media.copyright());
+}

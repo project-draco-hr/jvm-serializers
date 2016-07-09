@@ -1,0 +1,4 @@
+{
+  int o=__offset(4);
+  return o != 0 ? obj.__init(__indirect(__vector(o) + j * 4),bb) : null;
+}

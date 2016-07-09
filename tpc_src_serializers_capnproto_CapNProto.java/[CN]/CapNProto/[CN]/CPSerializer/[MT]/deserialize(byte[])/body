@@ -1,0 +1,5 @@
+{
+  MessageReader message=Serialize.read(ByteBuffer.wrap(array));
+  Mediacontent.MediaContent.Reader mc=message.getRoot(Mediacontent.MediaContent.factory);
+  return reverse(mc);
+}

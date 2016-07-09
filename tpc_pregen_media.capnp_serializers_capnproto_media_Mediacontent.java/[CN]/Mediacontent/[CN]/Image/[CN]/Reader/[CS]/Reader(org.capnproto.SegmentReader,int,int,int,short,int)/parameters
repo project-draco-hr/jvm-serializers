@@ -1,0 +1,6 @@
+org.capnproto.SegmentReader segment
+int data
+int pointers
+int dataSize
+short pointerCount
+int nestingLimit

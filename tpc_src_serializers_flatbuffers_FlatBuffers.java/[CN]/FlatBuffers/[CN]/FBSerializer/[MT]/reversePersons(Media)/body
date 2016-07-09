@@ -1,0 +1,7 @@
+{
+  List<String> result=new ArrayList<>(media.personsLength());
+  for (int i=0; i < media.personsLength(); i++) {
+    result.add(media.persons(i));
+  }
+  return result;
+}
